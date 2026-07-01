@@ -82,12 +82,14 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { name: "description", content: "A calm, science-backed parenting webinar by clinical psychologist Miss Samra Riaz. Raise a well-behaved child and build a peaceful home — without being a perfect parent." },
       { name: "author", content: "Confident Parent Academy" },
       { property: "og:site_name", content: "Confident Parent Academy" },
-      { property: "og:title", content: "Confident Parent Academy — Parenting Webinar" },
-      { property: "og:description", content: "Learn practical, science-backed parenting strategies to understand your child's behaviour and build a peaceful home." },
+      { property: "og:title", content: "Confident Parent Academy — Parenting Webinar with Miss Samra Riaz" },
+      { property: "og:description", content: "A calm, science-backed parenting webinar by clinical psychologist Miss Samra Riaz. Raise a well-behaved child and build a peaceful home — without being a perfect parent." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
-      { name: "twitter:title", content: "Confident Parent Academy — Parenting Webinar" },
-      { name: "twitter:description", content: "A calm, science-backed parenting webinar with clinical psychologist Miss Samra Riaz." },
+      { name: "twitter:title", content: "Confident Parent Academy — Parenting Webinar with Miss Samra Riaz" },
+      { name: "twitter:description", content: "A calm, science-backed parenting webinar by clinical psychologist Miss Samra Riaz. Raise a well-behaved child and build a peaceful home — without being a perfect parent." },
+      { property: "og:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/attachments/og-images/4bdb803e-b21f-48d8-b4f0-7fe6354bb613" },
+      { name: "twitter:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/attachments/og-images/4bdb803e-b21f-48d8-b4f0-7fe6354bb613" },
     ],
     links: [
       {
