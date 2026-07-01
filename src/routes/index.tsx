@@ -290,7 +290,7 @@ function TrustBar() {
     <section className="bg-secondary border-b">
       <div className="mx-auto max-w-5xl px-4 py-5 grid grid-cols-2 sm:grid-cols-4 gap-3 text-center">
         {items.map(({ icon: Icon, label }) => (
-          <div key={label} className="flex items-center justify-center gap-2 text-primary">
+          <div key={label} className="flex items-center justify-center gap-2 text-warm-brown">
             <Icon className="size-4 shrink-0" />
             <span className="text-xs sm:text-sm font-semibold">{label}</span>
           </div>
@@ -353,7 +353,7 @@ function SolutionSection() {
         <div className="mt-10 grid md:grid-cols-2 lg:grid-cols-3 gap-5">
           {points.map(({ icon: Icon, title, desc }) => (
             <div key={title} className="rounded-3xl bg-card border border-border p-6 shadow-sm">
-              <span className="grid place-items-center size-11 rounded-2xl bg-accent/50 text-primary">
+              <span className="grid place-items-center size-11 rounded-2xl bg-accent/50 text-warm-brown">
                 <Icon className="size-5" />
               </span>
               <h3 className="mt-4 text-lg font-semibold" style={{ fontFamily: "var(--font-display)" }}>{title}</h3>
@@ -417,7 +417,7 @@ function CurriculumSection() {
         <div className="mt-8 grid sm:grid-cols-2 gap-4">
           {modules.map((m, i) => (
             <div key={m} className="flex items-center gap-4 rounded-2xl bg-card border border-border p-5 shadow-sm">
-              <span className="grid place-items-center size-10 rounded-full bg-primary text-primary-foreground font-semibold shrink-0" style={{ fontFamily: "var(--font-display)" }}>
+              <span className="grid place-items-center size-10 rounded-full bg-accent text-warm-brown-deep font-semibold shrink-0" style={{ fontFamily: "var(--font-display)" }}>
                 {String(i + 1).padStart(2, "0")}
               </span>
               <span className="text-sm md:text-base font-semibold">{m}</span>
@@ -436,7 +436,7 @@ function AboutSamra() {
     "Clinical Psychologist",
     "4 Years of Experience",
     "Post Graduate Diploma in Clinical Psychology",
-    "ECCE Diploma",
+    "Certified Early Childhood Educator",
     "Behaviour Therapist (ABAT Candidate)",
   ];
   const works = ["Parents", "Children", "University Students", "Life Counselling"];
@@ -468,7 +468,7 @@ function AboutSamra() {
           <div className="mt-5 grid sm:grid-cols-2 gap-2.5">
             {creds.map((c) => (
               <div key={c} className="flex items-start gap-2 text-sm font-medium">
-                <Award className="size-4 text-primary shrink-0 mt-0.5" />
+                <Award className="size-4 text-warm-brown shrink-0 mt-0.5" />
                 <span>{c}</span>
               </div>
             ))}
@@ -535,7 +535,7 @@ function IncludesSection() {
         <div className="mt-8 grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
           {items.map(({ icon: Icon, title, desc }) => (
             <div key={title} className="rounded-3xl bg-card border border-border p-6 shadow-sm">
-              <span className="grid place-items-center size-11 rounded-2xl bg-accent/50 text-primary">
+              <span className="grid place-items-center size-11 rounded-2xl bg-accent/50 text-warm-brown">
                 <Icon className="size-5" />
               </span>
               <h3 className="mt-4 font-semibold" style={{ fontFamily: "var(--font-display)" }}>{title}</h3>
@@ -554,12 +554,12 @@ function PricingSection() {
   return (
     <section className="py-14 md:py-20 bg-secondary">
       <div className="mx-auto max-w-2xl px-4">
-        <div className="rounded-3xl bg-card border-2 border-primary/20 p-8 md:p-10 shadow-lg text-center">
+        <div className="rounded-3xl bg-card border-2 border-accent/40 p-8 md:p-10 shadow-lg text-center">
           <p className="text-sm font-semibold uppercase tracking-widest text-secondary-foreground/70">
             Limited-time seat price
           </p>
           <div className="mt-4 flex items-end justify-center gap-3">
-            <span className="text-5xl md:text-6xl font-semibold text-primary" style={{ fontFamily: "var(--font-display)" }}>
+            <span className="text-5xl md:text-6xl font-semibold text-warm-brown-deep" style={{ fontFamily: "var(--font-display)" }}>
               499 PKR
             </span>
             <span className="text-xl text-muted-foreground line-through mb-1">2,000 PKR</span>
@@ -664,7 +664,7 @@ function FAQSection() {
             <details key={f.q} className="group rounded-2xl bg-card border border-border p-5 shadow-sm">
               <summary className="flex cursor-pointer items-center justify-between gap-3 font-semibold list-none">
                 <span>{f.q}</span>
-                <ChevronDown className="size-5 text-primary shrink-0 transition-transform group-open:rotate-180" />
+                <ChevronDown className="size-5 text-warm-brown shrink-0 transition-transform group-open:rotate-180" />
               </summary>
               <p className="mt-3 text-sm text-muted-foreground leading-relaxed">{f.a}</p>
             </details>
