@@ -1,7 +1,7 @@
 import { createFileRoute, useNavigate } from "@tanstack/react-router";
-import productStack from "@/assets/product-stack.png.asset.json";
-import bumpStrategy from "@/assets/bump-strategy.png.asset.json";
-import bumpPrompts from "@/assets/bump-prompts.png.asset.json";
+import bumpToolkit from "@/assets/cpa-bump-toolkit.jpg";
+import bumpRecording from "@/assets/cpa-bump-recording.jpg";
+import heroFamily from "@/assets/cpa-hero-family.jpg";
 import { useMemo, useState } from "react";
 import { Topbar } from "@/components/site/Topbar";
 import { Footer } from "@/components/site/Footer";
@@ -35,8 +35,9 @@ export const Route = createFileRoute("/order")({
   }),
   head: () => ({
     meta: [
-      { title: "Checkout — Clinic Growth Masterclass" },
-      { name: "description", content: "Secure your seat in the Clinic Growth Masterclass for Rs. 999. Add high-converting order bumps to maximize your results." },
+      { title: "Checkout — Confident Parent Academy Webinar" },
+      { name: "description", content: "Reserve your seat in the Confident Parent Academy parenting webinar for just 499 PKR. Add helpful parenting resources at checkout." },
+      { name: "robots", content: "noindex,nofollow" },
     ],
   }),
   component: OrderPage,
@@ -45,43 +46,42 @@ export const Route = createFileRoute("/order")({
 const BUMPS = [
   {
     id: "strategy",
-    title: "1-on-1 Personalized Digital Marketing Strategy Session",
-    price: 3999,
-    image: bumpStrategy.url,
-    badge: "Most Popular (8/10 Members Add This)",
+    title: "Parenting Behaviour Toolkit",
+    price: 199,
+    image: bumpToolkit,
+    badge: "Most Popular (8/10 Parents Add This)",
     bullets: [
-      "90-Minute Private Strategy Session",
-      "Customized Patient Growth Plan",
-      "Meta Ads & Digital Marketing Guidance",
-      "Website & Online Presence Review",
-      "15 Days WhatsApp Support",
+      "Behaviour Tracker",
+      "Daily Routine Planner",
+      "Reward Chart",
+      "Printable Worksheets",
+      "Parenting Cheat Sheet",
     ],
-    bonus: "Bonus: Professional Clinic Website Setup",
+    bonus: null as string | null,
   },
   {
     id: "prompts",
-    title: "AI Content Prompt Vault for Doctors",
-    price: 699,
-    image: bumpPrompts.url,
-    badge: "Recommended (7/10 Members Add This)",
+    title: "Webinar Recording + PDF Bundle",
+    price: 299,
+    image: bumpRecording,
+    badge: "Recommended (7/10 Parents Add This)",
     bullets: [
-      "Ready-to-use AI prompts for doctors",
-      "Content ideas for social media",
-      "Patient education content prompts",
-      "Engagement and lead generation prompts",
-      "Save hours of content creation time",
+      "Full Webinar Recording (lifetime access)",
+      "Complete PDF Parenting Guide",
+      "Bonus parenting resources",
+      "Rewatch and revisit anytime",
+      "Perfect if you can't attend live",
     ],
     bonus: null as string | null,
   },
 ] as const;
 
 const PAYMENT_ACCOUNTS = {
-  easypaisa: { label: "Easypaisa", name: "Farhan Ali Rasheed", account: "03135944817" },
-  jazzcash: { label: "JazzCash", name: "Farhan Ali Rasheed", account: "03135944817" },
+  hbl: { label: "Habib Bank Limited (HBL)", name: "Samra", account: "16977901123599" },
 } as const;
 type PayMethod = keyof typeof PAYMENT_ACCOUNTS;
 
-const MAIN_PRODUCT = { title: "Clinic Growth Masterclass", price: 999 };
+const MAIN_PRODUCT = { title: "Confident Parent Academy Webinar", price: 499 };
 
 function OrderPage() {
   const search = Route.useSearch();
