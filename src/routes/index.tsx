@@ -679,20 +679,20 @@ function FAQSection() {
 
 function FinalCta() {
   return (
-    <section className="hero-bg text-white py-16 md:py-24">
+    <section className="hero-bg text-foreground py-16 md:py-24">
       <div className="mx-auto max-w-3xl px-4 text-center">
         <h2 className="text-2xl md:text-4xl font-semibold" style={{ fontFamily: "var(--font-display)" }}>
           A Calmer Home Starts With One Evening
         </h2>
-        <p className="mt-4 text-white/85 max-w-xl mx-auto">
+        <p className="mt-4 text-foreground/75 max-w-xl mx-auto">
           Join Miss Samra Riaz live on 11 July and learn how to raise a well-behaved child — without
           guilt, shouting, or being a perfect parent.
         </p>
         <div className="mt-6 max-w-sm mx-auto">
-          <MasterclassCountdown variant="dark" showDateLine={false} className="mb-5" />
+          <MasterclassCountdown variant="light" showDateLine={false} className="mb-5" />
           <CtaButton subtitle="Only 499 PKR · Recording included">Reserve My Seat</CtaButton>
         </div>
-        <div className="mt-5 flex items-center justify-center gap-2 text-sm text-white/80">
+        <div className="mt-5 flex items-center justify-center gap-2 text-sm text-foreground/70">
           <ShieldCheck className="size-4 text-accent" /> Secure checkout · Instant confirmation
         </div>
       </div>
