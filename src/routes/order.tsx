@@ -420,8 +420,7 @@ function OrderPage() {
                       onChange={(e) => setPaymentMethod(e.target.value as PayMethod)}
                       className="appearance-none w-full rounded-xl border-2 border-primary bg-gradient-to-br from-primary/5 to-primary/10 px-4 py-4 pr-12 text-base font-bold text-foreground shadow-md outline-none focus:ring-4 focus:ring-primary/30 hover:shadow-lg transition cursor-pointer"
                     >
-                      <option value="easypaisa">📱 Easypaisa</option>
-                      <option value="jazzcash">📲 JazzCash</option>
+                      <option value="hbl">🏦 Habib Bank Limited (HBL)</option>
                     </select>
                     <ChevronDown className="pointer-events-none absolute right-4 top-1/2 -translate-y-1/2 size-5 text-primary" />
                     <span className="pointer-events-none absolute inset-0 rounded-xl ring-1 ring-primary/20 animate-pulse" aria-hidden />
