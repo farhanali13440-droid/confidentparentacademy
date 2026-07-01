@@ -21,20 +21,20 @@ interface Props {
 }
 
 const DEFAULTS = {
-  trainingDate: '12th July 2026 (Sunday)',
-  trainingTime: '5:00 PM – 8:00 PM (Pakistan Standard Time)',
+  trainingDate: '11th July 2026 (Saturday)',
+  trainingTime: '8:00 PM – 9:30 PM (Pakistan Standard Time)',
   whatsappUrl: 'https://chat.whatsapp.com/D5RErdi4ZnhJGNOOEK37c6',
 }
 
 const Email = ({
-  name = 'Doctor',
+  name = 'Parent',
   trainingDate = DEFAULTS.trainingDate,
   trainingTime = DEFAULTS.trainingTime,
   whatsappUrl = DEFAULTS.whatsappUrl,
 }: Props) => (
   <Html lang="en" dir="ltr">
     <Head />
-    <Preview>You're registered for the Clinic Growth Masterclass — details inside</Preview>
+    <Preview>You're registered for the Confident Parent Academy webinar — details inside</Preview>
     <Body style={main}>
       <Container style={container}>
         <Heading style={h1}>✅ You're Registered!</Heading>
@@ -42,14 +42,14 @@ const Email = ({
         <Text style={text}>Assalam-o-Alaikum {name},</Text>
 
         <Text style={text}>
-          Your registration for the <strong>Clinic Growth Masterclass</strong> has been received successfully.
+          Your registration for the <strong>Confident Parent Academy</strong> parenting webinar has been received successfully.
         </Text>
 
         <Section style={card}>
-          <Text style={cardHeader}>Here are your training details:</Text>
+          <Text style={cardHeader}>Here are your webinar details:</Text>
           <Text style={detail}>📅 <strong>Date:</strong> {trainingDate}</Text>
           <Text style={detail}>⏰ <strong>Time:</strong> {trainingTime}</Text>
-          <Text style={detail}>📍 <strong>Location:</strong> Live Online Training</Text>
+          <Text style={detail}>📍 <strong>Location:</strong> Live on Google Meet</Text>
         </Section>
 
         <Text style={text}>Join the official WhatsApp Community here:</Text>
@@ -65,15 +65,15 @@ const Email = ({
         </Text>
 
         <Text style={text}>
-          We're excited to help you build your own patient acquisition system.
+          We're excited to help you build a calmer, more peaceful home.
         </Text>
 
         <Hr style={hr} />
 
         <Text style={signature}>
           Regards,<br />
-          <strong>Team Zero Apple A Day</strong><br />
-          Clinic Growth Masterclass
+          <strong>Confident Parent Academy</strong><br />
+          Miss Samra Riaz
         </Text>
       </Container>
     </Body>
@@ -82,10 +82,10 @@ const Email = ({
 
 export const template = {
   component: Email,
-  subject: "✅ You're Registered — Clinic Growth Masterclass Details Inside",
+  subject: "✅ You're Registered — Confident Parent Academy Webinar Details Inside",
   displayName: 'Registration Confirmation',
   previewData: {
-    name: 'Dr. Ahmed',
+    name: 'Ayesha',
     trainingDate: DEFAULTS.trainingDate,
     trainingTime: DEFAULTS.trainingTime,
     whatsappUrl: DEFAULTS.whatsappUrl,
