@@ -534,7 +534,7 @@ lastError: ${debug.lastError ?? "-"}`}
           <div className="mx-auto max-w-4xl px-4 text-center">
             <p className="text-xs font-bold uppercase tracking-[0.24em] text-yellow-300">One-Time Offer Pricing</p>
             <h2 className="mt-4 text-3xl md:text-5xl font-black tracking-tight">
-              Add The Personalized Clinic Growth Session Today
+              Add The Private 1-on-1 Parenting Session Today
             </h2>
             <div className="mt-8 rounded-3xl border border-white/10 bg-white/5 p-6 md:p-8 shadow-2xl">
               <div className="text-sm uppercase tracking-widest text-white/60">Regular Price</div>
@@ -552,8 +552,8 @@ lastError: ${debug.lastError ?? "-"}`}
                 <PrimaryAction
                   onClick={scrollToPayment}
                   disabled={!!pending}
-                  text={"YES! ADD MY 1-ON-1 CLINIC GROWTH SESSION →"}
-                  subtext="90-minute private session + customized plan + 15-day WhatsApp support + free website setup bonus"
+                  text={"YES! ADD MY 1-ON-1 PARENTING SESSION →"}
+                  subtext="60-minute private session + personalised plan + 15-day WhatsApp support + bonus parenting toolkit"
                 />
               </div>
               <button
@@ -562,7 +562,7 @@ lastError: ${debug.lastError ?? "-"}`}
                 disabled={!!pending}
                 className="mt-5 text-sm text-white/70 underline underline-offset-4 hover:text-white disabled:opacity-60"
               >
-                {pending === "decline" ? "CONTINUING..." : "← No Thanks, I’ll Go With Clinic Growth Masterclass Only"}
+                {pending === "decline" ? "CONTINUING..." : "← No Thanks, I’ll Attend The Webinar Only"}
               </button>
             </div>
             {error && <p className="mt-4 text-sm text-red-300">{error}</p>}
@@ -578,32 +578,32 @@ lastError: ${debug.lastError ?? "-"}`}
                 Complete Your 1-on-1 Session Upgrade
               </h2>
               <p className="mt-4 text-sm md:text-base text-white/80 leading-relaxed max-w-2xl mx-auto">
-                You are one step away from getting your personalized 90-minute clinic growth strategy session.
-                Complete your payment of <span className="font-bold text-yellow-300">PKR 3,999</span> and upload the screenshot below to confirm your upgrade.
+                You are one step away from your private 60-minute parenting counselling session with Miss Samra.
+                Complete your payment of <span className="font-bold text-yellow-300">PKR {OTO_PRICE.toLocaleString()}</span> and upload the screenshot below to confirm your upgrade.
               </p>
               <div className="mt-6 inline-flex flex-col items-center rounded-2xl bg-yellow-300/10 border border-yellow-300/30 px-6 py-4">
                 <div className="text-xs uppercase tracking-widest text-yellow-300/90">One-Time Offer Price</div>
-                <div className="mt-1 text-3xl md:text-5xl font-black text-yellow-300">PKR 3,999</div>
+                <div className="mt-1 text-3xl md:text-5xl font-black text-yellow-300">PKR {OTO_PRICE.toLocaleString()}</div>
               </div>
             </div>
 
             {/* Payment account card */}
             <div className="mt-8 rounded-2xl bg-white text-foreground p-5 md:p-6 shadow-2xl">
               <div className="text-xs font-bold uppercase tracking-wider text-muted-foreground">
-                Easypaisa / JazzCash
+                Habib Bank Limited (HBL)
               </div>
               <dl className="mt-4 space-y-3 text-sm md:text-base">
                 <div className="flex items-start justify-between gap-4">
                   <dt className="text-muted-foreground">Account Title</dt>
-                  <dd className="font-bold text-right">Farhan Ali Rasheed</dd>
+                  <dd className="font-bold text-right">Samra</dd>
                 </div>
                 <div className="flex items-start justify-between gap-4">
                   <dt className="text-muted-foreground">Account Number</dt>
-                  <dd className="font-bold text-right tracking-wider">03135944817</dd>
+                  <dd className="font-bold text-right tracking-wider">{OTO_ACCOUNT}</dd>
                 </div>
                 <div className="flex items-start justify-between gap-4">
                   <dt className="text-muted-foreground">Amount</dt>
-                  <dd className="font-bold text-right">PKR 3,999</dd>
+                  <dd className="font-bold text-right">PKR {OTO_PRICE.toLocaleString()}</dd>
                 </div>
               </dl>
               <button
@@ -618,10 +618,10 @@ lastError: ${debug.lastError ?? "-"}`}
               <div className="mt-6 rounded-xl bg-secondary/60 p-4 text-sm">
                 <div className="font-bold mb-2">Payment Instructions</div>
                 <ol className="list-decimal pl-5 space-y-1 text-foreground/80">
-                  <li>Send PKR 3,999 through Easypaisa or JazzCash.</li>
+                  <li>Send PKR {OTO_PRICE.toLocaleString()} to the HBL account above.</li>
                   <li>Take a screenshot of the successful payment.</li>
                   <li>Upload the screenshot below.</li>
-                  <li>Submit to confirm your 1-on-1 strategy session upgrade.</li>
+                  <li>Submit to confirm your 1-on-1 counselling session upgrade.</li>
                 </ol>
               </div>
             </div>
@@ -638,7 +638,7 @@ lastError: ${debug.lastError ?? "-"}`}
                   <input type="file" accept="image/*" onChange={handleOtoFile} className="hidden" />
                 </label>
                 <p className="mt-2 text-xs text-foreground/80">
-                  Upload your PKR 3,999 payment screenshot to confirm your 1-on-1 session upgrade.
+                  Upload your PKR {OTO_PRICE.toLocaleString()} payment screenshot to confirm your 1-on-1 session upgrade.
                 </p>
                 {otoPreview && (
                   <div className="mt-3 rounded-md border overflow-hidden">
