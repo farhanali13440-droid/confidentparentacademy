@@ -9,7 +9,7 @@ export const Route = createFileRoute("/thank-you")({
   head: () => ({
     meta: [
       { title: "Thank You — Payment Screenshot Received" },
-      { name: "description", content: "Your payment screenshot has been received. Join the WhatsApp community for masterclass details, Zoom link, and reminders." },
+      { name: "description", content: "Your payment screenshot has been received. Join the WhatsApp community for webinar details, the Google Meet link, and reminders." },
       { name: "robots", content: "noindex,nofollow" },
     ],
   }),
@@ -19,7 +19,7 @@ export const Route = createFileRoute("/thank-you")({
 function ThankYouPage() {
   const waCommunity = "https://chat.whatsapp.com/D5RErdi4ZnhJGNOOEK37c6";
   const waSupport = `https://wa.me/923135944817?text=${encodeURIComponent(
-    "Assalam-o-Alaikum, I need help with my Clinic Growth Masterclass order.",
+    "Assalam-o-Alaikum, I need help with my Confident Parent Academy webinar order.",
   )}`;
 
   const [otoSubmitted, setOtoSubmitted] = useState(false);
@@ -73,9 +73,9 @@ function ThankYouPage() {
                 <div className="text-sm text-slate-800">
                   <div className="font-bold mb-1">🎯 1-on-1 Session Payment Submitted</div>
                   <p>
-                    Your PKR 3,999 payment for the 1-on-1 Personalized Strategy Session has been
+                    Your payment for the private 1-on-1 parenting session with Miss Samra has been
                     received and will be confirmed after verification. Our team will reach out on
-                    WhatsApp to schedule your private 90-minute session.
+                    WhatsApp to schedule your private session.
                   </p>
                 </div>
               </div>
@@ -92,12 +92,11 @@ function ThankYouPage() {
                 <h2 className="text-lg md:text-xl font-extrabold">🎁 Your Bonus Is Ready</h2>
               </div>
               <p className="mt-3 font-semibold text-slate-900">
-                You have unlocked the AI Content Prompt Vault for Doctors &amp; Healthcare Practitioners.
+                You have unlocked the Webinar Recording + PDF Parenting Bundle.
               </p>
               <p className="mt-2 text-sm text-muted-foreground">
-                Use these ready-made prompts to create Facebook and Instagram video ads, Reels,
-                patient education posts, captions, WhatsApp follow-ups, and 7-day / 30-day content
-                plans in minutes.
+                Rewatch the full webinar anytime and use the PDF parenting guide and resources to
+                keep building a calmer, more connected home.
               </p>
               <a
                 href="https://docs.google.com/document/d/1hoBs3fP65ta11gwvugQ_MrRMBUBVxPDiJT9AZizdgYE/edit?usp=sharing"
@@ -105,24 +104,39 @@ function ThankYouPage() {
                 rel="noopener noreferrer"
                 className="btn-cta inline-flex items-center gap-2 w-full md:w-auto mt-5 px-6 py-4 text-base md:text-lg justify-center"
               >
-                <span>Access My AI Content Prompt Vault</span>
+                <span>Access My Recording + PDF Bundle</span>
                 <ArrowRight className="btn-cta-arrow size-5" aria-hidden="true" />
               </a>
             </section>
           )}
 
-          {/* Masterclass details */}
+          {/* Webinar details */}
           <section className="bg-card rounded-2xl border shadow-sm p-6">
             <div className="flex items-center gap-3">
               <div className="size-10 rounded-full bg-primary/10 grid place-items-center">
                 <Calendar className="size-5 text-primary" />
               </div>
-              <h2 className="text-lg font-extrabold uppercase tracking-wide">📅 Masterclass Details</h2>
+              <h2 className="text-lg font-extrabold uppercase tracking-wide">📅 Webinar Details</h2>
             </div>
-            <div className="mt-4 rounded-xl bg-gradient-to-r from-indigo-600 to-violet-600 text-white p-6 text-center">
-              <div className="text-sm uppercase tracking-widest opacity-90">Live on Zoom</div>
-              <div className="mt-1 text-2xl md:text-3xl font-black">Sunday, 12th July 2026</div>
-              <div className="mt-1 text-lg font-bold">5:00 PM – 8:00 PM (Pakistan Time)</div>
+            <div className="mt-4 rounded-xl bg-primary text-primary-foreground p-6 text-center">
+              <div className="text-sm uppercase tracking-widest opacity-90">Live on Google Meet</div>
+              <div className="mt-1 text-2xl md:text-3xl font-black" style={{ fontFamily: "var(--font-display)" }}>Saturday, 11th July 2026</div>
+              <div className="mt-1 text-lg font-bold">8:00 PM – 9:30 PM (Pakistan Time)</div>
+            </div>
+            <div className="mt-4 rounded-lg bg-secondary p-4 text-sm text-slate-800">
+              <p className="font-bold mb-1">How to join</p>
+              <p>
+                You'll receive the Google Meet joining link on WhatsApp and email before the session.
+                Add the date to your calendar and join a few minutes early.
+              </p>
+              <a
+                href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Confident+Parent+Academy+Webinar&dates=20260711T150000Z/20260711T163000Z&details=Live+parenting+webinar+with+Miss+Samra+Riaz+on+Google+Meet"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 mt-3 rounded-full border-2 border-primary px-4 py-2 font-bold text-primary hover:bg-primary/5"
+              >
+                <Calendar className="size-4" /> Add to Calendar
+              </a>
             </div>
           </section>
 
@@ -144,7 +158,7 @@ function ThankYouPage() {
               <ArrowRight className="btn-cta-arrow size-5" aria-hidden="true" />
             </a>
             <p className="mt-3 text-sm text-muted-foreground">
-              In this community, you will receive the Zoom link, reminders, important
+              In this community, you will receive the Google Meet link, reminders, important
               announcements, and all training updates.
             </p>
           </section>
