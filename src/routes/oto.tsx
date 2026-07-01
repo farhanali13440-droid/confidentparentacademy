@@ -416,43 +416,41 @@ lastError: ${debug.lastError ?? "-"}`}
               Special One-Time Offer
             </p>
             <h1 className="mt-4 text-3xl md:text-5xl font-black tracking-tight leading-tight">
-              You’re Enrolled In The Clinic Growth Masterclass…
+              Your Webinar Seat Is Confirmed…
               <span className="block mt-3 text-yellow-300">
-                But Before You Go, Get A Personalized Growth Plan For Your Own Clinic
+                But Before You Go, Get A Private Parenting Plan For Your Own Child
               </span>
             </h1>
             <p className="mt-4 md:mt-5 max-w-3xl mx-auto text-sm md:text-lg text-white/80 leading-relaxed">
-              The masterclass gives you the strategies. This private 90-minute session helps you apply them specifically to your specialty, city, services, clinic goals, and current online situation.
+              The webinar gives you the strategies. This private 60-minute counselling session with Miss Samra helps you apply them to your child's specific age, behaviour, and your family situation.
             </p>
-            <VisualCard src={heroVisual.url} alt="1-on-1 Personalized Digital Marketing Strategy Session visual" className="mt-7" />
             <div className="mt-6 max-w-2xl mx-auto">
               <PrimaryAction
                 onClick={scrollToPayment}
                 disabled={!!pending}
                 text={"YES! ADD MY 1-ON-1 SESSION →"}
-                subtext="Get your personalized clinic growth plan + 15-day WhatsApp support"
+                subtext="Get your personalised parenting plan + 15-day WhatsApp support"
               />
               <button type="button" onClick={handleDecline} disabled={!!pending} className="mt-4 block mx-auto text-xs md:text-sm text-white/70 underline underline-offset-4 hover:text-white disabled:opacity-60">
-                ← No Thanks, I’ll Go With Clinic Growth Masterclass Only
+                ← No Thanks, I’ll Attend The Webinar Only
               </button>
             </div>
             <p className="mt-4 flex items-center justify-center gap-2 text-xs text-white/60">
-              <Lock className="size-3.5" /> Your masterclass order stays intact either way.
+              <Lock className="size-3.5" /> Your webinar seat stays confirmed either way.
             </p>
           </div>
         </section>
 
-        <ContentSection title="This Is Not Generic Marketing Advice">
+        <ContentSection title="This Is Not Generic Parenting Advice">
           <div className="max-w-3xl space-y-4 text-sm md:text-lg text-foreground/80 leading-relaxed">
-            <p>You will not leave with random tips that may or may not work for your clinic.</p>
+            <p>You will not leave with random tips that may or may not work for your child.</p>
             <p>
-              During this session, we will build a patient-growth direction around your own specialty, city, services, current online presence, and patient goals.
+              During this session, Miss Samra will build a calm, practical plan around your child's age, temperament, daily routine, and the specific challenges you're facing.
             </p>
           </div>
-          <VisualCard src={growthPlanVisual.url} alt="Your Personalized Clinic Growth Plan visual" className="mt-6" />
         </ContentSection>
 
-        <ContentSection title="In Your 90-Minute Session, We Will Help You:" dark>
+        <ContentSection title="In Your 60-Minute Session, Miss Samra Will Help You:" dark>
           <div className="grid gap-3 md:grid-cols-2">
             {BENEFITS.map((item) => (
               <div
@@ -466,20 +464,19 @@ lastError: ${debug.lastError ?? "-"}`}
               </div>
             ))}
           </div>
-          <VisualCard src={privateSessionVisual.url} alt="Private 90-Minute Strategy Session visual" className="mt-6" />
           <div className="mt-6 max-w-2xl mx-auto">
             <PrimaryAction
               onClick={scrollToPayment}
               disabled={!!pending}
-              text={"YES! I WANT MY PERSONALIZED CLINIC GROWTH PLAN →"}
+              text={"YES! I WANT MY PERSONALISED PARENTING PLAN →"}
             />
             <button type="button" onClick={handleDecline} disabled={!!pending} className="mt-4 block mx-auto text-xs md:text-sm text-white/70 underline underline-offset-4 hover:text-white disabled:opacity-60">
-              ← No Thanks, I’ll Go With Clinic Growth Masterclass Only
+              ← No Thanks, I’ll Attend The Webinar Only
             </button>
           </div>
         </ContentSection>
 
-        <ContentSection title="Everything You Need To Move Forward With Clarity">
+        <ContentSection title="Everything You Need To Move Forward With Confidence">
           <div className="grid gap-3 md:grid-cols-2 lg:grid-cols-3">
             {INCLUDED.map((item) => (
               <div key={item} className="rounded-xl border bg-card px-4 py-4 shadow-sm flex items-start gap-3">
@@ -490,24 +487,21 @@ lastError: ${debug.lastError ?? "-"}`}
               </div>
             ))}
           </div>
-          <VisualCard src={whatsIncludedVisual.url} alt="What's Included visual" className="mt-6" />
         </ContentSection>
 
-        <ContentSection title="Plus, You Will Receive A Free Professional Clinic Website Setup" dark>
+        <ContentSection title="Plus, You Will Receive A Bonus Printable Parenting Toolkit" dark>
           <div className="max-w-3xl space-y-4 text-sm md:text-lg text-white/85 leading-relaxed">
             <p>
-              Your website setup will give your clinic a more professional online presence and make it easier for potential patients to understand your services and contact your clinic.
+              The toolkit includes a behaviour tracker, daily routine planner, reward chart, and printable worksheets to help you apply your plan at home.
             </p>
             <p>This is included as a bonus when you add the 1-on-1 session today.</p>
           </div>
-          <VisualCard src={websiteBonusVisual.url} alt="Free Professional Clinic Website Setup visual" className="mt-6" />
         </ContentSection>
 
-        <ContentSection title="The Masterclass Gives You The Strategy. This Session Helps You Apply It To Your Clinic.">
+        <ContentSection title="The Webinar Gives You The Strategy. This Session Helps You Apply It To Your Child.">
           <div className="max-w-3xl text-sm md:text-lg text-foreground/80 leading-relaxed">
-            Instead of trying to figure out every step alone, you get direct guidance on what to prioritize first, what to ignore, and how to build a practical plan for your specific clinic.
+            Instead of trying to figure out every step alone, you get direct guidance on what to prioritise first, what to let go of, and how to build a practical plan for your specific child.
           </div>
-          <VisualCard src={whyTakeOfferVisual.url} alt="Why Take This One-Time Offer visual" className="mt-6" />
           <div className="mt-6 max-w-2xl mx-auto">
             <PrimaryAction
               onClick={scrollToPayment}
@@ -516,30 +510,24 @@ lastError: ${debug.lastError ?? "-"}`}
               subtext="This one-time offer is available only on this page."
             />
             <button type="button" onClick={handleDecline} disabled={!!pending} className="mt-4 block mx-auto text-xs md:text-sm text-foreground/60 underline underline-offset-4 hover:text-foreground disabled:opacity-60">
-              ← No Thanks, I’ll Go With Clinic Growth Masterclass Only
+              ← No Thanks, I’ll Attend The Webinar Only
             </button>
           </div>
         </ContentSection>
 
-        <ContentSection title="Get Direct Guidance From Farhan Ali" dark>
-          <div className="max-w-3xl text-sm md:text-lg text-white/85 leading-relaxed">
-            Farhan Ali helps doctors and healthcare practitioners build stronger patient-acquisition systems through practical digital marketing strategies, clinic positioning, offers, content, local visibility, and patient-growth plans.
+        <ContentSection title="Guided By Miss Samra Riaz" dark>
+          <div className="max-w-3xl mx-auto text-center">
+            <img
+              src={samraPortrait}
+              alt="Miss Samra Riaz, Clinical Psychologist & Parent Counsellor"
+              className="mx-auto size-40 rounded-full object-cover border-4 border-white/20 shadow-xl"
+              loading="lazy"
+            />
+            <p className="mt-6 text-sm md:text-lg text-white/85 leading-relaxed">
+              Miss Samra Riaz is a Clinical Psychologist and Parent Counsellor who helps families understand
+              children's behaviour and build calm, connected homes using practical, science-backed psychology.
+            </p>
           </div>
-          <VisualCard src={guidedByFarhanVisual.url} alt="Guided By Farhan Ali visual using the uploaded personal photo" className="mt-6" />
-        </ContentSection>
-
-        <ContentSection title="Real Proof From Healthcare Practitioners">
-          <VisualCard src={proofBannerVisual.url} alt="Real Proof. Real Value. section banner" />
-          <div className="mt-6 -mx-1 overflow-x-auto pb-2">
-            <div className="flex gap-4 px-1">
-              {PROOF_ITEMS.map((item) => (
-                <div key={item.url} className="w-[220px] shrink-0 overflow-hidden rounded-2xl border bg-card shadow-sm">
-                  <img src={item.url} alt={item.alt} className="h-[360px] w-full object-contain bg-black/5" loading="lazy" />
-                </div>
-              ))}
-            </div>
-          </div>
-          <p className="mt-3 text-center text-xs text-muted-foreground md:hidden">← swipe to see more →</p>
         </ContentSection>
 
         <section className="py-12 md:py-16 bg-[oklch(0.15_0.05_272)] text-white border-y border-white/10">
