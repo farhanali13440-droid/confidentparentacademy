@@ -5,72 +5,47 @@ import { Topbar } from "@/components/site/Topbar";
 import { Footer } from "@/components/site/Footer";
 import { getOtoEligibility, declineOtoOffer, submitOtoPayment } from "@/lib/oto.functions";
 import { supabase } from "@/integrations/supabase/client";
-import heroVisual from "@/assets/oto-hero-strategy-session.png.asset.json";
-import growthPlanVisual from "@/assets/oto-growth-plan.png.asset.json";
-import privateSessionVisual from "@/assets/oto-private-session.png.asset.json";
-import whatsIncludedVisual from "@/assets/oto-whats-included.png.asset.json";
-import websiteBonusVisual from "@/assets/oto-website-bonus.png.asset.json";
-import whyTakeOfferVisual from "@/assets/oto-why-take-offer.png.asset.json";
-import guidedByFarhanVisual from "@/assets/oto-guided-by-farhan.png.asset.json";
-import proofBannerVisual from "@/assets/oto-proof-banner.png.asset.json";
-import drManalReview from "@/assets/dr-manal-whatsapp-review.jpeg.asset.json";
-import drJasimReview from "@/assets/dr-jasim-mumtaz-review.jpeg.asset.json";
-import drMehwishReview from "@/assets/dr-mehwish-rasheed-review.jpeg.asset.json";
-import payEasypaisa from "@/assets/proof/pay-easypaisa-1999.jpg.asset.json";
-import payAlbaraka from "@/assets/proof/pay-albaraka-999.jpg.asset.json";
-import payEpAdeel from "@/assets/proof/pay-easypaisa-adeel-999.jpg.asset.json";
-import textDrAmnah from "@/assets/proof/text-dr-amnah.jpg.asset.json";
-import textPatientJourney from "@/assets/proof/text-patient-journey.jpg.asset.json";
+import samraPortrait from "@/assets/cpa-samra.jpg";
 
-const OTO_REGULAR_PRICE = 7999;
-const OTO_PRICE = 3999;
+const OTO_REGULAR_PRICE = 6000;
+const OTO_PRICE = 2999;
+const OTO_ACCOUNT = "16977901123599";
 
 const BENEFITS = [
-  "Identify what is blocking your clinic from getting more patient inquiries",
-  "Create a customized patient-acquisition plan for your clinic",
-  "Decide which services and offers to promote first",
-  "Improve your Google Business Profile, content, social media, and ads direction",
-  "Build a clear action plan instead of trying random marketing tactics",
-  "Get direct guidance based on your specialty, city, and current situation",
+  "Understand what is really driving your child's behaviour",
+  "Get a personalised behaviour plan for your family",
+  "Know which challenges to focus on first (tantrums, sleep, screens, siblings)",
+  "Learn calm, practical responses that fit your child's age and temperament",
+  "Build a clear routine instead of trying random parenting tips",
+  "Get direct guidance based on your child's age and your family situation",
 ];
 
 const INCLUDED = [
-  "90-Minute Personalized Strategy Call",
-  "Customized Patient-Growth Plan",
-  "Clinic Online Presence Review",
-  "Meta Ads Guidance",
+  "60-Minute Private Counselling Call",
+  "Personalised Behaviour Plan",
+  "Review of Your Current Routine & Challenges",
+  "Age-Appropriate Strategy Guidance",
   "15-Day WhatsApp Support",
-  "Free Professional Clinic Website Setup Bonus",
+  "Bonus Printable Parenting Toolkit",
 ];
 
 const FAQS = [
   {
     q: "1. Who is this session for?",
-    a: "This is for doctors, nutritionists, physiotherapists, and healthcare practitioners who want a personalized patient-growth plan instead of generic marketing advice.",
+    a: "This is for parents who want personalised guidance for their own child instead of general parenting advice.",
   },
   {
-    q: "2. Will this be personalized for my clinic?",
-    a: "Yes. The strategy will be based on your specialty, city, services, patient goals, current online presence, and biggest challenges.",
+    q: "2. Will this be personalised for my child?",
+    a: "Yes. The plan will be based on your child's age, behaviour, your routine, and the challenges you're facing at home.",
   },
   {
     q: "3. What happens after I accept this offer?",
-    a: "After your order is confirmed, you will receive instructions to schedule your 90-minute personalized strategy session.",
+    a: "After your order is confirmed, you will receive instructions to schedule your private 60-minute counselling session with Miss Samra.",
   },
   {
-    q: "4. Is the clinic website included?",
-    a: "Yes. A professional clinic website setup is included as a bonus with this paid 1-on-1 strategy session.",
+    q: "4. Is the parenting toolkit included?",
+    a: "Yes. The printable parenting toolkit is included as a bonus with this private 1-on-1 counselling session.",
   },
-];
-
-const PROOF_ITEMS = [
-  { url: drManalReview.url, alt: "WhatsApp review from Dr. Manal" },
-  { url: payEasypaisa.url, alt: "Real payment proof screenshot" },
-  { url: drJasimReview.url, alt: "WhatsApp review from Dr. Jasim Mumtaz" },
-  { url: payAlbaraka.url, alt: "Real payment proof from a participant" },
-  { url: drMehwishReview.url, alt: "WhatsApp review from Dr. Mehwish Rasheed" },
-  { url: payEpAdeel.url, alt: "Real Easypaisa payment proof screenshot" },
-  { url: textDrAmnah.url, alt: "WhatsApp feedback from Dr. Amnah" },
-  { url: textPatientJourney.url, alt: "WhatsApp feedback about patient journey strategy" },
 ];
 
 type OtoSearch = { lead?: string };
