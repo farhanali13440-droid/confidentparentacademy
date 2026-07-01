@@ -543,44 +543,41 @@ function OrderPage() {
           {/* RIGHT: product card */}
           <aside className="lg:col-span-2 space-y-6">
             <div className="bg-card rounded-xl shadow-sm border overflow-hidden">
-              <div className="bg-gradient-to-r from-indigo-600 to-violet-600 text-white text-center py-3 font-black uppercase tracking-wider">
-                Clinic Growth Masterclass
+              <div className="bg-primary text-primary-foreground text-center py-3 font-semibold tracking-wide" style={{ fontFamily: "var(--font-display)" }}>
+                Confident Parent Academy Webinar
               </div>
               <img
-                src={productStack.url}
-                alt="Clinic Growth Masterclass"
+                src={heroFamily}
+                alt="Confident Parent Academy parenting webinar"
                 className="w-full h-auto"
+                loading="lazy"
               />
               <div className="p-5 text-center">
                 <div className="text-lg font-bold">Get Access For</div>
-                <div className="text-3xl font-black text-emerald-600 mt-1 whitespace-pre-line">{"Only\nRs. 999 Today!"}</div>
+                <div className="text-3xl font-black text-primary mt-1 whitespace-pre-line">{"Only\n499 PKR Today!"}</div>
 
                 <div className="mt-5 text-left">
                   <div className="bg-primary text-primary-foreground text-center font-bold py-2 rounded">
                     Here's Everything You Get:
                   </div>
                   <ul className="mt-3 space-y-3 text-sm">
-                    <Item title="Clinic Growth Masterclass">
-                      The complete patient-acquisition blueprint that eliminates months of guesswork.
-                      Get the exact patient-getting system, ad strategy, and follow-up flow used by leading
-                      Pakistani clinics.
+                    <Item title="Live 90-Minute Parenting Webinar">
+                      Join Miss Samra Riaz live on Google Meet and learn how to understand your child's
+                      behaviour and build a peaceful, well-behaved home.
                     </Item>
 
 
-                    <div className="bg-emerald-600 text-white text-center font-bold py-2 rounded mt-4">
-                      You'll Also Receive 4 Bonuses:
+                    <div className="bg-primary/80 text-primary-foreground text-center font-bold py-2 rounded mt-4">
+                      You'll Also Receive These Bonuses:
                     </div>
-                    <Item title="Bonus #1 — Authority Content Cheat Sheet for Doctors">
-                      30 ready-to-use post ideas to position you as the go-to specialist online.
+                    <Item title="Bonus #1 — Live Q&amp;A Session">
+                      Ask your real parenting questions and get personal, practical guidance.
                     </Item>
-                    <Item title="Bonus #2 — Doctor Personal Brand Positioning Worksheet">
-                      Define your niche and unique angle so patients instantly trust and pick you.
+                    <Item title="Bonus #2 — PDF Parenting Guide">
+                      A calm, practical takeaway guide you can return to again and again.
                     </Item>
-                    <Item title="Bonus #3 — Clinic WhatsApp Follow-Up Scripts">
-                      Plug-and-play scripts that turn inquiries into booked appointments — fast.
-                    </Item>
-                    <Item title="Bonus #4 — Private Doctor Growth Community">
-                      Ongoing support, case studies and Q&amp;A with ambitious doctors growing their clinics.
+                    <Item title="Bonus #3 — Webinar Recording">
+                      Lifetime access to the full recording so you can rewatch anytime.
                     </Item>
                   </ul>
                 </div>
@@ -589,28 +586,29 @@ function OrderPage() {
 
             {/* Guarantee */}
             <div className="bg-card rounded-xl border p-5 flex items-start gap-4">
-              <div className="size-14 rounded-full bg-yellow-400 grid place-items-center shrink-0">
-                <ShieldCheck className="size-7 text-hero-deep" />
+              <div className="size-14 rounded-full bg-accent grid place-items-center shrink-0">
+                <ShieldCheck className="size-7 text-primary" />
               </div>
               <div>
-                <h3 className="font-extrabold">30-Day Money-Back Guarantee</h3>
+                <h3 className="font-semibold" style={{ fontFamily: "var(--font-display)" }}>Attend With Confidence</h3>
                 <p className="text-sm text-muted-foreground mt-1">
-                  Attend, take notes, implement — and if you feel it didn't help, email us within 30 days for a 100% refund.
+                  Join the live session, take notes, and if you can't make it live you'll still get the
+                  full recording. We're here to support your family every step of the way.
                 </p>
               </div>
             </div>
 
             {/* Testimonials */}
             <div className="bg-card rounded-xl border p-5">
-              <div className="font-bold mb-3">Reviews From Happy Doctors</div>
+              <div className="font-semibold mb-3" style={{ fontFamily: "var(--font-display)" }}>What Parents Are Saying</div>
               {[
-                { n: "Dr. Sara K., Dentist", t: "We went from 8 to 26 booked appointments per week." },
-                { n: "Dr. Bilal R., Cardiologist", t: "Finally a Pakistan-specific marketing system. No fluff." },
-                { n: "Dr. Hina M., Dietitian", t: "My DMs are full of qualified patients. Worth 10x the price." },
+                { n: "A. Fatima, Mother of two", t: "For the first time I understood why my son was acting out. The shouting has almost stopped." },
+                { n: "M. Bilal, Father", t: "It completely changed how I connect with my daughter." },
+                { n: "S. Ayesha, Mother", t: "Calm, warm and practical. I used the tools the same evening." },
               ].map((r) => (
                 <div key={r.n} className="border-t first:border-t-0 py-3">
-                  <div className="flex gap-0.5 text-yellow-500">
-                    {Array.from({ length: 5 }).map((_, i) => <Star key={i} className="size-3.5 fill-yellow-500" />)}
+                  <div className="flex gap-0.5 text-secondary-foreground">
+                    {Array.from({ length: 5 }).map((_, i) => <Star key={i} className="size-3.5 fill-current" />)}
                   </div>
                   <p className="text-sm italic mt-1">"{r.t}"</p>
                   <p className="text-xs font-bold mt-1">{r.n}</p>
