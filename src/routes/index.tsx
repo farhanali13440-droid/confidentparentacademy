@@ -568,6 +568,16 @@ function IncludesSection() {
     <section className="py-14 md:py-20 bg-background">
       <div className="mx-auto max-w-5xl px-4">
         <SectionHeading eyebrow="Everything included" title="What The Webinar Includes" />
+        <div className="mt-8 mx-auto max-w-4xl">
+          <div className="rounded-3xl overflow-hidden shadow-xl ring-1 ring-blush/30 bg-white">
+            <img
+              src={everythingYouGet.url}
+              alt="Everything you get with your webinar ticket — live parenting webinar, recording, guide, toolkit, live Q&A and WhatsApp support"
+              className="w-full h-auto object-contain"
+              loading="lazy"
+            />
+          </div>
+        </div>
         <div className="mt-8 grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
           {items.map(({ icon: Icon, title, desc }) => (
             <div key={title} className="rounded-3xl bg-card border border-border p-6 shadow-sm">
