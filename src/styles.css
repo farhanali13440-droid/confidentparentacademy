@@ -69,11 +69,15 @@
   --highlight-from: #936e4c;          /* tan */
   --highlight-to: #c69b8a;            /* dusty rose */
   --soft-pink: #ffcdce;               /* soft pink accent wash */
+  --blush: #e0a89b;                   /* blush pink — secondary accent (from logo) */
+  --blush-deep: #d18f80;              /* deeper blush for hover/borders */
 }
 
 @theme inline {
   --font-body: var(--font-body);
   --color-soft-pink: var(--soft-pink);
+  --color-blush: var(--blush);
+  --color-blush-deep: var(--blush-deep);
 }
 
 @layer base {
@@ -106,6 +110,14 @@
     padding: 0 .35em;
     border-radius: .4rem;
   }
+  /* Secondary blush highlight — soft pink underline/emphasis */
+  .gradient-highlight-pink {
+    background-image: linear-gradient(90deg, var(--soft-pink), #ffe2e3);
+    color: var(--primary);
+    font-weight: 700;
+    padding: 0 .35em;
+    border-radius: .4rem;
+  }
   .btn-cta {
     background-image: linear-gradient(90deg, var(--cta-from), var(--cta-to));
     color: white;
@@ -116,7 +128,11 @@
     box-shadow: 0 14px 30px -12px rgba(147, 110, 76, 0.55);
     transition: transform .15s ease, filter .15s ease;
   }
-  .btn-cta:hover { transform: translateY(-1px); filter: brightness(1.05); }
+  .btn-cta:hover {
+    transform: translateY(-1px);
+    filter: brightness(1.05);
+    box-shadow: 0 16px 34px -12px rgba(209, 143, 128, 0.6);
+  }
   .btn-cta:active { transform: translateY(0); }
   .btn-cta-arrow { display: inline-block; transition: transform .15s ease; flex-shrink: 0; }
   .btn-cta:hover .btn-cta-arrow { transform: translateX(4px); }
