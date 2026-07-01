@@ -23,8 +23,8 @@ interface Props {
 
 const DEFAULTS = {
   checkoutUrl: 'https://www.zeroappleaday.site/order',
-  trainingDate: '12th July 2026 (Sunday)',
-  trainingTime: '5:00 PM – 8:00 PM (Pakistan Standard Time)',
+  trainingDate: '11th July 2026 (Saturday)',
+  trainingTime: '8:00 PM – 9:30 PM (Pakistan Standard Time)',
 }
 
 type Copy = { headline: string; preview: string; intro: string; body: string; cta: string }
@@ -32,16 +32,16 @@ type Copy = { headline: string; preview: string; intro: string; body: string; ct
 const COPY: Record<1 | 2 | 3 | 4, Copy> = {
   1: {
     headline: "You're Almost In 🎉",
-    preview: "Complete your Clinic Growth Masterclass registration",
+    preview: "Complete your Confident Parent Academy webinar registration",
     intro:
-      "You opted in for the Clinic Growth Masterclass but your registration isn't complete yet.",
+      "You opted in for the Confident Parent Academy parenting webinar but your registration isn't complete yet.",
     body:
       "Your seat will only be confirmed once your payment is submitted. Tap the button below to complete the simple checkout — it only takes a minute.",
     cta: 'Complete My Registration',
   },
   2: {
     headline: 'Your Seat Is Still Waiting',
-    preview: 'Your Clinic Growth Masterclass seat is still open',
+    preview: 'Your Confident Parent Academy webinar seat is still open',
     intro:
       'We noticed you started the registration but did not finish payment. Your seat is still reserved for now.',
     body:
@@ -49,10 +49,10 @@ const COPY: Record<1 | 2 | 3 | 4, Copy> = {
     cta: 'Complete My Registration',
   },
   3: {
-    headline: 'Doctors Are Already Building Their Patient Acquisition System',
-    preview: 'Doctors are already enrolling — join them',
+    headline: 'Parents Are Already Building Calmer, Happier Homes',
+    preview: 'Parents are already enrolling — join them',
     intro:
-      'Dozens of doctors have already enrolled in the Clinic Growth Masterclass and are getting ready to build their own patient acquisition system.',
+      'Dozens of parents have already enrolled in the Confident Parent Academy webinar and are getting ready to transform how they connect with their children.',
     body:
       "Don't miss the chance to be in the room with them. Complete your registration now so you don't get left behind.",
     cta: 'Complete My Registration',
@@ -61,7 +61,7 @@ const COPY: Record<1 | 2 | 3 | 4, Copy> = {
     headline: 'Final Reminder ⏰',
     preview: 'Final reminder — complete your registration before you miss out',
     intro:
-      "This is the final reminder. Your registration for the Clinic Growth Masterclass is still incomplete.",
+      "This is the final reminder. Your registration for the Confident Parent Academy webinar is still incomplete.",
     body:
       "After this we won't follow up again — your reserved seat will be released. Tap below to lock in your spot right now.",
     cta: 'Complete My Registration Now',
@@ -69,7 +69,7 @@ const COPY: Record<1 | 2 | 3 | 4, Copy> = {
 }
 
 const Email = ({
-  name = 'Doctor',
+  name = 'Parent',
   checkoutUrl = DEFAULTS.checkoutUrl,
   sequenceNumber = 1,
   trainingDate = DEFAULTS.trainingDate,
@@ -87,10 +87,10 @@ const Email = ({
           <Text style={text}>{c.intro}</Text>
 
           <Section style={card}>
-            <Text style={cardHeader}>Live Masterclass Details:</Text>
+            <Text style={cardHeader}>Live Webinar Details:</Text>
             <Text style={detail}>📅 <strong>Date:</strong> {trainingDate}</Text>
             <Text style={detail}>⏰ <strong>Time:</strong> {trainingTime}</Text>
-            <Text style={detail}>📍 <strong>Location:</strong> Live Online Training</Text>
+            <Text style={detail}>📍 <strong>Location:</strong> Live on Google Meet</Text>
           </Section>
 
           <Text style={text}>{c.body}</Text>
@@ -108,8 +108,8 @@ const Email = ({
 
           <Text style={signature}>
             Regards,<br />
-            <strong>Team Zero Apple A Day</strong><br />
-            Clinic Growth Masterclass
+            <strong>Confident Parent Academy</strong><br />
+            Miss Samra Riaz
           </Text>
         </Container>
       </Body>
@@ -117,25 +117,25 @@ const Email = ({
   )
 }
 
-const previewData = { name: 'Dr. Ahmed', checkoutUrl: DEFAULTS.checkoutUrl }
+const previewData = { name: 'Ayesha', checkoutUrl: DEFAULTS.checkoutUrl }
 
 export const template1 = {
   component: (props: Props) => <Email {...props} sequenceNumber={1} />,
-  subject: "You're Almost In — Complete Your Clinic Growth Masterclass Registration",
+  subject: "You're Almost In — Complete Your Confident Parent Academy Registration",
   displayName: 'Abandoned Checkout #1 (5 min)',
   previewData,
 } satisfies TemplateEntry
 
 export const template2 = {
   component: (props: Props) => <Email {...props} sequenceNumber={2} />,
-  subject: 'Your Clinic Growth Masterclass Seat Is Still Waiting',
+  subject: 'Your Confident Parent Academy Seat Is Still Waiting',
   displayName: 'Abandoned Checkout #2 (1 hour)',
   previewData,
 } satisfies TemplateEntry
 
 export const template3 = {
   component: (props: Props) => <Email {...props} sequenceNumber={3} />,
-  subject: 'Doctors Are Already Building Their Patient Acquisition System',
+  subject: 'Parents Are Already Building Calmer, Happier Homes',
   displayName: 'Abandoned Checkout #3 (24 hours)',
   previewData,
 } satisfies TemplateEntry
