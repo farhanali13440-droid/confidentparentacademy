@@ -121,7 +121,7 @@ function ThankYouPage() {
             <div className="mt-4 rounded-xl bg-primary text-primary-foreground p-6 text-center">
               <div className="text-sm uppercase tracking-widest opacity-90">Live on Google Meet</div>
               <div className="mt-1 text-2xl md:text-3xl font-black" style={{ fontFamily: "var(--font-display)" }}>Saturday, 11th July 2026</div>
-              <div className="mt-1 text-lg font-bold">8:00 PM – 9:30 PM (Pakistan Time)</div>
+              <div className="mt-1 text-lg font-bold">3:00 PM – 4:30 PM (Pakistan Time)</div>
             </div>
             <div className="mt-4 rounded-lg bg-secondary p-4 text-sm text-slate-800">
               <p className="font-bold mb-1">How to join</p>
@@ -130,7 +130,7 @@ function ThankYouPage() {
                 Add the date to your calendar and join a few minutes early.
               </p>
               <a
-                href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Confident+Parent+Academy+Webinar&dates=20260711T150000Z/20260711T163000Z&details=Live+parenting+webinar+with+Miss+Samra+Riaz+on+Google+Meet"
+                href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Confident+Parent+Academy+Webinar&dates=20260711T100000Z/20260711T113000Z&details=Live+parenting+webinar+with+Miss+Samra+Riaz+on+Google+Meet"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 mt-3 rounded-full border-2 border-primary px-4 py-2 font-bold text-primary hover:bg-primary/5"
