@@ -85,9 +85,8 @@ function Hero() {
         <div className="mt-6 md:mt-10 grid md:grid-cols-2 gap-6 md:gap-8 md:items-center">
           {/* 1. Headline + subheadline — always first so the promise leads on mobile */}
           <div className="text-center md:text-left md:col-start-1 md:row-start-1">
-            <h1 className="text-[26px] leading-tight sm:text-4xl md:text-[42px] md:leading-[1.1] font-semibold" style={{ fontFamily: "var(--font-display)" }}>
-              How to Create a{" "}
-              <span className="gradient-highlight">Peaceful Home</span> &amp; Raise a{" "}
+            <h1 className="text-[26px] leading-tight sm:text-4xl md:text-[42px] md:leading-[1.1] font-semibold whitespace-pre-line" style={{ fontFamily: "var(--font-display)" }}>
+              {"How to Create a\nPeaceful Home & Raise\u00A0\na "}
               <span className="gradient-highlight-pink">Well-Behaved Child</span> Without Being a Perfect Parent
             </h1>
             <p className="mt-4 md:mt-5 text-sm md:text-lg text-white/85 leading-relaxed">
