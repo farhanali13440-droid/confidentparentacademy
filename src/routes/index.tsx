@@ -1,6 +1,5 @@
 import { createFileRoute, useNavigate } from "@tanstack/react-router";
-import { useEffect, useState } from "react";
-import { fbqTrack } from "@/lib/fbpixel";
+import { useState } from "react";
 import { Topbar } from "@/components/site/Topbar";
 import { Footer } from "@/components/site/Footer";
 import { CtaButton } from "@/components/site/CtaButton";
@@ -36,15 +35,6 @@ export const Route = createFileRoute("/")({
 });
 
 function LandingPage() {
-  useEffect(() => {
-    fbqTrack("ViewContent", {
-      content_name: "Confident Parent Academy Webinar",
-      content_category: "Parenting Webinar",
-      value: 499,
-      currency: "PKR",
-    });
-  }, []);
-
   return (
     <div className="min-h-screen flex flex-col">
       <Topbar />
@@ -211,11 +201,6 @@ function InlineLeadForm() {
               specialty: spec,
               lead_status: "Opted In - Checkout Not Completed",
             },
-          });
-          fbqTrack("Lead", {
-            content_name: "Confident Parent Academy — Step 1 Opt-In",
-            value: 0,
-            currency: "PKR",
           });
         } catch (err) {
           console.error("Failed to save lead", err);

@@ -7,9 +7,8 @@ import { Topbar } from "@/components/site/Topbar";
 import { Footer } from "@/components/site/Footer";
 import { Lock, ShieldCheck, Star, ArrowRight, Gift, ChevronDown, CreditCard, Upload, ImageIcon } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
-import { fbqTrack } from "@/lib/fbpixel";
 import { createScreenshotSignedUrl } from "@/lib/payment-screenshot.functions";
-import { useEffect, useRef } from "react";
+import { useEffect } from "react";
 
 type OrderSearch = {
   name?: string;
@@ -147,16 +146,6 @@ function OrderPage() {
   const [screenshot, setScreenshot] = useState<File | null>(null);
   const [screenshotPreview, setScreenshotPreview] = useState<string | null>(null);
   const [uploadError, setUploadError] = useState<string | null>(null);
-  const purchaseFiredRef = useRef(false);
-
-  useEffect(() => {
-    fbqTrack("InitiateCheckout", { value: 499, currency: "PKR" });
-  }, []);
-
-
-
-
-
   const items = useMemo(() => {
     const list: { id: string; title: string; price: number; qty: number }[] = [
       { id: "main", title: MAIN_PRODUCT.title, price: MAIN_PRODUCT.price, qty: 1 },
@@ -269,17 +258,6 @@ function OrderPage() {
       setSubmitting(false);
       return;
     }
-
-    if (!purchaseFiredRef.current) {
-      purchaseFiredRef.current = true;
-      fbqTrack("Purchase", {
-        value: 499,
-        currency: "PKR",
-        content_name: "Confident Parent Academy Webinar",
-      });
-      console.log("Meta Pixel Purchase fired after payment screenshot submit");
-    }
-
 
     try {
       if (typeof window !== "undefined") {
