@@ -71,12 +71,12 @@ function Hero() {
     { icon: Gift, label: "Only 499 PKR" },
   ];
   return (
-    <section className="hero-bg text-white">
+    <section className="hero-bg text-foreground">
       <div className="mx-auto max-w-6xl px-4 pt-6 pb-10 md:pt-12 md:pb-16">
         <div className="flex justify-center">
-          <div className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 backdrop-blur-md px-4 py-1.5 shadow-sm">
+          <div className="inline-flex items-center gap-2 rounded-full border border-blush/40 bg-white/70 backdrop-blur-md px-4 py-1.5 shadow-sm">
             <BadgeCheck className="size-4 text-accent shrink-0" />
-            <span className="text-[11px] sm:text-sm font-semibold text-white/95 text-center leading-snug">
+            <span className="text-[11px] sm:text-sm font-semibold text-foreground/90 text-center leading-snug">
               A calm, science-backed parenting webinar for Pakistani families
             </span>
           </div>
@@ -89,7 +89,7 @@ function Hero() {
               {"How to Create a\nPeaceful Home & Raise\u00A0\na "}
               <span className="gradient-highlight-pink">Well-Behaved Child</span> Without Being a Perfect Parent
             </h1>
-            <p className="mt-4 md:mt-5 text-sm md:text-lg text-white/85 leading-relaxed">
+            <p className="mt-4 md:mt-5 text-sm md:text-lg text-foreground/75 leading-relaxed">
               Learn practical, science-backed parenting strategies that help you understand your
               child's behaviour, reduce daily struggles, and build a stronger relationship —
               without shouting, guilt, or becoming a perfect parent.
@@ -98,7 +98,7 @@ function Hero() {
 
           {/* 2. Hero image — sits after the headline on mobile, right column on desktop */}
           <div className="md:col-start-2 md:row-start-1 md:row-span-2 md:self-center">
-            <div className="rounded-3xl overflow-hidden shadow-2xl ring-1 ring-white/15">
+            <div className="rounded-3xl overflow-hidden shadow-2xl ring-1 ring-blush/30">
               <img
                 src={heroFamily}
                 alt="A happy Pakistani family — mother, father and child laughing together at home"
@@ -113,7 +113,7 @@ function Hero() {
           <div className="text-center md:text-left md:col-start-1 md:row-start-2">
             <div className="grid grid-cols-2 sm:grid-cols-3 gap-2.5 max-w-lg mx-auto md:mx-0">
               {facts.map(({ icon: Icon, label }) => (
-                <div key={label} className="flex items-center gap-2 rounded-xl bg-white/8 ring-1 ring-white/10 px-3 py-2">
+                <div key={label} className="flex items-center gap-2 rounded-xl bg-white/70 ring-1 ring-border px-3 py-2">
                   <Icon className="size-4 text-accent shrink-0" />
                   <span className="text-xs sm:text-sm font-semibold">{label}</span>
                 </div>
@@ -128,7 +128,7 @@ function Hero() {
                   e.preventDefault();
                   document.getElementById("curriculum")?.scrollIntoView({ behavior: "smooth", block: "start" });
                 }}
-                className="block w-full rounded-full border border-white/30 px-6 py-3 text-center text-sm font-semibold text-white/90 hover:bg-white/10 transition"
+                className="block w-full rounded-full border border-warm-brown/30 px-6 py-3 text-center text-sm font-semibold text-warm-brown hover:bg-blush/10 transition"
               >
                 View Webinar Details
               </a>
@@ -137,7 +137,7 @@ function Hero() {
         </div>
 
         <div className="mt-8 md:mt-10 max-w-2xl mx-auto">
-          <MasterclassCountdown variant="dark" />
+          <MasterclassCountdown variant="light" />
         </div>
 
         <div className="mt-6 max-w-md mx-auto" id="hero-optin">
