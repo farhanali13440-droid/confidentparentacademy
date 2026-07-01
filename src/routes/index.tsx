@@ -82,8 +82,9 @@ function Hero() {
           </div>
         </div>
 
-        <div className="mt-6 md:mt-10 grid md:grid-cols-2 gap-8 items-center">
-          <div className="text-center md:text-left">
+        <div className="mt-6 md:mt-10 grid md:grid-cols-2 gap-6 md:gap-8 md:items-center">
+          {/* 1. Headline + subheadline — always first so the promise leads on mobile */}
+          <div className="text-center md:text-left md:col-start-1 md:row-start-1">
             <h1 className="text-[26px] leading-tight sm:text-4xl md:text-[42px] md:leading-[1.1] font-semibold" style={{ fontFamily: "var(--font-display)" }}>
               How to Create a{" "}
               <span className="gradient-highlight">Peaceful Home</span> &amp; Raise a{" "}
@@ -94,8 +95,24 @@ function Hero() {
               child's behaviour, reduce daily struggles, and build a stronger relationship —
               without shouting, guilt, or becoming a perfect parent.
             </p>
+          </div>
 
-            <div className="mt-6 grid grid-cols-2 sm:grid-cols-3 gap-2.5 max-w-lg mx-auto md:mx-0">
+          {/* 2. Hero image — sits after the headline on mobile, right column on desktop */}
+          <div className="md:col-start-2 md:row-start-1 md:row-span-2 md:self-center">
+            <div className="rounded-3xl overflow-hidden shadow-2xl ring-1 ring-white/15">
+              <img
+                src={heroFamily}
+                alt="A happy Pakistani family — mother, father and child laughing together at home"
+                className="w-full h-auto object-cover"
+                width={1280}
+                height={1280}
+              />
+            </div>
+          </div>
+
+          {/* 3. Info chips + CTA — below the image on mobile, under the headline on desktop */}
+          <div className="text-center md:text-left md:col-start-1 md:row-start-2">
+            <div className="grid grid-cols-2 sm:grid-cols-3 gap-2.5 max-w-lg mx-auto md:mx-0">
               {facts.map(({ icon: Icon, label }) => (
                 <div key={label} className="flex items-center gap-2 rounded-xl bg-white/8 ring-1 ring-white/10 px-3 py-2">
                   <Icon className="size-4 text-accent shrink-0" />
@@ -116,18 +133,6 @@ function Hero() {
               >
                 View Webinar Details
               </a>
-            </div>
-          </div>
-
-          <div className="order-first md:order-last">
-            <div className="rounded-3xl overflow-hidden shadow-2xl ring-1 ring-white/15">
-              <img
-                src={heroFamily}
-                alt="A happy Pakistani family — mother, father and child laughing together at home"
-                className="w-full h-auto object-cover"
-                width={1280}
-                height={1280}
-              />
             </div>
           </div>
         </div>
