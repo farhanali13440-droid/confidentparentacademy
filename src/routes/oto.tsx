@@ -281,7 +281,7 @@ function OtoPage() {
   const handleCopyAccount = async () => {
     try {
       if (typeof navigator !== "undefined" && navigator.clipboard) {
-        await navigator.clipboard.writeText("03135944817");
+        await navigator.clipboard.writeText(OTO_ACCOUNT);
       }
       setCopied(true);
       setTimeout(() => setCopied(false), 1800);
