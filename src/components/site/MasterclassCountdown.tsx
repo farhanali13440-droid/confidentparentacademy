@@ -38,12 +38,12 @@ export function MasterclassCountdown({
   const isDark = variant === "dark";
   const wrap = isDark
     ? "bg-hero-deep text-white ring-1 ring-white/10"
-    : "bg-white text-primary ring-1 ring-primary/10 shadow-md";
+    : "bg-white text-foreground ring-1 ring-blush/30 shadow-md";
   const cellBg = isDark
     ? "bg-white/5 ring-1 ring-white/10"
-    : "bg-primary text-primary-foreground";
-  const labelClr = isDark ? "text-white/70" : "text-white/80";
-  const subClr = isDark ? "text-white/70" : "text-primary/70";
+    : "bg-accent/25 ring-1 ring-blush/40 text-warm-brown-deep";
+  const labelClr = isDark ? "text-white/70" : "text-warm-brown/80";
+  const subClr = isDark ? "text-white/70" : "text-foreground/70";
 
   const items: [number, string][] = [
     [t.days, "Days"],

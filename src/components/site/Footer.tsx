@@ -1,6 +1,6 @@
 export function Footer() {
   return (
-    <footer className="bg-hero-deep text-white/70 text-xs">
+    <footer className="bg-primary text-white/70 text-xs">
       <div className="mx-auto max-w-5xl px-4 py-10 text-center space-y-4">
         <p className="text-base font-semibold text-white/90" style={{ fontFamily: "var(--font-display)" }}>
           Confident Parent Academy

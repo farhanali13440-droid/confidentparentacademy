@@ -410,7 +410,7 @@ lastError: ${debug.lastError ?? "-"}`}
       {debugBanner}
 
       <main className="flex-1 overflow-x-hidden">
-        <section className="hero-bg text-white border-b border-white/10">
+        <section className="bg-[oklch(0.16_0.05_272)] text-white border-b border-white/10">
           <div className="mx-auto max-w-5xl px-4 py-10 md:py-14 text-center">
             <p className="text-xs md:text-sm font-bold uppercase tracking-[0.24em] text-yellow-300">
               Special One-Time Offer

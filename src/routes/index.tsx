@@ -71,12 +71,12 @@ function Hero() {
     { icon: Gift, label: "Only 499 PKR" },
   ];
   return (
-    <section className="hero-bg text-white">
+    <section className="hero-bg text-foreground">
       <div className="mx-auto max-w-6xl px-4 pt-6 pb-10 md:pt-12 md:pb-16">
         <div className="flex justify-center">
-          <div className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 backdrop-blur-md px-4 py-1.5 shadow-sm">
+          <div className="inline-flex items-center gap-2 rounded-full border border-blush/40 bg-white/70 backdrop-blur-md px-4 py-1.5 shadow-sm">
             <BadgeCheck className="size-4 text-accent shrink-0" />
-            <span className="text-[11px] sm:text-sm font-semibold text-white/95 text-center leading-snug">
+            <span className="text-[11px] sm:text-sm font-semibold text-foreground/90 text-center leading-snug">
               A calm, science-backed parenting webinar for Pakistani families
             </span>
           </div>
@@ -89,7 +89,7 @@ function Hero() {
               {"How to Create a\nPeaceful Home & Raise\u00A0\na "}
               <span className="gradient-highlight-pink">Well-Behaved Child</span> Without Being a Perfect Parent
             </h1>
-            <p className="mt-4 md:mt-5 text-sm md:text-lg text-white/85 leading-relaxed">
+            <p className="mt-4 md:mt-5 text-sm md:text-lg text-foreground/75 leading-relaxed">
               Learn practical, science-backed parenting strategies that help you understand your
               child's behaviour, reduce daily struggles, and build a stronger relationship —
               without shouting, guilt, or becoming a perfect parent.
@@ -98,7 +98,7 @@ function Hero() {
 
           {/* 2. Hero image — sits after the headline on mobile, right column on desktop */}
           <div className="md:col-start-2 md:row-start-1 md:row-span-2 md:self-center">
-            <div className="rounded-3xl overflow-hidden shadow-2xl ring-1 ring-white/15">
+            <div className="rounded-3xl overflow-hidden shadow-2xl ring-1 ring-blush/30">
               <img
                 src={heroFamily}
                 alt="A happy Pakistani family — mother, father and child laughing together at home"
@@ -113,7 +113,7 @@ function Hero() {
           <div className="text-center md:text-left md:col-start-1 md:row-start-2">
             <div className="grid grid-cols-2 sm:grid-cols-3 gap-2.5 max-w-lg mx-auto md:mx-0">
               {facts.map(({ icon: Icon, label }) => (
-                <div key={label} className="flex items-center gap-2 rounded-xl bg-white/8 ring-1 ring-white/10 px-3 py-2">
+                <div key={label} className="flex items-center gap-2 rounded-xl bg-white/70 ring-1 ring-border px-3 py-2">
                   <Icon className="size-4 text-accent shrink-0" />
                   <span className="text-xs sm:text-sm font-semibold">{label}</span>
                 </div>
@@ -128,7 +128,7 @@ function Hero() {
                   e.preventDefault();
                   document.getElementById("curriculum")?.scrollIntoView({ behavior: "smooth", block: "start" });
                 }}
-                className="block w-full rounded-full border border-white/30 px-6 py-3 text-center text-sm font-semibold text-white/90 hover:bg-white/10 transition"
+                className="block w-full rounded-full border border-warm-brown/30 px-6 py-3 text-center text-sm font-semibold text-warm-brown hover:bg-blush/10 transition"
               >
                 View Webinar Details
               </a>
@@ -137,7 +137,7 @@ function Hero() {
         </div>
 
         <div className="mt-8 md:mt-10 max-w-2xl mx-auto">
-          <MasterclassCountdown variant="dark" />
+          <MasterclassCountdown variant="light" />
         </div>
 
         <div className="mt-6 max-w-md mx-auto" id="hero-optin">
@@ -290,7 +290,7 @@ function TrustBar() {
     <section className="bg-secondary border-b">
       <div className="mx-auto max-w-5xl px-4 py-5 grid grid-cols-2 sm:grid-cols-4 gap-3 text-center">
         {items.map(({ icon: Icon, label }) => (
-          <div key={label} className="flex items-center justify-center gap-2 text-primary">
+          <div key={label} className="flex items-center justify-center gap-2 text-warm-brown">
             <Icon className="size-4 shrink-0" />
             <span className="text-xs sm:text-sm font-semibold">{label}</span>
           </div>
@@ -353,7 +353,7 @@ function SolutionSection() {
         <div className="mt-10 grid md:grid-cols-2 lg:grid-cols-3 gap-5">
           {points.map(({ icon: Icon, title, desc }) => (
             <div key={title} className="rounded-3xl bg-card border border-border p-6 shadow-sm">
-              <span className="grid place-items-center size-11 rounded-2xl bg-accent/50 text-primary">
+              <span className="grid place-items-center size-11 rounded-2xl bg-accent/50 text-warm-brown">
                 <Icon className="size-5" />
               </span>
               <h3 className="mt-4 text-lg font-semibold" style={{ fontFamily: "var(--font-display)" }}>{title}</h3>
@@ -417,7 +417,7 @@ function CurriculumSection() {
         <div className="mt-8 grid sm:grid-cols-2 gap-4">
           {modules.map((m, i) => (
             <div key={m} className="flex items-center gap-4 rounded-2xl bg-card border border-border p-5 shadow-sm">
-              <span className="grid place-items-center size-10 rounded-full bg-primary text-primary-foreground font-semibold shrink-0" style={{ fontFamily: "var(--font-display)" }}>
+              <span className="grid place-items-center size-10 rounded-full bg-accent text-warm-brown-deep font-semibold shrink-0" style={{ fontFamily: "var(--font-display)" }}>
                 {String(i + 1).padStart(2, "0")}
               </span>
               <span className="text-sm md:text-base font-semibold">{m}</span>
@@ -436,7 +436,7 @@ function AboutSamra() {
     "Clinical Psychologist",
     "4 Years of Experience",
     "Post Graduate Diploma in Clinical Psychology",
-    "ECCE Diploma",
+    "Certified Early Childhood Educator",
     "Behaviour Therapist (ABAT Candidate)",
   ];
   const works = ["Parents", "Children", "University Students", "Life Counselling"];
@@ -468,7 +468,7 @@ function AboutSamra() {
           <div className="mt-5 grid sm:grid-cols-2 gap-2.5">
             {creds.map((c) => (
               <div key={c} className="flex items-start gap-2 text-sm font-medium">
-                <Award className="size-4 text-primary shrink-0 mt-0.5" />
+                <Award className="size-4 text-warm-brown shrink-0 mt-0.5" />
                 <span>{c}</span>
               </div>
             ))}
@@ -535,7 +535,7 @@ function IncludesSection() {
         <div className="mt-8 grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
           {items.map(({ icon: Icon, title, desc }) => (
             <div key={title} className="rounded-3xl bg-card border border-border p-6 shadow-sm">
-              <span className="grid place-items-center size-11 rounded-2xl bg-accent/50 text-primary">
+              <span className="grid place-items-center size-11 rounded-2xl bg-accent/50 text-warm-brown">
                 <Icon className="size-5" />
               </span>
               <h3 className="mt-4 font-semibold" style={{ fontFamily: "var(--font-display)" }}>{title}</h3>
@@ -554,12 +554,12 @@ function PricingSection() {
   return (
     <section className="py-14 md:py-20 bg-secondary">
       <div className="mx-auto max-w-2xl px-4">
-        <div className="rounded-3xl bg-card border-2 border-primary/20 p-8 md:p-10 shadow-lg text-center">
+        <div className="rounded-3xl bg-card border-2 border-accent/40 p-8 md:p-10 shadow-lg text-center">
           <p className="text-sm font-semibold uppercase tracking-widest text-secondary-foreground/70">
             Limited-time seat price
           </p>
           <div className="mt-4 flex items-end justify-center gap-3">
-            <span className="text-5xl md:text-6xl font-semibold text-primary" style={{ fontFamily: "var(--font-display)" }}>
+            <span className="text-5xl md:text-6xl font-semibold text-warm-brown-deep" style={{ fontFamily: "var(--font-display)" }}>
               499 PKR
             </span>
             <span className="text-xl text-muted-foreground line-through mb-1">2,000 PKR</span>
@@ -664,7 +664,7 @@ function FAQSection() {
             <details key={f.q} className="group rounded-2xl bg-card border border-border p-5 shadow-sm">
               <summary className="flex cursor-pointer items-center justify-between gap-3 font-semibold list-none">
                 <span>{f.q}</span>
-                <ChevronDown className="size-5 text-primary shrink-0 transition-transform group-open:rotate-180" />
+                <ChevronDown className="size-5 text-warm-brown shrink-0 transition-transform group-open:rotate-180" />
               </summary>
               <p className="mt-3 text-sm text-muted-foreground leading-relaxed">{f.a}</p>
             </details>
@@ -679,20 +679,20 @@ function FAQSection() {
 
 function FinalCta() {
   return (
-    <section className="hero-bg text-white py-16 md:py-24">
+    <section className="hero-bg text-foreground py-16 md:py-24">
       <div className="mx-auto max-w-3xl px-4 text-center">
         <h2 className="text-2xl md:text-4xl font-semibold" style={{ fontFamily: "var(--font-display)" }}>
           A Calmer Home Starts With One Evening
         </h2>
-        <p className="mt-4 text-white/85 max-w-xl mx-auto">
+        <p className="mt-4 text-foreground/75 max-w-xl mx-auto">
           Join Miss Samra Riaz live on 11 July and learn how to raise a well-behaved child — without
           guilt, shouting, or being a perfect parent.
         </p>
         <div className="mt-6 max-w-sm mx-auto">
-          <MasterclassCountdown variant="dark" showDateLine={false} className="mb-5" />
+          <MasterclassCountdown variant="light" showDateLine={false} className="mb-5" />
           <CtaButton subtitle="Only 499 PKR · Recording included">Reserve My Seat</CtaButton>
         </div>
-        <div className="mt-5 flex items-center justify-center gap-2 text-sm text-white/80">
+        <div className="mt-5 flex items-center justify-center gap-2 text-sm text-foreground/70">
           <ShieldCheck className="size-4 text-accent" /> Secure checkout · Instant confirmation
         </div>
       </div>
