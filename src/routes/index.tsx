@@ -646,7 +646,6 @@ function PricingSection() {
 
 /* ---------------- BONUSES ---------------- */
 
-function BonusesSection() {
 function FreeBadge() {
   return (
     <span className="inline-flex items-center gap-1.5 rounded-full bg-primary/10 text-primary text-[11px] font-bold uppercase tracking-wide px-3 py-1 ring-1 ring-primary/20">
