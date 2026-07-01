@@ -53,10 +53,12 @@ function LandingPage() {
       <ProblemSection />
       <SolutionSection />
       <BenefitsSection />
+      <TransformationSection />
       <CurriculumSection />
       <AboutSamra />
       <StorySection />
       <IncludesSection />
+      <EverythingYouReceiveSection />
       <PricingSection />
       <BonusesSection />
       <TestimonialsSection />
