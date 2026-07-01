@@ -1,11 +1,11 @@
 import { useEffect, useState } from "react";
 import { Calendar, Clock } from "lucide-react";
 
-// 12th July 2026 (Sunday), 5:00 PM Pakistan Standard Time (UTC+5)
-// => 2026-07-12T17:00:00+05:00 => 2026-07-12T12:00:00Z
-export const MASTERCLASS_DATE_ISO = "2026-07-12T12:00:00Z";
+// 11th July 2026, 8:00 PM Pakistan Standard Time (UTC+5)
+// => 2026-07-11T20:00:00+05:00 => 2026-07-11T15:00:00Z
+export const MASTERCLASS_DATE_ISO = "2026-07-11T15:00:00Z";
 export const MASTERCLASS_DATE_LABEL =
-  "Live Masterclass: 12th (Sun) July at 5 PM – 8 PM Pakistan Standard Time";
+  "Live Webinar: 11th July at 8:00 PM – 9:30 PM Pakistan Standard Time (on Google Meet)";
 
 function getTimeLeft(target: number) {
   const diff = Math.max(0, target - Date.now());
@@ -37,13 +37,13 @@ export function MasterclassCountdown({
 
   const isDark = variant === "dark";
   const wrap = isDark
-    ? "bg-[#0b1735] text-white ring-1 ring-white/10"
-    : "bg-white text-[#0b1735] ring-1 ring-[#0b1735]/10 shadow-md";
+    ? "bg-hero-deep text-white ring-1 ring-white/10"
+    : "bg-white text-primary ring-1 ring-primary/10 shadow-md";
   const cellBg = isDark
     ? "bg-white/5 ring-1 ring-white/10"
-    : "bg-[#0b1735] text-white";
+    : "bg-primary text-primary-foreground";
   const labelClr = isDark ? "text-white/70" : "text-white/80";
-  const subClr = isDark ? "text-white/70" : "text-[#0b1735]/70";
+  const subClr = isDark ? "text-white/70" : "text-primary/70";
 
   const items: [number, string][] = [
     [t.days, "Days"],
@@ -56,11 +56,11 @@ export function MasterclassCountdown({
     <div className={`rounded-2xl p-4 sm:p-5 ${wrap} ${className}`}>
       {showDateLine && (
         <div className="flex items-center justify-center gap-2 text-center font-bold text-sm sm:text-base">
-          <Calendar className="size-4 sm:size-5 text-yellow-300 shrink-0" />
+          <Calendar className="size-4 sm:size-5 text-accent shrink-0" />
           <span>
-            Live Masterclass:{" "}
-            <span className="gradient-highlight">12th (Sun) July</span> at{" "}
-            <span className="gradient-highlight">5 PM – 8 PM</span> Pakistan Standard Time
+            Live Webinar:{" "}
+            <span className="gradient-highlight">11th July</span> at{" "}
+            <span className="gradient-highlight">8:00 – 9:30 PM</span> Pakistan Time · Google Meet
           </span>
         </div>
       )}
