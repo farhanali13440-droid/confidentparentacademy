@@ -275,7 +275,7 @@ function OnboardingPage() {
                   rows={3}
                   maxLength={2000}
                   required
-                  placeholder="Be honest — this helps us address it in the masterclass."
+                  placeholder="Be honest — this helps Miss Samra address it during the webinar."
                   className="w-full rounded-xl border border-slate-300 bg-white px-3 py-2 text-sm focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20"
                 />
               </Field>
