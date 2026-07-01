@@ -12,6 +12,14 @@ import {
 } from "lucide-react";
 import heroFamily from "@/assets/cpa-hero-family.jpg";
 import samraPortrait from "@/assets/cpa-samra.jpg";
+import bonusPdfGuide from "@/assets/cpa-bonus-pdf-guide.png.asset.json";
+import bonusToolkitMockup from "@/assets/cpa-bonus-toolkit-mockup.png.asset.json";
+import bonusRecording from "@/assets/cpa-bonus-recording.png.asset.json";
+import bonusWorksheets from "@/assets/cpa-bonus-worksheets.png.asset.json";
+import bonusLiveQa from "@/assets/cpa-bonus-live-qa.png.asset.json";
+import completeToolkit from "@/assets/cpa-complete-toolkit.png.asset.json";
+import beforeAfter from "@/assets/cpa-before-after.png.asset.json";
+import everythingYouGet from "@/assets/cpa-everything-you-get.png.asset.json";
 
 export const Route = createFileRoute("/")({
   head: () => ({
