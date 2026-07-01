@@ -146,8 +146,6 @@ function OrderPage() {
   const [screenshot, setScreenshot] = useState<File | null>(null);
   const [screenshotPreview, setScreenshotPreview] = useState<string | null>(null);
   const [uploadError, setUploadError] = useState<string | null>(null);
-  const purchaseFiredRef = useRef(false);
-
   const items = useMemo(() => {
     const list: { id: string; title: string; price: number; qty: number }[] = [
       { id: "main", title: MAIN_PRODUCT.title, price: MAIN_PRODUCT.price, qty: 1 },
