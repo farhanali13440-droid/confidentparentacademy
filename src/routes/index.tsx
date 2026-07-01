@@ -202,11 +202,6 @@ function InlineLeadForm() {
               lead_status: "Opted In - Checkout Not Completed",
             },
           });
-          fbqTrack("Lead", {
-            content_name: "Confident Parent Academy — Step 1 Opt-In",
-            value: 0,
-            currency: "PKR",
-          });
         } catch (err) {
           console.error("Failed to save lead", err);
         }
