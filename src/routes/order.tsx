@@ -357,19 +357,19 @@ function OrderPage() {
               return (
                 <label
                   key={b.id}
-                  className={`block rounded-xl border-2 border-dashed cursor-pointer p-4 transition ${checked ? "border-emerald-500 bg-emerald-50" : "border-yellow-500 bg-yellow-50"}`}
+                  className={`block rounded-xl border-2 border-dashed cursor-pointer p-4 transition ${checked ? "border-[color:var(--blush-deep)] bg-[color:var(--secondary)]" : "border-yellow-500 bg-yellow-50"}`}
                 >
                   <div className="flex items-start gap-3">
                     <input
                       type="checkbox"
                       checked={checked}
                       onChange={(e) => setBumps((s) => ({ ...s, [b.id]: e.target.checked }))}
-                      className="mt-1 size-5 accent-emerald-600 shrink-0"
+                      className="mt-1 size-5 accent-[color:var(--warm-brown)] shrink-0"
                     />
                     <div className="flex-1 min-w-0">
                       <div className="flex items-start gap-2">
                         <ArrowRight className="size-5 text-red-600 shrink-0 mt-0.5" />
-                        <div className="font-extrabold text-emerald-800 uppercase text-sm md:text-base">
+                        <div className="font-extrabold text-[color:var(--warm-brown-deep)] uppercase text-sm md:text-base">
                           ✅ YES! Add {b.title} for just PKR {b.price.toLocaleString()}
                         </div>
                       </div>
@@ -377,12 +377,12 @@ function OrderPage() {
                         <img
                           src={b.image}
                           alt={b.title}
-                          className="w-full h-auto rounded-lg object-cover border border-emerald-200"
+                          className="w-full h-auto rounded-lg object-cover border border-[color:var(--border)]"
                           loading="lazy"
                         />
                       </div>
                       <div className="mt-3">
-                        <span className="inline-flex items-center gap-1.5 rounded-full bg-emerald-600 text-white text-xs font-bold px-3 py-1 shadow-sm">
+                        <span className="inline-flex items-center gap-1.5 rounded-full bg-[color:var(--warm-brown)] text-white text-xs font-bold px-3 py-1 shadow-sm">
                           <span className="size-2 rounded-full bg-white/90" aria-hidden />
                           {b.badge}
                         </span>
@@ -393,7 +393,7 @@ function OrderPage() {
                           {b.bullets.map((line) => (
                             <li key={line}>✅ {line}</li>
                           ))}
-                          {b.bonus && <li className="font-semibold text-emerald-800 mt-1">🎁 {b.bonus}</li>}
+                          {b.bonus && <li className="font-semibold text-[color:var(--warm-brown-deep)] mt-1">🎁 {b.bonus}</li>}
                         </ul>
                       </div>
                     </div>
@@ -627,7 +627,7 @@ function OrderPage() {
 function Item({ title, children }: { title: string; children: React.ReactNode }) {
   return (
     <li className="flex gap-2">
-      <Gift className="size-4 text-emerald-600 shrink-0 mt-1" />
+      <Gift className="size-4 text-[color:var(--warm-brown)] shrink-0 mt-1" />
       <div>
         <div className="font-bold">{title}</div>
         <p className="text-muted-foreground">{children}</p>
