@@ -586,6 +586,32 @@ function IncludesSection() {
 
 /* ---------------- PRICING ---------------- */
 
+function EverythingYouReceiveSection() {
+  return (
+    <section className="py-14 md:py-20 bg-background">
+      <div className="mx-auto max-w-6xl px-4">
+        <SectionHeading
+          eyebrow="The full package"
+          title="Everything You'll Receive Inside This Webinar"
+          subtitle="Your registration gives you much more than just a live session."
+        />
+        <div className="mt-10 md:mt-12 mx-auto max-w-5xl">
+          <div className="rounded-3xl overflow-hidden shadow-2xl ring-1 ring-blush/30 bg-white">
+            <img
+              src={completeToolkit.url}
+              alt="The complete Parenting Behaviour Toolkit — behaviour trackers, routine charts, reward charts, calm-down strategies, emotions wheel and encouragement cards"
+              className="w-full h-auto object-contain"
+              loading="lazy"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* ---------------- PRICING ---------------- */
+
 function PricingSection() {
   return (
     <section className="py-14 md:py-20 bg-secondary">
