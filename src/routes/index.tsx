@@ -438,7 +438,7 @@ function AboutSamra() {
     "4 Years of Experience",
     "Post Graduate Diploma in Clinical Psychology",
     "ECCE Diploma",
-    "Behaviour Therapist (In Progress)",
+    "Behaviour Therapist (ABAT Candidate)",
   ];
   const works = ["Parents", "Children", "University Students", "Life Counselling"];
   return (
