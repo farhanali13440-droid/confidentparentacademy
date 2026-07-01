@@ -36,36 +36,44 @@
 }
 
 :root {
-  --radius: 0.625rem;
-  --font-display: "Montserrat", "Inter", system-ui, sans-serif;
+  --radius: 1rem;
+  --font-display: "Fraunces", Georgia, serif;
+  --font-body: "Nunito Sans", system-ui, sans-serif;
 
-  --background: oklch(0.98 0.005 240);
-  --foreground: oklch(0.18 0.03 250);
+  /* Calm, warm, premium — Confident Parent Academy */
+  --background: #fbf8f3;          /* warm cream */
+  --foreground: #2e3529;          /* deep olive charcoal */
 
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.18 0.03 250);
+  --card: #ffffff;
+  --card-foreground: #2e3529;
 
-  --primary: oklch(0.5 0.2 260);
-  --primary-foreground: oklch(0.99 0 0);
-  --secondary: oklch(0.95 0.02 250);
-  --secondary-foreground: oklch(0.2 0.04 260);
-  --muted: oklch(0.96 0.01 250);
-  --muted-foreground: oklch(0.45 0.03 250);
-  --accent: oklch(0.95 0.05 50);
-  --accent-foreground: oklch(0.2 0.05 50);
-  --destructive: oklch(0.6 0.22 27);
-  --border: oklch(0.9 0.015 250);
-  --input: oklch(0.93 0.015 250);
-  --ring: oklch(0.6 0.15 260);
+  --primary: #414b3b;             /* deep sage olive */
+  --primary-foreground: #f7f4ee;
+  --secondary: #eef2e7;           /* soft green tint */
+  --secondary-foreground: #414b3b;
+  --muted: #f2ede4;
+  --muted-foreground: #6f7565;
+  --accent: #c4d7b2;              /* soft green */
+  --accent-foreground: #33402a;
+  --destructive: #b3573f;         /* warm terracotta */
+  --border: #e7e0d4;
+  --input: #e7e0d4;
+  --ring: #936e4c;
 
   /* Brand */
-  --topbar: oklch(0.55 0.22 260);                   /* bright royal blue */
-  --hero: oklch(0.22 0.12 275);                     /* deep navy/indigo */
-  --hero-deep: oklch(0.13 0.08 275);                /* darker navy */
-  --cta-from: oklch(0.7 0.22 35);                   /* orange */
-  --cta-to: oklch(0.82 0.18 80);                    /* yellow */
-  --highlight-from: oklch(0.65 0.25 20);            /* red/pink */
-  --highlight-to: oklch(0.6 0.22 280);              /* purple/blue */
+  --topbar: #414b3b;                  /* deep sage */
+  --hero: #414b3b;                    /* deep sage */
+  --hero-deep: #333c2d;               /* darker sage */
+  --cta-from: #9a7550;                /* warm tan */
+  --cta-to: #b58a63;                  /* soft caramel */
+  --highlight-from: #936e4c;          /* tan */
+  --highlight-to: #c69b8a;            /* dusty rose */
+  --soft-pink: #ffcdce;               /* soft pink accent wash */
+}
+
+@theme inline {
+  --font-body: var(--font-body);
+  --color-soft-pink: var(--soft-pink);
 }
 
 @layer base {
@@ -75,36 +83,37 @@
   html, body {
     background-color: var(--color-background);
     color: var(--color-foreground);
-    font-family: var(--font-display);
+    font-family: var(--font-body);
     -webkit-font-smoothing: antialiased;
   }
   h1, h2, h3, h4 {
     font-family: var(--font-display);
-    font-weight: 800;
-    letter-spacing: -0.01em;
+    font-weight: 600;
+    letter-spacing: -0.015em;
   }
 }
 
 @layer components {
   .hero-bg {
     background:
-      radial-gradient(1200px 600px at 50% -10%, oklch(0.32 0.18 275) 0%, transparent 60%),
+      radial-gradient(1200px 600px at 50% -10%, #4d5843 0%, transparent 60%),
       linear-gradient(180deg, var(--hero) 0%, var(--hero-deep) 100%);
   }
   .gradient-highlight {
-    background-image: linear-gradient(90deg, var(--highlight-from), var(--highlight-to));
-    color: white;
+    background-image: linear-gradient(90deg, var(--accent), #d6e4c8);
+    color: var(--primary);
+    font-weight: 700;
     padding: 0 .35em;
-    border-radius: .25rem;
+    border-radius: .4rem;
   }
   .btn-cta {
     background-image: linear-gradient(90deg, var(--cta-from), var(--cta-to));
     color: white;
-    font-weight: 800;
-    text-transform: uppercase;
-    letter-spacing: 0.02em;
-    border-radius: 0.75rem;
-    box-shadow: 0 10px 25px -10px oklch(0.7 0.22 35 / 0.6);
+    font-weight: 700;
+    text-transform: none;
+    letter-spacing: 0.01em;
+    border-radius: 9999px;
+    box-shadow: 0 14px 30px -12px rgba(147, 110, 76, 0.55);
     transition: transform .15s ease, filter .15s ease;
   }
   .btn-cta:hover { transform: translateY(-1px); filter: brightness(1.05); }
