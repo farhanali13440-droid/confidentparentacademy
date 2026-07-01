@@ -407,6 +407,32 @@ function BenefitsSection() {
 
 /* ---------------- CURRICULUM ---------------- */
 
+function TransformationSection() {
+  return (
+    <section className="py-14 md:py-20 bg-secondary">
+      <div className="mx-auto max-w-6xl px-4">
+        <SectionHeading
+          eyebrow="Before vs after"
+          title="Imagine The Difference Just A Few Parenting Changes Can Make"
+          subtitle="Small changes today create a lifetime of calmer, more connected days at home."
+        />
+        <div className="mt-10 md:mt-12 mx-auto max-w-5xl">
+          <div className="rounded-3xl overflow-hidden shadow-2xl ring-1 ring-blush/30 bg-white">
+            <img
+              src={beforeAfter.url}
+              alt="Before and after: from an overwhelmed, disconnected home to a calm, connected and confident family"
+              className="w-full h-auto object-contain"
+              loading="lazy"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* ---------------- CURRICULUM ---------------- */
+
 function CurriculumSection() {
   const modules = [
     "Why Parenting Advice Doesn't Work",
