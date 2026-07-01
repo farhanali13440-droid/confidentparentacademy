@@ -1,90 +1,61 @@
-## Goal
+# Rebrand: Clinic Growth Masterclass → Confident Parent Academy
 
-Send Farhanali13440@gmail.com two internal notification emails tied to the Clinic Growth Masterclass funnel:
+We keep every backend feature (checkout, payment-screenshot upload, lead saving, thank-you flow, countdown, Meta Pixel, purchase events, DB tables, email + WhatsApp automations, routing, validation). We only change presentation: branding, colors, type, images, copy, offer, pricing, order bumps, testimonials, SEO.
 
-1. **Immediate notification** when a new lead saves in Step 1 (deduped within 24h).
-2. **Abandoned-checkout alert** 20 minutes later if the lead hasn't completed checkout.
+## What stays untouched (backend)
+- `src/lib/*.functions.ts`, `*.server.ts` (leads, oto, payment-screenshot, onboarding, thank-you, abandoned-checkout, registration-email)
+- Supabase clients, middleware, DB tables, column names, lead IDs, bump IDs (`prompts`, etc.)
+- `fbpixel.ts` event calls and Pixel ID; all tracking wiring
+- Email queue/send routes; the *content* of email templates is rewritten, the sending infra is not
 
-All current funnel behavior (Step 1 form, checkout, order bumps, payment upload, Meta Lead/Purchase events, thank-you page) stays untouched.
+Note: DB columns like `specialty`, table names like `clinic_growth_leads`, and bump `id`s keep their internal names to avoid breaking logic. Only user-facing **labels** change (e.g. the "Medical Speciality" field becomes an optional parenting-context field or is repurposed).
 
-## Email Provider
+## Design system (`src/styles.css`)
+New calm/premium palette via tokens:
+- Primary `#414b3b` (deep sage-olive), Secondary `#936e4c` (warm tan), Accent `#c4d7b2` (soft green), Soft accent `#c69b8a` (dusty rose), Background `#ffcdce` used softly (page bg stays airy off-white/cream; pink as accent wash, not full background).
+- Typography: warm premium pair (e.g. Fraunces / Cormorant display + Nunito Sans body) loaded via `<link>` in `__root.tsx`.
+- Rounded cards, soft shadows, rounded full-width buttons, generous whitespace. Replace the aggressive orange/navy hero gradient and uppercase CTAs with a soft, warm treatment.
 
-Use **Lovable Emails** (built-in, no API keys exposed). It requires a one-time sender domain setup before we can send. After you set up the sender domain, I'll scaffold app email templates and wire everything below.
+## Brand assets (generated — none were uploaded)
+- Logo (wordmark + soft mark) for topbar + favicon
+- Hero image: warm South-Asian / Pakistani family (mother, father, child), pastel tones
+- Curriculum / benefit / bonus card imagery and gentle icons (lucide)
+- Product/offer mockup and social OG image
+If you have the real logo or family photos, share them and I'll swap the generated ones.
 
-If you'd rather use Resend specifically, say so and I'll swap the send layer to the Resend connector instead — rest of the plan stays the same.
+## Page-by-page copy + content
 
-## Database Changes
+**Home (`index.tsx`)**
+- Topbar/announcement: Confident Parent Academy, 499 PKR, 11 July, Google Meet
+- Hero: new headline/subheadline, CTAs "Reserve My Seat" / "View Webinar Details", badges (499 PKR · 11 July · Google Meet · 1.5 Hours · Live Q&A · Recording Included)
+- New sections: Problem ("Do Any Of These Sound Familiar?"), Solution (why behaviour happens), Benefits cards, Curriculum (10 modules), About Samra, Story (three autistic cousins), Webinar Includes, Pricing (499 now / 2000 later + savings), Bonuses (3), FAQ (attendance/fathers/both parents/recording/duration/platform), Testimonials (CMS-friendly placeholders)
+- Lead form kept as-is functionally; labels reworded for parents
 
-Add two columns to `clinic_growth_leads`:
+**Order/checkout (`order.tsx`)**
+- Title, brand, pricing → 499 PKR; payment details → HBL, Title "Samra", Acct 16977901123599
+- Order bump 1 → Parenting Behaviour Toolkit (199 PKR); Order bump 2 → Webinar Recording + PDF Bundle (299 PKR). Bump internal IDs unchanged.
+- Screenshot upload untouched
 
-- `last_notified_at timestamptz` — timestamp of the last "new lead" email sent. Used for 24h dedup.
-- `abandoned_email_sent_at timestamptz` — set once the 20-min abandoned email is sent, to prevent repeats.
+**OTO (`oto.tsx`)** — rebranded copy consistent with parenting offer, logic/gate unchanged
 
-(No changes to existing columns, RLS, or grants.)
+**Thank-you (`thank-you.tsx`)** — thank parents, Google Meet join instructions, WhatsApp button, Add to Calendar, reminder, bonus download placeholder
 
-## Server Logic
+**Onboarding (`onboarding.tsx`)** — reword questions to parenting context; keep submit logic/fields
 
-### 1. New-lead notification (immediate)
+**Footer / Topbar** — brand, contact, socials, copyright
 
-Update `upsertLead` in `src/lib/leads.functions.ts`:
+**Email templates** (`registration-confirmation`, `abandoned-checkout`) — rewrite copy to parenting brand; keep template registry keys and sending logic
 
-- After a successful insert OR update where `lead_status === "Opted In - Checkout Not Completed"`, check `last_notified_at`.
-- Send the immediate email only if:
-  - It's a brand-new insert, OR
-  - The existing record's `last_notified_at` is null or older than 24 hours.
-- On send success, set `last_notified_at = now()` and `abandoned_email_sent_at = null` (reset so the 20-min check applies to this new submission).
-- If the DB save fails, no email is sent (already enforced by ordering).
+## SEO (`__root.tsx` + route heads)
+New title/description/OG/Twitter, favicon, updated JSON-LD if present. Replace old clinic OG image with new brand OG image.
 
-### 2. Abandoned-checkout notification (20 min later)
-
-Add a server route `src/routes/api/public/cron/check-abandoned-leads.ts` that:
-
-- Selects leads where:
-  - `lead_status = 'Opted In - Checkout Not Completed'`
-  - `created_at` (or `last_notified_at`) is between 20 and ~60 minutes ago
-  - `abandoned_email_sent_at IS NULL`
-- For each, sends the "⏰ Checkout Abandoned" email and stamps `abandoned_email_sent_at = now()`.
-- Authenticated via the `apikey` header (Supabase anon key) per the standard cron pattern. No custom secret.
-
-Schedule via `pg_cron` + `pg_net` to run every 5 minutes hitting that route.
-
-### 3. Email content
-
-Both emails sent via Lovable Emails `sendTransactionalEmail` helper, with templates in `src/lib/email-templates/`:
-
-- `new-lead-notification.tsx`
-  - Subject: `🚨 New Clinic Growth Lead — {full_name}`
-  - Body includes Full Name, Email, WhatsApp, Submitted At (formatted in `Asia/Karachi`), Lead Status, Source, and a clickable WhatsApp link (`https://wa.me/<digits>`).
-- `abandoned-checkout-notification.tsx`
-  - Subject: `⏰ Checkout Abandoned — Follow Up Now: {full_name}`
-  - Body per spec, same WhatsApp link.
-
-Recipient hardcoded to `Farhanali13440@gmail.com` in the server function (not exposed to client).
-
-## Dedup Summary
-
-| Scenario | Behavior |
-|---|---|
-| Brand-new email submits | Immediate email sent |
-| Same email resubmits within 24h | Lead row updated, no new email |
-| Same email resubmits after 24h | New immediate email sent, abandoned timer reset |
-| Lead completes checkout before 20 min | No abandoned email (status no longer "Opted In - Checkout Not Completed") |
-| Lead still pending after 20 min | One abandoned email, then never again for that submission |
-
-## Files Touched
-
-- **Migration**: add `last_notified_at`, `abandoned_email_sent_at` columns.
-- **Edited**: `src/lib/leads.functions.ts` (post-save email + dedup logic).
-- **New**: `src/lib/email/notify-internal.server.ts` (send helpers, recipient constant, WhatsApp link formatting, PKT time formatting).
-- **New**: `src/lib/email-templates/new-lead-notification.tsx`, `abandoned-checkout-notification.tsx` (+ registry update).
-- **New**: `src/routes/api/public/cron/check-abandoned-leads.ts`.
-- **Migration**: pg_cron schedule calling the cron route every 5 min.
-
-## Prerequisites You'll Need to Do
-
-1. Set up the email sender domain (one-time, via the email setup dialog I'll surface).
-2. Confirm provider choice (Lovable Emails default; say "use Resend" to switch).
+## Mobile & performance
+Preserve mobile-first layout, animations, loading states; verify full-width buttons, readable type, no overflow after restyle.
 
 ## Verification
+Build must pass; spot-check home, order, thank-you on mobile viewport; confirm checkout/lead/tracking calls still fire (no signature changes to functions).
 
-After build: submit a test lead → confirm immediate email arrives and `last_notified_at` is set. Resubmit same email → confirm no duplicate. Wait 20+ min without checking out → confirm abandoned email arrives once. Submit another test lead and complete checkout within 20 min → confirm no abandoned email.
+## Technical detail
+- Internal identifiers (table/column names, bump ids, template registry keys, function names, Pixel ID) are preserved; only strings rendered to users and email bodies change.
+- Fonts loaded via `<link>` in root head (never `@import` remote in styles.css).
+- `og:image` only on leaf route heads, not `__root`.

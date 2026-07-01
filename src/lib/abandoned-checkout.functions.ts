@@ -97,7 +97,7 @@ export const startAbandonedTestFlow = createServerFn({ method: 'POST' })
   .handler(async ({ data }) => {
     const { supabaseAdmin } = await import('@/integrations/supabase/client.server')
     const email = data.email.trim().toLowerCase()
-    const name = data.name?.trim() || 'Test Doctor'
+    const name = data.name?.trim() || 'Test Parent'
 
     // Find or create a dummy lead
     const { data: existing } = await (supabaseAdmin as any)

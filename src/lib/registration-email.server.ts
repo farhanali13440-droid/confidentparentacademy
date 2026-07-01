@@ -7,7 +7,7 @@ import { render } from 'react-email'
 import { TEMPLATES } from '@/lib/email-templates/registry'
 import { supabaseAdmin } from '@/integrations/supabase/client.server'
 
-const SITE_NAME = 'Clinic Growth Masterclass'
+const SITE_NAME = 'Confident Parent Academy'
 const SENDER_DOMAIN = 'notify.zeroappleaday.site'
 const FROM_DOMAIN = 'zeroappleaday.site'
 const TEMPLATE_NAME = 'registration-confirmation'
@@ -97,7 +97,7 @@ export async function sendRegistrationConfirmationEmail(opts: SendOptions): Prom
     unsubscribeToken = stored?.token ?? t
   }
 
-  const templateData = { name: opts.name || 'Doctor' }
+  const templateData = { name: opts.name || 'Parent' }
   const element = React.createElement(template.component, templateData)
   const html = await render(element)
   const text = await render(element, { plainText: true })

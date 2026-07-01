@@ -5,72 +5,47 @@ import { Topbar } from "@/components/site/Topbar";
 import { Footer } from "@/components/site/Footer";
 import { getOtoEligibility, declineOtoOffer, submitOtoPayment } from "@/lib/oto.functions";
 import { supabase } from "@/integrations/supabase/client";
-import heroVisual from "@/assets/oto-hero-strategy-session.png.asset.json";
-import growthPlanVisual from "@/assets/oto-growth-plan.png.asset.json";
-import privateSessionVisual from "@/assets/oto-private-session.png.asset.json";
-import whatsIncludedVisual from "@/assets/oto-whats-included.png.asset.json";
-import websiteBonusVisual from "@/assets/oto-website-bonus.png.asset.json";
-import whyTakeOfferVisual from "@/assets/oto-why-take-offer.png.asset.json";
-import guidedByFarhanVisual from "@/assets/oto-guided-by-farhan.png.asset.json";
-import proofBannerVisual from "@/assets/oto-proof-banner.png.asset.json";
-import drManalReview from "@/assets/dr-manal-whatsapp-review.jpeg.asset.json";
-import drJasimReview from "@/assets/dr-jasim-mumtaz-review.jpeg.asset.json";
-import drMehwishReview from "@/assets/dr-mehwish-rasheed-review.jpeg.asset.json";
-import payEasypaisa from "@/assets/proof/pay-easypaisa-1999.jpg.asset.json";
-import payAlbaraka from "@/assets/proof/pay-albaraka-999.jpg.asset.json";
-import payEpAdeel from "@/assets/proof/pay-easypaisa-adeel-999.jpg.asset.json";
-import textDrAmnah from "@/assets/proof/text-dr-amnah.jpg.asset.json";
-import textPatientJourney from "@/assets/proof/text-patient-journey.jpg.asset.json";
+import samraPortrait from "@/assets/cpa-samra.jpg";
 
-const OTO_REGULAR_PRICE = 7999;
-const OTO_PRICE = 3999;
+const OTO_REGULAR_PRICE = 6000;
+const OTO_PRICE = 2999;
+const OTO_ACCOUNT = "16977901123599";
 
 const BENEFITS = [
-  "Identify what is blocking your clinic from getting more patient inquiries",
-  "Create a customized patient-acquisition plan for your clinic",
-  "Decide which services and offers to promote first",
-  "Improve your Google Business Profile, content, social media, and ads direction",
-  "Build a clear action plan instead of trying random marketing tactics",
-  "Get direct guidance based on your specialty, city, and current situation",
+  "Understand what is really driving your child's behaviour",
+  "Get a personalised behaviour plan for your family",
+  "Know which challenges to focus on first (tantrums, sleep, screens, siblings)",
+  "Learn calm, practical responses that fit your child's age and temperament",
+  "Build a clear routine instead of trying random parenting tips",
+  "Get direct guidance based on your child's age and your family situation",
 ];
 
 const INCLUDED = [
-  "90-Minute Personalized Strategy Call",
-  "Customized Patient-Growth Plan",
-  "Clinic Online Presence Review",
-  "Meta Ads Guidance",
+  "60-Minute Private Counselling Call",
+  "Personalised Behaviour Plan",
+  "Review of Your Current Routine & Challenges",
+  "Age-Appropriate Strategy Guidance",
   "15-Day WhatsApp Support",
-  "Free Professional Clinic Website Setup Bonus",
+  "Bonus Printable Parenting Toolkit",
 ];
 
 const FAQS = [
   {
     q: "1. Who is this session for?",
-    a: "This is for doctors, nutritionists, physiotherapists, and healthcare practitioners who want a personalized patient-growth plan instead of generic marketing advice.",
+    a: "This is for parents who want personalised guidance for their own child instead of general parenting advice.",
   },
   {
-    q: "2. Will this be personalized for my clinic?",
-    a: "Yes. The strategy will be based on your specialty, city, services, patient goals, current online presence, and biggest challenges.",
+    q: "2. Will this be personalised for my child?",
+    a: "Yes. The plan will be based on your child's age, behaviour, your routine, and the challenges you're facing at home.",
   },
   {
     q: "3. What happens after I accept this offer?",
-    a: "After your order is confirmed, you will receive instructions to schedule your 90-minute personalized strategy session.",
+    a: "After your order is confirmed, you will receive instructions to schedule your private 60-minute counselling session with Miss Samra.",
   },
   {
-    q: "4. Is the clinic website included?",
-    a: "Yes. A professional clinic website setup is included as a bonus with this paid 1-on-1 strategy session.",
+    q: "4. Is the parenting toolkit included?",
+    a: "Yes. The printable parenting toolkit is included as a bonus with this private 1-on-1 counselling session.",
   },
-];
-
-const PROOF_ITEMS = [
-  { url: drManalReview.url, alt: "WhatsApp review from Dr. Manal" },
-  { url: payEasypaisa.url, alt: "Real payment proof screenshot" },
-  { url: drJasimReview.url, alt: "WhatsApp review from Dr. Jasim Mumtaz" },
-  { url: payAlbaraka.url, alt: "Real payment proof from a participant" },
-  { url: drMehwishReview.url, alt: "WhatsApp review from Dr. Mehwish Rasheed" },
-  { url: payEpAdeel.url, alt: "Real Easypaisa payment proof screenshot" },
-  { url: textDrAmnah.url, alt: "WhatsApp feedback from Dr. Amnah" },
-  { url: textPatientJourney.url, alt: "WhatsApp feedback about patient journey strategy" },
 ];
 
 type OtoSearch = { lead?: string };
@@ -306,7 +281,7 @@ function OtoPage() {
   const handleCopyAccount = async () => {
     try {
       if (typeof navigator !== "undefined" && navigator.clipboard) {
-        await navigator.clipboard.writeText("03135944817");
+        await navigator.clipboard.writeText(OTO_ACCOUNT);
       }
       setCopied(true);
       setTimeout(() => setCopied(false), 1800);
@@ -441,43 +416,41 @@ lastError: ${debug.lastError ?? "-"}`}
               Special One-Time Offer
             </p>
             <h1 className="mt-4 text-3xl md:text-5xl font-black tracking-tight leading-tight">
-              You’re Enrolled In The Clinic Growth Masterclass…
+              Your Webinar Seat Is Confirmed…
               <span className="block mt-3 text-yellow-300">
-                But Before You Go, Get A Personalized Growth Plan For Your Own Clinic
+                But Before You Go, Get A Private Parenting Plan For Your Own Child
               </span>
             </h1>
             <p className="mt-4 md:mt-5 max-w-3xl mx-auto text-sm md:text-lg text-white/80 leading-relaxed">
-              The masterclass gives you the strategies. This private 90-minute session helps you apply them specifically to your specialty, city, services, clinic goals, and current online situation.
+              The webinar gives you the strategies. This private 60-minute counselling session with Miss Samra helps you apply them to your child's specific age, behaviour, and your family situation.
             </p>
-            <VisualCard src={heroVisual.url} alt="1-on-1 Personalized Digital Marketing Strategy Session visual" className="mt-7" />
             <div className="mt-6 max-w-2xl mx-auto">
               <PrimaryAction
                 onClick={scrollToPayment}
                 disabled={!!pending}
                 text={"YES! ADD MY 1-ON-1 SESSION →"}
-                subtext="Get your personalized clinic growth plan + 15-day WhatsApp support"
+                subtext="Get your personalised parenting plan + 15-day WhatsApp support"
               />
               <button type="button" onClick={handleDecline} disabled={!!pending} className="mt-4 block mx-auto text-xs md:text-sm text-white/70 underline underline-offset-4 hover:text-white disabled:opacity-60">
-                ← No Thanks, I’ll Go With Clinic Growth Masterclass Only
+                ← No Thanks, I’ll Attend The Webinar Only
               </button>
             </div>
             <p className="mt-4 flex items-center justify-center gap-2 text-xs text-white/60">
-              <Lock className="size-3.5" /> Your masterclass order stays intact either way.
+              <Lock className="size-3.5" /> Your webinar seat stays confirmed either way.
             </p>
           </div>
         </section>
 
-        <ContentSection title="This Is Not Generic Marketing Advice">
+        <ContentSection title="This Is Not Generic Parenting Advice">
           <div className="max-w-3xl space-y-4 text-sm md:text-lg text-foreground/80 leading-relaxed">
-            <p>You will not leave with random tips that may or may not work for your clinic.</p>
+            <p>You will not leave with random tips that may or may not work for your child.</p>
             <p>
-              During this session, we will build a patient-growth direction around your own specialty, city, services, current online presence, and patient goals.
+              During this session, Miss Samra will build a calm, practical plan around your child's age, temperament, daily routine, and the specific challenges you're facing.
             </p>
           </div>
-          <VisualCard src={growthPlanVisual.url} alt="Your Personalized Clinic Growth Plan visual" className="mt-6" />
         </ContentSection>
 
-        <ContentSection title="In Your 90-Minute Session, We Will Help You:" dark>
+        <ContentSection title="In Your 60-Minute Session, Miss Samra Will Help You:" dark>
           <div className="grid gap-3 md:grid-cols-2">
             {BENEFITS.map((item) => (
               <div
@@ -491,20 +464,19 @@ lastError: ${debug.lastError ?? "-"}`}
               </div>
             ))}
           </div>
-          <VisualCard src={privateSessionVisual.url} alt="Private 90-Minute Strategy Session visual" className="mt-6" />
           <div className="mt-6 max-w-2xl mx-auto">
             <PrimaryAction
               onClick={scrollToPayment}
               disabled={!!pending}
-              text={"YES! I WANT MY PERSONALIZED CLINIC GROWTH PLAN →"}
+              text={"YES! I WANT MY PERSONALISED PARENTING PLAN →"}
             />
             <button type="button" onClick={handleDecline} disabled={!!pending} className="mt-4 block mx-auto text-xs md:text-sm text-white/70 underline underline-offset-4 hover:text-white disabled:opacity-60">
-              ← No Thanks, I’ll Go With Clinic Growth Masterclass Only
+              ← No Thanks, I’ll Attend The Webinar Only
             </button>
           </div>
         </ContentSection>
 
-        <ContentSection title="Everything You Need To Move Forward With Clarity">
+        <ContentSection title="Everything You Need To Move Forward With Confidence">
           <div className="grid gap-3 md:grid-cols-2 lg:grid-cols-3">
             {INCLUDED.map((item) => (
               <div key={item} className="rounded-xl border bg-card px-4 py-4 shadow-sm flex items-start gap-3">
@@ -515,24 +487,21 @@ lastError: ${debug.lastError ?? "-"}`}
               </div>
             ))}
           </div>
-          <VisualCard src={whatsIncludedVisual.url} alt="What's Included visual" className="mt-6" />
         </ContentSection>
 
-        <ContentSection title="Plus, You Will Receive A Free Professional Clinic Website Setup" dark>
+        <ContentSection title="Plus, You Will Receive A Bonus Printable Parenting Toolkit" dark>
           <div className="max-w-3xl space-y-4 text-sm md:text-lg text-white/85 leading-relaxed">
             <p>
-              Your website setup will give your clinic a more professional online presence and make it easier for potential patients to understand your services and contact your clinic.
+              The toolkit includes a behaviour tracker, daily routine planner, reward chart, and printable worksheets to help you apply your plan at home.
             </p>
             <p>This is included as a bonus when you add the 1-on-1 session today.</p>
           </div>
-          <VisualCard src={websiteBonusVisual.url} alt="Free Professional Clinic Website Setup visual" className="mt-6" />
         </ContentSection>
 
-        <ContentSection title="The Masterclass Gives You The Strategy. This Session Helps You Apply It To Your Clinic.">
+        <ContentSection title="The Webinar Gives You The Strategy. This Session Helps You Apply It To Your Child.">
           <div className="max-w-3xl text-sm md:text-lg text-foreground/80 leading-relaxed">
-            Instead of trying to figure out every step alone, you get direct guidance on what to prioritize first, what to ignore, and how to build a practical plan for your specific clinic.
+            Instead of trying to figure out every step alone, you get direct guidance on what to prioritise first, what to let go of, and how to build a practical plan for your specific child.
           </div>
-          <VisualCard src={whyTakeOfferVisual.url} alt="Why Take This One-Time Offer visual" className="mt-6" />
           <div className="mt-6 max-w-2xl mx-auto">
             <PrimaryAction
               onClick={scrollToPayment}
@@ -541,37 +510,31 @@ lastError: ${debug.lastError ?? "-"}`}
               subtext="This one-time offer is available only on this page."
             />
             <button type="button" onClick={handleDecline} disabled={!!pending} className="mt-4 block mx-auto text-xs md:text-sm text-foreground/60 underline underline-offset-4 hover:text-foreground disabled:opacity-60">
-              ← No Thanks, I’ll Go With Clinic Growth Masterclass Only
+              ← No Thanks, I’ll Attend The Webinar Only
             </button>
           </div>
         </ContentSection>
 
-        <ContentSection title="Get Direct Guidance From Farhan Ali" dark>
-          <div className="max-w-3xl text-sm md:text-lg text-white/85 leading-relaxed">
-            Farhan Ali helps doctors and healthcare practitioners build stronger patient-acquisition systems through practical digital marketing strategies, clinic positioning, offers, content, local visibility, and patient-growth plans.
+        <ContentSection title="Guided By Miss Samra Riaz" dark>
+          <div className="max-w-3xl mx-auto text-center">
+            <img
+              src={samraPortrait}
+              alt="Miss Samra Riaz, Clinical Psychologist & Parent Counsellor"
+              className="mx-auto size-40 rounded-full object-cover border-4 border-white/20 shadow-xl"
+              loading="lazy"
+            />
+            <p className="mt-6 text-sm md:text-lg text-white/85 leading-relaxed">
+              Miss Samra Riaz is a Clinical Psychologist and Parent Counsellor who helps families understand
+              children's behaviour and build calm, connected homes using practical, science-backed psychology.
+            </p>
           </div>
-          <VisualCard src={guidedByFarhanVisual.url} alt="Guided By Farhan Ali visual using the uploaded personal photo" className="mt-6" />
-        </ContentSection>
-
-        <ContentSection title="Real Proof From Healthcare Practitioners">
-          <VisualCard src={proofBannerVisual.url} alt="Real Proof. Real Value. section banner" />
-          <div className="mt-6 -mx-1 overflow-x-auto pb-2">
-            <div className="flex gap-4 px-1">
-              {PROOF_ITEMS.map((item) => (
-                <div key={item.url} className="w-[220px] shrink-0 overflow-hidden rounded-2xl border bg-card shadow-sm">
-                  <img src={item.url} alt={item.alt} className="h-[360px] w-full object-contain bg-black/5" loading="lazy" />
-                </div>
-              ))}
-            </div>
-          </div>
-          <p className="mt-3 text-center text-xs text-muted-foreground md:hidden">← swipe to see more →</p>
         </ContentSection>
 
         <section className="py-12 md:py-16 bg-[oklch(0.15_0.05_272)] text-white border-y border-white/10">
           <div className="mx-auto max-w-4xl px-4 text-center">
             <p className="text-xs font-bold uppercase tracking-[0.24em] text-yellow-300">One-Time Offer Pricing</p>
             <h2 className="mt-4 text-3xl md:text-5xl font-black tracking-tight">
-              Add The Personalized Clinic Growth Session Today
+              Add The Private 1-on-1 Parenting Session Today
             </h2>
             <div className="mt-8 rounded-3xl border border-white/10 bg-white/5 p-6 md:p-8 shadow-2xl">
               <div className="text-sm uppercase tracking-widest text-white/60">Regular Price</div>
@@ -589,8 +552,8 @@ lastError: ${debug.lastError ?? "-"}`}
                 <PrimaryAction
                   onClick={scrollToPayment}
                   disabled={!!pending}
-                  text={"YES! ADD MY 1-ON-1 CLINIC GROWTH SESSION →"}
-                  subtext="90-minute private session + customized plan + 15-day WhatsApp support + free website setup bonus"
+                  text={"YES! ADD MY 1-ON-1 PARENTING SESSION →"}
+                  subtext="60-minute private session + personalised plan + 15-day WhatsApp support + bonus parenting toolkit"
                 />
               </div>
               <button
@@ -599,7 +562,7 @@ lastError: ${debug.lastError ?? "-"}`}
                 disabled={!!pending}
                 className="mt-5 text-sm text-white/70 underline underline-offset-4 hover:text-white disabled:opacity-60"
               >
-                {pending === "decline" ? "CONTINUING..." : "← No Thanks, I’ll Go With Clinic Growth Masterclass Only"}
+                {pending === "decline" ? "CONTINUING..." : "← No Thanks, I’ll Attend The Webinar Only"}
               </button>
             </div>
             {error && <p className="mt-4 text-sm text-red-300">{error}</p>}
@@ -615,32 +578,32 @@ lastError: ${debug.lastError ?? "-"}`}
                 Complete Your 1-on-1 Session Upgrade
               </h2>
               <p className="mt-4 text-sm md:text-base text-white/80 leading-relaxed max-w-2xl mx-auto">
-                You are one step away from getting your personalized 90-minute clinic growth strategy session.
-                Complete your payment of <span className="font-bold text-yellow-300">PKR 3,999</span> and upload the screenshot below to confirm your upgrade.
+                You are one step away from your private 60-minute parenting counselling session with Miss Samra.
+                Complete your payment of <span className="font-bold text-yellow-300">PKR {OTO_PRICE.toLocaleString()}</span> and upload the screenshot below to confirm your upgrade.
               </p>
               <div className="mt-6 inline-flex flex-col items-center rounded-2xl bg-yellow-300/10 border border-yellow-300/30 px-6 py-4">
                 <div className="text-xs uppercase tracking-widest text-yellow-300/90">One-Time Offer Price</div>
-                <div className="mt-1 text-3xl md:text-5xl font-black text-yellow-300">PKR 3,999</div>
+                <div className="mt-1 text-3xl md:text-5xl font-black text-yellow-300">PKR {OTO_PRICE.toLocaleString()}</div>
               </div>
             </div>
 
             {/* Payment account card */}
             <div className="mt-8 rounded-2xl bg-white text-foreground p-5 md:p-6 shadow-2xl">
               <div className="text-xs font-bold uppercase tracking-wider text-muted-foreground">
-                Easypaisa / JazzCash
+                Habib Bank Limited (HBL)
               </div>
               <dl className="mt-4 space-y-3 text-sm md:text-base">
                 <div className="flex items-start justify-between gap-4">
                   <dt className="text-muted-foreground">Account Title</dt>
-                  <dd className="font-bold text-right">Farhan Ali Rasheed</dd>
+                  <dd className="font-bold text-right">Samra</dd>
                 </div>
                 <div className="flex items-start justify-between gap-4">
                   <dt className="text-muted-foreground">Account Number</dt>
-                  <dd className="font-bold text-right tracking-wider">03135944817</dd>
+                  <dd className="font-bold text-right tracking-wider">{OTO_ACCOUNT}</dd>
                 </div>
                 <div className="flex items-start justify-between gap-4">
                   <dt className="text-muted-foreground">Amount</dt>
-                  <dd className="font-bold text-right">PKR 3,999</dd>
+                  <dd className="font-bold text-right">PKR {OTO_PRICE.toLocaleString()}</dd>
                 </div>
               </dl>
               <button
@@ -655,10 +618,10 @@ lastError: ${debug.lastError ?? "-"}`}
               <div className="mt-6 rounded-xl bg-secondary/60 p-4 text-sm">
                 <div className="font-bold mb-2">Payment Instructions</div>
                 <ol className="list-decimal pl-5 space-y-1 text-foreground/80">
-                  <li>Send PKR 3,999 through Easypaisa or JazzCash.</li>
+                  <li>Send PKR {OTO_PRICE.toLocaleString()} to the HBL account above.</li>
                   <li>Take a screenshot of the successful payment.</li>
                   <li>Upload the screenshot below.</li>
-                  <li>Submit to confirm your 1-on-1 strategy session upgrade.</li>
+                  <li>Submit to confirm your 1-on-1 counselling session upgrade.</li>
                 </ol>
               </div>
             </div>
@@ -675,7 +638,7 @@ lastError: ${debug.lastError ?? "-"}`}
                   <input type="file" accept="image/*" onChange={handleOtoFile} className="hidden" />
                 </label>
                 <p className="mt-2 text-xs text-foreground/80">
-                  Upload your PKR 3,999 payment screenshot to confirm your 1-on-1 session upgrade.
+                  Upload your PKR {OTO_PRICE.toLocaleString()} payment screenshot to confirm your 1-on-1 session upgrade.
                 </p>
                 {otoPreview && (
                   <div className="mt-3 rounded-md border overflow-hidden">
@@ -745,11 +708,11 @@ export const Route = createFileRoute("/oto")({
   },
   head: () => ({
     meta: [
-      { title: "One-Time Offer — 1-on-1 Personalized Strategy Session" },
+      { title: "One-Time Offer — 1-on-1 Parenting Session With Miss Samra" },
       {
         name: "description",
         content:
-          "Upgrade your Clinic Growth Masterclass order with a 1-on-1 personalized digital marketing strategy session for your clinic.",
+          "Upgrade your Confident Parent Academy webinar with a private 1-on-1 parenting counselling session with Miss Samra Riaz.",
       },
       { name: "robots", content: "noindex,nofollow" },
     ],

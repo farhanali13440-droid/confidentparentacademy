@@ -1,7 +1,7 @@
 import { createFileRoute, useNavigate } from "@tanstack/react-router";
-import productStack from "@/assets/product-stack.png.asset.json";
-import bumpStrategy from "@/assets/bump-strategy.png.asset.json";
-import bumpPrompts from "@/assets/bump-prompts.png.asset.json";
+import bumpToolkit from "@/assets/cpa-bump-toolkit.jpg";
+import bumpRecording from "@/assets/cpa-bump-recording.jpg";
+import heroFamily from "@/assets/cpa-hero-family.jpg";
 import { useMemo, useState } from "react";
 import { Topbar } from "@/components/site/Topbar";
 import { Footer } from "@/components/site/Footer";
@@ -35,8 +35,9 @@ export const Route = createFileRoute("/order")({
   }),
   head: () => ({
     meta: [
-      { title: "Checkout — Clinic Growth Masterclass" },
-      { name: "description", content: "Secure your seat in the Clinic Growth Masterclass for Rs. 999. Add high-converting order bumps to maximize your results." },
+      { title: "Checkout — Confident Parent Academy Webinar" },
+      { name: "description", content: "Reserve your seat in the Confident Parent Academy parenting webinar for just 499 PKR. Add helpful parenting resources at checkout." },
+      { name: "robots", content: "noindex,nofollow" },
     ],
   }),
   component: OrderPage,
@@ -45,43 +46,42 @@ export const Route = createFileRoute("/order")({
 const BUMPS = [
   {
     id: "strategy",
-    title: "1-on-1 Personalized Digital Marketing Strategy Session",
-    price: 3999,
-    image: bumpStrategy.url,
-    badge: "Most Popular (8/10 Members Add This)",
+    title: "Parenting Behaviour Toolkit",
+    price: 199,
+    image: bumpToolkit,
+    badge: "Most Popular (8/10 Parents Add This)",
     bullets: [
-      "90-Minute Private Strategy Session",
-      "Customized Patient Growth Plan",
-      "Meta Ads & Digital Marketing Guidance",
-      "Website & Online Presence Review",
-      "15 Days WhatsApp Support",
+      "Behaviour Tracker",
+      "Daily Routine Planner",
+      "Reward Chart",
+      "Printable Worksheets",
+      "Parenting Cheat Sheet",
     ],
-    bonus: "Bonus: Professional Clinic Website Setup",
+    bonus: null as string | null,
   },
   {
     id: "prompts",
-    title: "AI Content Prompt Vault for Doctors",
-    price: 699,
-    image: bumpPrompts.url,
-    badge: "Recommended (7/10 Members Add This)",
+    title: "Webinar Recording + PDF Bundle",
+    price: 299,
+    image: bumpRecording,
+    badge: "Recommended (7/10 Parents Add This)",
     bullets: [
-      "Ready-to-use AI prompts for doctors",
-      "Content ideas for social media",
-      "Patient education content prompts",
-      "Engagement and lead generation prompts",
-      "Save hours of content creation time",
+      "Full Webinar Recording (lifetime access)",
+      "Complete PDF Parenting Guide",
+      "Bonus parenting resources",
+      "Rewatch and revisit anytime",
+      "Perfect if you can't attend live",
     ],
     bonus: null as string | null,
   },
 ] as const;
 
 const PAYMENT_ACCOUNTS = {
-  easypaisa: { label: "Easypaisa", name: "Farhan Ali Rasheed", account: "03135944817" },
-  jazzcash: { label: "JazzCash", name: "Farhan Ali Rasheed", account: "03135944817" },
+  hbl: { label: "Habib Bank Limited (HBL)", name: "Samra", account: "16977901123599" },
 } as const;
 type PayMethod = keyof typeof PAYMENT_ACCOUNTS;
 
-const MAIN_PRODUCT = { title: "Clinic Growth Masterclass", price: 999 };
+const MAIN_PRODUCT = { title: "Confident Parent Academy Webinar", price: 499 };
 
 function OrderPage() {
   const search = Route.useSearch();
@@ -142,7 +142,7 @@ function OrderPage() {
   }
 
   const [bumps, setBumps] = useState<Record<string, boolean>>({});
-  const [paymentMethod, setPaymentMethod] = useState<PayMethod>("easypaisa");
+  const [paymentMethod, setPaymentMethod] = useState<PayMethod>("hbl");
   const [submitting, setSubmitting] = useState(false);
   const [screenshot, setScreenshot] = useState<File | null>(null);
   const [screenshotPreview, setScreenshotPreview] = useState<string | null>(null);
@@ -150,7 +150,7 @@ function OrderPage() {
   const purchaseFiredRef = useRef(false);
 
   useEffect(() => {
-    fbqTrack("InitiateCheckout", { value: 999, currency: "PKR" });
+    fbqTrack("InitiateCheckout", { value: 499, currency: "PKR" });
   }, []);
 
 
@@ -273,9 +273,9 @@ function OrderPage() {
     if (!purchaseFiredRef.current) {
       purchaseFiredRef.current = true;
       fbqTrack("Purchase", {
-        value: 999,
+        value: 499,
         currency: "PKR",
-        content_name: "Clinic Growth Masterclass",
+        content_name: "Confident Parent Academy Webinar",
       });
       console.log("Meta Pixel Purchase fired after payment screenshot submit");
     }
@@ -310,10 +310,10 @@ function OrderPage() {
       {/* Headline strip */}
       <div className="bg-secondary border-b">
         <div className="mx-auto max-w-6xl px-4 py-6 md:py-8 text-center">
-          <h1 className="text-2xl md:text-4xl font-black">
-            You're <span className="gradient-highlight">One Step Away</span> From Filling Your Clinic
+          <h1 className="text-2xl md:text-4xl font-semibold" style={{ fontFamily: "var(--font-display)" }}>
+            You're <span className="gradient-highlight">One Step Away</span> From a Calmer Home
           </h1>
-          <p className="mt-2 text-muted-foreground">Complete your order below to confirm your seat.</p>
+          <p className="mt-2 text-muted-foreground">Complete your order below to confirm your webinar seat.</p>
         </div>
       </div>
 
@@ -420,8 +420,7 @@ function OrderPage() {
                       onChange={(e) => setPaymentMethod(e.target.value as PayMethod)}
                       className="appearance-none w-full rounded-xl border-2 border-primary bg-gradient-to-br from-primary/5 to-primary/10 px-4 py-4 pr-12 text-base font-bold text-foreground shadow-md outline-none focus:ring-4 focus:ring-primary/30 hover:shadow-lg transition cursor-pointer"
                     >
-                      <option value="easypaisa">📱 Easypaisa</option>
-                      <option value="jazzcash">📲 JazzCash</option>
+                      <option value="hbl">🏦 Habib Bank Limited (HBL)</option>
                     </select>
                     <ChevronDown className="pointer-events-none absolute right-4 top-1/2 -translate-y-1/2 size-5 text-primary" />
                     <span className="pointer-events-none absolute inset-0 rounded-xl ring-1 ring-primary/20 animate-pulse" aria-hidden />
@@ -522,7 +521,7 @@ function OrderPage() {
                   <ArrowRight className="btn-cta-arrow size-5" aria-hidden="true" />
                 </span>
                 <div className="text-xs font-medium normal-case tracking-normal opacity-95">
-                  Submit your details and screenshot to receive masterclass access.
+                  Submit your details and screenshot to receive your webinar access.
                 </div>
               </button>
 
@@ -544,44 +543,41 @@ function OrderPage() {
           {/* RIGHT: product card */}
           <aside className="lg:col-span-2 space-y-6">
             <div className="bg-card rounded-xl shadow-sm border overflow-hidden">
-              <div className="bg-gradient-to-r from-indigo-600 to-violet-600 text-white text-center py-3 font-black uppercase tracking-wider">
-                Clinic Growth Masterclass
+              <div className="bg-primary text-primary-foreground text-center py-3 font-semibold tracking-wide" style={{ fontFamily: "var(--font-display)" }}>
+                Confident Parent Academy Webinar
               </div>
               <img
-                src={productStack.url}
-                alt="Clinic Growth Masterclass"
+                src={heroFamily}
+                alt="Confident Parent Academy parenting webinar"
                 className="w-full h-auto"
+                loading="lazy"
               />
               <div className="p-5 text-center">
                 <div className="text-lg font-bold">Get Access For</div>
-                <div className="text-3xl font-black text-emerald-600 mt-1 whitespace-pre-line">{"Only\nRs. 999 Today!"}</div>
+                <div className="text-3xl font-black text-primary mt-1 whitespace-pre-line">{"Only\n499 PKR Today!"}</div>
 
                 <div className="mt-5 text-left">
                   <div className="bg-primary text-primary-foreground text-center font-bold py-2 rounded">
                     Here's Everything You Get:
                   </div>
                   <ul className="mt-3 space-y-3 text-sm">
-                    <Item title="Clinic Growth Masterclass">
-                      The complete patient-acquisition blueprint that eliminates months of guesswork.
-                      Get the exact patient-getting system, ad strategy, and follow-up flow used by leading
-                      Pakistani clinics.
+                    <Item title="Live 90-Minute Parenting Webinar">
+                      Join Miss Samra Riaz live on Google Meet and learn how to understand your child's
+                      behaviour and build a peaceful, well-behaved home.
                     </Item>
 
 
-                    <div className="bg-emerald-600 text-white text-center font-bold py-2 rounded mt-4">
-                      You'll Also Receive 4 Bonuses:
+                    <div className="bg-primary/80 text-primary-foreground text-center font-bold py-2 rounded mt-4">
+                      You'll Also Receive These Bonuses:
                     </div>
-                    <Item title="Bonus #1 — Authority Content Cheat Sheet for Doctors">
-                      30 ready-to-use post ideas to position you as the go-to specialist online.
+                    <Item title="Bonus #1 — Live Q&amp;A Session">
+                      Ask your real parenting questions and get personal, practical guidance.
                     </Item>
-                    <Item title="Bonus #2 — Doctor Personal Brand Positioning Worksheet">
-                      Define your niche and unique angle so patients instantly trust and pick you.
+                    <Item title="Bonus #2 — PDF Parenting Guide">
+                      A calm, practical takeaway guide you can return to again and again.
                     </Item>
-                    <Item title="Bonus #3 — Clinic WhatsApp Follow-Up Scripts">
-                      Plug-and-play scripts that turn inquiries into booked appointments — fast.
-                    </Item>
-                    <Item title="Bonus #4 — Private Doctor Growth Community">
-                      Ongoing support, case studies and Q&amp;A with ambitious doctors growing their clinics.
+                    <Item title="Bonus #3 — Webinar Recording">
+                      Lifetime access to the full recording so you can rewatch anytime.
                     </Item>
                   </ul>
                 </div>
@@ -590,28 +586,29 @@ function OrderPage() {
 
             {/* Guarantee */}
             <div className="bg-card rounded-xl border p-5 flex items-start gap-4">
-              <div className="size-14 rounded-full bg-yellow-400 grid place-items-center shrink-0">
-                <ShieldCheck className="size-7 text-hero-deep" />
+              <div className="size-14 rounded-full bg-accent grid place-items-center shrink-0">
+                <ShieldCheck className="size-7 text-primary" />
               </div>
               <div>
-                <h3 className="font-extrabold">30-Day Money-Back Guarantee</h3>
+                <h3 className="font-semibold" style={{ fontFamily: "var(--font-display)" }}>Attend With Confidence</h3>
                 <p className="text-sm text-muted-foreground mt-1">
-                  Attend, take notes, implement — and if you feel it didn't help, email us within 30 days for a 100% refund.
+                  Join the live session, take notes, and if you can't make it live you'll still get the
+                  full recording. We're here to support your family every step of the way.
                 </p>
               </div>
             </div>
 
             {/* Testimonials */}
             <div className="bg-card rounded-xl border p-5">
-              <div className="font-bold mb-3">Reviews From Happy Doctors</div>
+              <div className="font-semibold mb-3" style={{ fontFamily: "var(--font-display)" }}>What Parents Are Saying</div>
               {[
-                { n: "Dr. Sara K., Dentist", t: "We went from 8 to 26 booked appointments per week." },
-                { n: "Dr. Bilal R., Cardiologist", t: "Finally a Pakistan-specific marketing system. No fluff." },
-                { n: "Dr. Hina M., Dietitian", t: "My DMs are full of qualified patients. Worth 10x the price." },
+                { n: "A. Fatima, Mother of two", t: "For the first time I understood why my son was acting out. The shouting has almost stopped." },
+                { n: "M. Bilal, Father", t: "It completely changed how I connect with my daughter." },
+                { n: "S. Ayesha, Mother", t: "Calm, warm and practical. I used the tools the same evening." },
               ].map((r) => (
                 <div key={r.n} className="border-t first:border-t-0 py-3">
-                  <div className="flex gap-0.5 text-yellow-500">
-                    {Array.from({ length: 5 }).map((_, i) => <Star key={i} className="size-3.5 fill-yellow-500" />)}
+                  <div className="flex gap-0.5 text-secondary-foreground">
+                    {Array.from({ length: 5 }).map((_, i) => <Star key={i} className="size-3.5 fill-current" />)}
                   </div>
                   <p className="text-sm italic mt-1">"{r.t}"</p>
                   <p className="text-xs font-bold mt-1">{r.n}</p>

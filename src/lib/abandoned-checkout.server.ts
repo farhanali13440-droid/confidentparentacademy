@@ -7,7 +7,7 @@ import { render } from 'react-email'
 import { TEMPLATES } from '@/lib/email-templates/registry'
 import { supabaseAdmin } from '@/integrations/supabase/client.server'
 
-const SITE_NAME = 'Clinic Growth Masterclass'
+const SITE_NAME = 'Confident Parent Academy'
 const SENDER_DOMAIN = 'notify.zeroappleaday.site'
 const FROM_DOMAIN = 'zeroappleaday.site'
 const CHECKOUT_BASE = 'https://www.zeroappleaday.site/order'
@@ -171,7 +171,7 @@ export async function sendQueuedAbandonedReminder(queueRow: {
   if (!template) return { ok: false, reason: 'template_missing' }
 
   const templateData = {
-    name: queueRow.name || lead.full_name || 'Doctor',
+    name: queueRow.name || lead.full_name || 'Parent',
     checkoutUrl: buildCheckoutUrl(lead),
   }
   const element = React.createElement(template.component, templateData)
