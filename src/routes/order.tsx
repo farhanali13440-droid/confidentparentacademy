@@ -310,10 +310,10 @@ function OrderPage() {
       {/* Headline strip */}
       <div className="bg-secondary border-b">
         <div className="mx-auto max-w-6xl px-4 py-6 md:py-8 text-center">
-          <h1 className="text-2xl md:text-4xl font-black">
-            You're <span className="gradient-highlight">One Step Away</span> From Filling Your Clinic
+          <h1 className="text-2xl md:text-4xl font-semibold" style={{ fontFamily: "var(--font-display)" }}>
+            You're <span className="gradient-highlight">One Step Away</span> From a Calmer Home
           </h1>
-          <p className="mt-2 text-muted-foreground">Complete your order below to confirm your seat.</p>
+          <p className="mt-2 text-muted-foreground">Complete your order below to confirm your webinar seat.</p>
         </div>
       </div>
 
