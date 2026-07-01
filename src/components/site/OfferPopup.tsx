@@ -80,8 +80,8 @@ export function OfferPopup() {
             <X className="size-3.5" />
           </button>
           <div className="flex-1 text-[12px] leading-tight font-semibold">
-            <div>Live Masterclass: 12 July, 5–8 PM PKT</div>
-            <div className="text-yellow-300">Rs. 999 Today</div>
+            <div>Live Webinar: 11 July, 8–9:30 PM PKT</div>
+            <div className="text-yellow-300">499 PKR Today</div>
           </div>
           <button
             onClick={goToOrder}
@@ -111,43 +111,43 @@ export function OfferPopup() {
               <X className="size-4" />
             </button>
 
-            <div className="bg-gradient-to-r from-blue-600 to-violet-600 text-white px-6 py-5 text-center">
+            <div className="bg-primary text-primary-foreground px-6 py-5 text-center">
               <h2 className="text-xl md:text-2xl font-black leading-tight">
-                Enjoy PKR 999 A Little Longer
+                Enjoy 499 PKR A Little Longer
               </h2>
             </div>
 
             <div className="px-6 py-5 space-y-3 text-center">
               <p className="text-sm md:text-base text-slate-700 leading-relaxed">
-                After hearing from many doctors and healthcare practitioners, we've decided to keep
-                our <span className="font-semibold">Clinic Growth Masterclass</span> at PKR 999 for a
+                After hearing from many parents, we've decided to keep our
+                <span className="font-semibold"> Confident Parent Academy</span> webinar at 499 PKR for a
                 little longer.
               </p>
               <p className="text-sm text-slate-600">
-                Price will adjust to <span className="font-bold">PKR 3,999</span> after the deadline due to the rising costs of managing a high number of students..
+                Price will adjust to <span className="font-bold">2000 PKR</span> after the deadline.
               </p>
 
               <div className="mt-2 rounded-xl border-2 border-emerald-200 bg-emerald-50 p-4">
-                <div className="text-3xl md:text-4xl font-black text-emerald-600">PKR 999</div>
-                <div className="mt-1 text-base text-slate-500 line-through">PKR 3,999</div>
+                <div className="text-3xl md:text-4xl font-black text-emerald-600">499 PKR</div>
+                <div className="mt-1 text-base text-slate-500 line-through">2000 PKR</div>
                 <div className="mt-2 text-sm font-bold text-orange-600">
-                  Early-bird Rs. 999 offer ends: {DEADLINE_LABEL}
+                  Early-bird 499 PKR offer ends: {DEADLINE_LABEL}
                 </div>
                 <div className="mt-1 text-xs text-slate-600">
-                  Live Masterclass: Sunday, 12th July 2026, 5:00 PM – 8:00 PM PKT
+                  Live Webinar: Saturday, 11th July 2026, 8:00 PM – 9:30 PM PKT
                 </div>
               </div>
 
               <button
                 onClick={goToOrder}
-                className="w-full mt-2 rounded-xl bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white font-extrabold py-3.5 px-5 shadow-lg transition"
+                className="w-full mt-2 rounded-xl bg-primary hover:opacity-90 text-primary-foreground font-extrabold py-3.5 px-5 shadow-lg transition"
               >
                 👉 Secure Your Seat Now
               </button>
             </div>
 
             <div className="px-6 pb-4 text-center text-xs text-slate-500">
-              Clinic Growth Masterclass | 2026 Content
+              Confident Parent Academy | 2026
             </div>
           </div>
         </div>
