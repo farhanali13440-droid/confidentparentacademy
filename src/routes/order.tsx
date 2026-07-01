@@ -273,9 +273,9 @@ function OrderPage() {
     if (!purchaseFiredRef.current) {
       purchaseFiredRef.current = true;
       fbqTrack("Purchase", {
-        value: 999,
+        value: 499,
         currency: "PKR",
-        content_name: "Clinic Growth Masterclass",
+        content_name: "Confident Parent Academy Webinar",
       });
       console.log("Meta Pixel Purchase fired after payment screenshot submit");
     }
