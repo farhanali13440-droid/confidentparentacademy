@@ -88,7 +88,7 @@ function Hero() {
             <h1 className="text-[26px] leading-tight sm:text-4xl md:text-[42px] md:leading-[1.1] font-semibold" style={{ fontFamily: "var(--font-display)" }}>
               How to Create a{" "}
               <span className="gradient-highlight">Peaceful Home</span> &amp; Raise a{" "}
-              <span className="gradient-highlight">Well-Behaved Child</span> Without Being a Perfect Parent
+              <span className="gradient-highlight-pink">Well-Behaved Child</span> Without Being a Perfect Parent
             </h1>
             <p className="mt-4 md:mt-5 text-sm md:text-lg text-white/85 leading-relaxed">
               Learn practical, science-backed parenting strategies that help you understand your
