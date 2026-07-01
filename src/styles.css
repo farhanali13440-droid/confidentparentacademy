@@ -40,37 +40,41 @@
   --font-display: "Fraunces", Georgia, serif;
   --font-body: "Nunito Sans", system-ui, sans-serif;
 
-  /* Calm, warm, premium — Confident Parent Academy */
-  --background: #fbf8f3;          /* warm cream */
-  --foreground: #2e3529;          /* deep olive charcoal */
+  /* Soft, warm, feminine — Confident Parent Academy (blush-first) */
+  --background: #fffcfa;          /* near-white warm */
+  --foreground: #3d332e;          /* warm brown charcoal */
 
   --card: #ffffff;
-  --card-foreground: #2e3529;
+  --card-foreground: #3d332e;
 
-  --primary: #414b3b;             /* deep sage olive */
+  --primary: #414b3b;             /* deep sage olive — supporting "growth" green */
   --primary-foreground: #f7f4ee;
-  --secondary: #eef2e7;           /* soft green tint */
-  --secondary-foreground: #414b3b;
-  --muted: #f2ede4;
-  --muted-foreground: #6f7565;
-  --accent: #c4d7b2;              /* soft green */
-  --accent-foreground: #33402a;
+  --secondary: #fceee9;           /* very light blush — alternating section wash */
+  --secondary-foreground: #7a4535;
+  --muted: #f7ece7;
+  --muted-foreground: #8a746b;
+  --accent: #e8b6a6;              /* blush pink (from logo) */
+  --accent-foreground: #6e3f30;   /* warm brown */
   --destructive: #b3573f;         /* warm terracotta */
-  --border: #e7e0d4;
-  --input: #e7e0d4;
-  --ring: #936e4c;
+  --border: #f1ddd4;              /* light pink/beige border */
+  --input: #f1ddd4;
+  --ring: #d18f80;
 
-  /* Brand */
-  --topbar: #414b3b;                  /* deep sage */
-  --hero: #414b3b;                    /* deep sage */
-  --hero-deep: #333c2d;               /* darker sage */
-  --cta-from: #9a7550;                /* warm tan */
-  --cta-to: #b58a63;                  /* soft caramel */
-  --highlight-from: #936e4c;          /* tan */
-  --highlight-to: #c69b8a;            /* dusty rose */
-  --soft-pink: #ffcdce;               /* soft pink accent wash */
-  --blush: #e0a89b;                   /* blush pink — secondary accent (from logo) */
+  /* Brand — blush pink & warm brown from the logo */
+  --topbar: #414b3b;                  /* slim sage bar (small green touch) */
+  --hero: #fdeee9;                    /* light blush */
+  --hero-deep: #f7ddd3;               /* deeper blush */
+  --blush-pink: #e4a890;              /* exact blush from logo */
+  --blush: #e4a890;                   /* blush pink — primary accent */
   --blush-deep: #d18f80;              /* deeper blush for hover/borders */
+  --warm-brown: #a86c48;              /* warm brown from logo */
+  --warm-brown-deep: #90603c;         /* deeper brown for hover */
+  --cta-from: #e8b09b;                /* blush */
+  --cta-to: #dd9880;                  /* deeper blush */
+  --highlight-from: #e4a890;          /* blush */
+  --highlight-to: #f0cabb;            /* soft blush */
+  --soft-pink: #ffcdce;               /* soft pink accent wash */
+  --sage: #c4d7b2;                    /* soft sage — supporting only */
 }
 
 @theme inline {
@@ -78,6 +82,10 @@
   --color-soft-pink: var(--soft-pink);
   --color-blush: var(--blush);
   --color-blush-deep: var(--blush-deep);
+  --color-blush-pink: var(--blush-pink);
+  --color-warm-brown: var(--warm-brown);
+  --color-warm-brown-deep: var(--warm-brown-deep);
+  --color-sage: var(--sage);
 }
 
 @layer base {
