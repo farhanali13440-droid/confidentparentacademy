@@ -108,20 +108,28 @@
 @layer components {
   .hero-bg {
     background:
-      radial-gradient(1200px 600px at 50% -10%, #4d5843 0%, transparent 60%),
+      radial-gradient(900px 500px at 15% -10%, #ffe6dd 0%, transparent 55%),
+      radial-gradient(900px 500px at 90% 0%, #fbe0d6 0%, transparent 55%),
       linear-gradient(180deg, var(--hero) 0%, var(--hero-deep) 100%);
   }
+  /* Signature soft blush gradient — reusable background throughout the site */
+  .blush-bg {
+    background:
+      radial-gradient(700px 400px at 20% 0%, #ffeae2 0%, transparent 60%),
+      radial-gradient(700px 400px at 90% 20%, #fce3da 0%, transparent 60%),
+      linear-gradient(180deg, #fff8f5 0%, #fceee9 100%);
+  }
   .gradient-highlight {
-    background-image: linear-gradient(90deg, var(--accent), #d6e4c8);
-    color: var(--primary);
+    background-image: linear-gradient(90deg, var(--blush), #f3ccbc);
+    color: var(--warm-brown-deep);
     font-weight: 700;
     padding: 0 .35em;
     border-radius: .4rem;
   }
   /* Secondary blush highlight — soft pink underline/emphasis */
   .gradient-highlight-pink {
-    background-image: linear-gradient(90deg, var(--soft-pink), #ffe2e3);
-    color: var(--primary);
+    background-image: linear-gradient(90deg, var(--blush), #f6d3c5);
+    color: var(--warm-brown-deep);
     font-weight: 700;
     padding: 0 .35em;
     border-radius: .4rem;
@@ -133,13 +141,13 @@
     text-transform: none;
     letter-spacing: 0.01em;
     border-radius: 9999px;
-    box-shadow: 0 14px 30px -12px rgba(147, 110, 76, 0.55);
+    box-shadow: 0 14px 30px -12px rgba(228, 168, 144, 0.6);
     transition: transform .15s ease, filter .15s ease;
   }
   .btn-cta:hover {
     transform: translateY(-1px);
-    filter: brightness(1.05);
-    box-shadow: 0 16px 34px -12px rgba(209, 143, 128, 0.6);
+    background-image: linear-gradient(90deg, var(--warm-brown), var(--warm-brown-deep));
+    box-shadow: 0 16px 34px -12px rgba(168, 108, 72, 0.55);
   }
   .btn-cta:active { transform: translateY(0); }
   .btn-cta-arrow { display: inline-block; transition: transform .15s ease; flex-shrink: 0; }
