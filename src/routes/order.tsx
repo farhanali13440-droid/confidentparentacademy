@@ -142,7 +142,7 @@ function OrderPage() {
   }
 
   const [bumps, setBumps] = useState<Record<string, boolean>>({});
-  const [paymentMethod, setPaymentMethod] = useState<PayMethod>("easypaisa");
+  const [paymentMethod, setPaymentMethod] = useState<PayMethod>("hbl");
   const [submitting, setSubmitting] = useState(false);
   const [screenshot, setScreenshot] = useState<File | null>(null);
   const [screenshotPreview, setScreenshotPreview] = useState<string | null>(null);
@@ -150,7 +150,7 @@ function OrderPage() {
   const purchaseFiredRef = useRef(false);
 
   useEffect(() => {
-    fbqTrack("InitiateCheckout", { value: 999, currency: "PKR" });
+    fbqTrack("InitiateCheckout", { value: 499, currency: "PKR" });
   }, []);
 
 
