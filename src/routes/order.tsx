@@ -521,7 +521,7 @@ function OrderPage() {
                   <ArrowRight className="btn-cta-arrow size-5" aria-hidden="true" />
                 </span>
                 <div className="text-xs font-medium normal-case tracking-normal opacity-95">
-                  Submit your details and screenshot to receive masterclass access.
+                  Submit your details and screenshot to receive your webinar access.
                 </div>
               </button>
 
