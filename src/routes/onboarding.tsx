@@ -13,7 +13,7 @@ export const Route = createFileRoute("/onboarding")({
   }),
   head: () => ({
     meta: [
-      { title: "Step 2 of 2 — Personalise Your Masterclass" },
+      { title: "Step 2 of 2 — Personalise Your Webinar" },
       { name: "robots", content: "noindex,nofollow" },
     ],
   }),
@@ -21,50 +21,50 @@ export const Route = createFileRoute("/onboarding")({
 });
 
 const GOALS = [
-  "Get more patient appointments",
-  "Start running Meta ads properly",
-  "Improve my Google Business Profile",
-  "Build my doctor/clinic personal brand",
-  "Create better content consistently",
-  "Stop depending only on referrals, Oladoc, or Marham",
-  "Build a complete patient acquisition system",
+  "Understand why my child behaves the way they do",
+  "Reduce shouting and daily struggles",
+  "Handle tantrums and meltdowns calmly",
+  "Manage screen time and routines",
+  "Improve communication with my child",
+  "Build a stronger, more trusting relationship",
+  "Feel less guilty and more confident as a parent",
 ];
 
 const TRIED = [
-  "Facebook or Instagram ads",
-  "Posting reels or content",
-  "Google Business Profile",
-  "Oladoc, Marham, or another platform",
-  "Discounts or offers",
-  "Asking for referrals",
-  "Nothing consistently yet",
+  "Reading parenting books or blogs",
+  "Watching parenting videos or reels",
+  "Rewards and punishments",
+  "Being stricter or setting more rules",
+  "Being more lenient",
+  "Asking family or friends for advice",
+  "Nothing structured yet",
   "Other",
 ];
 
 const DECISION = [
-  "I need more patients urgently",
-  "I want a system instead of random marketing",
-  "I want to reduce dependency on third-party platforms",
-  "Your ad/content felt relevant to me",
+  "My child's behaviour feels overwhelming right now",
+  "I want to understand the psychology behind behaviour",
+  "I want practical tools instead of random tips",
+  "The topic felt relevant to my family",
   "The price made it easy to try",
-  "I want to learn before hiring an agency",
+  "I want to learn before problems get worse",
   "Other",
 ];
 
 const HELP = [
-  "Google Business Profile setup and optimisation",
-  "Clinic website or landing page",
-  "Meta ads setup",
-  "Content strategy and video ideas",
-  "WhatsApp booking and follow-up system",
-  "Complete Patient Acquisition Machine",
-  "I want to implement it myself first",
+  "Handling tantrums and meltdowns",
+  "Managing screen time and routines",
+  "Improving sleep and daily habits",
+  "Communication and connection",
+  "Sibling conflict",
+  "A complete calm-parenting system",
+  "I want to apply it myself first",
 ];
 
 const DFY_OPTIONS = [
-  "Yes, I would like details for my clinic",
+  "Yes, I would like details about 1-on-1 parent counselling",
   "Maybe later, but I am interested",
-  "No, I want to implement the masterclass myself first",
+  "No, I want to apply the webinar myself first",
 ];
 
 function CheckboxGroup({
@@ -119,7 +119,7 @@ function OnboardingPage() {
   const [leadId, setLeadId] = useState<string | null>(null);
   useEffect(() => {
     let id = lead ?? null;
-    if (!id && typeof window !== "undefined") {
+          if (!id && typeof window !== "undefined") {
       try {
         id = localStorage.getItem("cgm_last_lead");
       } catch {}
@@ -205,19 +205,18 @@ function OnboardingPage() {
           </div>
 
           <div className="bg-card rounded-2xl border shadow-sm p-5 md:p-8">
-            <h1 className="text-xl md:text-2xl font-black leading-tight">
-              Before You Access Clinic Growth Masterclass, Help Us Personalise Your
-              Learning Experience
+            <h1 className="text-xl md:text-2xl font-semibold leading-tight" style={{ fontFamily: "var(--font-display)" }}>
+              Before the Webinar, Help Us Personalise Your Experience
             </h1>
             <p className="mt-3 text-sm md:text-base text-muted-foreground">
-              Your answers help us recommend the most relevant strategies,
-              templates, and next steps for your clinic.
+              Your answers help Miss Samra focus on the most relevant strategies
+              and examples for your family.
             </p>
 
             <form onSubmit={onSubmit} className="mt-6 space-y-7">
               <Field
                 num={1}
-                label="What is your biggest goal from Clinic Growth Masterclass right now?"
+                label="What is your biggest goal from this parenting webinar right now?"
               >
                 <CheckboxGroup
                   name="goals"
@@ -229,7 +228,7 @@ function OnboardingPage() {
 
               <Field
                 num={2}
-                label="What have you already tried to get more patients?"
+                label="What have you already tried to improve your child's behaviour?"
               >
                 <CheckboxGroup
                   name="tried"
@@ -241,7 +240,7 @@ function OnboardingPage() {
 
               <Field
                 num={3}
-                label="What has frustrated you the most about trying to grow your clinic?"
+                label="What has frustrated you the most about parenting lately?"
               >
                 <textarea
                   value={frustration}
@@ -255,7 +254,7 @@ function OnboardingPage() {
 
               <Field
                 num={4}
-                label="What made you decide to join Clinic Growth Masterclass today?"
+                label="What made you decide to join this webinar today?"
               >
                 <CheckboxGroup
                   name="decision"
@@ -283,7 +282,7 @@ function OnboardingPage() {
 
               <Field
                 num={6}
-                label="Which part would you most want help implementing after the masterclass?"
+                label="Which area would you most want help with after the webinar?"
               >
                 <CheckboxGroup
                   name="help"
@@ -296,13 +295,13 @@ function OnboardingPage() {
               <Field
                 num={7}
                 required
-                label="Would you be interested in having our team help set up and manage a customised digital marketing system for your clinic — based on your specialty, city, goals, and current situation?"
+                label="Would you be interested in personalised 1-on-1 parent counselling with Miss Samra — based on your child's age, behaviour, and your family situation?"
               >
                 <p className="text-xs text-muted-foreground mb-2">
-                  This can include: clinic website/landing page, Google Business
-                  Profile optimisation, Facebook & Instagram setup/content,
-                  patient-focused ad campaigns, WhatsApp inquiry & appointment
-                  follow-up system, and a complete patient acquisition strategy.
+                  This can include: a personalised behaviour plan, guidance for
+                  specific challenges (tantrums, sleep, screens, siblings),
+                  developmental support, and ongoing parent coaching tailored to
+                  your family.
                 </p>
                 <div className="grid gap-2">
                   {DFY_OPTIONS.map((opt) => {
@@ -335,7 +334,7 @@ function OnboardingPage() {
 
               <Field
                 num={8}
-                label="What other training, template, tool, or service would help you get more patients?"
+                label="What other guide, tool, or support would help you as a parent?"
                 optional
               >
                 <textarea
@@ -365,7 +364,7 @@ function OnboardingPage() {
                   </>
                 ) : (
                   <>
-                    <span>Submit & Access My Masterclass</span>
+                    <span>Submit &amp; Confirm My Seat</span>
                     <ArrowRight className="btn-cta-arrow size-5" aria-hidden="true" />
                   </>
                 )}
