@@ -708,11 +708,11 @@ export const Route = createFileRoute("/oto")({
   },
   head: () => ({
     meta: [
-      { title: "One-Time Offer — 1-on-1 Personalized Strategy Session" },
+      { title: "One-Time Offer — 1-on-1 Parenting Session With Miss Samra" },
       {
         name: "description",
         content:
-          "Upgrade your Clinic Growth Masterclass order with a 1-on-1 personalized digital marketing strategy session for your clinic.",
+          "Upgrade your Confident Parent Academy webinar with a private 1-on-1 parenting counselling session with Miss Samra Riaz.",
       },
       { name: "robots", content: "noindex,nofollow" },
     ],
