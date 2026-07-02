@@ -31,12 +31,14 @@ export function MasterclassCountdown({
   className = "",
 }: Props) {
   const target = new Date(MASTERCLASS_DATE_ISO).getTime();
-  const [t, setT] = useState(() => getTimeLeft(target));
+  const [t, setT] = useState(ZERO);
 
   useEffect(() => {
+    setT(getTimeLeft(target));
     const id = setInterval(() => setT(getTimeLeft(target)), 1000);
     return () => clearInterval(id);
   }, [target]);
+
 
   const isDark = variant === "dark";
   const wrap = isDark
