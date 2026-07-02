@@ -1,5 +1,5 @@
 // Meta (Facebook) Pixel helper for Confident Parent Academy.
-export const FB_PIXEL_ID = "1851147519177135";
+export const FB_PIXEL_ID = "1648842249512123";
 
 type Fbq = ((...args: unknown[]) => void) & { queue?: unknown[] };
 
