@@ -206,6 +206,13 @@ function InlineLeadForm() {
           console.error("Failed to save lead", err);
         }
 
+        try {
+          const { trackPixel } = await import("@/lib/fbpixel");
+          trackPixel("Lead", { content_name: "Webinar Registration", value: 499, currency: "PKR" });
+        } catch (err) {
+          console.error("Pixel Lead event failed", err);
+        }
+
         const params = new URLSearchParams();
         params.set("full_name", fullName);
         params.set("email", emailNorm);
