@@ -7,6 +7,8 @@ export const MASTERCLASS_DATE_ISO = "2026-07-11T10:00:00Z";
 export const MASTERCLASS_DATE_LABEL =
   "Live Webinar: 11th July at 3:00 PM – 4:30 PM Pakistan Standard Time (on Google Meet)";
 
+const ZERO = { days: 0, hours: 0, minutes: 0, seconds: 0, done: false };
+
 function getTimeLeft(target: number) {
   const diff = Math.max(0, target - Date.now());
   const days = Math.floor(diff / 86_400_000);
@@ -15,6 +17,7 @@ function getTimeLeft(target: number) {
   const seconds = Math.floor((diff % 60_000) / 1000);
   return { days, hours, minutes, seconds, done: diff === 0 };
 }
+
 
 type Props = {
   variant?: "dark" | "light";
@@ -28,12 +31,14 @@ export function MasterclassCountdown({
   className = "",
 }: Props) {
   const target = new Date(MASTERCLASS_DATE_ISO).getTime();
-  const [t, setT] = useState(() => getTimeLeft(target));
+  const [t, setT] = useState(ZERO);
 
   useEffect(() => {
+    setT(getTimeLeft(target));
     const id = setInterval(() => setT(getTimeLeft(target)), 1000);
     return () => clearInterval(id);
   }, [target]);
+
 
   const isDark = variant === "dark";
   const wrap = isDark
