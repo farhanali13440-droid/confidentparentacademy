@@ -77,7 +77,7 @@ function Hero() {
           <div className="inline-flex items-center gap-2 rounded-full border border-blush/40 bg-white/70 backdrop-blur-md px-4 py-1.5 shadow-sm">
             <BadgeCheck className="size-4 text-accent shrink-0" />
             <span className="text-[11px] sm:text-sm font-semibold text-foreground/90 text-center leading-snug">
-              A calm, science-backed parenting webinar for Pakistani families
+              A live parenting webinar for busy Pakistani parents
             </span>
           </div>
         </div>
@@ -86,13 +86,13 @@ function Hero() {
           {/* 1. Headline + subheadline — always first so the promise leads on mobile */}
           <div className="text-center md:text-left md:col-start-1 md:row-start-1">
             <h1 className="text-[26px] leading-tight sm:text-4xl md:text-[42px] md:leading-[1.1] font-semibold whitespace-pre-line" style={{ fontFamily: "var(--font-display)" }}>
-              {"How to Create a\nPeaceful Home & Raise\u00A0\na "}
-              <span className="gradient-highlight-pink">Well-Behaved Child</span> Without Being a Perfect Parent
+              {"Tired of the Crying,\nShouting and Daily\u00A0\nFights at Home? "}
+              <span className="gradient-highlight-pink">Bring Back the Calm</span> With Your Child
             </h1>
             <p className="mt-4 md:mt-5 text-sm md:text-lg text-foreground/75 leading-relaxed">
-              Learn practical, science-backed parenting strategies that help you understand your
-              child's behaviour, reduce daily struggles, and build a stronger relationship —
-              without shouting, guilt, or becoming a perfect parent.
+              In this live webinar you will finally understand why your child cries, shouts and
+              doesn't listen, and get simple things you can do the same day to make your home
+              calmer. No shouting. No guilt. No need to be a perfect parent.
             </p>
           </div>
 
