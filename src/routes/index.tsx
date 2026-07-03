@@ -707,8 +707,8 @@ function BonusesSection() {
       <div className="mx-auto max-w-6xl px-4">
         <SectionHeading
           eyebrow="Included free"
-          title="Premium Bonuses You Get With Your Ticket"
-          subtitle="Practical, ready-to-use resources designed to make peaceful parenting easier — yours free with registration."
+          title="Free Bonuses That Make Parenting Easier"
+          subtitle="Ready-to-use tools that help you handle hard days more calmly. All free when you register."
         />
 
         {/* Featured bonus — highest perceived value */}
@@ -719,7 +719,7 @@ function BonusesSection() {
             alt="Parenting Behaviour Toolkit — worksheets, trackers, charts and templates to understand and support your child"
             label="Exclusive Bonus"
             title="Parenting Behaviour Toolkit"
-            desc="A complete set of practical tools — behaviour trackers, routine charts, reward charts and calm-down strategies — to understand, guide and support your child every day."
+            desc="A ready-to-use set of tools, behaviour trackers, routine charts, reward charts and calm-down cards, that help you handle difficult behaviour more calmly and confidently every day."
           />
         </div>
 
@@ -730,7 +730,7 @@ function BonusesSection() {
             alt="Printable parenting worksheets — emotions check-in, daily routine planner, behaviour tracker and good-choices chart"
             label="Bonus — Printables"
             title="Printable Parenting Worksheets"
-            desc="Ready-to-print tools for everyday parenting support: emotion check-ins, routine planners, calm-down cards and behaviour trackers your child will love."
+            desc="Print them at home and use them right away. Emotion check-ins, routine planners and calm-down cards that help your child settle down and follow the day."
           />
         </div>
 
@@ -741,14 +741,14 @@ function BonusesSection() {
             alt="Webinar recording on a laptop — rewatch the full session anytime"
             label="Bonus — Lifetime Recording"
             title="Webinar Recording"
-            desc="Missed the live session? No problem. Get lifetime access to the full recording and rewatch anytime, on any device."
+            desc="Missed the live session, or want to watch it again? Keep the full recording for life and rewatch it anytime, on any device."
           />
           <BonusCard
             img={bonusLiveQa.url}
             alt="Live Q&A session with Miss Samra Riaz on Google Meet"
             label="Bonus — Live Q&A"
             title="Live Q&A Session"
-            desc="Ask your personal parenting questions directly to Miss Samra Riaz and get expert guidance in real time."
+            desc="Ask Miss Samra Riaz about your own child and get a clear answer live, so you leave knowing exactly what to do."
           />
         </div>
 
@@ -759,7 +759,7 @@ function BonusesSection() {
             alt="Peaceful Parenting Guide PDF — a complete guide with practical strategies and real-life examples"
             label="Bonus — PDF Guide"
             title="Peaceful Parenting Guide (PDF)"
-            desc="A calm, practical reference packed with step-by-step strategies, expert tips and real-life examples you can return to again and again."
+            desc="A simple guide full of step-by-step tips and real-life examples you can come back to whenever a hard day shows up."
           />
         </div>
       </div>
