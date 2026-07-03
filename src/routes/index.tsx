@@ -344,19 +344,19 @@ function ProblemSection() {
 
 function SolutionSection() {
   const points = [
-    { icon: HandHeart, title: "Connection before correction", desc: "Discipline works only after your child feels understood and safe." },
-    { icon: Baby, title: "Developmental milestones", desc: "Know what's normal at each age so you stop expecting too much too soon." },
-    { icon: Brain, title: "Behaviour functions", desc: "Every behaviour has a reason. Learn to read the need behind the action." },
-    { icon: Home, title: "Parenting styles", desc: "Discover the balanced style that raises calm, confident children." },
-    { icon: Sparkles, title: "Practical psychology", desc: "Simple, science-backed tools you can use at home the very same day." },
+    { icon: HandHeart, title: "Your child listens when they feel understood", desc: "Once your child feels safe and heard, they stop fighting you and start listening. Correction comes after connection." },
+    { icon: Baby, title: "Know what's normal for their age", desc: "Learn what is normal at your child's age so you stop worrying and stop expecting too much too soon." },
+    { icon: Brain, title: "See the real reason behind the behaviour", desc: "Every time your child acts out, they are trying to tell you something. Learn to read what they really need." },
+    { icon: Home, title: "Small changes that stop daily arguments", desc: "A few simple changes in how you respond can turn shouting matches into calm conversations." },
+    { icon: Sparkles, title: "Simple tools you can use the same day", desc: "Easy things you can start using at home today, no psychology background needed." },
   ];
   return (
     <section className="py-14 md:py-20 bg-secondary">
       <div className="mx-auto max-w-5xl px-4">
         <SectionHeading
           eyebrow="The real shift"
-          title="Parents Don't Need More Hacks — They Need to Understand Behaviour"
-          subtitle="Once you understand WHY your child behaves the way they do, everything becomes calmer, clearer, and far less exhausting."
+          title="You Don't Need More Parenting Tips. You Need to Understand Your Child."
+          subtitle="Once you understand why your child behaves the way they do, the daily fights start to fade and your home feels calmer."
         />
         <div className="mt-10 grid md:grid-cols-2 lg:grid-cols-3 gap-5">
           {points.map(({ icon: Icon, title, desc }) => (
