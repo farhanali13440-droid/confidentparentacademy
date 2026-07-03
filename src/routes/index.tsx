@@ -19,6 +19,8 @@ import bonusLiveQa from "@/assets/cpa-bonus-live-qa.png.asset.json";
 import completeToolkit from "@/assets/cpa-complete-toolkit.png.asset.json";
 import beforeAfter from "@/assets/cpa-before-after.png.asset.json";
 import everythingYouGet from "@/assets/cpa-everything-you-get.png.asset.json";
+import testimonialMotherhood from "@/assets/testimonial-motherhood.jpeg.asset.json";
+import testimonialParenting from "@/assets/testimonial-parenting.jpeg.asset.json";
 
 export const Route = createFileRoute("/")({
   head: () => ({
