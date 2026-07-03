@@ -641,7 +641,7 @@ function PricingSection() {
             Book now while the price is low. After this group, the price goes back up to 2,000 PKR.
           </p>
           <div className="mt-7 max-w-sm mx-auto">
-            <CtaButton subtitle="Live on 11 July · Recording included">Reserve My Seat — 499 PKR</CtaButton>
+            <CtaButton subtitle="Live on 11 July · Recording included">Reserve My Seat for 499 PKR</CtaButton>
           </div>
           <div className="mt-4 flex items-center justify-center gap-2 text-xs text-muted-foreground">
             <Lock className="size-3.5" /> Secure checkout
@@ -728,7 +728,7 @@ function BonusesSection() {
           <BonusCard
             img={bonusWorksheets.url}
             alt="Printable parenting worksheets — emotions check-in, daily routine planner, behaviour tracker and good-choices chart"
-            label="Bonus — Printables"
+            label="Bonus: Printables"
             title="Printable Parenting Worksheets"
             desc="Print them at home and use them right away. Emotion check-ins, routine planners and calm-down cards that help your child settle down and follow the day."
           />
@@ -739,14 +739,14 @@ function BonusesSection() {
           <BonusCard
             img={bonusRecording.url}
             alt="Webinar recording on a laptop — rewatch the full session anytime"
-            label="Bonus — Lifetime Recording"
+            label="Bonus: Lifetime Recording"
             title="Webinar Recording"
             desc="Missed the live session, or want to watch it again? Keep the full recording for life and rewatch it anytime, on any device."
           />
           <BonusCard
             img={bonusLiveQa.url}
             alt="Live Q&A session with Miss Samra Riaz on Google Meet"
-            label="Bonus — Live Q&A"
+            label="Bonus: Live Q&A"
             title="Live Q&A Session"
             desc="Ask Miss Samra Riaz about your own child and get a clear answer live, so you leave knowing exactly what to do."
           />
@@ -757,7 +757,7 @@ function BonusesSection() {
           <BonusCard
             img={bonusPdfGuide.url}
             alt="Peaceful Parenting Guide PDF — a complete guide with practical strategies and real-life examples"
-            label="Bonus — PDF Guide"
+            label="Bonus: PDF Guide"
             title="Peaceful Parenting Guide (PDF)"
             desc="A simple guide full of step-by-step tips and real-life examples you can come back to whenever a hard day shows up."
           />
