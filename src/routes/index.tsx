@@ -839,11 +839,11 @@ function FinalCta() {
     <section className="hero-bg text-foreground py-16 md:py-24">
       <div className="mx-auto max-w-3xl px-4 text-center">
         <h2 className="text-2xl md:text-4xl font-semibold" style={{ fontFamily: "var(--font-display)" }}>
-          A Calmer Home Starts With One Evening
+          A Calmer Home Can Start This Week
         </h2>
         <p className="mt-4 text-foreground/75 max-w-xl mx-auto">
-          Join Miss Samra Riaz live on 11 July and learn how to raise a well-behaved child — without
-          guilt, shouting, or being a perfect parent.
+          Join Miss Samra Riaz live on 11 July and learn simple ways to end the daily fights and
+          enjoy your child again. No guilt, no shouting, no need to be perfect.
         </p>
         <div className="mt-6 max-w-sm mx-auto">
           <MasterclassCountdown variant="light" showDateLine={false} className="mb-5" />
