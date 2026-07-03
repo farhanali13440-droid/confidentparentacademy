@@ -146,6 +146,7 @@ function Hero() {
         </div>
 
         <div className="mt-6 max-w-md mx-auto" id="hero-optin">
+          <AttendeeTestimonials />
           <InlineLeadForm />
         </div>
       </div>
