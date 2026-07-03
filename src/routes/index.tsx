@@ -411,8 +411,8 @@ function TransformationSection() {
       <div className="mx-auto max-w-6xl px-4">
         <SectionHeading
           eyebrow="Before vs after"
-          title="Imagine The Difference Just A Few Parenting Changes Can Make"
-          subtitle="Small changes today create a lifetime of calmer, more connected days at home."
+          title="Picture Your Home After Just A Few Small Changes"
+          subtitle="A few small changes today can turn stressful, noisy days into calm, happy ones at home."
         />
         <div className="mt-10 md:mt-12 mx-auto max-w-5xl">
           <div className="rounded-3xl overflow-hidden shadow-2xl ring-1 ring-blush/30 bg-white">
