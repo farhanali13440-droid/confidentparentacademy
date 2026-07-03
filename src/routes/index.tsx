@@ -156,6 +156,30 @@ function Hero() {
 
 /* ---------------- LEAD FORM (functionally unchanged) ---------------- */
 
+function AttendeeTestimonials() {
+  const shots = [
+    { src: testimonialMotherhood.url, alt: "Parent review: your guidance replaced fear with confidence and understanding" },
+    { src: testimonialParenting.url, alt: "Parent review: your practical pointers helped with everyday parenting challenges" },
+  ];
+  return (
+    <div className="mb-6">
+      <h3 className="text-center text-base sm:text-lg font-bold text-warm-brown" style={{ fontFamily: "var(--font-display)" }}>
+        Parents Loved This Webinar
+      </h3>
+      <p className="text-center text-xs text-muted-foreground mt-1 mb-3">
+        Here's what previous attendees had to say
+      </p>
+      <div className="grid grid-cols-1 gap-3">
+        {shots.map((s) => (
+          <div key={s.src} className="rounded-2xl overflow-hidden shadow-lg ring-1 ring-blush/30 bg-white">
+            <img src={s.src} alt={s.alt} loading="lazy" className="w-full h-auto" />
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
+
 function InlineLeadForm() {
   const navigate = useNavigate();
   const [name, setName] = useState("");
