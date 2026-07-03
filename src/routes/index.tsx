@@ -496,8 +496,8 @@ function AboutSamra() {
           </h2>
           <p className="mt-3 text-muted-foreground leading-relaxed">
             Samra is a clinical psychologist and parent counsellor who helps families build calmer,
-            warmer homes. Her approach blends practical psychology with genuine empathy — no jargon,
-            no judgement, just tools that work in real Pakistani homes.
+            warmer homes. She speaks to you like a friend, not like a textbook. No hard words, no
+            judgement, just simple advice that works in real Pakistani homes.
           </p>
           <div className="mt-5 grid sm:grid-cols-2 gap-2.5">
             {creds.map((c) => (
