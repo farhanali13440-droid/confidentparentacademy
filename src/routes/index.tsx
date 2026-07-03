@@ -23,10 +23,10 @@ import everythingYouGet from "@/assets/cpa-everything-you-get.png.asset.json";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Confident Parent Academy — Raise a Well-Behaved Child Without Being Perfect" },
-      { name: "description", content: "A calm, science-backed parenting webinar by clinical psychologist Miss Samra Riaz. Understand your child's behaviour, reduce daily struggles, and build a peaceful home — for just 499 PKR." },
-      { property: "og:title", content: "Confident Parent Academy — Parenting Webinar with Miss Samra Riaz" },
-      { property: "og:description", content: "Learn practical, science-backed parenting strategies to understand your child's behaviour and build a peaceful home. Live on 11 July · Google Meet." },
+      { title: "Confident Parent Academy | Stop the Daily Fights and Enjoy Your Child Again" },
+      { name: "description", content: "A live parenting webinar with Miss Samra Riaz. Understand why your child cries, shouts and doesn't listen, and learn simple ways to calm your home. Only 499 PKR." },
+      { property: "og:title", content: "Confident Parent Academy | Parenting Webinar with Miss Samra Riaz" },
+      { property: "og:description", content: "Understand why your child behaves this way and learn simple ways to bring calm back to your home. Live on 11 July on Google Meet." },
       { property: "og:type", content: "website" },
       { property: "og:url", content: "/" },
     ],
@@ -77,7 +77,7 @@ function Hero() {
           <div className="inline-flex items-center gap-2 rounded-full border border-blush/40 bg-white/70 backdrop-blur-md px-4 py-1.5 shadow-sm">
             <BadgeCheck className="size-4 text-accent shrink-0" />
             <span className="text-[11px] sm:text-sm font-semibold text-foreground/90 text-center leading-snug">
-              A calm, science-backed parenting webinar for Pakistani families
+              A live parenting webinar for busy Pakistani parents
             </span>
           </div>
         </div>
@@ -86,13 +86,13 @@ function Hero() {
           {/* 1. Headline + subheadline — always first so the promise leads on mobile */}
           <div className="text-center md:text-left md:col-start-1 md:row-start-1">
             <h1 className="text-[26px] leading-tight sm:text-4xl md:text-[42px] md:leading-[1.1] font-semibold whitespace-pre-line" style={{ fontFamily: "var(--font-display)" }}>
-              {"How to Create a\nPeaceful Home & Raise\u00A0\na "}
-              <span className="gradient-highlight-pink">Well-Behaved Child</span> Without Being a Perfect Parent
+              {"Tired of the Crying,\nShouting and Daily\u00A0\nFights at Home? "}
+              <span className="gradient-highlight-pink">Bring Back the Calm</span> With Your Child
             </h1>
             <p className="mt-4 md:mt-5 text-sm md:text-lg text-foreground/75 leading-relaxed">
-              Learn practical, science-backed parenting strategies that help you understand your
-              child's behaviour, reduce daily struggles, and build a stronger relationship —
-              without shouting, guilt, or becoming a perfect parent.
+              In this live webinar you will finally understand why your child cries, shouts and
+              doesn't listen, and get simple things you can do the same day to make your home
+              calmer. No shouting. No guilt. No need to be a perfect parent.
             </p>
           </div>
 
@@ -223,7 +223,7 @@ function InlineLeadForm() {
     >
       <div className="text-center">
         <div className="text-lg font-semibold" style={{ fontFamily: "var(--font-display)" }}>Reserve Your Seat</div>
-        <p className="text-xs text-muted-foreground mt-1">Just 499 PKR · Limited seats for the live session</p>
+        <p className="text-xs text-muted-foreground mt-1">Just 499 PKR. Limited seats for the live session.</p>
       </div>
       <input
         required
@@ -306,28 +306,34 @@ function TrustBar() {
 
 function ProblemSection() {
   const problems = [
-    "Children don't listen", "Always saying NO", "Tantrums & meltdowns",
-    "Screen addiction", "Sleep issues", "Mess everywhere",
-    "Not studying", "Always demanding attention", "Sibling fights",
-    "Emotional outbursts", "Parents feeling guilty", "Endless daily battles",
+    "No matter how many times you explain, your child acts like they didn't even hear you.",
+    "Every small thing turns into crying, shouting or a tantrum.",
+    "The moment you take the mobile away, your child starts crying or gets angry.",
+    "Bedtime becomes a nightly fight and nobody sleeps on time.",
+    "You ask them to study, but it ends in tears or arguments.",
+    "The house is a mess and you feel like you're repeating yourself all day.",
+    "The kids fight with each other and you're stuck in the middle.",
+    "Your child gets upset over things you can't even understand.",
+    "You end the day feeling guilty for losing your temper again.",
+    "It feels like the same battles happen over and over, every single day.",
   ];
   return (
     <section className="py-14 md:py-20 bg-background">
       <div className="mx-auto max-w-5xl px-4">
-        <SectionHeading eyebrow="Sound familiar?" title="Do Any Of These Sound Familiar?" />
+        <SectionHeading eyebrow="Sound familiar?" title="Does This Sound Like Your Home?" />
         <div className="mt-8 grid sm:grid-cols-2 lg:grid-cols-3 gap-3">
           {problems.map((p) => (
-            <div key={p} className="flex items-center gap-3 rounded-2xl bg-card border border-border px-4 py-3.5 shadow-sm">
+            <div key={p} className="flex items-start gap-3 rounded-2xl bg-card border border-border px-4 py-3.5 shadow-sm">
               <span className="grid place-items-center size-8 rounded-full shrink-0" style={{ backgroundColor: "var(--soft-pink)" }}>
                 <Baby className="size-4 text-destructive" />
               </span>
-              <span className="text-sm font-medium text-foreground">{p}</span>
+              <span className="text-sm font-medium text-foreground leading-snug">{p}</span>
             </div>
           ))}
         </div>
         <p className="mt-8 text-center text-base md:text-lg text-muted-foreground max-w-2xl mx-auto">
-          If you nodded along to even a few of these, you're not failing as a parent — you simply
-          haven't been shown <span className="font-semibold text-foreground">why</span> these behaviours happen.
+          If even a few of these felt like your home, you are not a bad parent. Nobody has ever
+          shown you <span className="font-semibold text-foreground">why</span> your child does these things, or what to do next.
         </p>
       </div>
     </section>
@@ -338,19 +344,19 @@ function ProblemSection() {
 
 function SolutionSection() {
   const points = [
-    { icon: HandHeart, title: "Connection before correction", desc: "Discipline works only after your child feels understood and safe." },
-    { icon: Baby, title: "Developmental milestones", desc: "Know what's normal at each age so you stop expecting too much too soon." },
-    { icon: Brain, title: "Behaviour functions", desc: "Every behaviour has a reason. Learn to read the need behind the action." },
-    { icon: Home, title: "Parenting styles", desc: "Discover the balanced style that raises calm, confident children." },
-    { icon: Sparkles, title: "Practical psychology", desc: "Simple, science-backed tools you can use at home the very same day." },
+    { icon: HandHeart, title: "Your child listens when they feel understood", desc: "Once your child feels safe and heard, they stop fighting you and start listening. Correction comes after connection." },
+    { icon: Baby, title: "Know what's normal for their age", desc: "Learn what is normal at your child's age so you stop worrying and stop expecting too much too soon." },
+    { icon: Brain, title: "See the real reason behind the behaviour", desc: "Every time your child acts out, they are trying to tell you something. Learn to read what they really need." },
+    { icon: Home, title: "Small changes that stop daily arguments", desc: "A few simple changes in how you respond can turn shouting matches into calm conversations." },
+    { icon: Sparkles, title: "Simple tools you can use the same day", desc: "Easy things you can start using at home today, no psychology background needed." },
   ];
   return (
     <section className="py-14 md:py-20 bg-secondary">
       <div className="mx-auto max-w-5xl px-4">
         <SectionHeading
           eyebrow="The real shift"
-          title="Parents Don't Need More Hacks — They Need to Understand Behaviour"
-          subtitle="Once you understand WHY your child behaves the way they do, everything becomes calmer, clearer, and far less exhausting."
+          title="You Don't Need More Parenting Tips. You Need to Understand Your Child."
+          subtitle="Once you understand why your child behaves the way they do, the daily fights start to fade and your home feels calmer."
         />
         <div className="mt-10 grid md:grid-cols-2 lg:grid-cols-3 gap-5">
           {points.map(({ icon: Icon, title, desc }) => (
@@ -372,18 +378,18 @@ function SolutionSection() {
 
 function BenefitsSection() {
   const benefits = [
-    "Understand why children behave the way they do",
-    "Respond calmly instead of reacting",
-    "Reduce shouting and daily conflict",
-    "Build trust and a deeper connection",
-    "Improve communication with your child",
-    "Handle difficult situations confidently",
-    "Raise emotionally healthy children",
+    "Instead of shouting every day, you'll know exactly why your child is behaving that way and what to do next.",
+    "You'll stay calm in the moments that used to make you lose your temper.",
+    "The crying, arguing and daily fights will start to settle down.",
+    "Your child will trust you more and open up to you.",
+    "You'll be able to talk to your child in a way they actually listen to.",
+    "You'll feel confident handling tantrums and tough moments in public and at home.",
+    "Your child will feel happier, calmer and more secure at home.",
   ];
   return (
     <section className="py-14 md:py-20 bg-background">
       <div className="mx-auto max-w-5xl px-4">
-        <SectionHeading eyebrow="What you'll gain" title="By The End Of This Webinar, You Will Be Able To…" />
+        <SectionHeading eyebrow="What changes for you" title="Here's What Your Days Will Feel Like After This Webinar" />
         <div className="mt-8 grid sm:grid-cols-2 gap-4">
           {benefits.map((b) => (
             <div key={b} className="flex items-start gap-3 rounded-2xl bg-card border border-border p-5 shadow-sm">
@@ -405,8 +411,8 @@ function TransformationSection() {
       <div className="mx-auto max-w-6xl px-4">
         <SectionHeading
           eyebrow="Before vs after"
-          title="Imagine The Difference Just A Few Parenting Changes Can Make"
-          subtitle="Small changes today create a lifetime of calmer, more connected days at home."
+          title="Picture Your Home After Just A Few Small Changes"
+          subtitle="A few small changes today can turn stressful, noisy days into calm, happy ones at home."
         />
         <div className="mt-10 md:mt-12 mx-auto max-w-5xl">
           <div className="rounded-3xl overflow-hidden shadow-2xl ring-1 ring-blush/30 bg-white">
@@ -427,28 +433,28 @@ function TransformationSection() {
 
 function CurriculumSection() {
   const modules = [
-    "Why Parenting Advice Doesn't Work",
-    "Developmental Milestones",
-    "Connection Before Correction",
-    "Parenting Styles",
-    "Behaviour Functions",
-    "The Role of Toys",
-    "Activities That Improve Development",
-    "The Parenting Toolkit",
-    "Common Parenting Mistakes",
-    "Easy Behaviour Fixes",
+    "Why the parenting advice everyone gives you doesn't actually work.",
+    "What is normal behaviour at your child's age, and what isn't.",
+    "Why your child listens more when they feel close to you first.",
+    "Simple changes in your parenting that can reduce daily arguments.",
+    "Why your child behaves this way, and what they're really trying to tell you.",
+    "How the right toys and play can calm your child and help them learn.",
+    "Easy play activities that improve your child's behaviour and development.",
+    "Ready-to-use tools that help you handle tough behaviour calmly and confidently.",
+    "The common mistakes that quietly make behaviour worse, and how to avoid them.",
+    "Quick, practical fixes you can try at home the same day.",
   ];
   return (
     <section id="curriculum" className="py-14 md:py-20 bg-secondary scroll-mt-16">
       <div className="mx-auto max-w-5xl px-4">
-        <SectionHeading eyebrow="Inside the webinar" title="What You'll Learn — 10 Practical Modules" />
+        <SectionHeading eyebrow="Inside the webinar" title="What You'll Learn (10 Simple, Real-Life Topics)" />
         <div className="mt-8 grid sm:grid-cols-2 gap-4">
           {modules.map((m, i) => (
             <div key={m} className="flex items-center gap-4 rounded-2xl bg-card border border-border p-5 shadow-sm">
               <span className="grid place-items-center size-10 rounded-full bg-accent text-warm-brown-deep font-semibold shrink-0" style={{ fontFamily: "var(--font-display)" }}>
                 {String(i + 1).padStart(2, "0")}
               </span>
-              <span className="text-sm md:text-base font-semibold">{m}</span>
+              <span className="text-sm md:text-base font-medium leading-snug">{m}</span>
             </div>
           ))}
         </div>
@@ -490,8 +496,8 @@ function AboutSamra() {
           </h2>
           <p className="mt-3 text-muted-foreground leading-relaxed">
             Samra is a clinical psychologist and parent counsellor who helps families build calmer,
-            warmer homes. Her approach blends practical psychology with genuine empathy — no jargon,
-            no judgement, just tools that work in real Pakistani homes.
+            warmer homes. She speaks to you like a friend, not like a textbook. No hard words, no
+            judgement, just simple advice that works in real Pakistani homes.
           </p>
           <div className="mt-5 grid sm:grid-cols-2 gap-2.5">
             {creds.map((c) => (
@@ -530,14 +536,14 @@ function StorySection() {
           </h2>
           <div className="mt-5 space-y-4 text-muted-foreground leading-relaxed text-center md:text-left">
             <p>
-              My journey into parenting psychology began close to home. Growing up with three
-              autistic cousins, I saw how much families struggle when they don't have the right
-              understanding or support — and how much lighter everything becomes when they do.
+              My work with families started close to home. Growing up with three autistic cousins,
+              I saw how hard it is for parents when nobody explains what is really going on with
+              their child. And I saw how much easier life becomes once they finally understand.
             </p>
             <p>
-              That experience gave me one mission: to help parents <span className="font-semibold text-foreground">before</span> small
-              struggles grow into severe problems. Every child deserves to be understood, and every
-              parent deserves to feel confident, calm, and connected.
+              That gave me one mission: to help parents <span className="font-semibold text-foreground">before</span> small
+              struggles grow into big problems. Every child deserves to be understood, and every
+              parent deserves to feel calm, confident and close to their child.
             </p>
           </div>
         </div>
@@ -550,16 +556,16 @@ function StorySection() {
 
 function IncludesSection() {
   const items = [
-    { icon: Video, title: "Live Session", desc: "90 minutes live with Miss Samra on Google Meet." },
-    { icon: Star, title: "Recording", desc: "Can't attend live? Watch the full recording anytime." },
-    { icon: MessageCircle, title: "Live Q&A", desc: "Ask your real parenting questions and get answers." },
-    { icon: FileText, title: "PDF Parenting Guide", desc: "A practical takeaway guide (coming soon)." },
-    { icon: Award, title: "Certificate", desc: "Certificate of attendance (optional)." },
+    { icon: Video, title: "90-Minute Live Session", desc: "Spend 90 minutes live with Miss Samra on Google Meet." },
+    { icon: Star, title: "Full Recording", desc: "Can't make it live? Watch the whole session later, anytime." },
+    { icon: MessageCircle, title: "Live Q&A", desc: "Ask about your own child and get real answers on the spot." },
+    { icon: FileText, title: "PDF Parenting Guide", desc: "A simple guide you can keep and come back to whenever you need it." },
+    { icon: Award, title: "Certificate", desc: "Get a certificate of attendance if you'd like one." },
   ];
   return (
     <section className="py-14 md:py-20 bg-background">
       <div className="mx-auto max-w-5xl px-4">
-        <SectionHeading eyebrow="Everything included" title="What The Webinar Includes" />
+        <SectionHeading eyebrow="Everything included" title="Here's Everything You Get" />
         <div className="mt-8 mx-auto max-w-4xl">
           <div className="rounded-3xl overflow-hidden shadow-xl ring-1 ring-blush/30 bg-white">
             <img
@@ -594,8 +600,8 @@ function EverythingYouReceiveSection() {
       <div className="mx-auto max-w-6xl px-4">
         <SectionHeading
           eyebrow="The full package"
-          title="Everything You'll Receive Inside This Webinar"
-          subtitle="Your registration gives you much more than just a live session."
+          title="You Get So Much More Than One Live Session"
+          subtitle="Your 499 PKR gives you the live session plus tools you'll use with your child for years."
         />
         <div className="mt-10 md:mt-12 mx-auto max-w-5xl">
           <div className="rounded-3xl overflow-hidden shadow-2xl ring-1 ring-blush/30 bg-white">
@@ -632,10 +638,10 @@ function PricingSection() {
             You save 1,501 PKR today
           </div>
           <p className="mt-5 text-muted-foreground">
-            Enrol now while the introductory price lasts. The price rises to 2,000 PKR after this cohort.
+            Book now while the price is low. After this group, the price goes back up to 2,000 PKR.
           </p>
           <div className="mt-7 max-w-sm mx-auto">
-            <CtaButton subtitle="Live on 11 July · Recording included">Reserve My Seat — 499 PKR</CtaButton>
+            <CtaButton subtitle="Live on 11 July · Recording included">Reserve My Seat for 499 PKR</CtaButton>
           </div>
           <div className="mt-4 flex items-center justify-center gap-2 text-xs text-muted-foreground">
             <Lock className="size-3.5" /> Secure checkout
@@ -701,8 +707,8 @@ function BonusesSection() {
       <div className="mx-auto max-w-6xl px-4">
         <SectionHeading
           eyebrow="Included free"
-          title="Premium Bonuses You Get With Your Ticket"
-          subtitle="Practical, ready-to-use resources designed to make peaceful parenting easier — yours free with registration."
+          title="Free Bonuses That Make Parenting Easier"
+          subtitle="Ready-to-use tools that help you handle hard days more calmly. All free when you register."
         />
 
         {/* Featured bonus — highest perceived value */}
@@ -713,7 +719,7 @@ function BonusesSection() {
             alt="Parenting Behaviour Toolkit — worksheets, trackers, charts and templates to understand and support your child"
             label="Exclusive Bonus"
             title="Parenting Behaviour Toolkit"
-            desc="A complete set of practical tools — behaviour trackers, routine charts, reward charts and calm-down strategies — to understand, guide and support your child every day."
+            desc="A ready-to-use set of tools, behaviour trackers, routine charts, reward charts and calm-down cards, that help you handle difficult behaviour more calmly and confidently every day."
           />
         </div>
 
@@ -722,9 +728,9 @@ function BonusesSection() {
           <BonusCard
             img={bonusWorksheets.url}
             alt="Printable parenting worksheets — emotions check-in, daily routine planner, behaviour tracker and good-choices chart"
-            label="Bonus — Printables"
+            label="Bonus: Printables"
             title="Printable Parenting Worksheets"
-            desc="Ready-to-print tools for everyday parenting support: emotion check-ins, routine planners, calm-down cards and behaviour trackers your child will love."
+            desc="Print them at home and use them right away. Emotion check-ins, routine planners and calm-down cards that help your child settle down and follow the day."
           />
         </div>
 
@@ -733,16 +739,16 @@ function BonusesSection() {
           <BonusCard
             img={bonusRecording.url}
             alt="Webinar recording on a laptop — rewatch the full session anytime"
-            label="Bonus — Lifetime Recording"
+            label="Bonus: Lifetime Recording"
             title="Webinar Recording"
-            desc="Missed the live session? No problem. Get lifetime access to the full recording and rewatch anytime, on any device."
+            desc="Missed the live session, or want to watch it again? Keep the full recording for life and rewatch it anytime, on any device."
           />
           <BonusCard
             img={bonusLiveQa.url}
             alt="Live Q&A session with Miss Samra Riaz on Google Meet"
-            label="Bonus — Live Q&A"
+            label="Bonus: Live Q&A"
             title="Live Q&A Session"
-            desc="Ask your personal parenting questions directly to Miss Samra Riaz and get expert guidance in real time."
+            desc="Ask Miss Samra Riaz about your own child and get a clear answer live, so you leave knowing exactly what to do."
           />
         </div>
 
@@ -751,9 +757,9 @@ function BonusesSection() {
           <BonusCard
             img={bonusPdfGuide.url}
             alt="Peaceful Parenting Guide PDF — a complete guide with practical strategies and real-life examples"
-            label="Bonus — PDF Guide"
+            label="Bonus: PDF Guide"
             title="Peaceful Parenting Guide (PDF)"
-            desc="A calm, practical reference packed with step-by-step strategies, expert tips and real-life examples you can return to again and again."
+            desc="A simple guide full of step-by-step tips and real-life examples you can come back to whenever a hard day shows up."
           />
         </div>
       </div>
@@ -765,14 +771,14 @@ function BonusesSection() {
 
 function TestimonialsSection() {
   const reviews = [
-    { name: "A. Fatima", role: "Mother of two", text: "For the first time I understood WHY my son was acting out. The shouting has almost stopped at home." },
-    { name: "M. Bilal", role: "Father", text: "As a dad I wasn't sure this was for me. It completely changed how I connect with my daughter." },
-    { name: "S. Ayesha", role: "Mother", text: "Calm, warm and practical. I used the tools the very same evening and saw a difference." },
+    { name: "A. Fatima", role: "Mother of two", text: "For the first time I understood why my son was acting out. The shouting has almost stopped at home." },
+    { name: "M. Bilal", role: "Father", text: "As a dad I wasn't sure this was for me. It completely changed how I talk to my daughter." },
+    { name: "S. Ayesha", role: "Mother", text: "Warm and easy to follow. I tried the tools the same evening and saw a difference." },
   ];
   return (
     <section className="py-14 md:py-20 bg-secondary">
       <div className="mx-auto max-w-5xl px-4">
-        <SectionHeading eyebrow="Parent stories" title="What Parents Are Saying" />
+        <SectionHeading eyebrow="Parent stories" title="Parents Just Like You" />
         <div className="mt-8 grid md:grid-cols-3 gap-5">
           {reviews.map((r) => (
             <div key={r.name} className="rounded-3xl bg-card border border-border p-6 shadow-sm">
@@ -799,9 +805,9 @@ function TestimonialsSection() {
 
 function FAQSection() {
   const faqs = [
-    { q: "Who should attend this webinar?", a: "Any parent who wants a calmer home and a better understanding of their child's behaviour — whether your child is a toddler, school-aged, or older." },
+    { q: "Who should attend this webinar?", a: "Any parent who wants a calmer home and wants to understand their child better, whether your child is a toddler, school-aged or older." },
     { q: "Can fathers attend?", a: "Absolutely. Fathers play a vital role, and this webinar is designed for both mothers and fathers." },
-    { q: "Can both parents join?", a: "Yes — we encourage both parents to attend together on the same registration so you're aligned at home." },
+    { q: "Can both parents join?", a: "Yes. We encourage both parents to attend together on the same registration so you're on the same page at home." },
     { q: "Will the recording be available?", a: "Yes. Every registrant gets access to the full recording, so you can watch or rewatch anytime." },
     { q: "How long is the webinar?", a: "It runs for 1 hour 30 minutes, including a live Q&A session." },
     { q: "What platform is it on?", a: "The live session is hosted on Google Meet. You'll receive the joining link on WhatsApp and email." },
@@ -833,11 +839,11 @@ function FinalCta() {
     <section className="hero-bg text-foreground py-16 md:py-24">
       <div className="mx-auto max-w-3xl px-4 text-center">
         <h2 className="text-2xl md:text-4xl font-semibold" style={{ fontFamily: "var(--font-display)" }}>
-          A Calmer Home Starts With One Evening
+          A Calmer Home Can Start This Week
         </h2>
         <p className="mt-4 text-foreground/75 max-w-xl mx-auto">
-          Join Miss Samra Riaz live on 11 July and learn how to raise a well-behaved child — without
-          guilt, shouting, or being a perfect parent.
+          Join Miss Samra Riaz live on 11 July and learn simple ways to end the daily fights and
+          enjoy your child again. No guilt, no shouting, no need to be perfect.
         </p>
         <div className="mt-6 max-w-sm mx-auto">
           <MasterclassCountdown variant="light" showDateLine={false} className="mb-5" />
