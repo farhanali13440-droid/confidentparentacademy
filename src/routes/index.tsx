@@ -771,14 +771,14 @@ function BonusesSection() {
 
 function TestimonialsSection() {
   const reviews = [
-    { name: "A. Fatima", role: "Mother of two", text: "For the first time I understood WHY my son was acting out. The shouting has almost stopped at home." },
-    { name: "M. Bilal", role: "Father", text: "As a dad I wasn't sure this was for me. It completely changed how I connect with my daughter." },
-    { name: "S. Ayesha", role: "Mother", text: "Calm, warm and practical. I used the tools the very same evening and saw a difference." },
+    { name: "A. Fatima", role: "Mother of two", text: "For the first time I understood why my son was acting out. The shouting has almost stopped at home." },
+    { name: "M. Bilal", role: "Father", text: "As a dad I wasn't sure this was for me. It completely changed how I talk to my daughter." },
+    { name: "S. Ayesha", role: "Mother", text: "Warm and easy to follow. I tried the tools the same evening and saw a difference." },
   ];
   return (
     <section className="py-14 md:py-20 bg-secondary">
       <div className="mx-auto max-w-5xl px-4">
-        <SectionHeading eyebrow="Parent stories" title="What Parents Are Saying" />
+        <SectionHeading eyebrow="Parent stories" title="Parents Just Like You" />
         <div className="mt-8 grid md:grid-cols-3 gap-5">
           {reviews.map((r) => (
             <div key={r.name} className="rounded-3xl bg-card border border-border p-6 shadow-sm">
