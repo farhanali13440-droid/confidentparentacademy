@@ -556,16 +556,16 @@ function StorySection() {
 
 function IncludesSection() {
   const items = [
-    { icon: Video, title: "Live Session", desc: "90 minutes live with Miss Samra on Google Meet." },
-    { icon: Star, title: "Recording", desc: "Can't attend live? Watch the full recording anytime." },
-    { icon: MessageCircle, title: "Live Q&A", desc: "Ask your real parenting questions and get answers." },
-    { icon: FileText, title: "PDF Parenting Guide", desc: "A practical takeaway guide (coming soon)." },
-    { icon: Award, title: "Certificate", desc: "Certificate of attendance (optional)." },
+    { icon: Video, title: "90-Minute Live Session", desc: "Spend 90 minutes live with Miss Samra on Google Meet." },
+    { icon: Star, title: "Full Recording", desc: "Can't make it live? Watch the whole session later, anytime." },
+    { icon: MessageCircle, title: "Live Q&A", desc: "Ask about your own child and get real answers on the spot." },
+    { icon: FileText, title: "PDF Parenting Guide", desc: "A simple guide you can keep and come back to whenever you need it." },
+    { icon: Award, title: "Certificate", desc: "Get a certificate of attendance if you'd like one." },
   ];
   return (
     <section className="py-14 md:py-20 bg-background">
       <div className="mx-auto max-w-5xl px-4">
-        <SectionHeading eyebrow="Everything included" title="What The Webinar Includes" />
+        <SectionHeading eyebrow="Everything included" title="Here's Everything You Get" />
         <div className="mt-8 mx-auto max-w-4xl">
           <div className="rounded-3xl overflow-hidden shadow-xl ring-1 ring-blush/30 bg-white">
             <img
