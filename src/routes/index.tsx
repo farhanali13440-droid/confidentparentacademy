@@ -638,7 +638,7 @@ function PricingSection() {
             You save 1,501 PKR today
           </div>
           <p className="mt-5 text-muted-foreground">
-            Enrol now while the introductory price lasts. The price rises to 2,000 PKR after this cohort.
+            Book now while the price is low. After this group, the price goes back up to 2,000 PKR.
           </p>
           <div className="mt-7 max-w-sm mx-auto">
             <CtaButton subtitle="Live on 11 July · Recording included">Reserve My Seat — 499 PKR</CtaButton>
