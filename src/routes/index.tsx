@@ -536,14 +536,14 @@ function StorySection() {
           </h2>
           <div className="mt-5 space-y-4 text-muted-foreground leading-relaxed text-center md:text-left">
             <p>
-              My journey into parenting psychology began close to home. Growing up with three
-              autistic cousins, I saw how much families struggle when they don't have the right
-              understanding or support — and how much lighter everything becomes when they do.
+              My work with families started close to home. Growing up with three autistic cousins,
+              I saw how hard it is for parents when nobody explains what is really going on with
+              their child. And I saw how much easier life becomes once they finally understand.
             </p>
             <p>
-              That experience gave me one mission: to help parents <span className="font-semibold text-foreground">before</span> small
-              struggles grow into severe problems. Every child deserves to be understood, and every
-              parent deserves to feel confident, calm, and connected.
+              That gave me one mission: to help parents <span className="font-semibold text-foreground">before</span> small
+              struggles grow into big problems. Every child deserves to be understood, and every
+              parent deserves to feel calm, confident and close to their child.
             </p>
           </div>
         </div>
