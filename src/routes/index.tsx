@@ -306,28 +306,34 @@ function TrustBar() {
 
 function ProblemSection() {
   const problems = [
-    "Children don't listen", "Always saying NO", "Tantrums & meltdowns",
-    "Screen addiction", "Sleep issues", "Mess everywhere",
-    "Not studying", "Always demanding attention", "Sibling fights",
-    "Emotional outbursts", "Parents feeling guilty", "Endless daily battles",
+    "No matter how many times you explain, your child acts like they didn't even hear you.",
+    "Every small thing turns into crying, shouting or a tantrum.",
+    "The moment you take the mobile away, your child starts crying or gets angry.",
+    "Bedtime becomes a nightly fight and nobody sleeps on time.",
+    "You ask them to study, but it ends in tears or arguments.",
+    "The house is a mess and you feel like you're repeating yourself all day.",
+    "The kids fight with each other and you're stuck in the middle.",
+    "Your child gets upset over things you can't even understand.",
+    "You end the day feeling guilty for losing your temper again.",
+    "It feels like the same battles happen over and over, every single day.",
   ];
   return (
     <section className="py-14 md:py-20 bg-background">
       <div className="mx-auto max-w-5xl px-4">
-        <SectionHeading eyebrow="Sound familiar?" title="Do Any Of These Sound Familiar?" />
+        <SectionHeading eyebrow="Sound familiar?" title="Does This Sound Like Your Home?" />
         <div className="mt-8 grid sm:grid-cols-2 lg:grid-cols-3 gap-3">
           {problems.map((p) => (
-            <div key={p} className="flex items-center gap-3 rounded-2xl bg-card border border-border px-4 py-3.5 shadow-sm">
+            <div key={p} className="flex items-start gap-3 rounded-2xl bg-card border border-border px-4 py-3.5 shadow-sm">
               <span className="grid place-items-center size-8 rounded-full shrink-0" style={{ backgroundColor: "var(--soft-pink)" }}>
                 <Baby className="size-4 text-destructive" />
               </span>
-              <span className="text-sm font-medium text-foreground">{p}</span>
+              <span className="text-sm font-medium text-foreground leading-snug">{p}</span>
             </div>
           ))}
         </div>
         <p className="mt-8 text-center text-base md:text-lg text-muted-foreground max-w-2xl mx-auto">
-          If you nodded along to even a few of these, you're not failing as a parent — you simply
-          haven't been shown <span className="font-semibold text-foreground">why</span> these behaviours happen.
+          If even a few of these felt like your home, you are not a bad parent. Nobody has ever
+          shown you <span className="font-semibold text-foreground">why</span> your child does these things, or what to do next.
         </p>
       </div>
     </section>
