@@ -19,6 +19,8 @@ import bonusLiveQa from "@/assets/cpa-bonus-live-qa.png.asset.json";
 import completeToolkit from "@/assets/cpa-complete-toolkit.png.asset.json";
 import beforeAfter from "@/assets/cpa-before-after.png.asset.json";
 import everythingYouGet from "@/assets/cpa-everything-you-get.png.asset.json";
+import testimonialMotherhood from "@/assets/testimonial-motherhood.jpeg.asset.json";
+import testimonialParenting from "@/assets/testimonial-parenting.jpeg.asset.json";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -26,7 +28,7 @@ export const Route = createFileRoute("/")({
       { title: "Confident Parent Academy | Stop the Daily Fights and Enjoy Your Child Again" },
       { name: "description", content: "A live parenting webinar with Miss Samra Riaz. Understand why your child cries, shouts and doesn't listen, and learn simple ways to calm your home. Only 499 PKR." },
       { property: "og:title", content: "Confident Parent Academy | Parenting Webinar with Miss Samra Riaz" },
-      { property: "og:description", content: "Understand why your child behaves this way and learn simple ways to bring calm back to your home. Live on 11 July on Google Meet." },
+      { property: "og:description", content: "Understand why your child behaves this way and learn simple ways to bring calm back to your home. Live on 13 July on Google Meet." },
       { property: "og:type", content: "website" },
       { property: "og:url", content: "/" },
     ],
@@ -49,6 +51,7 @@ function LandingPage() {
       <StorySection />
       <IncludesSection />
       <EverythingYouReceiveSection />
+      <GuaranteeSection />
       <PricingSection />
       <BonusesSection />
       <TestimonialsSection />
@@ -63,7 +66,7 @@ function LandingPage() {
 
 function Hero() {
   const facts = [
-    { icon: Calendar, label: "11 July" },
+    { icon: Calendar, label: "13 July" },
     { icon: Video, label: "Google Meet" },
     { icon: Clock, label: "1.5 Hours" },
     { icon: MessageCircle, label: "Live Q&A" },
@@ -123,7 +126,7 @@ function Hero() {
             </div>
 
             <div className="mt-7 space-y-3 max-w-md mx-auto md:mx-0">
-              <CtaButton subtitle="Live on 11 July · Recording included">Reserve My Seat</CtaButton>
+              <CtaButton subtitle="Live on 13 July · Recording included">Reserve My Seat</CtaButton>
               <a
                 href="#curriculum"
                 onClick={(e) => {
@@ -143,6 +146,7 @@ function Hero() {
         </div>
 
         <div className="mt-6 max-w-md mx-auto" id="hero-optin">
+          <AttendeeTestimonials />
           <InlineLeadForm />
         </div>
       </div>
@@ -151,6 +155,30 @@ function Hero() {
 }
 
 /* ---------------- LEAD FORM (functionally unchanged) ---------------- */
+
+function AttendeeTestimonials() {
+  const shots = [
+    { src: testimonialMotherhood.url, alt: "Parent review: your guidance replaced fear with confidence and understanding" },
+    { src: testimonialParenting.url, alt: "Parent review: your practical pointers helped with everyday parenting challenges" },
+  ];
+  return (
+    <div className="mb-6">
+      <h3 className="text-center text-base sm:text-lg font-bold text-warm-brown" style={{ fontFamily: "var(--font-display)" }}>
+        Parents Loved This Webinar
+      </h3>
+      <p className="text-center text-xs text-muted-foreground mt-1 mb-3">
+        Here's what previous attendees had to say
+      </p>
+      <div className="grid grid-cols-1 gap-3">
+        {shots.map((s) => (
+          <div key={s.src} className="rounded-2xl overflow-hidden shadow-lg ring-1 ring-blush/30 bg-white">
+            <img src={s.src} alt={s.alt} loading="lazy" className="w-full h-auto" />
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
 
 function InlineLeadForm() {
   const navigate = useNavigate();
@@ -622,6 +650,45 @@ function EverythingYouReceiveSection() {
 
 /* ---------------- PRICING ---------------- */
 
+function GuaranteeSection() {
+  const points = [
+    "Refund available within 24 hours after the webinar ends",
+    "100% of your registration fee returned",
+    "No questions asked",
+  ];
+  return (
+    <section className="py-14 md:py-20 bg-blush/15">
+      <div className="mx-auto max-w-2xl px-4">
+        <div className="rounded-3xl bg-white border-2 border-blush/40 p-8 md:p-10 shadow-xl text-center">
+          <div className="mx-auto mb-5 grid size-20 place-items-center rounded-full bg-accent/30 ring-4 ring-blush/30">
+            <ShieldCheck className="size-10 text-primary" />
+          </div>
+          <h2 className="text-2xl md:text-3xl font-bold text-warm-brown-deep" style={{ fontFamily: "var(--font-display)" }}>
+            100% Money-Back Guarantee
+          </h2>
+          <p className="mt-4 text-muted-foreground leading-relaxed">
+            If you attend the webinar and genuinely feel you didn't learn practical parenting strategies
+            that can help you create a more peaceful home, simply let us know within{" "}
+            <span className="font-semibold text-warm-brown">24 hours</span> after the webinar ends.
+            We'll refund <span className="font-semibold text-warm-brown">100% of your registration fee</span>. No questions asked.
+          </p>
+          <div className="mt-6 grid gap-2.5 max-w-md mx-auto text-left">
+            {points.map((p) => (
+              <div key={p} className="flex items-start gap-2.5 rounded-xl bg-accent/15 px-4 py-3">
+                <CheckCircle2 className="size-5 text-primary shrink-0 mt-0.5" />
+                <span className="text-sm font-semibold text-warm-brown">{p}</span>
+              </div>
+            ))}
+          </div>
+          <p className="mt-6 text-sm text-muted-foreground">
+            This guarantee exists because we're confident you'll find immense value in this session.
+          </p>
+        </div>
+      </div>
+    </section>
+  );
+}
+
 function PricingSection() {
   return (
     <section className="py-14 md:py-20 bg-secondary">
@@ -643,7 +710,7 @@ function PricingSection() {
             Book now while the price is low. After this group, the price goes back up to 2,000 PKR.
           </p>
           <div className="mt-7 max-w-sm mx-auto">
-            <CtaButton subtitle="Live on 11 July · Recording included">Reserve My Seat for 499 PKR</CtaButton>
+            <CtaButton subtitle="Live on 13 July · Recording included">Reserve My Seat for 499 PKR</CtaButton>
           </div>
           <div className="mt-4 flex items-center justify-center gap-2 text-xs text-muted-foreground">
             <Lock className="size-3.5" /> Secure checkout
@@ -844,7 +911,7 @@ function FinalCta() {
           A Calmer Home Can Start This Week
         </h2>
         <p className="mt-4 text-foreground/75 max-w-xl mx-auto">
-          Join Miss Samra Riaz live on 11 July and learn simple ways to end the daily fights and
+          Join Miss Samra Riaz live on 13 July and learn simple ways to end the daily fights and
           enjoy your child again. No guilt, no shouting, no need to be perfect.
         </p>
         <div className="mt-6 max-w-sm mx-auto">

@@ -1,11 +1,11 @@
 import { useEffect, useState } from "react";
 import { Calendar, Clock } from "lucide-react";
 
-// 11th July 2026, 3:00 PM Pakistan Standard Time (UTC+5)
-// => 2026-07-11T15:00:00+05:00 => 2026-07-11T10:00:00Z
-export const MASTERCLASS_DATE_ISO = "2026-07-11T10:00:00Z";
+// 13th July 2026, 3:00 PM Pakistan Standard Time (UTC+5)
+// => 2026-07-13T15:00:00+05:00 => 2026-07-13T10:00:00Z
+export const MASTERCLASS_DATE_ISO = "2026-07-13T10:00:00Z";
 export const MASTERCLASS_DATE_LABEL =
-  "Live Webinar: 11th July at 3:00 PM – 4:30 PM Pakistan Standard Time (on Google Meet)";
+  "Live Webinar: 13th July at 3:00 PM – 4:30 PM Pakistan Standard Time (on Google Meet)";
 
 const ZERO = { days: 0, hours: 0, minutes: 0, seconds: 0, done: false };
 
@@ -64,7 +64,7 @@ export function MasterclassCountdown({
           <Calendar className="size-4 sm:size-5 text-accent shrink-0" />
           <span>
             Live Webinar:{" "}
-            <span className="gradient-highlight">11th July</span> at{" "}
+            <span className="gradient-highlight">13th July</span> at{" "}
             <span className="gradient-highlight">3:00 – 4:30 PM</span> Pakistan Time · Google Meet
           </span>
         </div>
