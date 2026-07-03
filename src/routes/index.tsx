@@ -650,6 +650,45 @@ function EverythingYouReceiveSection() {
 
 /* ---------------- PRICING ---------------- */
 
+function GuaranteeSection() {
+  const points = [
+    "Refund available within 24 hours after the webinar ends",
+    "100% of your registration fee returned",
+    "No questions asked",
+  ];
+  return (
+    <section className="py-14 md:py-20 bg-blush/15">
+      <div className="mx-auto max-w-2xl px-4">
+        <div className="rounded-3xl bg-white border-2 border-blush/40 p-8 md:p-10 shadow-xl text-center">
+          <div className="mx-auto mb-5 grid size-20 place-items-center rounded-full bg-accent/30 ring-4 ring-blush/30">
+            <ShieldCheck className="size-10 text-primary" />
+          </div>
+          <h2 className="text-2xl md:text-3xl font-bold text-warm-brown-deep" style={{ fontFamily: "var(--font-display)" }}>
+            100% Money-Back Guarantee
+          </h2>
+          <p className="mt-4 text-muted-foreground leading-relaxed">
+            If you attend the webinar and genuinely feel you didn't learn practical parenting strategies
+            that can help you create a more peaceful home, simply let us know within{" "}
+            <span className="font-semibold text-warm-brown">24 hours</span> after the webinar ends.
+            We'll refund <span className="font-semibold text-warm-brown">100% of your registration fee</span>. No questions asked.
+          </p>
+          <div className="mt-6 grid gap-2.5 max-w-md mx-auto text-left">
+            {points.map((p) => (
+              <div key={p} className="flex items-start gap-2.5 rounded-xl bg-accent/15 px-4 py-3">
+                <CheckCircle2 className="size-5 text-primary shrink-0 mt-0.5" />
+                <span className="text-sm font-semibold text-warm-brown">{p}</span>
+              </div>
+            ))}
+          </div>
+          <p className="mt-6 text-sm text-muted-foreground">
+            This guarantee exists because we're confident you'll find immense value in this session.
+          </p>
+        </div>
+      </div>
+    </section>
+  );
+}
+
 function PricingSection() {
   return (
     <section className="py-14 md:py-20 bg-secondary">
