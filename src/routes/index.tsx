@@ -23,10 +23,10 @@ import everythingYouGet from "@/assets/cpa-everything-you-get.png.asset.json";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Confident Parent Academy — Raise a Well-Behaved Child Without Being Perfect" },
-      { name: "description", content: "A calm, science-backed parenting webinar by clinical psychologist Miss Samra Riaz. Understand your child's behaviour, reduce daily struggles, and build a peaceful home — for just 499 PKR." },
-      { property: "og:title", content: "Confident Parent Academy — Parenting Webinar with Miss Samra Riaz" },
-      { property: "og:description", content: "Learn practical, science-backed parenting strategies to understand your child's behaviour and build a peaceful home. Live on 11 July · Google Meet." },
+      { title: "Confident Parent Academy | Stop the Daily Fights and Enjoy Your Child Again" },
+      { name: "description", content: "A live parenting webinar with Miss Samra Riaz. Understand why your child cries, shouts and doesn't listen, and learn simple ways to calm your home. Only 499 PKR." },
+      { property: "og:title", content: "Confident Parent Academy | Parenting Webinar with Miss Samra Riaz" },
+      { property: "og:description", content: "Understand why your child behaves this way and learn simple ways to bring calm back to your home. Live on 11 July on Google Meet." },
       { property: "og:type", content: "website" },
       { property: "og:url", content: "/" },
     ],
