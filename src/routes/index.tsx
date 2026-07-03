@@ -600,8 +600,8 @@ function EverythingYouReceiveSection() {
       <div className="mx-auto max-w-6xl px-4">
         <SectionHeading
           eyebrow="The full package"
-          title="Everything You'll Receive Inside This Webinar"
-          subtitle="Your registration gives you much more than just a live session."
+          title="You Get So Much More Than One Live Session"
+          subtitle="Your 499 PKR gives you the live session plus tools you'll use with your child for years."
         />
         <div className="mt-10 md:mt-12 mx-auto max-w-5xl">
           <div className="rounded-3xl overflow-hidden shadow-2xl ring-1 ring-blush/30 bg-white">
