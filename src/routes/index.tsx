@@ -378,18 +378,18 @@ function SolutionSection() {
 
 function BenefitsSection() {
   const benefits = [
-    "Understand why children behave the way they do",
-    "Respond calmly instead of reacting",
-    "Reduce shouting and daily conflict",
-    "Build trust and a deeper connection",
-    "Improve communication with your child",
-    "Handle difficult situations confidently",
-    "Raise emotionally healthy children",
+    "Instead of shouting every day, you'll know exactly why your child is behaving that way and what to do next.",
+    "You'll stay calm in the moments that used to make you lose your temper.",
+    "The crying, arguing and daily fights will start to settle down.",
+    "Your child will trust you more and open up to you.",
+    "You'll be able to talk to your child in a way they actually listen to.",
+    "You'll feel confident handling tantrums and tough moments in public and at home.",
+    "Your child will feel happier, calmer and more secure at home.",
   ];
   return (
     <section className="py-14 md:py-20 bg-background">
       <div className="mx-auto max-w-5xl px-4">
-        <SectionHeading eyebrow="What you'll gain" title="By The End Of This Webinar, You Will Be Able To…" />
+        <SectionHeading eyebrow="What changes for you" title="Here's What Your Days Will Feel Like After This Webinar" />
         <div className="mt-8 grid sm:grid-cols-2 gap-4">
           {benefits.map((b) => (
             <div key={b} className="flex items-start gap-3 rounded-2xl bg-card border border-border p-5 shadow-sm">
