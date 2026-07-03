@@ -223,7 +223,7 @@ function InlineLeadForm() {
     >
       <div className="text-center">
         <div className="text-lg font-semibold" style={{ fontFamily: "var(--font-display)" }}>Reserve Your Seat</div>
-        <p className="text-xs text-muted-foreground mt-1">Just 499 PKR · Limited seats for the live session</p>
+        <p className="text-xs text-muted-foreground mt-1">Just 499 PKR. Limited seats for the live session.</p>
       </div>
       <input
         required
