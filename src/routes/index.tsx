@@ -26,7 +26,7 @@ export const Route = createFileRoute("/")({
       { title: "Confident Parent Academy | Stop the Daily Fights and Enjoy Your Child Again" },
       { name: "description", content: "A live parenting webinar with Miss Samra Riaz. Understand why your child cries, shouts and doesn't listen, and learn simple ways to calm your home. Only 499 PKR." },
       { property: "og:title", content: "Confident Parent Academy | Parenting Webinar with Miss Samra Riaz" },
-      { property: "og:description", content: "Understand why your child behaves this way and learn simple ways to bring calm back to your home. Live on 11 July on Google Meet." },
+      { property: "og:description", content: "Understand why your child behaves this way and learn simple ways to bring calm back to your home. Live on 13 July on Google Meet." },
       { property: "og:type", content: "website" },
       { property: "og:url", content: "/" },
     ],
@@ -63,7 +63,7 @@ function LandingPage() {
 
 function Hero() {
   const facts = [
-    { icon: Calendar, label: "11 July" },
+    { icon: Calendar, label: "13 July" },
     { icon: Video, label: "Google Meet" },
     { icon: Clock, label: "1.5 Hours" },
     { icon: MessageCircle, label: "Live Q&A" },
@@ -123,7 +123,7 @@ function Hero() {
             </div>
 
             <div className="mt-7 space-y-3 max-w-md mx-auto md:mx-0">
-              <CtaButton subtitle="Live on 11 July · Recording included">Reserve My Seat</CtaButton>
+              <CtaButton subtitle="Live on 13 July · Recording included">Reserve My Seat</CtaButton>
               <a
                 href="#curriculum"
                 onClick={(e) => {
@@ -643,7 +643,7 @@ function PricingSection() {
             Book now while the price is low. After this group, the price goes back up to 2,000 PKR.
           </p>
           <div className="mt-7 max-w-sm mx-auto">
-            <CtaButton subtitle="Live on 11 July · Recording included">Reserve My Seat for 499 PKR</CtaButton>
+            <CtaButton subtitle="Live on 13 July · Recording included">Reserve My Seat for 499 PKR</CtaButton>
           </div>
           <div className="mt-4 flex items-center justify-center gap-2 text-xs text-muted-foreground">
             <Lock className="size-3.5" /> Secure checkout
@@ -844,7 +844,7 @@ function FinalCta() {
           A Calmer Home Can Start This Week
         </h2>
         <p className="mt-4 text-foreground/75 max-w-xl mx-auto">
-          Join Miss Samra Riaz live on 11 July and learn simple ways to end the daily fights and
+          Join Miss Samra Riaz live on 13 July and learn simple ways to end the daily fights and
           enjoy your child again. No guilt, no shouting, no need to be perfect.
         </p>
         <div className="mt-6 max-w-sm mx-auto">
