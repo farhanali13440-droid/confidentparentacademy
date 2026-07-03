@@ -86,8 +86,8 @@ function Hero() {
           {/* 1. Headline + subheadline — always first so the promise leads on mobile */}
           <div className="text-center md:text-left md:col-start-1 md:row-start-1">
             <h1 className="text-[26px] leading-tight sm:text-4xl md:text-[42px] md:leading-[1.1] font-semibold whitespace-pre-line" style={{ fontFamily: "var(--font-display)" }}>
-              {"Tired of the Crying,\nShouting and Daily\u00A0\nFights at Home? "}
-              <span className="gradient-highlight-pink">Bring Back the Calm</span> With Your Child
+              {"How to Create a\nPeaceful Home &\u00A0\nRaise a Well-Behaved Child Without "}
+              <span className="gradient-highlight-pink">Daily Power Struggles</span>
             </h1>
             <p className="mt-4 md:mt-5 text-sm md:text-lg text-foreground/75 leading-relaxed">
               In this live webinar you will finally understand why your child cries, shouts and
