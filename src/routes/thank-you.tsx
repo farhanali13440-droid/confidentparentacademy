@@ -17,7 +17,7 @@ export const Route = createFileRoute("/thank-you")({
 });
 
 function ThankYouPage() {
-  const waCommunity = "https://chat.whatsapp.com/D5RErdi4ZnhJGNOOEK37c6";
+  const waCommunity = "https://chat.whatsapp.com/LpvtektZWgZCeGEUKnjfsJ";
   const waSupport = `https://wa.me/923135944817?text=${encodeURIComponent(
     "Assalam-o-Alaikum, I need help with my Confident Parent Academy webinar order.",
   )}`;
@@ -64,6 +64,22 @@ function ThankYouPage() {
               Thank you for submitting your payment screenshot. Our team will verify your
               payment and process your access shortly.
             </p>
+
+            <div className="mt-6 rounded-xl bg-emerald-50 border border-emerald-200 p-5">
+              <p className="text-sm text-slate-800">
+                Please join the WhatsApp community to receive webinar updates, Google Meet link,
+                reminders, bonuses, and important announcements.
+              </p>
+              <a
+                href={waCommunity}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-cta inline-flex items-center gap-2 w-full mt-4 px-6 py-4 text-base md:text-lg justify-center"
+              >
+                <span>Join WhatsApp Community</span>
+                <ArrowRight className="btn-cta-arrow size-5" aria-hidden="true" />
+              </a>
+            </div>
           </section>
 
           {otoSubmitted && (
