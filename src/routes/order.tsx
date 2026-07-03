@@ -265,6 +265,19 @@ function OrderPage() {
       }
     } catch {}
 
+    // Fire the primary conversion only after a fully successful submission:
+    // validation passed, screenshot uploaded, and order data saved.
+    try {
+      const { trackPixel } = await import("@/lib/fbpixel");
+      trackPixel("SubmitApplication", {
+        content_name: "Webinar Registration",
+        value: 499,
+        currency: "PKR",
+      });
+    } catch (err) {
+      console.error("Pixel SubmitApplication event failed", err);
+    }
+
     const rawValue = savedOrder.strategy_session_order_bump_selected;
     const strategySelected = rawValue === true;
 
