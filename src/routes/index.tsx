@@ -433,28 +433,28 @@ function TransformationSection() {
 
 function CurriculumSection() {
   const modules = [
-    "Why Parenting Advice Doesn't Work",
-    "Developmental Milestones",
-    "Connection Before Correction",
-    "Parenting Styles",
-    "Behaviour Functions",
-    "The Role of Toys",
-    "Activities That Improve Development",
-    "The Parenting Toolkit",
-    "Common Parenting Mistakes",
-    "Easy Behaviour Fixes",
+    "Why the parenting advice everyone gives you doesn't actually work.",
+    "What is normal behaviour at your child's age, and what isn't.",
+    "Why your child listens more when they feel close to you first.",
+    "Simple changes in your parenting that can reduce daily arguments.",
+    "Why your child behaves this way, and what they're really trying to tell you.",
+    "How the right toys and play can calm your child and help them learn.",
+    "Easy play activities that improve your child's behaviour and development.",
+    "Ready-to-use tools that help you handle tough behaviour calmly and confidently.",
+    "The common mistakes that quietly make behaviour worse, and how to avoid them.",
+    "Quick, practical fixes you can try at home the same day.",
   ];
   return (
     <section id="curriculum" className="py-14 md:py-20 bg-secondary scroll-mt-16">
       <div className="mx-auto max-w-5xl px-4">
-        <SectionHeading eyebrow="Inside the webinar" title="What You'll Learn — 10 Practical Modules" />
+        <SectionHeading eyebrow="Inside the webinar" title="What You'll Learn (10 Simple, Real-Life Topics)" />
         <div className="mt-8 grid sm:grid-cols-2 gap-4">
           {modules.map((m, i) => (
             <div key={m} className="flex items-center gap-4 rounded-2xl bg-card border border-border p-5 shadow-sm">
               <span className="grid place-items-center size-10 rounded-full bg-accent text-warm-brown-deep font-semibold shrink-0" style={{ fontFamily: "var(--font-display)" }}>
                 {String(i + 1).padStart(2, "0")}
               </span>
-              <span className="text-sm md:text-base font-semibold">{m}</span>
+              <span className="text-sm md:text-base font-medium leading-snug">{m}</span>
             </div>
           ))}
         </div>
