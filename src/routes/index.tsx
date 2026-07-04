@@ -595,7 +595,6 @@ function IncludesSection() {
     { icon: Users, title: "Private Parent Community Access", desc: "Join a supportive community of parents on the same journey." },
     { icon: FileText, title: "The Parenting Genius Blueprint (PDF)", desc: "Understand your child's unique intelligence and natural strengths." },
     { icon: Heart, title: "Parent Gratitude Planner", desc: "A simple guided planner to build a more positive connection." },
-    { icon: Star, title: "Complete Workshop Recording", desc: "Rewatch the full workshop at your convenience, anytime." },
   ];
   return (
     <section className="py-14 md:py-20 bg-background">
