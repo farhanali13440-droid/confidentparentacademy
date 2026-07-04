@@ -67,8 +67,8 @@ function Hero() {
     { icon: Video, label: "Google Meet" },
     { icon: Clock, label: "1.5 Hours" },
     { icon: MessageCircle, label: "Live Q&A" },
-    { icon: Star, label: "Recording Included" },
-    { icon: Gift, label: "Only 499 PKR" },
+    { icon: Gift, label: "3 Free Bonuses" },
+    { icon: Star, label: "Only 499 PKR" },
   ];
   return (
     <section className="hero-bg text-foreground">
