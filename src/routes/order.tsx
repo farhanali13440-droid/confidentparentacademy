@@ -49,6 +49,7 @@ const BUMPS = [
     price: 199,
     image: bumpToolkit,
     badge: "Most Popular (8/10 Parents Add This)",
+    caption: null as string | null,
     bullets: [
       "Behaviour Tracker",
       "Daily Routine Planner",
