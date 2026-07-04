@@ -42,7 +42,7 @@ const PROOFS: Proof[] = [
   { url: textAhmadMunir.url, kind: "text", alt: "WhatsApp feedback from Ahmad Munir: Session was amazing" },
   { url: payEasypaisa999.url, kind: "payment", alt: "Easypaisa payment proof Rs. 999" },
   { url: textThankyou.url, kind: "text", alt: "Messenger feedback: Session was outstanding, worth thousands of rupees" },
-  { url: payJazzAyesha.url, kind: "payment", alt: "JazzCash payment proof Rs. 999 — webinar payment" },
+  { url: payJazzAyesha.url, kind: "payment", alt: "JazzCash payment proof Rs. 999 — workshop payment" },
   { url: textTanveer.url, kind: "text", alt: "WhatsApp feedback from Tanveer Ahmad: Way of teaching is excellent" },
   { url: payEp1000.url, kind: "payment", alt: "Easypaisa payment proof Rs. 1,000" },
   { url: textTanveerHr.url, kind: "text", alt: "WhatsApp feedback from Tanveer Ahmad: Bundle of knowledge, simple action steps" },

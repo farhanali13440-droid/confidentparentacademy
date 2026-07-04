@@ -34,7 +34,7 @@ const Email = ({
 }: Props) => (
   <Html lang="en" dir="ltr">
     <Head />
-    <Preview>You're registered for the Confident Parent Academy webinar — details inside</Preview>
+    <Preview>You're registered for the Confident Parent Academy workshop — details inside</Preview>
     <Body style={main}>
       <Container style={container}>
         <Heading style={h1}>✅ You're Registered!</Heading>
@@ -42,11 +42,11 @@ const Email = ({
         <Text style={text}>Assalam-o-Alaikum {name},</Text>
 
         <Text style={text}>
-          Your registration for the <strong>Confident Parent Academy</strong> parenting webinar has been received successfully.
+          Your registration for the <strong>Confident Parent Academy</strong> parenting workshop has been received successfully.
         </Text>
 
         <Section style={card}>
-          <Text style={cardHeader}>Here are your webinar details:</Text>
+          <Text style={cardHeader}>Here are your workshop details:</Text>
           <Text style={detail}>📅 <strong>Date:</strong> {trainingDate}</Text>
           <Text style={detail}>⏰ <strong>Time:</strong> {trainingTime}</Text>
           <Text style={detail}>📍 <strong>Location:</strong> Live on Google Meet</Text>
@@ -82,7 +82,7 @@ const Email = ({
 
 export const template = {
   component: Email,
-  subject: "✅ You're Registered — Confident Parent Academy Webinar Details Inside",
+  subject: "✅ You're Registered — Confident Parent Academy Workshop Details Inside",
   displayName: 'Registration Confirmation',
   previewData: {
     name: 'Ayesha',

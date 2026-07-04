@@ -34,8 +34,8 @@ export const Route = createFileRoute("/order")({
   }),
   head: () => ({
     meta: [
-      { title: "Checkout — Confident Parent Academy Webinar" },
-      { name: "description", content: "Reserve your seat in the Confident Parent Academy parenting webinar for just 499 PKR. Add helpful parenting resources at checkout." },
+      { title: "Checkout — Confident Parent Academy Workshop" },
+      { name: "description", content: "Reserve your seat in the Confident Parent Academy parenting workshop for just 499 PKR. Add helpful parenting resources at checkout." },
       { name: "robots", content: "noindex,nofollow" },
     ],
   }),
@@ -60,12 +60,12 @@ const BUMPS = [
   },
   {
     id: "prompts",
-    title: "Webinar Recording + PDF Bundle",
+    title: "Workshop Recording + PDF Bundle",
     price: 299,
     image: bumpRecording,
     badge: "Recommended (7/10 Parents Add This)",
     bullets: [
-      "Full Webinar Recording (lifetime access)",
+      "Full Workshop Recording (lifetime access)",
       "Complete PDF Parenting Guide",
       "Bonus parenting resources",
       "Rewatch and revisit anytime",
@@ -81,7 +81,7 @@ const PAYMENT_ACCOUNTS = {
 } as const;
 type PayMethod = keyof typeof PAYMENT_ACCOUNTS;
 
-const MAIN_PRODUCT = { title: "Confident Parent Academy Webinar", price: 499 };
+const MAIN_PRODUCT = { title: "Confident Parent Academy Workshop", price: 499 };
 
 function OrderPage() {
   const search = Route.useSearch();
@@ -271,7 +271,7 @@ function OrderPage() {
     try {
       const { trackPixel } = await import("@/lib/fbpixel");
       trackPixel("SubmitApplication", {
-        content_name: "Webinar Registration",
+        content_name: "Workshop Registration",
         value: 499,
         currency: "PKR",
       });
@@ -305,7 +305,7 @@ function OrderPage() {
           <h1 className="text-2xl md:text-4xl font-semibold" style={{ fontFamily: "var(--font-display)" }}>
             You're <span className="gradient-highlight">One Step Away</span> From a Calmer Home
           </h1>
-          <p className="mt-2 text-muted-foreground">Complete your order below to confirm your webinar seat.</p>
+          <p className="mt-2 text-muted-foreground">Complete your order below to confirm your workshop seat.</p>
         </div>
       </div>
 
@@ -514,7 +514,7 @@ function OrderPage() {
                   <ArrowRight className="btn-cta-arrow size-5" aria-hidden="true" />
                 </span>
                 <div className="text-xs font-medium normal-case tracking-normal opacity-95">
-                  Submit your details and screenshot to receive your webinar access.
+                  Submit your details and screenshot to receive your workshop access.
                 </div>
               </button>
 
@@ -537,11 +537,11 @@ function OrderPage() {
           <aside className="lg:col-span-2 space-y-6">
             <div className="bg-card rounded-xl shadow-sm border overflow-hidden">
               <div className="bg-primary text-primary-foreground text-center py-3 font-semibold tracking-wide" style={{ fontFamily: "var(--font-display)" }}>
-                Confident Parent Academy Webinar
+                Confident Parent Academy Workshop
               </div>
               <img
                 src={heroFamily}
-                alt="Confident Parent Academy parenting webinar"
+                alt="Confident Parent Academy parenting workshop"
                 className="w-full h-auto"
                 loading="lazy"
               />
@@ -554,7 +554,7 @@ function OrderPage() {
                     Here's Everything You Get:
                   </div>
                   <ul className="mt-3 space-y-3 text-sm">
-                    <Item title="Live 90-Minute Parenting Webinar">
+                    <Item title="Live 90-Minute Parenting Workshop">
                       Join Miss Samra Riaz live on Google Meet and learn how to understand your child's
                       behaviour and build a peaceful, well-behaved home.
                     </Item>
@@ -569,7 +569,7 @@ function OrderPage() {
                     <Item title="Bonus #2 — PDF Parenting Guide">
                       A calm, practical takeaway guide you can return to again and again.
                     </Item>
-                    <Item title="Bonus #3 — Webinar Recording">
+                    <Item title="Bonus #3 — Workshop Recording">
                       Lifetime access to the full recording so you can rewatch anytime.
                     </Item>
                   </ul>

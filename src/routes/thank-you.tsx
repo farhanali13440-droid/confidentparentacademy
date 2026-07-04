@@ -9,7 +9,7 @@ export const Route = createFileRoute("/thank-you")({
   head: () => ({
     meta: [
       { title: "Thank You — Payment Screenshot Received" },
-      { name: "description", content: "Your payment screenshot has been received. Join the WhatsApp community for webinar details, the Google Meet link, and reminders." },
+      { name: "description", content: "Your payment screenshot has been received. Join the WhatsApp community for workshop details, the Google Meet link, and reminders." },
       { name: "robots", content: "noindex,nofollow" },
     ],
   }),
@@ -19,7 +19,7 @@ export const Route = createFileRoute("/thank-you")({
 function ThankYouPage() {
   const waCommunity = "https://chat.whatsapp.com/LpvtektZWgZCeGEUKnjfsJ";
   const waSupport = `https://wa.me/923135944817?text=${encodeURIComponent(
-    "Assalam-o-Alaikum, I need help with my Confident Parent Academy webinar order.",
+    "Assalam-o-Alaikum, I need help with my Confident Parent Academy workshop order.",
   )}`;
 
   const [otoSubmitted, setOtoSubmitted] = useState(false);
@@ -67,7 +67,7 @@ function ThankYouPage() {
 
             <div className="mt-6 rounded-xl bg-emerald-50 border border-emerald-200 p-5">
               <p className="text-sm text-slate-800">
-                Please join the WhatsApp community to receive webinar updates, Google Meet link,
+                Please join the WhatsApp community to receive workshop updates, Google Meet link,
                 reminders, bonuses, and important announcements.
               </p>
               <a
@@ -108,10 +108,10 @@ function ThankYouPage() {
                 <h2 className="text-lg md:text-xl font-extrabold">🎁 Your Bonus Is Ready</h2>
               </div>
               <p className="mt-3 font-semibold text-slate-900">
-                You have unlocked the Webinar Recording + PDF Parenting Bundle.
+                You have unlocked the Workshop Recording + PDF Parenting Bundle.
               </p>
               <p className="mt-2 text-sm text-muted-foreground">
-                Rewatch the full webinar anytime and use the PDF parenting guide and resources to
+                Rewatch the full workshop anytime and use the PDF parenting guide and resources to
                 keep building a calmer, more connected home.
               </p>
               <a
@@ -126,13 +126,13 @@ function ThankYouPage() {
             </section>
           )}
 
-          {/* Webinar details */}
+          {/* Workshop details */}
           <section className="bg-card rounded-2xl border shadow-sm p-6">
             <div className="flex items-center gap-3">
               <div className="size-10 rounded-full bg-primary/10 grid place-items-center">
                 <Calendar className="size-5 text-primary" />
               </div>
-              <h2 className="text-lg font-extrabold uppercase tracking-wide">📅 Webinar Details</h2>
+              <h2 className="text-lg font-extrabold uppercase tracking-wide">📅 Workshop Details</h2>
             </div>
             <div className="mt-4 rounded-xl bg-primary text-primary-foreground p-6 text-center">
               <div className="text-sm uppercase tracking-widest opacity-90">Live on Google Meet</div>
@@ -146,7 +146,7 @@ function ThankYouPage() {
                 Add the date to your calendar and join a few minutes early.
               </p>
               <a
-                href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Confident+Parent+Academy+Webinar&dates=20260711T100000Z/20260711T113000Z&details=Live+parenting+webinar+with+Miss+Samra+Riaz+on+Google+Meet"
+                href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Confident+Parent+Academy+Workshop&dates=20260711T100000Z/20260711T113000Z&details=Live+parenting+workshop+with+Miss+Samra+Riaz+on+Google+Meet"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 mt-3 rounded-full border-2 border-primary px-4 py-2 font-bold text-primary hover:bg-primary/5"

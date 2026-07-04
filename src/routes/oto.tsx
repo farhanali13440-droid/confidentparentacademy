@@ -416,13 +416,13 @@ lastError: ${debug.lastError ?? "-"}`}
               Special One-Time Offer
             </p>
             <h1 className="mt-4 text-3xl md:text-5xl font-black tracking-tight leading-tight">
-              Your Webinar Seat Is Confirmed…
+              Your Workshop Seat Is Confirmed…
               <span className="block mt-3 text-yellow-300">
                 But Before You Go, Get A Private Parenting Plan For Your Own Child
               </span>
             </h1>
             <p className="mt-4 md:mt-5 max-w-3xl mx-auto text-sm md:text-lg text-white/80 leading-relaxed">
-              The webinar gives you the strategies. This private 60-minute counselling session with Miss Samra helps you apply them to your child's specific age, behaviour, and your family situation.
+              The workshop gives you the strategies. This private 60-minute counselling session with Miss Samra helps you apply them to your child's specific age, behaviour, and your family situation.
             </p>
             <div className="mt-6 max-w-2xl mx-auto">
               <PrimaryAction
@@ -432,11 +432,11 @@ lastError: ${debug.lastError ?? "-"}`}
                 subtext="Get your personalised parenting plan + 15-day WhatsApp support"
               />
               <button type="button" onClick={handleDecline} disabled={!!pending} className="mt-4 block mx-auto text-xs md:text-sm text-white/70 underline underline-offset-4 hover:text-white disabled:opacity-60">
-                ← No Thanks, I’ll Attend The Webinar Only
+                ← No Thanks, I’ll Attend The Workshop Only
               </button>
             </div>
             <p className="mt-4 flex items-center justify-center gap-2 text-xs text-white/60">
-              <Lock className="size-3.5" /> Your webinar seat stays confirmed either way.
+              <Lock className="size-3.5" /> Your workshop seat stays confirmed either way.
             </p>
           </div>
         </section>
@@ -471,7 +471,7 @@ lastError: ${debug.lastError ?? "-"}`}
               text={"YES! I WANT MY PERSONALISED PARENTING PLAN →"}
             />
             <button type="button" onClick={handleDecline} disabled={!!pending} className="mt-4 block mx-auto text-xs md:text-sm text-white/70 underline underline-offset-4 hover:text-white disabled:opacity-60">
-              ← No Thanks, I’ll Attend The Webinar Only
+              ← No Thanks, I’ll Attend The Workshop Only
             </button>
           </div>
         </ContentSection>
@@ -498,7 +498,7 @@ lastError: ${debug.lastError ?? "-"}`}
           </div>
         </ContentSection>
 
-        <ContentSection title="The Webinar Gives You The Strategy. This Session Helps You Apply It To Your Child.">
+        <ContentSection title="The Workshop Gives You The Strategy. This Session Helps You Apply It To Your Child.">
           <div className="max-w-3xl text-sm md:text-lg text-foreground/80 leading-relaxed">
             Instead of trying to figure out every step alone, you get direct guidance on what to prioritise first, what to let go of, and how to build a practical plan for your specific child.
           </div>
@@ -510,7 +510,7 @@ lastError: ${debug.lastError ?? "-"}`}
               subtext="This one-time offer is available only on this page."
             />
             <button type="button" onClick={handleDecline} disabled={!!pending} className="mt-4 block mx-auto text-xs md:text-sm text-foreground/60 underline underline-offset-4 hover:text-foreground disabled:opacity-60">
-              ← No Thanks, I’ll Attend The Webinar Only
+              ← No Thanks, I’ll Attend The Workshop Only
             </button>
           </div>
         </ContentSection>
@@ -562,7 +562,7 @@ lastError: ${debug.lastError ?? "-"}`}
                 disabled={!!pending}
                 className="mt-5 text-sm text-white/70 underline underline-offset-4 hover:text-white disabled:opacity-60"
               >
-                {pending === "decline" ? "CONTINUING..." : "← No Thanks, I’ll Attend The Webinar Only"}
+                {pending === "decline" ? "CONTINUING..." : "← No Thanks, I’ll Attend The Workshop Only"}
               </button>
             </div>
             {error && <p className="mt-4 text-sm text-red-300">{error}</p>}
@@ -712,7 +712,7 @@ export const Route = createFileRoute("/oto")({
       {
         name: "description",
         content:
-          "Upgrade your Confident Parent Academy webinar with a private 1-on-1 parenting counselling session with Miss Samra Riaz.",
+          "Upgrade your Confident Parent Academy workshop with a private 1-on-1 parenting counselling session with Miss Samra Riaz.",
       },
       { name: "robots", content: "noindex,nofollow" },
     ],
