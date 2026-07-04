@@ -21,6 +21,7 @@ import beforeAfter from "@/assets/cpa-before-after.png.asset.json";
 import everythingYouGet from "@/assets/cpa-everything-you-get.png.asset.json";
 import testimonialMotherhood from "@/assets/testimonial-motherhood.jpeg.asset.json";
 import testimonialParenting from "@/assets/testimonial-parenting.jpeg.asset.json";
+import soundLikeYourHome from "@/assets/sound-like-your-home.png.asset.json";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -350,7 +351,14 @@ function ProblemSection() {
   return (
     <section className="py-14 md:py-20 bg-background">
       <div className="mx-auto max-w-5xl px-4">
-        <SectionHeading eyebrow="Sound familiar?" title="Does This Sound Like Your Home?" />
+        <div className="my-6 md:my-10 flex justify-center animate-fade-in">
+          <img
+            src={soundLikeYourHome.url}
+            alt="Does this sound like your home? Daily tantrums, screen-time battles and exhausted parents — in just one workshop you'll learn how to reduce power struggles, raise a calm child, build connection and create a peaceful home."
+            loading="lazy"
+            className="w-full max-w-[1000px] h-auto rounded-2xl shadow-xl"
+          />
+        </div>
         <div className="mt-8 grid sm:grid-cols-2 lg:grid-cols-3 gap-3">
           {problems.map((p) => (
             <div key={p} className="flex items-start gap-3 rounded-2xl bg-card border border-border px-4 py-3.5 shadow-sm">
