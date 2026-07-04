@@ -109,6 +109,23 @@ function OrderPage() {
     }
   }, [hasGhlContact, ghlName, ghlEmail, ghlPhone, ghlSpecialty]);
 
+  // Fire InitiateCheckout once when the checkout page is reached (per session).
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+    try {
+      if (sessionStorage.getItem("cpa_initiate_checkout_fired") === "1") return;
+      sessionStorage.setItem("cpa_initiate_checkout_fired", "1");
+      import("@/lib/fbpixel").then(({ trackPixel }) => {
+        trackPixel("InitiateCheckout", {
+          content_name: "Confident Parent Academy Workshop",
+          currency: "PKR",
+        });
+      });
+    } catch {
+      /* ignore */
+    }
+  }, []);
+
   function getLead() {
     if (hasGhlContact) {
       return {
@@ -266,17 +283,26 @@ function OrderPage() {
       }
     } catch {}
 
-    // Fire the primary conversion only after a fully successful submission:
-    // validation passed, screenshot uploaded, and order data saved.
+    // Fire the primary Purchase conversion ONLY after a fully successful
+    // submission: validation passed, screenshot uploaded, and order saved to
+    // the database (savedLeadId + savedOrder both present, checked above).
+    // Value uses the actual final order total (workshop + selected bumps),
+    // never a hardcoded amount. Guarded so a given saved order fires once.
     try {
-      const { trackPixel } = await import("@/lib/fbpixel");
-      trackPixel("SubmitApplication", {
-        content_name: "Workshop Registration",
-        value: 499,
-        currency: "PKR",
-      });
+      const purchaseGuardKey = `cpa_purchase_fired_${savedLeadId}`;
+      const alreadyFired =
+        typeof window !== "undefined" && localStorage.getItem(purchaseGuardKey) === "1";
+      if (!alreadyFired) {
+        const { trackPixel } = await import("@/lib/fbpixel");
+        trackPixel("Purchase", {
+          content_name: "Confident Parent Academy Workshop",
+          value: total,
+          currency: "PKR",
+        });
+        if (typeof window !== "undefined") localStorage.setItem(purchaseGuardKey, "1");
+      }
     } catch (err) {
-      console.error("Pixel SubmitApplication event failed", err);
+      console.error("Pixel Purchase event failed", err);
     }
 
     const rawValue = savedOrder.strategy_session_order_bump_selected;

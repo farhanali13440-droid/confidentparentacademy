@@ -238,7 +238,7 @@ function InlineLeadForm() {
 
         try {
           const { trackPixel } = await import("@/lib/fbpixel");
-          trackPixel("Lead", { content_name: "Workshop Registration", value: 499, currency: "PKR" });
+          trackPixel("Lead", { content_name: "Workshop Registration" });
         } catch (err) {
           console.error("Pixel Lead event failed", err);
         }
