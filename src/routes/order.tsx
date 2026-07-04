@@ -387,6 +387,11 @@ function OrderPage() {
                       className="mt-1 size-5 accent-[color:var(--warm-brown)] shrink-0"
                     />
                     <div className="flex-1 min-w-0">
+                      {b.caption && (
+                        <div className="mb-2 text-xs md:text-sm font-bold text-[color:var(--warm-brown-deep)]">
+                          {b.caption}
+                        </div>
+                      )}
                       <div className="flex items-start gap-2">
                         <ArrowRight className="size-5 text-red-600 shrink-0 mt-0.5" />
                         <div className="font-extrabold text-[color:var(--warm-brown-deep)] uppercase text-sm md:text-base">
