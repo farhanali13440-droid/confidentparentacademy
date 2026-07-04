@@ -717,99 +717,86 @@ function BonusCard({
   label,
   title,
   desc,
-  featured = false,
 }: {
   img: string;
   alt: string;
   label: string;
   title: string;
   desc: string;
-  featured?: boolean;
+  index: number;
+  reverse?: boolean;
 }) {
-  return (
-    <div
-      className={`flex flex-col overflow-hidden rounded-3xl border ${
-        featured ? "border-blush/60 shadow-2xl ring-1 ring-blush/40" : "border-border shadow-md"
-      }`}
-      style={{ backgroundColor: "color-mix(in srgb, var(--soft-pink) 20%, white)" }}
-    >
-      <div className="bg-white">
-        <img src={img} alt={alt} className="w-full h-auto object-contain" loading="lazy" />
-      </div>
-      <div className="p-5 sm:p-6">
-        <div className="flex items-center justify-between gap-3">
-          <span className="text-xs font-semibold uppercase tracking-widest text-warm-brown">{label}</span>
-          <FreeBadge />
-        </div>
-        <h3 className={`mt-2 font-semibold ${featured ? "text-xl md:text-2xl" : "text-lg"}`} style={{ fontFamily: "var(--font-display)" }}>
-          {title}
-        </h3>
-        <p className="mt-1.5 text-sm text-muted-foreground leading-relaxed">{desc}</p>
-      </div>
-    </div>
-  );
+  return null;
 }
 
 function BonusesSection() {
+  const bonuses = [
+    {
+      img: bonusCommunity.url,
+      alt: "Private Parent Community Access — a supportive community of parents sharing tips and encouragement",
+      label: "Bonus 1",
+      title: "Private Parent Community Access",
+      desc: "Join a supportive community of parents where you can ask questions, share experiences, learn practical parenting tips, and grow alongside parents on the same journey.",
+    },
+    {
+      img: bonusGeniusBlueprint.url,
+      alt: "The Parenting Genius Blueprint — a PDF guide to your child's unique intelligence and natural strengths",
+      label: "Bonus 2",
+      title: "The Parenting Genius Blueprint (PDF)",
+      desc: "Discover your child's unique intelligence, natural strengths, learning style, and how you can support their growth with more confidence — all in one practical PDF guide.",
+    },
+    {
+      img: bonusGratitudePlanner.url,
+      alt: "Parent Gratitude Planner — a simple guided planner to build a positive connection with your child",
+      label: "Bonus 3",
+      title: "Parent Gratitude Planner",
+      desc: "A simple guided planner designed to help you notice the good, reduce daily frustration, and build a more positive connection with your child.",
+    },
+    {
+      img: bonusWorkshopRecording.url,
+      alt: "Complete Workshop Recording — rewatch the full parenting workshop at your convenience",
+      label: "Bonus 4",
+      title: "Complete Workshop Recording",
+      desc: "Miss something during the live workshop? Rewatch the complete workshop at your convenience and revisit the parenting strategies whenever you need them.",
+    },
+  ];
   return (
     <section className="py-14 md:py-20 bg-background">
       <div className="mx-auto max-w-6xl px-4">
         <SectionHeading
           eyebrow="Included free"
           title="Free Bonuses That Make Parenting Easier"
-          subtitle="Ready-to-use tools that help you handle hard days more calmly. All free when you register."
+          subtitle="Helpful tools and continued support to make parenting easier. All included free when you register."
         />
 
-        {/* Featured bonus — highest perceived value */}
-        <div className="mt-10">
-          <BonusCard
-            featured
-            img={bonusToolkitMockup.url}
-            alt="Parenting Behaviour Toolkit — worksheets, trackers, charts and templates to understand and support your child"
-            label="Exclusive Bonus"
-            title="Parenting Behaviour Toolkit"
-            desc="A ready-to-use set of tools, behaviour trackers, routine charts, reward charts and calm-down cards, that help you handle difficult behaviour more calmly and confidently every day."
-          />
-        </div>
-
-        {/* Printable worksheets — directly below the toolkit */}
-        <div className="mt-6">
-          <BonusCard
-            img={bonusWorksheets.url}
-            alt="Printable parenting worksheets — emotions check-in, daily routine planner, behaviour tracker and good-choices chart"
-            label="Bonus: Printables"
-            title="Printable Parenting Worksheets"
-            desc="Print them at home and use them right away. Emotion check-ins, routine planners and calm-down cards that help your child settle down and follow the day."
-          />
-        </div>
-
-        {/* Recording + Live Q&A side by side */}
-        <div className="mt-6 grid md:grid-cols-2 gap-6">
-          <BonusCard
-            img={bonusRecording.url}
-            alt="Workshop recording on a laptop — rewatch the full session anytime"
-            label="Bonus: Lifetime Recording"
-            title="Workshop Recording"
-            desc="Missed the live session, or want to watch it again? Keep the full recording for life and rewatch it anytime, on any device."
-          />
-          <BonusCard
-            img={bonusLiveQa.url}
-            alt="Live Q&A session with Miss Samra Riaz on Google Meet"
-            label="Bonus: Live Q&A"
-            title="Live Q&A Session"
-            desc="Ask Miss Samra Riaz about your own child and get a clear answer live, so you leave knowing exactly what to do."
-          />
-        </div>
-
-        {/* PDF guide */}
-        <div className="mt-6 mx-auto max-w-3xl">
-          <BonusCard
-            img={bonusPdfGuide.url}
-            alt="Peaceful Parenting Guide PDF — a complete guide with practical strategies and real-life examples"
-            label="Bonus: PDF Guide"
-            title="Peaceful Parenting Guide (PDF)"
-            desc="A simple guide full of step-by-step tips and real-life examples you can come back to whenever a hard day shows up."
-          />
+        <div className="mt-10 md:mt-14 space-y-10 md:space-y-16">
+          {bonuses.map((b, i) => {
+            const reverse = i % 2 === 1;
+            return (
+              <div
+                key={b.label}
+                className="grid items-center gap-6 md:gap-10 md:grid-cols-2"
+              >
+                <div className={reverse ? "md:order-2" : "md:order-1"}>
+                  <div className="overflow-hidden rounded-2xl shadow-lg ring-1 ring-blush/30 bg-white">
+                    <img src={b.img} alt={b.alt} className="w-full h-auto object-contain" loading="lazy" />
+                  </div>
+                </div>
+                <div className={reverse ? "md:order-1" : "md:order-2"}>
+                  <div className="flex items-center gap-3">
+                    <span className="inline-flex items-center rounded-full bg-primary/10 text-primary text-xs font-bold uppercase tracking-widest px-3 py-1 ring-1 ring-primary/20">
+                      {b.label}
+                    </span>
+                    <FreeBadge />
+                  </div>
+                  <h3 className="mt-4 text-2xl md:text-3xl font-semibold text-warm-brown-deep" style={{ fontFamily: "var(--font-display)" }}>
+                    {b.title}
+                  </h3>
+                  <p className="mt-3 text-muted-foreground leading-relaxed">{b.desc}</p>
+                </div>
+              </div>
+            );
+          })}
         </div>
       </div>
     </section>
