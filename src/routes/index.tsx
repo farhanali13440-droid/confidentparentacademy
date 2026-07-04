@@ -592,21 +592,21 @@ function StorySection() {
 
 function IncludesSection() {
   const items = [
-    { icon: Video, title: "90-Minute Live Session", desc: "Spend 90 minutes live with Miss Samra on Google Meet." },
-    { icon: Star, title: "Full Recording", desc: "Can't make it live? Watch the whole session later, anytime." },
-    { icon: MessageCircle, title: "Live Q&A", desc: "Ask about your own child and get real answers on the spot." },
-    { icon: FileText, title: "PDF Parenting Guide", desc: "A simple guide you can keep and come back to whenever you need it." },
-    { icon: Award, title: "Certificate", desc: "Get a certificate of attendance if you'd like one." },
+    { icon: Video, title: "Live Confident Parenting Workshop", desc: "A live, interactive session with Miss Samra on Google Meet." },
+    { icon: Users, title: "Private Parent Community Access", desc: "Join a supportive community of parents on the same journey." },
+    { icon: FileText, title: "The Parenting Genius Blueprint (PDF)", desc: "Understand your child's unique intelligence and natural strengths." },
+    { icon: Heart, title: "Parent Gratitude Planner", desc: "A simple guided planner to build a more positive connection." },
+    { icon: Star, title: "Complete Workshop Recording", desc: "Rewatch the full workshop at your convenience, anytime." },
   ];
   return (
     <section className="py-14 md:py-20 bg-background">
-      <div className="mx-auto max-w-5xl px-4">
-        <SectionHeading eyebrow="Everything included" title="Here's Everything You Get" />
-        <div className="mt-8 mx-auto max-w-4xl">
-          <div className="rounded-3xl overflow-hidden shadow-xl ring-1 ring-blush/30 bg-white">
+      <div className="mx-auto max-w-6xl px-4">
+        <SectionHeading eyebrow="Everything included" title="Everything You Get With Your Workshop Ticket" />
+        <div className="mt-8 mx-auto w-full max-w-[1100px]">
+          <div className="rounded-2xl overflow-hidden shadow-lg ring-1 ring-blush/30 bg-white">
             <img
               src={everythingYouGet.url}
-              alt="Everything you get with your workshop ticket — live parenting workshop, recording, guide, toolkit, live Q&A and WhatsApp support"
+              alt="Everything you get with your workshop ticket — live Confident Parenting Workshop, The Parenting Genius Blueprint PDF, Parent Gratitude Planner, complete workshop recording and private parent community access"
               className="w-full h-auto object-contain"
               loading="lazy"
             />
@@ -622,32 +622,6 @@ function IncludesSection() {
               <p className="mt-1.5 text-sm text-muted-foreground">{desc}</p>
             </div>
           ))}
-        </div>
-      </div>
-    </section>
-  );
-}
-
-/* ---------------- PRICING ---------------- */
-
-function EverythingYouReceiveSection() {
-  return (
-    <section className="py-14 md:py-20 bg-background">
-      <div className="mx-auto max-w-6xl px-4">
-        <SectionHeading
-          eyebrow="The full package"
-          title="You Get So Much More Than One Live Session"
-          subtitle="Your 499 PKR gives you the live session plus tools you'll use with your child for years."
-        />
-        <div className="mt-10 md:mt-12 mx-auto max-w-5xl">
-          <div className="rounded-3xl overflow-hidden shadow-2xl ring-1 ring-blush/30 bg-white">
-            <img
-              src={completeToolkit.url}
-              alt="The complete Parenting Behaviour Toolkit — behaviour trackers, routine charts, reward charts, calm-down strategies, emotions wheel and encouragement cards"
-              className="w-full h-auto object-contain"
-              loading="lazy"
-            />
-          </div>
         </div>
       </div>
     </section>
