@@ -142,7 +142,7 @@ function OrderPage() {
   }
 
   const [bumps, setBumps] = useState<Record<string, boolean>>({});
-  const [paymentMethod, setPaymentMethod] = useState<PayMethod>("hbl");
+  const [paymentMethod, setPaymentMethod] = useState<PayMethod>("sadapay");
   const [submitting, setSubmitting] = useState(false);
   const [screenshot, setScreenshot] = useState<File | null>(null);
   const [screenshotPreview, setScreenshotPreview] = useState<string | null>(null);
