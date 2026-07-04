@@ -15,7 +15,6 @@ import bonusCommunity from "@/assets/cpa-bonus-community.png.asset.json";
 import bonusGeniusBlueprint from "@/assets/cpa-bonus-genius-blueprint.png.asset.json";
 import bonusGratitudePlanner from "@/assets/cpa-bonus-gratitude-planner.png.asset.json";
 import beforeAfter from "@/assets/cpa-before-after.png.asset.json";
-import everythingYouGet from "@/assets/cpa-everything-you-get-workshop.png.asset.json";
 import testimonialMotherhood from "@/assets/testimonial-motherhood.jpeg.asset.json";
 import testimonialParenting from "@/assets/testimonial-parenting.jpeg.asset.json";
 import exhaustedMotherCryingChild from "@/assets/exhausted-mother-crying-child.png.asset.json";
