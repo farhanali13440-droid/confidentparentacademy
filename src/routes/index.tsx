@@ -806,7 +806,7 @@ function FAQSection() {
     { q: "Who should attend this workshop?", a: "Any parent who wants a calmer home and wants to understand their child better, whether your child is a toddler, school-aged or older." },
     { q: "Can fathers attend?", a: "Absolutely. Fathers play a vital role, and this workshop is designed for both mothers and fathers." },
     { q: "Can both parents join?", a: "Yes. We encourage both parents to attend together on the same registration so you're on the same page at home." },
-    { q: "Will the recording be available?", a: "Yes. Every registrant gets access to the full recording, so you can watch or rewatch anytime." },
+    { q: "Is the workshop recording included?", a: "The 499 PKR ticket covers the live workshop plus your 3 free bonuses. The complete workshop recording is available separately as an optional paid add-on at checkout if you'd like to rewatch later." },
     { q: "How long is the workshop?", a: "It runs for 1 hour 30 minutes, including a live Q&A session." },
     { q: "What platform is it on?", a: "The live session is hosted on Google Meet. You'll receive the joining link on WhatsApp and email." },
   ];
