@@ -412,7 +412,7 @@ function OrderPage() {
                       onChange={(e) => setPaymentMethod(e.target.value as PayMethod)}
                       className="appearance-none w-full rounded-xl border-2 border-primary bg-gradient-to-br from-primary/5 to-primary/10 px-4 py-4 pr-12 text-base font-bold text-foreground shadow-md outline-none focus:ring-4 focus:ring-primary/30 hover:shadow-lg transition cursor-pointer"
                     >
-                      <option value="sadapay">⭐ SadaPay — Recommended</option>
+                      <option value="sadapay">⭐ SadaPay</option>
                       <option value="hbl">🏦 Habib Bank Limited (HBL)</option>
                     </select>
                     <ChevronDown className="pointer-events-none absolute right-4 top-1/2 -translate-y-1/2 size-5 text-primary" />
@@ -421,15 +421,8 @@ function OrderPage() {
                 </div>
 
                 <div className="rounded-lg border-2 border-primary/30 bg-primary/5 p-4">
-                  <div className="flex flex-wrap items-center gap-2">
-                    <div className="text-xs font-bold uppercase tracking-wider text-primary">
-                      {PAYMENT_ACCOUNTS[paymentMethod].label} Payment Details
-                    </div>
-                    {paymentMethod === "sadapay" && (
-                      <span className="rounded-full bg-primary px-2.5 py-0.5 text-[10px] font-bold uppercase tracking-wider text-primary-foreground shadow-sm">
-                        Preferred
-                      </span>
-                    )}
+                  <div className="text-xs font-bold uppercase tracking-wider text-primary">
+                    {PAYMENT_ACCOUNTS[paymentMethod].label} Payment Details
                   </div>
                   <div className="mt-2 space-y-1 text-sm">
                     <div className="flex justify-between gap-3">
