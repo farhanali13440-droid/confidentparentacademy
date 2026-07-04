@@ -49,7 +49,6 @@ function LandingPage() {
       <AboutSamra />
       <StorySection />
       <IncludesSection />
-      <EverythingYouReceiveSection />
       <GuaranteeSection />
       <PricingSection />
       <BonusesSection />
