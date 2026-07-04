@@ -14,7 +14,6 @@ import samraPortrait from "@/assets/cpa-samra.jpg";
 import bonusCommunity from "@/assets/cpa-bonus-community.png.asset.json";
 import bonusGeniusBlueprint from "@/assets/cpa-bonus-genius-blueprint.png.asset.json";
 import bonusGratitudePlanner from "@/assets/cpa-bonus-gratitude-planner.png.asset.json";
-import bonusWorkshopRecording from "@/assets/cpa-bonus-workshop-recording.png.asset.json";
 import beforeAfter from "@/assets/cpa-before-after.png.asset.json";
 import everythingYouGet from "@/assets/cpa-everything-you-get-workshop.png.asset.json";
 import testimonialMotherhood from "@/assets/testimonial-motherhood.jpeg.asset.json";
