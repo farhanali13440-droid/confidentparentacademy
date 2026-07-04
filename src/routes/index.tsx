@@ -732,13 +732,6 @@ function BonusesSection() {
       title: "Parent Gratitude Planner",
       desc: "A simple guided planner designed to help you notice the good, reduce daily frustration, and build a more positive connection with your child.",
     },
-    {
-      img: bonusWorkshopRecording.url,
-      alt: "Complete Workshop Recording — rewatch the full parenting workshop at your convenience",
-      label: "Bonus 4",
-      title: "Complete Workshop Recording",
-      desc: "Miss something during the live workshop? Rewatch the complete workshop at your convenience and revisit the parenting strategies whenever you need them.",
-    },
   ];
   return (
     <section className="py-14 md:py-20 bg-background">
