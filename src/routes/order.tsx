@@ -611,8 +611,8 @@ function OrderPage() {
               <div>
                 <h3 className="font-semibold" style={{ fontFamily: "var(--font-display)" }}>Attend With Confidence</h3>
                 <p className="text-sm text-muted-foreground mt-1">
-                  Join the live session, take notes, and if you can't make it live you'll still get the
-                  full recording. We're here to support your family every step of the way.
+                  Join the live session and take notes with the help of Miss Samra. We're here to support
+                  your family every step of the way.
                 </p>
               </div>
             </div>
