@@ -76,7 +76,8 @@ const BUMPS = [
 ] as const;
 
 const PAYMENT_ACCOUNTS = {
-  hbl: { label: "Habib Bank Limited (HBL)", name: "Samra", account: "16977901123599" },
+  sadapay: { label: "SadaPay", name: "Iman Tariq", account: "03305599608", accountLabel: "Account / Mobile Number" },
+  hbl: { label: "Habib Bank Limited (HBL)", name: "Farhan Ali Rash", account: "11107902348103", accountLabel: "Account Number" },
 } as const;
 type PayMethod = keyof typeof PAYMENT_ACCOUNTS;
 
@@ -141,7 +142,7 @@ function OrderPage() {
   }
 
   const [bumps, setBumps] = useState<Record<string, boolean>>({});
-  const [paymentMethod, setPaymentMethod] = useState<PayMethod>("hbl");
+  const [paymentMethod, setPaymentMethod] = useState<PayMethod>("sadapay");
   const [submitting, setSubmitting] = useState(false);
   const [screenshot, setScreenshot] = useState<File | null>(null);
   const [screenshotPreview, setScreenshotPreview] = useState<string | null>(null);
@@ -411,6 +412,7 @@ function OrderPage() {
                       onChange={(e) => setPaymentMethod(e.target.value as PayMethod)}
                       className="appearance-none w-full rounded-xl border-2 border-primary bg-gradient-to-br from-primary/5 to-primary/10 px-4 py-4 pr-12 text-base font-bold text-foreground shadow-md outline-none focus:ring-4 focus:ring-primary/30 hover:shadow-lg transition cursor-pointer"
                     >
+                      <option value="sadapay">⭐ SadaPay — Recommended</option>
                       <option value="hbl">🏦 Habib Bank Limited (HBL)</option>
                     </select>
                     <ChevronDown className="pointer-events-none absolute right-4 top-1/2 -translate-y-1/2 size-5 text-primary" />
@@ -419,17 +421,24 @@ function OrderPage() {
                 </div>
 
                 <div className="rounded-lg border-2 border-primary/30 bg-primary/5 p-4">
-                  <div className="text-xs font-bold uppercase tracking-wider text-primary">
-                    {PAYMENT_ACCOUNTS[paymentMethod].label} Payment Details
+                  <div className="flex flex-wrap items-center gap-2">
+                    <div className="text-xs font-bold uppercase tracking-wider text-primary">
+                      {PAYMENT_ACCOUNTS[paymentMethod].label} Payment Details
+                    </div>
+                    {paymentMethod === "sadapay" && (
+                      <span className="rounded-full bg-primary px-2.5 py-0.5 text-[10px] font-bold uppercase tracking-wider text-primary-foreground shadow-sm">
+                        Preferred
+                      </span>
+                    )}
                   </div>
                   <div className="mt-2 space-y-1 text-sm">
                     <div className="flex justify-between gap-3">
                       <span className="text-muted-foreground">Account Title</span>
-                      <span className="font-bold">{PAYMENT_ACCOUNTS[paymentMethod].name}</span>
+                      <span className="font-bold text-right">{PAYMENT_ACCOUNTS[paymentMethod].name}</span>
                     </div>
                     <div className="flex justify-between gap-3">
-                      <span className="text-muted-foreground">Account Number</span>
-                      <span className="font-bold tracking-wider">{PAYMENT_ACCOUNTS[paymentMethod].account}</span>
+                      <span className="text-muted-foreground shrink-0">{PAYMENT_ACCOUNTS[paymentMethod].accountLabel}</span>
+                      <span className="font-bold tracking-wider text-right break-all">{PAYMENT_ACCOUNTS[paymentMethod].account}</span>
                     </div>
                   </div>
                 </div>
