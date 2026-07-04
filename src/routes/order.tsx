@@ -76,7 +76,8 @@ const BUMPS = [
 ] as const;
 
 const PAYMENT_ACCOUNTS = {
-  hbl: { label: "Habib Bank Limited (HBL)", name: "Samra", account: "16977901123599" },
+  sadapay: { label: "SadaPay", name: "Iman Tariq", account: "03305599608", accountLabel: "Account / Mobile Number" },
+  hbl: { label: "Habib Bank Limited (HBL)", name: "Farhan Ali Rash", account: "11107902348103", accountLabel: "Account Number" },
 } as const;
 type PayMethod = keyof typeof PAYMENT_ACCOUNTS;
 
