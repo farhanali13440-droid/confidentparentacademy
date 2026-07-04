@@ -123,7 +123,7 @@ function Hero() {
             </div>
 
             <div className="mt-7 space-y-3 max-w-md mx-auto md:mx-0">
-              <CtaButton subtitle="Live on 13 July · Recording included">Reserve My Seat</CtaButton>
+              <CtaButton subtitle="Live on 13 July · Includes 3 free bonuses">Reserve My Seat</CtaButton>
               <a
                 href="#curriculum"
                 onClick={(e) => {
@@ -689,7 +689,7 @@ function PricingSection() {
             Book now while the price is low. After this group, the price goes back up to 2,000 PKR.
           </p>
           <div className="mt-7 max-w-sm mx-auto">
-            <CtaButton subtitle="Live on 13 July · Recording included">Reserve My Seat for 499 PKR</CtaButton>
+            <CtaButton subtitle="Live on 13 July · Includes 3 free bonuses">Reserve My Seat for 499 PKR</CtaButton>
           </div>
           <div className="mt-4 flex items-center justify-center gap-2 text-xs text-muted-foreground">
             <Lock className="size-3.5" /> Secure checkout
@@ -864,7 +864,7 @@ function FinalCta() {
         </p>
         <div className="mt-6 max-w-sm mx-auto">
           <MasterclassCountdown variant="light" showDateLine={false} className="mb-5" />
-          <CtaButton subtitle="Only 499 PKR · Recording included">Reserve My Seat</CtaButton>
+          <CtaButton subtitle="Only 499 PKR · Includes 3 free bonuses">Reserve My Seat</CtaButton>
         </div>
         <div className="mt-5 flex items-center justify-center gap-2 text-sm text-foreground/70">
           <ShieldCheck className="size-4 text-accent" /> Secure checkout · Instant confirmation
