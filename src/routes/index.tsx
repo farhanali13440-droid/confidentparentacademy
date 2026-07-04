@@ -26,8 +26,8 @@ export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
       { title: "Confident Parent Academy | Stop the Daily Fights and Enjoy Your Child Again" },
-      { name: "description", content: "A live parenting webinar with Miss Samra Riaz. Understand why your child cries, shouts and doesn't listen, and learn simple ways to calm your home. Only 499 PKR." },
-      { property: "og:title", content: "Confident Parent Academy | Parenting Webinar with Miss Samra Riaz" },
+      { name: "description", content: "A live parenting workshop with Miss Samra Riaz. Understand why your child cries, shouts and doesn't listen, and learn simple ways to calm your home. Only 499 PKR." },
+      { property: "og:title", content: "Confident Parent Academy | Parenting Workshop with Miss Samra Riaz" },
       { property: "og:description", content: "Understand why your child behaves this way and learn simple ways to bring calm back to your home. Live on 13 July on Google Meet." },
       { property: "og:type", content: "website" },
       { property: "og:url", content: "/" },
@@ -80,7 +80,7 @@ function Hero() {
           <div className="inline-flex items-center gap-2 rounded-full border border-blush/40 bg-white/70 backdrop-blur-md px-4 py-1.5 shadow-sm">
             <BadgeCheck className="size-4 text-accent shrink-0" />
             <span className="text-[11px] sm:text-sm font-semibold text-foreground/90 text-center leading-snug">
-              A live parenting webinar for busy Pakistani parents
+              A live parenting workshop for busy Pakistani parents
             </span>
           </div>
         </div>
@@ -95,7 +95,7 @@ function Hero() {
               <span className="gradient-highlight-pink">Daily Power Struggles</span>
             </h1>
             <p className="mt-4 md:mt-5 text-sm md:text-lg text-foreground/75 leading-relaxed">
-              In this live webinar you will finally understand why your child cries, shouts and
+              In this live workshop you will finally understand why your child cries, shouts and
               doesn't listen, and get simple things you can do the same day to make your home
               calmer. No shouting. No guilt. No need to be a perfect parent.
             </p>
@@ -135,7 +135,7 @@ function Hero() {
                 }}
                 className="block w-full rounded-full border border-warm-brown/30 px-6 py-3 text-center text-sm font-semibold text-warm-brown hover:bg-blush/10 transition"
               >
-                View Webinar Details
+                View Workshop Details
               </a>
             </div>
           </div>
@@ -164,7 +164,7 @@ function AttendeeTestimonials() {
   return (
     <div className="mb-6">
       <h3 className="text-center text-base sm:text-lg font-bold text-warm-brown" style={{ fontFamily: "var(--font-display)" }}>
-        Parents Loved This Webinar
+        Parents Loved This Workshop
       </h3>
       <p className="text-center text-xs text-muted-foreground mt-1 mb-3">
         Here's what previous attendees had to say
@@ -238,7 +238,7 @@ function InlineLeadForm() {
 
         try {
           const { trackPixel } = await import("@/lib/fbpixel");
-          trackPixel("Lead", { content_name: "Webinar Registration", value: 499, currency: "PKR" });
+          trackPixel("Lead", { content_name: "Workshop Registration", value: 499, currency: "PKR" });
         } catch (err) {
           console.error("Pixel Lead event failed", err);
         }
@@ -419,7 +419,7 @@ function BenefitsSection() {
   return (
     <section className="py-14 md:py-20 bg-background">
       <div className="mx-auto max-w-5xl px-4">
-        <SectionHeading eyebrow="What changes for you" title="Here's What Your Days Will Feel Like After This Webinar" />
+        <SectionHeading eyebrow="What changes for you" title="Here's What Your Days Will Feel Like After This Workshop" />
         <div className="mt-8 grid sm:grid-cols-2 gap-4">
           {benefits.map((b) => (
             <div key={b} className="flex items-start gap-3 rounded-2xl bg-card border border-border p-5 shadow-sm">
@@ -477,7 +477,7 @@ function CurriculumSection() {
   return (
     <section id="curriculum" className="py-14 md:py-20 bg-secondary scroll-mt-16">
       <div className="mx-auto max-w-5xl px-4">
-        <SectionHeading eyebrow="Inside the webinar" title="What You'll Learn (10 Simple, Real-Life Topics)" />
+        <SectionHeading eyebrow="Inside the workshop" title="What You'll Learn (10 Simple, Real-Life Topics)" />
         <div className="mt-8 grid sm:grid-cols-2 gap-4">
           {modules.map((m, i) => (
             <div key={m} className="flex items-center gap-4 rounded-2xl bg-card border border-border p-5 shadow-sm">
@@ -600,7 +600,7 @@ function IncludesSection() {
           <div className="rounded-3xl overflow-hidden shadow-xl ring-1 ring-blush/30 bg-white">
             <img
               src={everythingYouGet.url}
-              alt="Everything you get with your webinar ticket — live parenting webinar, recording, guide, toolkit, live Q&A and WhatsApp support"
+              alt="Everything you get with your workshop ticket — live parenting workshop, recording, guide, toolkit, live Q&A and WhatsApp support"
               className="w-full h-auto object-contain"
               loading="lazy"
             />
@@ -652,7 +652,7 @@ function EverythingYouReceiveSection() {
 
 function GuaranteeSection() {
   const points = [
-    "Refund available within 24 hours after the webinar ends",
+    "Refund available within 24 hours after the workshop ends",
     "100% of your registration fee returned",
     "No questions asked",
   ];
@@ -667,9 +667,9 @@ function GuaranteeSection() {
             100% Money-Back Guarantee
           </h2>
           <p className="mt-4 text-muted-foreground leading-relaxed">
-            If you attend the webinar and genuinely feel you didn't learn practical parenting strategies
+            If you attend the workshop and genuinely feel you didn't learn practical parenting strategies
             that can help you create a more peaceful home, simply let us know within{" "}
-            <span className="font-semibold text-warm-brown">24 hours</span> after the webinar ends.
+            <span className="font-semibold text-warm-brown">24 hours</span> after the workshop ends.
             We'll refund <span className="font-semibold text-warm-brown">100% of your registration fee</span>. No questions asked.
           </p>
           <div className="mt-6 grid gap-2.5 max-w-md mx-auto text-left">
@@ -807,9 +807,9 @@ function BonusesSection() {
         <div className="mt-6 grid md:grid-cols-2 gap-6">
           <BonusCard
             img={bonusRecording.url}
-            alt="Webinar recording on a laptop — rewatch the full session anytime"
+            alt="Workshop recording on a laptop — rewatch the full session anytime"
             label="Bonus: Lifetime Recording"
-            title="Webinar Recording"
+            title="Workshop Recording"
             desc="Missed the live session, or want to watch it again? Keep the full recording for life and rewatch it anytime, on any device."
           />
           <BonusCard
@@ -874,11 +874,11 @@ function TestimonialsSection() {
 
 function FAQSection() {
   const faqs = [
-    { q: "Who should attend this webinar?", a: "Any parent who wants a calmer home and wants to understand their child better, whether your child is a toddler, school-aged or older." },
-    { q: "Can fathers attend?", a: "Absolutely. Fathers play a vital role, and this webinar is designed for both mothers and fathers." },
+    { q: "Who should attend this workshop?", a: "Any parent who wants a calmer home and wants to understand their child better, whether your child is a toddler, school-aged or older." },
+    { q: "Can fathers attend?", a: "Absolutely. Fathers play a vital role, and this workshop is designed for both mothers and fathers." },
     { q: "Can both parents join?", a: "Yes. We encourage both parents to attend together on the same registration so you're on the same page at home." },
     { q: "Will the recording be available?", a: "Yes. Every registrant gets access to the full recording, so you can watch or rewatch anytime." },
-    { q: "How long is the webinar?", a: "It runs for 1 hour 30 minutes, including a live Q&A session." },
+    { q: "How long is the workshop?", a: "It runs for 1 hour 30 minutes, including a live Q&A session." },
     { q: "What platform is it on?", a: "The live session is hosted on Google Meet. You'll receive the joining link on WhatsApp and email." },
   ];
   return (

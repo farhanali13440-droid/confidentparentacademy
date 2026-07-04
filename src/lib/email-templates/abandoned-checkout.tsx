@@ -32,16 +32,16 @@ type Copy = { headline: string; preview: string; intro: string; body: string; ct
 const COPY: Record<1 | 2 | 3 | 4, Copy> = {
   1: {
     headline: "You're Almost In 🎉",
-    preview: "Complete your Confident Parent Academy webinar registration",
+    preview: "Complete your Confident Parent Academy workshop registration",
     intro:
-      "You opted in for the Confident Parent Academy parenting webinar but your registration isn't complete yet.",
+      "You opted in for the Confident Parent Academy parenting workshop but your registration isn't complete yet.",
     body:
       "Your seat will only be confirmed once your payment is submitted. Tap the button below to complete the simple checkout — it only takes a minute.",
     cta: 'Complete My Registration',
   },
   2: {
     headline: 'Your Seat Is Still Waiting',
-    preview: 'Your Confident Parent Academy webinar seat is still open',
+    preview: 'Your Confident Parent Academy workshop seat is still open',
     intro:
       'We noticed you started the registration but did not finish payment. Your seat is still reserved for now.',
     body:
@@ -52,7 +52,7 @@ const COPY: Record<1 | 2 | 3 | 4, Copy> = {
     headline: 'Parents Are Already Building Calmer, Happier Homes',
     preview: 'Parents are already enrolling — join them',
     intro:
-      'Dozens of parents have already enrolled in the Confident Parent Academy webinar and are getting ready to transform how they connect with their children.',
+      'Dozens of parents have already enrolled in the Confident Parent Academy workshop and are getting ready to transform how they connect with their children.',
     body:
       "Don't miss the chance to be in the room with them. Complete your registration now so you don't get left behind.",
     cta: 'Complete My Registration',
@@ -61,7 +61,7 @@ const COPY: Record<1 | 2 | 3 | 4, Copy> = {
     headline: 'Final Reminder ⏰',
     preview: 'Final reminder — complete your registration before you miss out',
     intro:
-      "This is the final reminder. Your registration for the Confident Parent Academy webinar is still incomplete.",
+      "This is the final reminder. Your registration for the Confident Parent Academy workshop is still incomplete.",
     body:
       "After this we won't follow up again — your reserved seat will be released. Tap below to lock in your spot right now.",
     cta: 'Complete My Registration Now',
@@ -87,7 +87,7 @@ const Email = ({
           <Text style={text}>{c.intro}</Text>
 
           <Section style={card}>
-            <Text style={cardHeader}>Live Webinar Details:</Text>
+            <Text style={cardHeader}>Live Workshop Details:</Text>
             <Text style={detail}>📅 <strong>Date:</strong> {trainingDate}</Text>
             <Text style={detail}>⏰ <strong>Time:</strong> {trainingTime}</Text>
             <Text style={detail}>📍 <strong>Location:</strong> Live on Google Meet</Text>

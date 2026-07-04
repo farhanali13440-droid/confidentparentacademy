@@ -80,7 +80,7 @@ export function OfferPopup() {
             <X className="size-3.5" />
           </button>
           <div className="flex-1 text-[12px] leading-tight font-semibold">
-            <div>Live Webinar: 13 July, 3–4:30 PM PKT</div>
+            <div>Live Workshop: 13 July, 3–4:30 PM PKT</div>
             <div className="text-yellow-300">499 PKR Today</div>
           </div>
           <button
@@ -120,7 +120,7 @@ export function OfferPopup() {
             <div className="px-6 py-5 space-y-3 text-center">
               <p className="text-sm md:text-base text-slate-700 leading-relaxed">
                 After hearing from many parents, we've decided to keep our
-                <span className="font-semibold"> Confident Parent Academy</span> webinar at 499 PKR for a
+                <span className="font-semibold"> Confident Parent Academy</span> workshop at 499 PKR for a
                 little longer.
               </p>
               <p className="text-sm text-slate-600">
@@ -134,7 +134,7 @@ export function OfferPopup() {
                   Early-bird 499 PKR offer ends: {DEADLINE_LABEL}
                 </div>
                 <div className="mt-1 text-xs text-slate-600">
-                  Live Webinar: Monday, 13th July 2026, 3:00 PM – 4:30 PM PKT
+                  Live Workshop: Monday, 13th July 2026, 3:00 PM – 4:30 PM PKT
                 </div>
               </div>
 

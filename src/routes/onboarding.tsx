@@ -13,7 +13,7 @@ export const Route = createFileRoute("/onboarding")({
   }),
   head: () => ({
     meta: [
-      { title: "Step 2 of 2 — Personalise Your Webinar" },
+      { title: "Step 2 of 2 — Personalise Your Workshop" },
       { name: "robots", content: "noindex,nofollow" },
     ],
   }),
@@ -64,7 +64,7 @@ const HELP = [
 const DFY_OPTIONS = [
   "Yes, I would like details about 1-on-1 parent counselling",
   "Maybe later, but I am interested",
-  "No, I want to apply the webinar myself first",
+  "No, I want to apply the workshop myself first",
 ];
 
 function CheckboxGroup({
@@ -206,7 +206,7 @@ function OnboardingPage() {
 
           <div className="bg-card rounded-2xl border shadow-sm p-5 md:p-8">
             <h1 className="text-xl md:text-2xl font-semibold leading-tight" style={{ fontFamily: "var(--font-display)" }}>
-              Before the Webinar, Help Us Personalise Your Experience
+              Before the Workshop, Help Us Personalise Your Experience
             </h1>
             <p className="mt-3 text-sm md:text-base text-muted-foreground">
               Your answers help Miss Samra focus on the most relevant strategies
@@ -216,7 +216,7 @@ function OnboardingPage() {
             <form onSubmit={onSubmit} className="mt-6 space-y-7">
               <Field
                 num={1}
-                label="What is your biggest goal from this parenting webinar right now?"
+                label="What is your biggest goal from this parenting workshop right now?"
               >
                 <CheckboxGroup
                   name="goals"
@@ -254,7 +254,7 @@ function OnboardingPage() {
 
               <Field
                 num={4}
-                label="What made you decide to join this webinar today?"
+                label="What made you decide to join this workshop today?"
               >
                 <CheckboxGroup
                   name="decision"
@@ -275,14 +275,14 @@ function OnboardingPage() {
                   rows={3}
                   maxLength={2000}
                   required
-                  placeholder="Be honest — this helps Miss Samra address it during the webinar."
+                  placeholder="Be honest — this helps Miss Samra address it during the workshop."
                   className="w-full rounded-xl border border-slate-300 bg-white px-3 py-2 text-sm focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20"
                 />
               </Field>
 
               <Field
                 num={6}
-                label="Which area would you most want help with after the webinar?"
+                label="Which area would you most want help with after the workshop?"
               >
                 <CheckboxGroup
                   name="help"
