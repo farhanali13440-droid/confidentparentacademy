@@ -11,14 +11,12 @@ import {
 } from "lucide-react";
 import heroFamily from "@/assets/cpa-hero-family.jpg";
 import samraPortrait from "@/assets/cpa-samra.jpg";
-import bonusPdfGuide from "@/assets/cpa-bonus-pdf-guide.png.asset.json";
-import bonusToolkitMockup from "@/assets/cpa-bonus-toolkit-mockup.png.asset.json";
-import bonusRecording from "@/assets/cpa-bonus-recording.png.asset.json";
-import bonusWorksheets from "@/assets/cpa-bonus-worksheets.png.asset.json";
-import bonusLiveQa from "@/assets/cpa-bonus-live-qa.png.asset.json";
-import completeToolkit from "@/assets/cpa-complete-toolkit.png.asset.json";
+import bonusCommunity from "@/assets/cpa-bonus-community.png.asset.json";
+import bonusGeniusBlueprint from "@/assets/cpa-bonus-genius-blueprint.png.asset.json";
+import bonusGratitudePlanner from "@/assets/cpa-bonus-gratitude-planner.png.asset.json";
+import bonusWorkshopRecording from "@/assets/cpa-bonus-workshop-recording.png.asset.json";
 import beforeAfter from "@/assets/cpa-before-after.png.asset.json";
-import everythingYouGet from "@/assets/cpa-everything-you-get.png.asset.json";
+import everythingYouGet from "@/assets/cpa-everything-you-get-workshop.png.asset.json";
 import testimonialMotherhood from "@/assets/testimonial-motherhood.jpeg.asset.json";
 import testimonialParenting from "@/assets/testimonial-parenting.jpeg.asset.json";
 import exhaustedMotherCryingChild from "@/assets/exhausted-mother-crying-child.png.asset.json";
@@ -51,7 +49,6 @@ function LandingPage() {
       <AboutSamra />
       <StorySection />
       <IncludesSection />
-      <EverythingYouReceiveSection />
       <GuaranteeSection />
       <PricingSection />
       <BonusesSection />
@@ -595,21 +592,21 @@ function StorySection() {
 
 function IncludesSection() {
   const items = [
-    { icon: Video, title: "90-Minute Live Session", desc: "Spend 90 minutes live with Miss Samra on Google Meet." },
-    { icon: Star, title: "Full Recording", desc: "Can't make it live? Watch the whole session later, anytime." },
-    { icon: MessageCircle, title: "Live Q&A", desc: "Ask about your own child and get real answers on the spot." },
-    { icon: FileText, title: "PDF Parenting Guide", desc: "A simple guide you can keep and come back to whenever you need it." },
-    { icon: Award, title: "Certificate", desc: "Get a certificate of attendance if you'd like one." },
+    { icon: Video, title: "Live Confident Parenting Workshop", desc: "A live, interactive session with Miss Samra on Google Meet." },
+    { icon: Users, title: "Private Parent Community Access", desc: "Join a supportive community of parents on the same journey." },
+    { icon: FileText, title: "The Parenting Genius Blueprint (PDF)", desc: "Understand your child's unique intelligence and natural strengths." },
+    { icon: Heart, title: "Parent Gratitude Planner", desc: "A simple guided planner to build a more positive connection." },
+    { icon: Star, title: "Complete Workshop Recording", desc: "Rewatch the full workshop at your convenience, anytime." },
   ];
   return (
     <section className="py-14 md:py-20 bg-background">
-      <div className="mx-auto max-w-5xl px-4">
-        <SectionHeading eyebrow="Everything included" title="Here's Everything You Get" />
-        <div className="mt-8 mx-auto max-w-4xl">
-          <div className="rounded-3xl overflow-hidden shadow-xl ring-1 ring-blush/30 bg-white">
+      <div className="mx-auto max-w-6xl px-4">
+        <SectionHeading eyebrow="Everything included" title="Everything You Get With Your Workshop Ticket" />
+        <div className="mt-8 mx-auto w-full max-w-[1100px]">
+          <div className="rounded-2xl overflow-hidden shadow-lg ring-1 ring-blush/30 bg-white">
             <img
               src={everythingYouGet.url}
-              alt="Everything you get with your workshop ticket — live parenting workshop, recording, guide, toolkit, live Q&A and WhatsApp support"
+              alt="Everything you get with your workshop ticket — live Confident Parenting Workshop, The Parenting Genius Blueprint PDF, Parent Gratitude Planner, complete workshop recording and private parent community access"
               className="w-full h-auto object-contain"
               loading="lazy"
             />
@@ -625,32 +622,6 @@ function IncludesSection() {
               <p className="mt-1.5 text-sm text-muted-foreground">{desc}</p>
             </div>
           ))}
-        </div>
-      </div>
-    </section>
-  );
-}
-
-/* ---------------- PRICING ---------------- */
-
-function EverythingYouReceiveSection() {
-  return (
-    <section className="py-14 md:py-20 bg-background">
-      <div className="mx-auto max-w-6xl px-4">
-        <SectionHeading
-          eyebrow="The full package"
-          title="You Get So Much More Than One Live Session"
-          subtitle="Your 499 PKR gives you the live session plus tools you'll use with your child for years."
-        />
-        <div className="mt-10 md:mt-12 mx-auto max-w-5xl">
-          <div className="rounded-3xl overflow-hidden shadow-2xl ring-1 ring-blush/30 bg-white">
-            <img
-              src={completeToolkit.url}
-              alt="The complete Parenting Behaviour Toolkit — behaviour trackers, routine charts, reward charts, calm-down strategies, emotions wheel and encouragement cards"
-              className="w-full h-auto object-contain"
-              loading="lazy"
-            />
-          </div>
         </div>
       </div>
     </section>
@@ -740,105 +711,74 @@ function FreeBadge() {
   );
 }
 
-function BonusCard({
-  img,
-  alt,
-  label,
-  title,
-  desc,
-  featured = false,
-}: {
-  img: string;
-  alt: string;
-  label: string;
-  title: string;
-  desc: string;
-  featured?: boolean;
-}) {
-  return (
-    <div
-      className={`flex flex-col overflow-hidden rounded-3xl border ${
-        featured ? "border-blush/60 shadow-2xl ring-1 ring-blush/40" : "border-border shadow-md"
-      }`}
-      style={{ backgroundColor: "color-mix(in srgb, var(--soft-pink) 20%, white)" }}
-    >
-      <div className="bg-white">
-        <img src={img} alt={alt} className="w-full h-auto object-contain" loading="lazy" />
-      </div>
-      <div className="p-5 sm:p-6">
-        <div className="flex items-center justify-between gap-3">
-          <span className="text-xs font-semibold uppercase tracking-widest text-warm-brown">{label}</span>
-          <FreeBadge />
-        </div>
-        <h3 className={`mt-2 font-semibold ${featured ? "text-xl md:text-2xl" : "text-lg"}`} style={{ fontFamily: "var(--font-display)" }}>
-          {title}
-        </h3>
-        <p className="mt-1.5 text-sm text-muted-foreground leading-relaxed">{desc}</p>
-      </div>
-    </div>
-  );
-}
-
 function BonusesSection() {
+  const bonuses = [
+    {
+      img: bonusCommunity.url,
+      alt: "Private Parent Community Access — a supportive community of parents sharing tips and encouragement",
+      label: "Bonus 1",
+      title: "Private Parent Community Access",
+      desc: "Join a supportive community of parents where you can ask questions, share experiences, learn practical parenting tips, and grow alongside parents on the same journey.",
+    },
+    {
+      img: bonusGeniusBlueprint.url,
+      alt: "The Parenting Genius Blueprint — a PDF guide to your child's unique intelligence and natural strengths",
+      label: "Bonus 2",
+      title: "The Parenting Genius Blueprint (PDF)",
+      desc: "Discover your child's unique intelligence, natural strengths, learning style, and how you can support their growth with more confidence — all in one practical PDF guide.",
+    },
+    {
+      img: bonusGratitudePlanner.url,
+      alt: "Parent Gratitude Planner — a simple guided planner to build a positive connection with your child",
+      label: "Bonus 3",
+      title: "Parent Gratitude Planner",
+      desc: "A simple guided planner designed to help you notice the good, reduce daily frustration, and build a more positive connection with your child.",
+    },
+    {
+      img: bonusWorkshopRecording.url,
+      alt: "Complete Workshop Recording — rewatch the full parenting workshop at your convenience",
+      label: "Bonus 4",
+      title: "Complete Workshop Recording",
+      desc: "Miss something during the live workshop? Rewatch the complete workshop at your convenience and revisit the parenting strategies whenever you need them.",
+    },
+  ];
   return (
     <section className="py-14 md:py-20 bg-background">
       <div className="mx-auto max-w-6xl px-4">
         <SectionHeading
           eyebrow="Included free"
           title="Free Bonuses That Make Parenting Easier"
-          subtitle="Ready-to-use tools that help you handle hard days more calmly. All free when you register."
+          subtitle="Helpful tools and continued support to make parenting easier. All included free when you register."
         />
 
-        {/* Featured bonus — highest perceived value */}
-        <div className="mt-10">
-          <BonusCard
-            featured
-            img={bonusToolkitMockup.url}
-            alt="Parenting Behaviour Toolkit — worksheets, trackers, charts and templates to understand and support your child"
-            label="Exclusive Bonus"
-            title="Parenting Behaviour Toolkit"
-            desc="A ready-to-use set of tools, behaviour trackers, routine charts, reward charts and calm-down cards, that help you handle difficult behaviour more calmly and confidently every day."
-          />
-        </div>
-
-        {/* Printable worksheets — directly below the toolkit */}
-        <div className="mt-6">
-          <BonusCard
-            img={bonusWorksheets.url}
-            alt="Printable parenting worksheets — emotions check-in, daily routine planner, behaviour tracker and good-choices chart"
-            label="Bonus: Printables"
-            title="Printable Parenting Worksheets"
-            desc="Print them at home and use them right away. Emotion check-ins, routine planners and calm-down cards that help your child settle down and follow the day."
-          />
-        </div>
-
-        {/* Recording + Live Q&A side by side */}
-        <div className="mt-6 grid md:grid-cols-2 gap-6">
-          <BonusCard
-            img={bonusRecording.url}
-            alt="Workshop recording on a laptop — rewatch the full session anytime"
-            label="Bonus: Lifetime Recording"
-            title="Workshop Recording"
-            desc="Missed the live session, or want to watch it again? Keep the full recording for life and rewatch it anytime, on any device."
-          />
-          <BonusCard
-            img={bonusLiveQa.url}
-            alt="Live Q&A session with Miss Samra Riaz on Google Meet"
-            label="Bonus: Live Q&A"
-            title="Live Q&A Session"
-            desc="Ask Miss Samra Riaz about your own child and get a clear answer live, so you leave knowing exactly what to do."
-          />
-        </div>
-
-        {/* PDF guide */}
-        <div className="mt-6 mx-auto max-w-3xl">
-          <BonusCard
-            img={bonusPdfGuide.url}
-            alt="Peaceful Parenting Guide PDF — a complete guide with practical strategies and real-life examples"
-            label="Bonus: PDF Guide"
-            title="Peaceful Parenting Guide (PDF)"
-            desc="A simple guide full of step-by-step tips and real-life examples you can come back to whenever a hard day shows up."
-          />
+        <div className="mt-10 md:mt-14 space-y-10 md:space-y-16">
+          {bonuses.map((b, i) => {
+            const reverse = i % 2 === 1;
+            return (
+              <div
+                key={b.label}
+                className="grid items-center gap-6 md:gap-10 md:grid-cols-2"
+              >
+                <div className={reverse ? "md:order-2" : "md:order-1"}>
+                  <div className="overflow-hidden rounded-2xl shadow-lg ring-1 ring-blush/30 bg-white">
+                    <img src={b.img} alt={b.alt} className="w-full h-auto object-contain" loading="lazy" />
+                  </div>
+                </div>
+                <div className={reverse ? "md:order-1" : "md:order-2"}>
+                  <div className="flex items-center gap-3">
+                    <span className="inline-flex items-center rounded-full bg-primary/10 text-primary text-xs font-bold uppercase tracking-widest px-3 py-1 ring-1 ring-primary/20">
+                      {b.label}
+                    </span>
+                    <FreeBadge />
+                  </div>
+                  <h3 className="mt-4 text-2xl md:text-3xl font-semibold text-warm-brown-deep" style={{ fontFamily: "var(--font-display)" }}>
+                    {b.title}
+                  </h3>
+                  <p className="mt-3 text-muted-foreground leading-relaxed">{b.desc}</p>
+                </div>
+              </div>
+            );
+          })}
         </div>
       </div>
     </section>
