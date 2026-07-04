@@ -49,6 +49,7 @@ const BUMPS = [
     price: 199,
     image: bumpToolkit,
     badge: "Most Popular (8/10 Parents Add This)",
+    caption: null as string | null,
     bullets: [
       "Behaviour Tracker",
       "Daily Routine Planner",
@@ -64,6 +65,7 @@ const BUMPS = [
     price: 299,
     image: bumpRecording,
     badge: "Recommended (7/10 Parents Add This)",
+    caption: "Can't Attend Live or Want to Rewatch Later? — Optional Add-On (not included in your 499 PKR ticket)",
     bullets: [
       "Full Workshop Recording (lifetime access)",
       "Complete PDF Parenting Guide",
@@ -385,6 +387,11 @@ function OrderPage() {
                       className="mt-1 size-5 accent-[color:var(--warm-brown)] shrink-0"
                     />
                     <div className="flex-1 min-w-0">
+                      {b.caption && (
+                        <div className="mb-2 text-xs md:text-sm font-bold text-[color:var(--warm-brown-deep)]">
+                          {b.caption}
+                        </div>
+                      )}
                       <div className="flex items-start gap-2">
                         <ArrowRight className="size-5 text-red-600 shrink-0 mt-0.5" />
                         <div className="font-extrabold text-[color:var(--warm-brown-deep)] uppercase text-sm md:text-base">
@@ -589,14 +596,14 @@ function OrderPage() {
                     <div className="bg-primary/80 text-primary-foreground text-center font-bold py-2 rounded mt-4">
                       You'll Also Receive These Bonuses:
                     </div>
-                    <Item title="Bonus #1 — Live Q&amp;A Session">
-                      Ask your real parenting questions and get personal, practical guidance.
+                    <Item title="Bonus #1 — Private Parent Community Access">
+                      Join a supportive community of parents to ask questions, share experiences and grow together.
                     </Item>
-                    <Item title="Bonus #2 — PDF Parenting Guide">
-                      A calm, practical takeaway guide you can return to again and again.
+                    <Item title="Bonus #2 — The Parenting Genius Blueprint (PDF)">
+                      Discover your child's unique intelligence, natural strengths and learning style.
                     </Item>
-                    <Item title="Bonus #3 — Workshop Recording">
-                      Lifetime access to the full recording so you can rewatch anytime.
+                    <Item title="Bonus #3 — Parent Gratitude Planner">
+                      A simple guided planner to notice the good and build a more positive connection.
                     </Item>
                   </ul>
                 </div>
@@ -611,8 +618,8 @@ function OrderPage() {
               <div>
                 <h3 className="font-semibold" style={{ fontFamily: "var(--font-display)" }}>Attend With Confidence</h3>
                 <p className="text-sm text-muted-foreground mt-1">
-                  Join the live session, take notes, and if you can't make it live you'll still get the
-                  full recording. We're here to support your family every step of the way.
+                  Join the live session and take notes with the help of Miss Samra. We're here to support
+                  your family every step of the way.
                 </p>
               </div>
             </div>

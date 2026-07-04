@@ -14,9 +14,7 @@ import samraPortrait from "@/assets/cpa-samra.jpg";
 import bonusCommunity from "@/assets/cpa-bonus-community.png.asset.json";
 import bonusGeniusBlueprint from "@/assets/cpa-bonus-genius-blueprint.png.asset.json";
 import bonusGratitudePlanner from "@/assets/cpa-bonus-gratitude-planner.png.asset.json";
-import bonusWorkshopRecording from "@/assets/cpa-bonus-workshop-recording.png.asset.json";
 import beforeAfter from "@/assets/cpa-before-after.png.asset.json";
-import everythingYouGet from "@/assets/cpa-everything-you-get-workshop.png.asset.json";
 import testimonialMotherhood from "@/assets/testimonial-motherhood.jpeg.asset.json";
 import testimonialParenting from "@/assets/testimonial-parenting.jpeg.asset.json";
 import exhaustedMotherCryingChild from "@/assets/exhausted-mother-crying-child.png.asset.json";
@@ -68,8 +66,8 @@ function Hero() {
     { icon: Video, label: "Google Meet" },
     { icon: Clock, label: "1.5 Hours" },
     { icon: MessageCircle, label: "Live Q&A" },
-    { icon: Star, label: "Recording Included" },
-    { icon: Gift, label: "Only 499 PKR" },
+    { icon: Gift, label: "3 Free Bonuses" },
+    { icon: Star, label: "Only 499 PKR" },
   ];
   return (
     <section className="hero-bg text-foreground">
@@ -124,7 +122,7 @@ function Hero() {
             </div>
 
             <div className="mt-7 space-y-3 max-w-md mx-auto md:mx-0">
-              <CtaButton subtitle="Live on 13 July · Recording included">Reserve My Seat</CtaButton>
+              <CtaButton subtitle="Live on 13 July · Includes 3 free bonuses">Reserve My Seat</CtaButton>
               <a
                 href="#curriculum"
                 onClick={(e) => {
@@ -596,23 +594,12 @@ function IncludesSection() {
     { icon: Users, title: "Private Parent Community Access", desc: "Join a supportive community of parents on the same journey." },
     { icon: FileText, title: "The Parenting Genius Blueprint (PDF)", desc: "Understand your child's unique intelligence and natural strengths." },
     { icon: Heart, title: "Parent Gratitude Planner", desc: "A simple guided planner to build a more positive connection." },
-    { icon: Star, title: "Complete Workshop Recording", desc: "Rewatch the full workshop at your convenience, anytime." },
   ];
   return (
     <section className="py-14 md:py-20 bg-background">
       <div className="mx-auto max-w-6xl px-4">
         <SectionHeading eyebrow="Everything included" title="Everything You Get With Your Workshop Ticket" />
-        <div className="mt-8 mx-auto w-full max-w-[1100px]">
-          <div className="rounded-2xl overflow-hidden shadow-lg ring-1 ring-blush/30 bg-white">
-            <img
-              src={everythingYouGet.url}
-              alt="Everything you get with your workshop ticket — live Confident Parenting Workshop, The Parenting Genius Blueprint PDF, Parent Gratitude Planner, complete workshop recording and private parent community access"
-              className="w-full h-auto object-contain"
-              loading="lazy"
-            />
-          </div>
-        </div>
-        <div className="mt-8 grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+        <div className="mt-10 grid sm:grid-cols-2 gap-4 max-w-4xl mx-auto">
           {items.map(({ icon: Icon, title, desc }) => (
             <div key={title} className="rounded-3xl bg-card border border-border p-6 shadow-sm">
               <span className="grid place-items-center size-11 rounded-2xl bg-accent/50 text-warm-brown">
@@ -690,7 +677,7 @@ function PricingSection() {
             Book now while the price is low. After this group, the price goes back up to 2,000 PKR.
           </p>
           <div className="mt-7 max-w-sm mx-auto">
-            <CtaButton subtitle="Live on 13 July · Recording included">Reserve My Seat for 499 PKR</CtaButton>
+            <CtaButton subtitle="Live on 13 July · Includes 3 free bonuses">Reserve My Seat for 499 PKR</CtaButton>
           </div>
           <div className="mt-4 flex items-center justify-center gap-2 text-xs text-muted-foreground">
             <Lock className="size-3.5" /> Secure checkout
@@ -733,13 +720,6 @@ function BonusesSection() {
       label: "Bonus 3",
       title: "Parent Gratitude Planner",
       desc: "A simple guided planner designed to help you notice the good, reduce daily frustration, and build a more positive connection with your child.",
-    },
-    {
-      img: bonusWorkshopRecording.url,
-      alt: "Complete Workshop Recording — rewatch the full parenting workshop at your convenience",
-      label: "Bonus 4",
-      title: "Complete Workshop Recording",
-      desc: "Miss something during the live workshop? Rewatch the complete workshop at your convenience and revisit the parenting strategies whenever you need them.",
     },
   ];
   return (
@@ -826,7 +806,7 @@ function FAQSection() {
     { q: "Who should attend this workshop?", a: "Any parent who wants a calmer home and wants to understand their child better, whether your child is a toddler, school-aged or older." },
     { q: "Can fathers attend?", a: "Absolutely. Fathers play a vital role, and this workshop is designed for both mothers and fathers." },
     { q: "Can both parents join?", a: "Yes. We encourage both parents to attend together on the same registration so you're on the same page at home." },
-    { q: "Will the recording be available?", a: "Yes. Every registrant gets access to the full recording, so you can watch or rewatch anytime." },
+    { q: "Is the workshop recording included?", a: "The 499 PKR ticket covers the live workshop plus your 3 free bonuses. The complete workshop recording is available separately as an optional paid add-on at checkout if you'd like to rewatch later." },
     { q: "How long is the workshop?", a: "It runs for 1 hour 30 minutes, including a live Q&A session." },
     { q: "What platform is it on?", a: "The live session is hosted on Google Meet. You'll receive the joining link on WhatsApp and email." },
   ];
@@ -865,7 +845,7 @@ function FinalCta() {
         </p>
         <div className="mt-6 max-w-sm mx-auto">
           <MasterclassCountdown variant="light" showDateLine={false} className="mb-5" />
-          <CtaButton subtitle="Only 499 PKR · Recording included">Reserve My Seat</CtaButton>
+          <CtaButton subtitle="Only 499 PKR · Includes 3 free bonuses">Reserve My Seat</CtaButton>
         </div>
         <div className="mt-5 flex items-center justify-center gap-2 text-sm text-foreground/70">
           <ShieldCheck className="size-4 text-accent" /> Secure checkout · Instant confirmation
