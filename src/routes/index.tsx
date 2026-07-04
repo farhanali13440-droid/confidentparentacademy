@@ -21,7 +21,7 @@ import beforeAfter from "@/assets/cpa-before-after.png.asset.json";
 import everythingYouGet from "@/assets/cpa-everything-you-get.png.asset.json";
 import testimonialMotherhood from "@/assets/testimonial-motherhood.jpeg.asset.json";
 import testimonialParenting from "@/assets/testimonial-parenting.jpeg.asset.json";
-import soundLikeYourHome from "@/assets/sound-like-your-home.png.asset.json";
+import exhaustedMotherCryingChild from "@/assets/exhausted-mother-crying-child.png.asset.json";
 
 export const Route = createFileRoute("/")({
   head: () => ({
