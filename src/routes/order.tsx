@@ -589,14 +589,14 @@ function OrderPage() {
                     <div className="bg-primary/80 text-primary-foreground text-center font-bold py-2 rounded mt-4">
                       You'll Also Receive These Bonuses:
                     </div>
-                    <Item title="Bonus #1 — Live Q&amp;A Session">
-                      Ask your real parenting questions and get personal, practical guidance.
+                    <Item title="Bonus #1 — Private Parent Community Access">
+                      Join a supportive community of parents to ask questions, share experiences and grow together.
                     </Item>
-                    <Item title="Bonus #2 — PDF Parenting Guide">
-                      A calm, practical takeaway guide you can return to again and again.
+                    <Item title="Bonus #2 — The Parenting Genius Blueprint (PDF)">
+                      Discover your child's unique intelligence, natural strengths and learning style.
                     </Item>
-                    <Item title="Bonus #3 — Workshop Recording">
-                      Lifetime access to the full recording so you can rewatch anytime.
+                    <Item title="Bonus #3 — Parent Gratitude Planner">
+                      A simple guided planner to notice the good and build a more positive connection.
                     </Item>
                   </ul>
                 </div>
