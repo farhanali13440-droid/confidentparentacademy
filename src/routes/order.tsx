@@ -64,6 +64,7 @@ const BUMPS = [
     price: 299,
     image: bumpRecording,
     badge: "Recommended (7/10 Parents Add This)",
+    caption: "Can't Attend Live or Want to Rewatch Later? — Optional Add-On (not included in your 499 PKR ticket)",
     bullets: [
       "Full Workshop Recording (lifetime access)",
       "Complete PDF Parenting Guide",
