@@ -711,24 +711,6 @@ function FreeBadge() {
   );
 }
 
-function BonusCard({
-  img,
-  alt,
-  label,
-  title,
-  desc,
-}: {
-  img: string;
-  alt: string;
-  label: string;
-  title: string;
-  desc: string;
-  index: number;
-  reverse?: boolean;
-}) {
-  return null;
-}
-
 function BonusesSection() {
   const bonuses = [
     {
