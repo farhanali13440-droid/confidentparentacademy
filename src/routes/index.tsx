@@ -604,7 +604,7 @@ function IncludesSection() {
           <div className="rounded-2xl overflow-hidden shadow-lg ring-1 ring-blush/30 bg-white">
             <img
               src={everythingYouGet.url}
-              alt="Everything you get with your workshop ticket — live Confident Parenting Workshop, The Parenting Genius Blueprint PDF, Parent Gratitude Planner, complete workshop recording and private parent community access"
+              alt="Everything you get with your workshop ticket — live Confident Parenting Workshop, The Parenting Genius Blueprint PDF, Parent Gratitude Planner and private parent community access"
               className="w-full h-auto object-contain"
               loading="lazy"
             />
