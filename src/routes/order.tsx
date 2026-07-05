@@ -117,11 +117,12 @@ function OrderPage() {
     try {
       if (sessionStorage.getItem("cpa_initiate_checkout_fired") === "1") return;
       sessionStorage.setItem("cpa_initiate_checkout_fired", "1");
-      import("@/lib/fbpixel").then(({ trackPixel }) => {
+      import("@/lib/fbpixel").then(({ trackPixel, debugMetaEvent }) => {
         trackPixel("InitiateCheckout", {
           content_name: "Confident Parent Academy Workshop",
           currency: "PKR",
         });
+        debugMetaEvent("InitiateCheckout fired - checkout reached");
       });
     } catch {
       /* ignore */
