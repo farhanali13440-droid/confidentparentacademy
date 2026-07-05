@@ -147,6 +147,11 @@ function RootShell({ children }: { children: ReactNode }) {
 function RootComponent() {
   const { queryClient } = Route.useRouteContext();
 
+  // Temporary dev-only debug log: confirms the single PageView init fired.
+  useEffect(() => {
+    if (import.meta.env.DEV) console.log("[META EVENT] PageView fired");
+  }, []);
+
   return (
     <QueryClientProvider client={queryClient}>
       {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}
