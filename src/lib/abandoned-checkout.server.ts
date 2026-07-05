@@ -167,6 +167,13 @@ export async function sendQueuedAbandonedReminder(queueRow: {
     return { ok: false, reason: 'lead_already_paid' }
   }
 
+  // Deadline reminders (seq 5 & 6) must never go out after the session has
+  // already started.
+  const isDeadlineReminder = queueRow.sequence_number >= 5
+  if (isDeadlineReminder && cohortHasStarted()) {
+    return { ok: false, reason: 'session_started' }
+  }
+
   // Suppression check (bounces / complaints / unsubscribes)
   const { data: suppressed } = await supabaseAdmin
     .from('suppressed_emails')
@@ -201,9 +208,13 @@ export async function sendQueuedAbandonedReminder(queueRow: {
   const template = TEMPLATES[templateName]
   if (!template) return { ok: false, reason: 'template_missing' }
 
-  const templateData = {
+  const templateData: Record<string, unknown> = {
     name: queueRow.name || lead.full_name || 'Parent',
     checkoutUrl: buildCheckoutUrl(lead),
+  }
+  if (isDeadlineReminder) {
+    templateData.cohortDate = cohortDateLabel()
+    templateData.cohortTime = cohortTimeLabel()
   }
   const element = React.createElement(template.component, templateData)
   const html = await render(element)
