@@ -296,13 +296,19 @@ function OrderPage() {
       const alreadyFired =
         typeof window !== "undefined" && localStorage.getItem(submitGuardKey) === "1";
       if (!alreadyFired) {
-        const { trackPixel } = await import("@/lib/fbpixel");
+        const { trackPixel, debugMetaEvent } = await import("@/lib/fbpixel");
         trackPixel("SubmitApplication", {
           content_name: "Confident Parent Academy Workshop",
           value: total,
           currency: "PKR",
         });
         if (typeof window !== "undefined") localStorage.setItem(submitGuardKey, "1");
+        debugMetaEvent("SubmitApplication fired - successful paid order", {
+          leadId: savedLeadId,
+          total,
+          paymentMethod: PAYMENT_ACCOUNTS[paymentMethod].label,
+          screenshotUploaded: true,
+        });
       }
     } catch (err) {
       console.error("Pixel SubmitApplication event failed", err);
