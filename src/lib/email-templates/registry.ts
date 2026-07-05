@@ -6,6 +6,7 @@ import {
   template3 as abandonedCheckout3,
   template4 as abandonedCheckout4,
 } from './abandoned-checkout'
+import { template4h as deadlineReminder4h, template1h as deadlineReminder1h } from './deadline-reminder'
 
 export interface TemplateEntry {
   component: ComponentType<any>
@@ -25,4 +26,6 @@ export const TEMPLATES: Record<string, TemplateEntry> = {
   'abandoned-checkout-2': abandonedCheckout2,
   'abandoned-checkout-3': abandonedCheckout3,
   'abandoned-checkout-4': abandonedCheckout4,
+  'abandoned-checkout-5': deadlineReminder4h,
+  'abandoned-checkout-6': deadlineReminder1h,
 }
