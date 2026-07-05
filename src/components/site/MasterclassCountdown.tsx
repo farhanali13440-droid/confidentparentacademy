@@ -1,9 +1,10 @@
 import { useEffect, useState } from "react";
 import { Calendar, Clock } from "lucide-react";
+import { COHORT_START_ISO } from "@/lib/cohort";
 
-// 13th July 2026, 3:00 PM Pakistan Standard Time (UTC+5)
-// => 2026-07-13T15:00:00+05:00 => 2026-07-13T10:00:00Z
-export const MASTERCLASS_DATE_ISO = "2026-07-13T10:00:00Z";
+// Cohort date/time lives in src/lib/cohort.ts (single source of truth,
+// shared with the deadline reminder emails).
+export const MASTERCLASS_DATE_ISO = COHORT_START_ISO;
 export const MASTERCLASS_DATE_LABEL =
   "Live Workshop: 13th July at 3:00 PM – 4:30 PM Pakistan Standard Time (on Google Meet)";
 
