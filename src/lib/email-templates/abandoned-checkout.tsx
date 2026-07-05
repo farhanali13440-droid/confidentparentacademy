@@ -229,6 +229,7 @@ const main = { backgroundColor: '#ffffff', fontFamily: 'Arial, sans-serif' }
 const container = { padding: '24px', maxWidth: '600px' }
 const h1 = { fontSize: '26px', fontWeight: 'bold' as const, color: '#0f172a', margin: '0 0 20px' }
 const text = { fontSize: '15px', color: '#334155', lineHeight: '1.6', margin: '0 0 16px' }
+const textBold = { fontSize: '15px', color: '#0f172a', lineHeight: '1.6', margin: '0 0 16px', fontWeight: 'bold' as const }
 const smallText = { fontSize: '13px', color: '#64748b', lineHeight: '1.5', margin: '12px 0' }
 const linkText = { color: '#16a34a', wordBreak: 'break-all' as const }
 const card = {
