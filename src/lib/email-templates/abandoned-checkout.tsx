@@ -197,28 +197,28 @@ const previewData = { name: 'Ayesha', checkoutUrl: DEFAULTS.checkoutUrl }
 
 export const template1 = {
   component: (props: Props) => <Email {...props} sequenceNumber={1} />,
-  subject: "You're Almost In — Complete Your Confident Parent Academy Registration",
+  subject: 'You Were One Step Away From Confident Parent Academy',
   displayName: 'Abandoned Checkout #1 (5 min)',
   previewData,
 } satisfies TemplateEntry
 
 export const template2 = {
   component: (props: Props) => <Email {...props} sequenceNumber={2} />,
-  subject: 'Your Confident Parent Academy Seat Is Still Waiting',
+  subject: 'A Respectful But Honest Question About Your Parenting',
   displayName: 'Abandoned Checkout #2 (1 hour)',
   previewData,
 } satisfies TemplateEntry
 
 export const template3 = {
   component: (props: Props) => <Email {...props} sequenceNumber={3} />,
-  subject: 'Parents Are Already Building Calmer, Happier Homes',
+  subject: 'No Parent Is Perfect — But Every Child Needs This',
   displayName: 'Abandoned Checkout #3 (24 hours)',
   previewData,
 } satisfies TemplateEntry
 
 export const template4 = {
   component: (props: Props) => <Email {...props} sequenceNumber={4} />,
-  subject: 'Final Reminder — Complete Your Registration Before You Miss Out',
+  subject: 'Final Reminder — Registrations Are Closing Soon',
   displayName: 'Abandoned Checkout #4 (48 hours)',
   previewData,
 } satisfies TemplateEntry
