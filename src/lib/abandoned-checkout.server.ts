@@ -6,6 +6,12 @@ import * as React from 'react'
 import { render } from 'react-email'
 import { TEMPLATES } from '@/lib/email-templates/registry'
 import { supabaseAdmin } from '@/integrations/supabase/client.server'
+import {
+  cohortDateLabel,
+  cohortTimeLabel,
+  cohortHasStarted,
+  deadlineSendAtIso,
+} from '@/lib/cohort'
 
 const SITE_NAME = 'Confident Parent Academy'
 const SENDER_DOMAIN = 'notify.zeroappleaday.site'
@@ -73,7 +79,14 @@ export async function scheduleAbandonedCheckoutSequence(opts: {
   startAt?: Date
 }): Promise<void> {
   const start = opts.startAt ?? new Date()
-  const rows = ([1, 2, 3, 4] as const).map((seq) => ({
+  const rows: Array<{
+    lead_id: string
+    email: string
+    name: string
+    sequence_number: number
+    scheduled_for: string
+    status: 'pending'
+  }> = ([1, 2, 3, 4] as const).map((seq) => ({
     lead_id: opts.leadId,
     email: opts.email,
     name: opts.name,
@@ -81,6 +94,24 @@ export async function scheduleAbandonedCheckoutSequence(opts: {
     scheduled_for: new Date(start.getTime() + SEQUENCE_DELAYS_MS[seq]).toISOString(),
     status: 'pending' as const,
   }))
+
+  // Cohort deadline reminders (absolute times): 4h and 1h before the live
+  // session. Only schedule when their send time is still in the future.
+  const now = Date.now()
+  for (const seq of [5, 6] as const) {
+    const sendAt = deadlineSendAtIso(seq)
+    if (new Date(sendAt).getTime() > now) {
+      rows.push({
+        lead_id: opts.leadId,
+        email: opts.email,
+        name: opts.name,
+        sequence_number: seq,
+        scheduled_for: sendAt,
+        status: 'pending' as const,
+      })
+    }
+  }
+
   const { error } = await (supabaseAdmin as any)
     .from('abandoned_checkout_email_queue')
     .upsert(rows, { onConflict: 'lead_id,sequence_number', ignoreDuplicates: true })
