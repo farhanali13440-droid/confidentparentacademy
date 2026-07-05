@@ -50,12 +50,18 @@ export const sendAbandonedReminderNow = createServerFn({ method: 'POST' })
         .eq('id', row.id)
       return { ok: true }
     }
-    if (res.reason === 'lead_already_paid' || res.reason === 'suppressed') {
+    if (
+      res.reason === 'lead_already_paid' ||
+      res.reason === 'suppressed' ||
+      res.reason === 'session_started'
+    ) {
       await (supabaseAdmin as any)
         .from('abandoned_checkout_email_queue')
         .update({ status: 'skipped', error_message: res.reason })
         .eq('id', row.id)
-      await cancelRemainingAbandonedReminders(row.lead_id, res.reason)
+      if (res.reason !== 'session_started') {
+        await cancelRemainingAbandonedReminders(row.lead_id, res.reason)
+      }
     } else {
       await (supabaseAdmin as any)
         .from('abandoned_checkout_email_queue')

@@ -6,6 +6,12 @@ import * as React from 'react'
 import { render } from 'react-email'
 import { TEMPLATES } from '@/lib/email-templates/registry'
 import { supabaseAdmin } from '@/integrations/supabase/client.server'
+import {
+  cohortDateLabel,
+  cohortTimeLabel,
+  cohortHasStarted,
+  deadlineSendAtIso,
+} from '@/lib/cohort'
 
 const SITE_NAME = 'Confident Parent Academy'
 const SENDER_DOMAIN = 'notify.zeroappleaday.site'
@@ -73,7 +79,14 @@ export async function scheduleAbandonedCheckoutSequence(opts: {
   startAt?: Date
 }): Promise<void> {
   const start = opts.startAt ?? new Date()
-  const rows = ([1, 2, 3, 4] as const).map((seq) => ({
+  const rows: Array<{
+    lead_id: string
+    email: string
+    name: string
+    sequence_number: number
+    scheduled_for: string
+    status: 'pending'
+  }> = ([1, 2, 3, 4] as const).map((seq) => ({
     lead_id: opts.leadId,
     email: opts.email,
     name: opts.name,
@@ -81,6 +94,24 @@ export async function scheduleAbandonedCheckoutSequence(opts: {
     scheduled_for: new Date(start.getTime() + SEQUENCE_DELAYS_MS[seq]).toISOString(),
     status: 'pending' as const,
   }))
+
+  // Cohort deadline reminders (absolute times): 4h and 1h before the live
+  // session. Only schedule when their send time is still in the future.
+  const now = Date.now()
+  for (const seq of [5, 6] as const) {
+    const sendAt = deadlineSendAtIso(seq)
+    if (new Date(sendAt).getTime() > now) {
+      rows.push({
+        lead_id: opts.leadId,
+        email: opts.email,
+        name: opts.name,
+        sequence_number: seq,
+        scheduled_for: sendAt,
+        status: 'pending' as const,
+      })
+    }
+  }
+
   const { error } = await (supabaseAdmin as any)
     .from('abandoned_checkout_email_queue')
     .upsert(rows, { onConflict: 'lead_id,sequence_number', ignoreDuplicates: true })
@@ -136,6 +167,13 @@ export async function sendQueuedAbandonedReminder(queueRow: {
     return { ok: false, reason: 'lead_already_paid' }
   }
 
+  // Deadline reminders (seq 5 & 6) must never go out after the session has
+  // already started.
+  const isDeadlineReminder = queueRow.sequence_number >= 5
+  if (isDeadlineReminder && cohortHasStarted()) {
+    return { ok: false, reason: 'session_started' }
+  }
+
   // Suppression check (bounces / complaints / unsubscribes)
   const { data: suppressed } = await supabaseAdmin
     .from('suppressed_emails')
@@ -170,9 +208,13 @@ export async function sendQueuedAbandonedReminder(queueRow: {
   const template = TEMPLATES[templateName]
   if (!template) return { ok: false, reason: 'template_missing' }
 
-  const templateData = {
+  const templateData: Record<string, unknown> = {
     name: queueRow.name || lead.full_name || 'Parent',
     checkoutUrl: buildCheckoutUrl(lead),
+  }
+  if (isDeadlineReminder) {
+    templateData.cohortDate = cohortDateLabel()
+    templateData.cohortTime = cohortTimeLabel()
   }
   const element = React.createElement(template.component, templateData)
   const html = await render(element)
@@ -262,14 +304,19 @@ export async function processDueAbandonedReminders(opts: { limit?: number } = {}
         .from('abandoned_checkout_email_queue')
         .update({ status: 'sent', sent_at: new Date().toISOString(), error_message: null })
         .eq('id', (row as any).id)
-    } else if (res.reason === 'lead_already_paid' || res.reason === 'suppressed' || res.reason === 'lead_missing') {
+    } else if (
+      res.reason === 'lead_already_paid' ||
+      res.reason === 'suppressed' ||
+      res.reason === 'lead_missing' ||
+      res.reason === 'session_started'
+    ) {
       skipped++
       await (supabaseAdmin as any)
         .from('abandoned_checkout_email_queue')
         .update({ status: 'skipped', error_message: res.reason })
         .eq('id', (row as any).id)
       // Cascade: cancel remaining for this lead if paid/suppressed
-      if (res.reason !== 'lead_missing') {
+      if (res.reason === 'lead_already_paid' || res.reason === 'suppressed') {
         await cancelRemainingAbandonedReminders((row as any).lead_id, res.reason)
       }
     } else if (res.retryable) {
