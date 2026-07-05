@@ -304,14 +304,19 @@ export async function processDueAbandonedReminders(opts: { limit?: number } = {}
         .from('abandoned_checkout_email_queue')
         .update({ status: 'sent', sent_at: new Date().toISOString(), error_message: null })
         .eq('id', (row as any).id)
-    } else if (res.reason === 'lead_already_paid' || res.reason === 'suppressed' || res.reason === 'lead_missing') {
+    } else if (
+      res.reason === 'lead_already_paid' ||
+      res.reason === 'suppressed' ||
+      res.reason === 'lead_missing' ||
+      res.reason === 'session_started'
+    ) {
       skipped++
       await (supabaseAdmin as any)
         .from('abandoned_checkout_email_queue')
         .update({ status: 'skipped', error_message: res.reason })
         .eq('id', (row as any).id)
       // Cascade: cancel remaining for this lead if paid/suppressed
-      if (res.reason !== 'lead_missing') {
+      if (res.reason === 'lead_already_paid' || res.reason === 'suppressed') {
         await cancelRemainingAbandonedReminders((row as any).lead_id, res.reason)
       }
     } else if (res.retryable) {
