@@ -6,7 +6,7 @@ import { OnePageCheckout } from "@/components/site/OnePageCheckout";
 import { MasterclassCountdown } from "@/components/site/MasterclassCountdown";
 import {
   Star, ShieldCheck, CheckCircle2, Lock, BadgeCheck, Heart, Brain, Users,
-  Calendar, Gift, ChevronDown, ArrowRight, Clock, Video, MessageCircle,
+  Calendar, Gift, ChevronDown, Clock, Video, MessageCircle,
   FileText, Award, Sparkles, Baby, Home, HandHeart,
 } from "lucide-react";
 import heroFamily from "@/assets/cpa-hero-family.jpg";
