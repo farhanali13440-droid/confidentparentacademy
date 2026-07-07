@@ -1,8 +1,8 @@
-import { createFileRoute, useNavigate } from "@tanstack/react-router";
-import { useState } from "react";
+import { createFileRoute } from "@tanstack/react-router";
 import { Topbar } from "@/components/site/Topbar";
 import { Footer } from "@/components/site/Footer";
 import { CtaButton } from "@/components/site/CtaButton";
+import { OnePageCheckout } from "@/components/site/OnePageCheckout";
 import { MasterclassCountdown } from "@/components/site/MasterclassCountdown";
 import {
   Star, ShieldCheck, CheckCircle2, Lock, BadgeCheck, Heart, Brain, Users,
@@ -49,6 +49,7 @@ function LandingPage() {
       <IncludesSection />
       <GuaranteeSection />
       <PricingSection />
+      <OnePageCheckout />
       <BonusesSection />
       <TestimonialsSection />
       <FAQSection />
