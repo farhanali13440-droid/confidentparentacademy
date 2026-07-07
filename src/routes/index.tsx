@@ -1,12 +1,12 @@
-import { createFileRoute, useNavigate } from "@tanstack/react-router";
-import { useState } from "react";
+import { createFileRoute } from "@tanstack/react-router";
 import { Topbar } from "@/components/site/Topbar";
 import { Footer } from "@/components/site/Footer";
 import { CtaButton } from "@/components/site/CtaButton";
+import { OnePageCheckout } from "@/components/site/OnePageCheckout";
 import { MasterclassCountdown } from "@/components/site/MasterclassCountdown";
 import {
   Star, ShieldCheck, CheckCircle2, Lock, BadgeCheck, Heart, Brain, Users,
-  Calendar, Gift, ChevronDown, ArrowRight, Clock, Video, MessageCircle,
+  Calendar, Gift, ChevronDown, Clock, Video, MessageCircle,
   FileText, Award, Sparkles, Baby, Home, HandHeart,
 } from "lucide-react";
 import heroFamily from "@/assets/cpa-hero-family.jpg";
@@ -49,6 +49,7 @@ function LandingPage() {
       <IncludesSection />
       <GuaranteeSection />
       <PricingSection />
+      <OnePageCheckout />
       <BonusesSection />
       <TestimonialsSection />
       <FAQSection />
@@ -143,7 +144,11 @@ function Hero() {
 
         <div className="mt-6 max-w-md mx-auto" id="hero-optin">
           <AttendeeTestimonials />
-          <InlineLeadForm />
+          <div className="mt-4">
+            <CtaButton subtitle="Live on 13 July · Includes 3 free bonuses">
+              Reserve My Seat for 499 PKR
+            </CtaButton>
+          </div>
         </div>
       </div>
     </section>
@@ -173,137 +178,6 @@ function AttendeeTestimonials() {
         ))}
       </div>
     </div>
-  );
-}
-
-function InlineLeadForm() {
-  const navigate = useNavigate();
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
-  const [whatsapp, setWhatsapp] = useState("");
-  const [specialty, setSpecialty] = useState("");
-  const [error, setError] = useState<string | null>(null);
-  const [submitting, setSubmitting] = useState(false);
-
-  return (
-    <form
-      id="lead-form"
-      className="rounded-2xl bg-card text-card-foreground p-5 sm:p-6 shadow-2xl space-y-3 text-left scroll-mt-24"
-      onSubmit={async (e) => {
-        e.preventDefault();
-        setError(null);
-
-        const fullName = name.trim();
-        const emailNorm = email.trim().toLowerCase();
-        const wa = whatsapp.trim();
-        const spec = specialty.trim();
-
-        if (fullName.length < 2) {
-          setError("Please enter your full name.");
-          return;
-        }
-        if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailNorm)) {
-          setError("Please enter a valid email address.");
-          return;
-        }
-        const digits = wa.replace(/\D/g, "");
-        if (digits.length < 10) {
-          setError("Please enter a valid WhatsApp number (e.g. 03XX XXXXXXX).");
-          return;
-        }
-        if (!spec) {
-          setError("Please tell us your child's age(s).");
-          return;
-        }
-
-        setSubmitting(true);
-        try {
-          const { upsertLead } = await import("@/lib/leads.functions");
-          await upsertLead({
-            data: {
-              full_name: fullName,
-              email: emailNorm,
-              whatsapp: wa,
-              specialty: spec,
-              lead_status: "Opted In - Checkout Not Completed",
-            },
-          });
-        } catch (err) {
-          console.error("Failed to save lead", err);
-        }
-
-        try {
-          const { trackPixel } = await import("@/lib/fbpixel");
-          trackPixel("Lead", { content_name: "Workshop Registration" });
-          const { debugMetaEvent } = await import("@/lib/fbpixel");
-          debugMetaEvent("Lead fired - opt-in completed");
-        } catch (err) {
-          console.error("Pixel Lead event failed", err);
-        }
-
-        const params = new URLSearchParams();
-        params.set("full_name", fullName);
-        params.set("email", emailNorm);
-        params.set("whatsapp", wa);
-        params.set("specialty", spec);
-        navigate({ to: "/order", search: Object.fromEntries(params) });
-      }}
-    >
-      <div className="text-center">
-        <div className="text-lg font-semibold" style={{ fontFamily: "var(--font-display)" }}>Reserve Your Seat</div>
-        <p className="text-xs text-muted-foreground mt-1">Just 499 PKR. Limited seats for the live session.</p>
-      </div>
-      <input
-        required
-        value={name}
-        onChange={(e) => setName(e.target.value)}
-        placeholder="Full Name*"
-        autoComplete="name"
-        className="w-full rounded-xl border border-input bg-background px-4 py-3 text-sm outline-none focus:ring-2 focus:ring-ring"
-      />
-      <input
-        required
-        type="email"
-        value={email}
-        onChange={(e) => setEmail(e.target.value)}
-        placeholder="Email*"
-        autoComplete="email"
-        className="w-full rounded-xl border border-input bg-background px-4 py-3 text-sm outline-none focus:ring-2 focus:ring-ring"
-      />
-      <input
-        required
-        type="tel"
-        inputMode="tel"
-        value={whatsapp}
-        onChange={(e) => setWhatsapp(e.target.value)}
-        placeholder="WhatsApp Number* (e.g. 03XX XXXXXXX)"
-        autoComplete="tel"
-        className="w-full rounded-xl border border-input bg-background px-4 py-3 text-sm outline-none focus:ring-2 focus:ring-ring"
-      />
-      <input
-        required
-        type="text"
-        value={specialty}
-        onChange={(e) => setSpecialty(e.target.value)}
-        placeholder="Your child's age(s)* (e.g. 3 and 6)"
-        maxLength={120}
-        className="w-full rounded-xl border border-input bg-background px-4 py-3 text-sm outline-none focus:ring-2 focus:ring-ring"
-      />
-      {error && <p className="text-xs font-semibold text-destructive">{error}</p>}
-      <button
-        type="submit"
-        disabled={submitting}
-        className="btn-cta w-full px-4 py-4 text-base disabled:opacity-70 disabled:cursor-not-allowed"
-      >
-        <span className="inline-flex items-center justify-center gap-2">
-          <span>{submitting ? "Saving..." : "Continue to Checkout"}</span>
-          <ArrowRight className="btn-cta-arrow size-5" aria-hidden="true" />
-        </span>
-      </button>
-      <p className="flex items-center justify-center gap-1.5 text-[11px] text-muted-foreground">
-        <Lock className="size-3" /> Your details are saved securely. Payment is on the next step.
-      </p>
-    </form>
   );
 }
 
