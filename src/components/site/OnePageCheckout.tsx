@@ -50,17 +50,17 @@ const BUMPS = [
 ] as const;
 
 const PAYMENT_ACCOUNTS = {
-  sadapay: {
-    label: "SadaPay",
-    name: "Iman Tariq",
-    account: "03305599608",
-    accountLabel: "Account / Mobile Number",
-  },
   hbl: {
     label: "Habib Bank Limited (HBL)",
     name: "Farhan Ali Rash",
     account: "11107902348103",
     accountLabel: "Account Number",
+  },
+  sadapay: {
+    label: "SadaPay",
+    name: "Iman Tariq",
+    account: "03305599608",
+    accountLabel: "Account / Mobile Number",
   },
 } as const;
 type PayMethod = keyof typeof PAYMENT_ACCOUNTS;
@@ -79,7 +79,7 @@ export function OnePageCheckout() {
 
   // Order state
   const [bumps, setBumps] = useState<Record<string, boolean>>({});
-  const [paymentMethod, setPaymentMethod] = useState<PayMethod>("sadapay");
+  const [paymentMethod, setPaymentMethod] = useState<PayMethod>("hbl");
   const [screenshot, setScreenshot] = useState<File | null>(null);
   const [screenshotPreview, setScreenshotPreview] = useState<string | null>(null);
   const [uploadError, setUploadError] = useState<string | null>(null);
@@ -462,8 +462,8 @@ export function OnePageCheckout() {
                     onChange={(e) => setPaymentMethod(e.target.value as PayMethod)}
                     className="appearance-none w-full rounded-xl border-2 border-primary bg-gradient-to-br from-primary/5 to-primary/10 px-4 py-4 pr-12 text-base font-bold text-foreground shadow-md outline-none focus:ring-4 focus:ring-primary/30 hover:shadow-lg transition cursor-pointer"
                   >
-                    <option value="sadapay">⭐ SadaPay</option>
                     <option value="hbl">🏦 Habib Bank Limited (HBL)</option>
+                    <option value="sadapay">SadaPay</option>
                   </select>
                   <ChevronDown className="pointer-events-none absolute right-4 top-1/2 -translate-y-1/2 size-5 text-primary" />
                 </div>
