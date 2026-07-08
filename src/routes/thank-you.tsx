@@ -105,24 +105,35 @@ function ThankYouPage() {
                 <div className="size-10 rounded-full bg-emerald-100 grid place-items-center">
                   <Gift className="size-5 text-emerald-600" />
                 </div>
-                <h2 className="text-lg md:text-xl font-extrabold">🎁 Your Bonus Is Ready</h2>
+                <h2 className="text-lg md:text-xl font-extrabold">🎁 Your Parenting Toolkit Is Ready</h2>
               </div>
               <p className="mt-3 font-semibold text-slate-900">
-                You have unlocked the Workshop Recording + PDF Parenting Bundle.
+                Your Parenting Toolkit is ready to access now.
               </p>
               <p className="mt-2 text-sm text-muted-foreground">
-                Rewatch the full workshop anytime and use the PDF parenting guide and resources to
-                keep building a calmer, more connected home.
+                The workshop recording will be shared with you after the live workshop is completed.
+              </p>
+              <p className="mt-2 text-sm text-muted-foreground">
+                You can access your parenting toolkit below and start using the practical resources
+                with your child.
               </p>
               <a
-                href="https://docs.google.com/document/d/1hoBs3fP65ta11gwvugQ_MrRMBUBVxPDiJT9AZizdgYE/edit?usp=sharing"
+                href="https://drive.google.com/drive/folders/1Pm3GD-hWposALS5rTMonl4AZHkLLKeK_"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn-cta inline-flex items-center gap-2 w-full md:w-auto mt-5 px-6 py-4 text-base md:text-lg justify-center"
               >
-                <span>Access My Recording + PDF Bundle</span>
+                <span>ACCESS MY PARENTING TOOLKIT</span>
                 <ArrowRight className="btn-cta-arrow size-5" aria-hidden="true" />
               </a>
+
+              <div className="mt-5 rounded-xl bg-primary/5 border border-primary/20 p-4 text-left">
+                <div className="font-bold text-slate-900 mb-1">🎥 Workshop Recording</div>
+                <p className="text-sm text-muted-foreground">
+                  Your workshop recording will be available after the live workshop is completed.
+                  We will share the recording access with you after the workshop.
+                </p>
+              </div>
             </section>
           )}
 
