@@ -78,8 +78,8 @@ const BUMPS = [
 ] as const;
 
 const PAYMENT_ACCOUNTS = {
-  sadapay: { label: "SadaPay", name: "Iman Tariq", account: "03305599608", accountLabel: "Account / Mobile Number" },
   hbl: { label: "Habib Bank Limited (HBL)", name: "Farhan Ali Rash", account: "11107902348103", accountLabel: "Account Number" },
+  sadapay: { label: "SadaPay", name: "Iman Tariq", account: "03305599608", accountLabel: "Account / Mobile Number" },
 } as const;
 type PayMethod = keyof typeof PAYMENT_ACCOUNTS;
 
@@ -162,7 +162,7 @@ function OrderPage() {
   }
 
   const [bumps, setBumps] = useState<Record<string, boolean>>({});
-  const [paymentMethod, setPaymentMethod] = useState<PayMethod>("sadapay");
+  const [paymentMethod, setPaymentMethod] = useState<PayMethod>("hbl");
   const [submitting, setSubmitting] = useState(false);
   const [screenshot, setScreenshot] = useState<File | null>(null);
   const [screenshotPreview, setScreenshotPreview] = useState<string | null>(null);
