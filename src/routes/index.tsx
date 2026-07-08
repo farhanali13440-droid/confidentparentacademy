@@ -38,21 +38,31 @@ function LandingPage() {
     <div className="min-h-screen flex flex-col">
       <Topbar />
       <Hero />
+      <LeadOptinForm />
       <TrustBar />
       <ProblemSection />
+      <SectionCta />
       <SolutionSection />
+      <SectionCta />
       <BenefitsSection />
       <TransformationSection />
+      <SectionCta />
       <CurriculumSection />
+      <SectionCta />
       <AboutSamra />
+      <SectionCta />
       <StorySection />
       <IncludesSection />
+      <SectionCta />
       <GuaranteeSection />
+      <SectionCta />
       <PricingSection />
-      <LeadOptinForm />
       <BonusesSection />
+      <SectionCta />
       <TestimonialsSection />
+      <SectionCta />
       <FAQSection />
+      <SectionCta />
       <FinalCta />
       <Footer />
     </div>
