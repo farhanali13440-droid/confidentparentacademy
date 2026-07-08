@@ -154,11 +154,6 @@ function Hero() {
 
         <div className="mt-6 max-w-md mx-auto" id="hero-optin">
           <AttendeeTestimonials />
-          <div className="mt-4">
-            <CtaButton subtitle="Live on 13 July · Includes 3 free bonuses">
-              Reserve My Seat for 499 PKR
-            </CtaButton>
-          </div>
         </div>
       </div>
     </section>
