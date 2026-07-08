@@ -38,21 +38,31 @@ function LandingPage() {
     <div className="min-h-screen flex flex-col">
       <Topbar />
       <Hero />
+      <LeadOptinForm />
       <TrustBar />
       <ProblemSection />
+      <SectionCta />
       <SolutionSection />
+      <SectionCta />
       <BenefitsSection />
       <TransformationSection />
+      <SectionCta />
       <CurriculumSection />
+      <SectionCta />
       <AboutSamra />
+      <SectionCta />
       <StorySection />
       <IncludesSection />
+      <SectionCta />
       <GuaranteeSection />
+      <SectionCta />
       <PricingSection />
-      <LeadOptinForm />
       <BonusesSection />
+      <SectionCta />
       <TestimonialsSection />
+      <SectionCta />
       <FAQSection />
+      <SectionCta />
       <FinalCta />
       <Footer />
     </div>
@@ -144,11 +154,6 @@ function Hero() {
 
         <div className="mt-6 max-w-md mx-auto" id="hero-optin">
           <AttendeeTestimonials />
-          <div className="mt-4">
-            <CtaButton subtitle="Live on 13 July · Includes 3 free bonuses">
-              Reserve My Seat for 499 PKR
-            </CtaButton>
-          </div>
         </div>
       </div>
     </section>
@@ -743,6 +748,19 @@ function SectionHeading({ eyebrow, title, subtitle }: { eyebrow?: string; title:
         {title}
       </h2>
       {subtitle && <p className="mt-3 text-muted-foreground">{subtitle}</p>}
+    </div>
+  );
+}
+
+/* Consistent conversion CTA placed after major sales sections. Scrolls to the opt-in form. */
+function SectionCta() {
+  return (
+    <div className="bg-background">
+      <div className="mx-auto max-w-sm px-4 py-8 md:py-10">
+        <CtaButton subtitle="Join the live Confident Parenting Workshop">
+          Reserve My Seat for 499 PKR
+        </CtaButton>
+      </div>
     </div>
   );
 }
