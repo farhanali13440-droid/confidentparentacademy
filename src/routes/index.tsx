@@ -751,3 +751,16 @@ function SectionHeading({ eyebrow, title, subtitle }: { eyebrow?: string; title:
     </div>
   );
 }
+
+/* Consistent conversion CTA placed after major sales sections. Scrolls to the opt-in form. */
+function SectionCta() {
+  return (
+    <div className="bg-background">
+      <div className="mx-auto max-w-sm px-4 py-8 md:py-10">
+        <CtaButton subtitle="Join the live Confident Parenting Workshop">
+          Reserve My Seat for 499 PKR
+        </CtaButton>
+      </div>
+    </div>
+  );
+}
