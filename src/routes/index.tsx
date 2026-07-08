@@ -2,7 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { Topbar } from "@/components/site/Topbar";
 import { Footer } from "@/components/site/Footer";
 import { CtaButton } from "@/components/site/CtaButton";
-import { OnePageCheckout } from "@/components/site/OnePageCheckout";
+import { LeadOptinForm } from "@/components/site/LeadOptinForm";
 import { MasterclassCountdown } from "@/components/site/MasterclassCountdown";
 import {
   Star, ShieldCheck, CheckCircle2, Lock, BadgeCheck, Heart, Brain, Users,
@@ -49,7 +49,7 @@ function LandingPage() {
       <IncludesSection />
       <GuaranteeSection />
       <PricingSection />
-      <OnePageCheckout />
+      <LeadOptinForm />
       <BonusesSection />
       <TestimonialsSection />
       <FAQSection />
