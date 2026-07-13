@@ -80,7 +80,7 @@ export function OfferPopup() {
             <X className="size-3.5" />
           </button>
           <div className="flex-1 text-[12px] leading-tight font-semibold">
-            <div>Live Workshop: 13 July, 3–4:30 PM PKT</div>
+            <div>Live Workshop: 27 July, 3–4:30 PM PKT</div>
             <div className="text-yellow-300">499 PKR Today</div>
           </div>
           <button
@@ -134,7 +134,7 @@ export function OfferPopup() {
                   Early-bird 499 PKR offer ends: {DEADLINE_LABEL}
                 </div>
                 <div className="mt-1 text-xs text-slate-600">
-                  Live Workshop: Monday, 13th July 2026, 3:00 PM – 4:30 PM PKT
+                  Live Workshop: Monday, 27th July 2026, 3:00 PM – 4:30 PM PKT
                 </div>
               </div>
 
