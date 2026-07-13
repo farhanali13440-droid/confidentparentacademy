@@ -6,7 +6,7 @@ import { COHORT_START_ISO } from "@/lib/cohort";
 // shared with the deadline reminder emails).
 export const MASTERCLASS_DATE_ISO = COHORT_START_ISO;
 export const MASTERCLASS_DATE_LABEL =
-  "Live Workshop: 13th July at 3:00 PM – 4:30 PM Pakistan Standard Time (on Google Meet)";
+  "Live Workshop: 27th July at 3:00 PM – 4:30 PM Pakistan Standard Time (on Google Meet)";
 
 const ZERO = { days: 0, hours: 0, minutes: 0, seconds: 0, done: false };
 
@@ -65,7 +65,7 @@ export function MasterclassCountdown({
           <Calendar className="size-4 sm:size-5 text-accent shrink-0" />
           <span>
             Live Workshop:{" "}
-            <span className="gradient-highlight">13th July</span> at{" "}
+            <span className="gradient-highlight">27th July</span> at{" "}
             <span className="gradient-highlight">3:00 – 4:30 PM</span> Pakistan Time · Google Meet
           </span>
         </div>
