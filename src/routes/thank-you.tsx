@@ -23,7 +23,8 @@ function ThankYouPage() {
   )}`;
 
   const [otoSubmitted, setOtoSubmitted] = useState(false);
-  const [promptVaultUnlocked, setPromptVaultUnlocked] = useState(false);
+  const [parentingToolkit, setParentingToolkit] = useState(false);
+  const [recordingBundle, setRecordingBundle] = useState(false);
 
   useEffect(() => {
     try {
@@ -39,7 +40,8 @@ function ThankYouPage() {
 
     getThankYouEntitlements({ data: { leadId } })
       .then((res) => {
-        if (res?.promptVault) setPromptVaultUnlocked(true);
+        if (res?.parentingToolkit) setParentingToolkit(true);
+        if (res?.recordingBundle) setRecordingBundle(true);
       })
       .catch(() => {
         /* silently ignore — no bonus shown */
@@ -98,24 +100,52 @@ function ThankYouPage() {
             </section>
           )}
 
-          {/* Prompt Vault bonus — only when purchased */}
-          {promptVaultUnlocked && (
+          {/* Order Bump #1 — Parenting Behavior Toolkit */}
+          {parentingToolkit && (
             <section className="bg-card rounded-2xl border-2 border-emerald-200 shadow-sm p-6 md:p-8 text-center">
               <div className="flex items-center justify-center gap-3">
                 <div className="size-10 rounded-full bg-emerald-100 grid place-items-center">
                   <Gift className="size-5 text-emerald-600" />
                 </div>
-                <h2 className="text-lg md:text-xl font-extrabold">🎁 Your Parenting Toolkit Is Ready</h2>
+                <h2 className="text-lg md:text-xl font-extrabold">
+                  🎁 You Have Unlocked the Parenting Behavior Toolkit
+                </h2>
               </div>
-              <p className="mt-3 font-semibold text-slate-900">
-                Your Parenting Toolkit is ready to access now.
-              </p>
+              <p className="mt-3 text-slate-800">We have now prepared your access link.</p>
               <p className="mt-2 text-sm text-muted-foreground">
-                The workshop recording will be shared with you after the live workshop is completed.
+                Access your Parenting Behavior Toolkit here:
               </p>
+              <a
+                href="https://drive.google.com/drive/folders/19gunh3V04d1gNUQnNETvxD-TiXZ9Ahv1"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-cta inline-flex items-center gap-2 w-full md:w-auto mt-5 px-6 py-4 text-base md:text-lg justify-center"
+              >
+                <span>Access Parenting Behavior Toolkit</span>
+                <ArrowRight className="btn-cta-arrow size-5" aria-hidden="true" />
+              </a>
+              <p className="mt-5 text-sm text-slate-700">
+                Warm Regards,
+                <br />
+                Team Confident Parent Academy
+              </p>
+            </section>
+          )}
+
+          {/* Order Bump #2 — Workshop Recording + PDF Bundle */}
+          {recordingBundle && (
+            <section className="bg-card rounded-2xl border-2 border-emerald-200 shadow-sm p-6 md:p-8 text-center">
+              <div className="flex items-center justify-center gap-3">
+                <div className="size-10 rounded-full bg-emerald-100 grid place-items-center">
+                  <Gift className="size-5 text-emerald-600" />
+                </div>
+                <h2 className="text-lg md:text-xl font-extrabold">
+                  🎁 You Have Unlocked the Recording + PDF Bundle
+                </h2>
+              </div>
+              <p className="mt-3 text-slate-800">We have now prepared your access link.</p>
               <p className="mt-2 text-sm text-muted-foreground">
-                You can access your parenting toolkit below and start using the practical resources
-                with your child.
+                Your Lifetime Access to the Recording + PDF Bundle is available below.
               </p>
               <a
                 href="https://drive.google.com/drive/folders/1Pm3GD-hWposALS5rTMonl4AZHkLLKeK_"
@@ -123,17 +153,14 @@ function ThankYouPage() {
                 rel="noopener noreferrer"
                 className="btn-cta inline-flex items-center gap-2 w-full md:w-auto mt-5 px-6 py-4 text-base md:text-lg justify-center"
               >
-                <span>ACCESS MY PARENTING TOOLKIT</span>
+                <span>Access Recording + PDF Bundle</span>
                 <ArrowRight className="btn-cta-arrow size-5" aria-hidden="true" />
               </a>
-
-              <div className="mt-5 rounded-xl bg-primary/5 border border-primary/20 p-4 text-left">
-                <div className="font-bold text-slate-900 mb-1">🎥 Workshop Recording</div>
-                <p className="text-sm text-muted-foreground">
-                  Your workshop recording will be available after the live workshop is completed.
-                  We will share the recording access with you after the workshop.
-                </p>
-              </div>
+              <p className="mt-5 text-sm text-slate-700">
+                Warm Regards,
+                <br />
+                Team Confident Parent Academy
+              </p>
             </section>
           )}
 
