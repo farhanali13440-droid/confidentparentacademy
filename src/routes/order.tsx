@@ -286,24 +286,25 @@ function OrderPage() {
       }
     } catch {}
 
-    // Fire the primary SubmitApplication conversion ONLY after a fully
+    // Fire the primary Purchase conversion ONLY after a fully
     // successful submission: validation passed, screenshot uploaded, and order
     // saved to the database (savedLeadId + savedOrder both present, checked
     // above). Value uses the actual final order total (workshop + selected
     // bumps), never a hardcoded amount. Guarded so a saved order fires once.
     try {
-      const submitGuardKey = `cpa_submitapplication_fired_${savedLeadId}`;
+      const submitGuardKey = `cpa_purchase_fired_${savedLeadId}`;
       const alreadyFired =
         typeof window !== "undefined" && localStorage.getItem(submitGuardKey) === "1";
       if (!alreadyFired) {
         const { trackPixel, debugMetaEvent } = await import("@/lib/fbpixel");
-        trackPixel("SubmitApplication", {
-          content_name: "Confident Parent Academy Workshop",
+        trackPixel("Purchase", {
+          content_name: "Confident Parenting Workshop",
+          content_type: "product",
           value: total,
           currency: "PKR",
         });
         if (typeof window !== "undefined") localStorage.setItem(submitGuardKey, "1");
-        debugMetaEvent("SubmitApplication fired - successful paid order", {
+        debugMetaEvent("Purchase fired - successful paid order", {
           leadId: savedLeadId,
           total,
           paymentMethod: PAYMENT_ACCOUNTS[paymentMethod].label,
@@ -311,7 +312,7 @@ function OrderPage() {
         });
       }
     } catch (err) {
-      console.error("Pixel SubmitApplication event failed", err);
+      console.error("Pixel Purchase event failed", err);
     }
 
     const rawValue = savedOrder.strategy_session_order_bump_selected;
