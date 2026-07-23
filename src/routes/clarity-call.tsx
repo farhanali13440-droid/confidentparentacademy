@@ -40,11 +40,11 @@ function ClarityCallPage() {
   const { lead } = Route.useSearch();
 
   const skipToAccess = () => {
-    navigate({
-      to: "/thank-you",
-      search: lead ? { lead } : undefined,
-      replace: true,
-    });
+    if (lead && typeof window !== "undefined") {
+      window.location.href = `/thank-you?lead=${encodeURIComponent(lead)}`;
+      return;
+    }
+    navigate({ to: "/thank-you", replace: true });
   };
 
   const openBooking = () => {
@@ -263,13 +263,12 @@ function ClarityCallPage() {
 
           <p className="text-center text-xs text-muted-foreground">
             Prefer to go straight to your workshop access?{" "}
-            <Link
-              to="/thank-you"
-              search={lead ? { lead } : undefined}
+            <a
+              href={lead ? `/thank-you?lead=${encodeURIComponent(lead)}` : "/thank-you"}
               className="underline"
             >
               Continue to workshop access
-            </Link>
+            </a>
             .
           </p>
         </div>
