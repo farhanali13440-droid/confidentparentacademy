@@ -326,7 +326,7 @@ function OrderPage() {
       redirectTo: "/thank-you",
     });
 
-    navigate({ to: "/onboarding", search: { lead: savedLeadId }, replace: true });
+    navigate({ to: "/clarity-call", search: { lead: savedLeadId }, replace: true });
 
   }
 

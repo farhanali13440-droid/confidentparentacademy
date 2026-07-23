@@ -13,6 +13,7 @@ import { Route as ThankYouRouteImport } from './routes/thank-you'
 import { Route as OtoRouteImport } from './routes/oto'
 import { Route as OrderRouteImport } from './routes/order'
 import { Route as OnboardingRouteImport } from './routes/onboarding'
+import { Route as ClarityCallRouteImport } from './routes/clarity-call'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as EmailUnsubscribeRouteImport } from './routes/email/unsubscribe'
 import { Route as AdminOnboarding1340RouteImport } from './routes/admin.onboarding1340'
@@ -43,6 +44,11 @@ const OrderRoute = OrderRouteImport.update({
 const OnboardingRoute = OnboardingRouteImport.update({
   id: '/onboarding',
   path: '/onboarding',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ClarityCallRoute = ClarityCallRouteImport.update({
+  id: '/clarity-call',
+  path: '/clarity-call',
   getParentRoute: () => rootRouteImport,
 } as any)
 const IndexRoute = IndexRouteImport.update({
@@ -107,6 +113,7 @@ const ApiPublicHooksAbandonedCheckoutRoute =
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/clarity-call': typeof ClarityCallRoute
   '/onboarding': typeof OnboardingRoute
   '/order': typeof OrderRoute
   '/oto': typeof OtoRoute
@@ -124,6 +131,7 @@ export interface FileRoutesByFullPath {
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/clarity-call': typeof ClarityCallRoute
   '/onboarding': typeof OnboardingRoute
   '/order': typeof OrderRoute
   '/oto': typeof OtoRoute
@@ -142,6 +150,7 @@ export interface FileRoutesByTo {
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/clarity-call': typeof ClarityCallRoute
   '/onboarding': typeof OnboardingRoute
   '/order': typeof OrderRoute
   '/oto': typeof OtoRoute
@@ -161,6 +170,7 @@ export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
+    | '/clarity-call'
     | '/onboarding'
     | '/order'
     | '/oto'
@@ -178,6 +188,7 @@ export interface FileRouteTypes {
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
+    | '/clarity-call'
     | '/onboarding'
     | '/order'
     | '/oto'
@@ -195,6 +206,7 @@ export interface FileRouteTypes {
   id:
     | '__root__'
     | '/'
+    | '/clarity-call'
     | '/onboarding'
     | '/order'
     | '/oto'
@@ -213,6 +225,7 @@ export interface FileRouteTypes {
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  ClarityCallRoute: typeof ClarityCallRoute
   OnboardingRoute: typeof OnboardingRoute
   OrderRoute: typeof OrderRoute
   OtoRoute: typeof OtoRoute
@@ -257,6 +270,13 @@ declare module '@tanstack/react-router' {
       path: '/onboarding'
       fullPath: '/onboarding'
       preLoaderRoute: typeof OnboardingRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/clarity-call': {
+      id: '/clarity-call'
+      path: '/clarity-call'
+      fullPath: '/clarity-call'
+      preLoaderRoute: typeof ClarityCallRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/': {
@@ -341,6 +361,7 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  ClarityCallRoute: ClarityCallRoute,
   OnboardingRoute: OnboardingRoute,
   OrderRoute: OrderRoute,
   OtoRoute: OtoRoute,
