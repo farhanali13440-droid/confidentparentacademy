@@ -17,7 +17,7 @@ export const Route = createFileRoute("/thank-you")({
 });
 
 function ThankYouPage() {
-  const waCommunity = "https://chat.whatsapp.com/DNKk37BxAMD1S00weW548Z";
+  const waCommunity = "https://chat.whatsapp.com/Ji7Uu6MxcHtKU6sokUOp5h";
   const waSupport = `https://wa.me/923135944817?text=${encodeURIComponent(
     "Assalam-o-Alaikum, I need help with my Confident Parent Academy workshop order.",
   )}`;
@@ -174,7 +174,7 @@ function ThankYouPage() {
             </div>
             <div className="mt-4 rounded-xl bg-primary text-primary-foreground p-6 text-center">
               <div className="text-sm uppercase tracking-widest opacity-90">Live on Google Meet</div>
-              <div className="mt-1 text-2xl md:text-3xl font-black" style={{ fontFamily: "var(--font-display)" }}>Monday, 27th July 2026</div>
+              <div className="mt-1 text-2xl md:text-3xl font-black" style={{ fontFamily: "var(--font-display)" }}>Sunday, 10th August 2026</div>
               <div className="mt-1 text-lg font-bold">3:00 PM – 4:30 PM (Pakistan Time)</div>
             </div>
             <div className="mt-4 rounded-lg bg-secondary p-4 text-sm text-slate-800">
@@ -184,7 +184,7 @@ function ThankYouPage() {
                 Add the date to your calendar and join a few minutes early.
               </p>
               <a
-                href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Confident+Parent+Academy+Workshop&dates=20260727T100000Z/20260727T113000Z&details=Live+parenting+workshop+with+Miss+Samra+Riaz+on+Google+Meet"
+                href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Confident+Parent+Academy+Workshop&dates=20260810T100000Z/20260810T113000Z&details=Live+parenting+workshop+with+Miss+Samra+Riaz+on+Google+Meet"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 mt-3 rounded-full border-2 border-primary px-4 py-2 font-bold text-primary hover:bg-primary/5"
