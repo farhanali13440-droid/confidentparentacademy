@@ -21,9 +21,9 @@ interface Props {
 }
 
 const DEFAULTS = {
-  trainingDate: '27th July 2026 (Monday)',
+  trainingDate: '10th August 2026 (Sunday)',
   trainingTime: '3:00 PM – 4:30 PM (Pakistan Standard Time)',
-  whatsappUrl: 'https://chat.whatsapp.com/D5RErdi4ZnhJGNOOEK37c6',
+  whatsappUrl: 'https://chat.whatsapp.com/Ji7Uu6MxcHtKU6sokUOp5h',
 }
 
 const Email = ({
