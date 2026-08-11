@@ -17,7 +17,7 @@ export const Route = createFileRoute("/thank-you")({
 });
 
 function ThankYouPage() {
-  const waCommunity = "https://chat.whatsapp.com/Ji7Uu6MxcHtKU6sokUOp5h";
+  const waCommunity = "https://chat.whatsapp.com/JvOMwdK8HvT4gfSF7zDpd7?s=cl&p=a&ilr=1";
   const waSupport = `https://wa.me/923135944817?text=${encodeURIComponent(
     "Assalam-o-Alaikum, I need help with my Confident Parent Academy workshop order.",
   )}`;
