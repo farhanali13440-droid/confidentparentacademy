@@ -23,7 +23,7 @@ interface Props {
 
 const DEFAULTS = {
   checkoutUrl: 'https://www.zeroappleaday.site/order',
-  cohortDate: '10 August 2026',
+  cohortDate: '24 August 2026',
   cohortTime: '3:00 PM PKT',
 }
 
