@@ -25,7 +25,7 @@ export const Route = createFileRoute("/")({
       { title: "Confident Parent Academy | Stop the Daily Fights and Enjoy Your Child Again" },
       { name: "description", content: "A live parenting workshop with Miss Samra Riaz. Understand why your child cries, shouts and doesn't listen, and learn simple ways to calm your home. Only 499 PKR." },
       { property: "og:title", content: "Confident Parent Academy | Parenting Workshop with Miss Samra Riaz" },
-      { property: "og:description", content: "Understand why your child behaves this way and learn simple ways to bring calm back to your home. Live on 10 August on Google Meet." },
+      { property: "og:description", content: "Understand why your child behaves this way and learn simple ways to bring calm back to your home. Live on 24 August on Google Meet." },
       { property: "og:type", content: "website" },
       { property: "og:url", content: "/" },
     ],
@@ -73,7 +73,7 @@ function LandingPage() {
 
 function Hero() {
   const facts = [
-    { icon: Calendar, label: "10 Aug" },
+    { icon: Calendar, label: "24 Aug" },
     { icon: Video, label: "Google Meet" },
     { icon: Clock, label: "1.5 Hours" },
     { icon: MessageCircle, label: "Live Q&A" },
