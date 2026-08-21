@@ -184,7 +184,7 @@ function ThankYouPage() {
                 Add the date to your calendar and join a few minutes early.
               </p>
               <a
-                href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Confident+Parent+Academy+Workshop&dates=20260824T100000Z/20260824T113000Z&details=Live+parenting+workshop+with+Miss+Samra+Riaz+on+Google+Meet"
+                href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Confident+Parent+Academy+Workshop&dates=20260831T100000Z/20260831T113000Z&details=Live+parenting+workshop+with+Miss+Samra+Riaz+on+Google+Meet"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 mt-3 rounded-full border-2 border-primary px-4 py-2 font-bold text-primary hover:bg-primary/5"
