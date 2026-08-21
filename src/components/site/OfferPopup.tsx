@@ -80,7 +80,7 @@ export function OfferPopup() {
             <X className="size-3.5" />
           </button>
           <div className="flex-1 text-[12px] leading-tight font-semibold">
-            <div>Live Workshop: 24 Aug, 3–4:30 PM PKT</div>
+            <div>Live Workshop: 31 Aug, 3–4:30 PM PKT</div>
             <div className="text-yellow-300">499 PKR Today</div>
           </div>
           <button
