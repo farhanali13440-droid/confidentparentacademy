@@ -134,7 +134,7 @@ export function OfferPopup() {
                   Early-bird 499 PKR offer ends: {DEADLINE_LABEL}
                 </div>
                 <div className="mt-1 text-xs text-slate-600">
-                  Live Workshop: Sunday, 24th August 2026, 3:00 PM – 4:30 PM PKT
+                  Live Workshop: Monday, 31st August 2026, 3:00 PM – 4:30 PM PKT
                 </div>
               </div>
 
