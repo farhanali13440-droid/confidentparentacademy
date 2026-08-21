@@ -25,7 +25,7 @@ export const Route = createFileRoute("/")({
       { title: "Confident Parent Academy | Stop the Daily Fights and Enjoy Your Child Again" },
       { name: "description", content: "A live parenting workshop with Miss Samra Riaz. Understand why your child cries, shouts and doesn't listen, and learn simple ways to calm your home. Only 499 PKR." },
       { property: "og:title", content: "Confident Parent Academy | Parenting Workshop with Miss Samra Riaz" },
-      { property: "og:description", content: "Understand why your child behaves this way and learn simple ways to bring calm back to your home. Live on 24 August on Google Meet." },
+      { property: "og:description", content: "Understand why your child behaves this way and learn simple ways to bring calm back to your home. Live on 31 August on Google Meet." },
       { property: "og:type", content: "website" },
       { property: "og:url", content: "/" },
     ],
@@ -721,7 +721,7 @@ function FinalCta() {
           A Calmer Home Can Start This Week
         </h2>
         <p className="mt-4 text-foreground/75 max-w-xl mx-auto">
-          Join Miss Samra Riaz live on 24 August and learn simple ways to end the daily fights and
+          Join Miss Samra Riaz live on 31 August and learn simple ways to end the daily fights and
           enjoy your child again. No guilt, no shouting, no need to be perfect.
         </p>
         <div className="mt-6 max-w-sm mx-auto">

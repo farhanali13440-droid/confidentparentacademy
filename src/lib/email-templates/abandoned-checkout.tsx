@@ -23,7 +23,7 @@ interface Props {
 
 const DEFAULTS = {
   checkoutUrl: 'https://www.zeroappleaday.site/order',
-  trainingDate: '24th August 2026 (Sunday)',
+  trainingDate: '31st August 2026 (Monday)',
   trainingTime: '3:00 PM – 4:30 PM (Pakistan Standard Time)',
 }
 

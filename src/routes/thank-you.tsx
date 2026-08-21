@@ -174,7 +174,7 @@ function ThankYouPage() {
             </div>
             <div className="mt-4 rounded-xl bg-primary text-primary-foreground p-6 text-center">
               <div className="text-sm uppercase tracking-widest opacity-90">Live on Google Meet</div>
-              <div className="mt-1 text-2xl md:text-3xl font-black" style={{ fontFamily: "var(--font-display)" }}>Sunday, 24th August 2026</div>
+              <div className="mt-1 text-2xl md:text-3xl font-black" style={{ fontFamily: "var(--font-display)" }}>Monday, 31st August 2026</div>
               <div className="mt-1 text-lg font-bold">3:00 PM – 4:30 PM (Pakistan Time)</div>
             </div>
             <div className="mt-4 rounded-lg bg-secondary p-4 text-sm text-slate-800">
