@@ -17,7 +17,7 @@ export function Topbar() {
 
         <div className="flex flex-col items-end gap-0 leading-tight min-w-0">
           <span className="font-semibold text-[10px] sm:text-xs">Need Help?</span>
-          <a href="mailto:hello@confidentparentacademy.com" className="underline text-[10px] sm:text-xs truncate max-w-[180px] sm:max-w-none">hello@confidentparentacademy.com</a>
+          <a href="mailto:samrariaz600@gmail.com" className="underline text-[10px] sm:text-xs truncate max-w-[180px] sm:max-w-none">samrariaz600@gmail.com</a>
         </div>
       </div>
     </div>
