@@ -9,7 +9,7 @@ export function Footer() {
           Calm, science-backed parenting guidance with Miss Samra Riaz, Clinical Psychologist &amp; Parent Counsellor.
         </p>
         <p className="flex flex-wrap items-center justify-center gap-x-2 gap-y-1">
-          <a href="mailto:hello@confidentparentacademy.com" className="underline">hello@confidentparentacademy.com</a>
+          <a href="mailto:samrariaz600@gmail.com" className="underline">samrariaz600@gmail.com</a>
           <span className="hidden sm:inline">•</span>
           <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="underline">Instagram</a>
           <span className="hidden sm:inline">•</span>
