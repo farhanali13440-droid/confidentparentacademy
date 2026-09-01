@@ -25,7 +25,7 @@ export const Route = createFileRoute("/")({
       { title: "Confident Parent Academy | Stop the Daily Fights and Enjoy Your Child Again" },
       { name: "description", content: "A live parenting workshop with Miss Samra Riaz. Understand why your child cries, shouts and doesn't listen, and learn simple ways to calm your home. Only 499 PKR." },
       { property: "og:title", content: "Confident Parent Academy | Parenting Workshop with Miss Samra Riaz" },
-      { property: "og:description", content: "Understand why your child behaves this way and learn simple ways to bring calm back to your home. Live on 31 August on Google Meet." },
+      { property: "og:description", content: "Understand why your child behaves this way and learn simple ways to bring calm back to your home. Live on 14 September on Google Meet." },
       { property: "og:type", content: "website" },
       { property: "og:url", content: "/" },
     ],
@@ -73,7 +73,7 @@ function LandingPage() {
 
 function Hero() {
   const facts = [
-    { icon: Calendar, label: "31 Aug" },
+    { icon: Calendar, label: "14 Sep" },
     { icon: Video, label: "Google Meet" },
     { icon: Clock, label: "1.5 Hours" },
     { icon: MessageCircle, label: "Live Q&A" },
@@ -93,7 +93,6 @@ function Hero() {
         </div>
 
         <div className="mt-6 md:mt-10 grid md:grid-cols-2 gap-6 md:gap-8 md:items-center">
-          {/* 1. Headline + subheadline — always first so the promise leads on mobile */}
           <div className="text-center md:text-left md:col-start-1 md:row-start-1">
             <h1 className="text-[26px] leading-tight sm:text-4xl md:text-[42px] md:leading-[1.1] font-semibold whitespace-pre-line" style={{ fontFamily: "var(--font-display)" }}>
               {"How to Create a\n"}
@@ -108,7 +107,6 @@ function Hero() {
             </p>
           </div>
 
-          {/* 2. Hero image — sits after the headline on mobile, right column on desktop */}
           <div className="md:col-start-2 md:row-start-1 md:row-span-2 md:self-center">
             <div className="rounded-3xl overflow-hidden shadow-2xl ring-1 ring-blush/30">
               <img
@@ -121,7 +119,6 @@ function Hero() {
             </div>
           </div>
 
-          {/* 3. Info chips + CTA — below the image on mobile, under the headline on desktop */}
           <div className="text-center md:text-left md:col-start-1 md:row-start-2">
             <div className="grid grid-cols-2 sm:grid-cols-3 gap-2.5 max-w-lg mx-auto md:mx-0">
               {facts.map(({ icon: Icon, label }) => (
@@ -133,7 +130,7 @@ function Hero() {
             </div>
 
             <div className="mt-7 space-y-3 max-w-md mx-auto md:mx-0">
-              <CtaButton subtitle="Live on 31 Aug · Includes 3 free bonuses">Reserve My Seat</CtaButton>
+              <CtaButton subtitle="Live on 14 Sep · Includes 3 free bonuses">Reserve My Seat</CtaButton>
               <a
                 href="#curriculum"
                 onClick={(e) => {
@@ -307,9 +304,9 @@ function BenefitsSection() {
         <SectionHeading eyebrow="What changes for you" title="Here's What Your Days Will Feel Like After This Workshop" />
         <div className="mt-8 grid sm:grid-cols-2 gap-4">
           {benefits.map((b) => (
-            <div key={b} className="flex items-start gap-3 rounded-2xl bg-card border border-border p-5 shadow-sm">
-              <CheckCircle2 className="size-5 text-primary shrink-0 mt-0.5" />
-              <span className="text-sm md:text-base font-medium">{b}</span>
+            <div key={b} className="flex items-start gap-3 rounded-2xl border border-border bg-card p-4 shadow-sm">
+              <CheckCircle2 className="size-5 mt-0.5 text-accent shrink-0" />
+              <span className="text-sm sm:text-base leading-relaxed">{b}</span>
             </div>
           ))}
         </div>
@@ -318,26 +315,61 @@ function BenefitsSection() {
   );
 }
 
-/* ---------------- CURRICULUM ---------------- */
+/* ---------------- TRANSFORMATION ---------------- */
 
 function TransformationSection() {
   return (
     <section className="py-14 md:py-20 bg-secondary">
-      <div className="mx-auto max-w-6xl px-4">
-        <SectionHeading
-          eyebrow="Before vs after"
-          title="Picture Your Home After Just A Few Small Changes"
-          subtitle="A few small changes today can turn stressful, noisy days into calm, happy ones at home."
-        />
-        <div className="mt-10 md:mt-12 mx-auto max-w-5xl">
-          <div className="rounded-3xl overflow-hidden shadow-2xl ring-1 ring-blush/30 bg-white">
-            <img
-              src={beforeAfter.url}
-              alt="Before and after: from an overwhelmed, disconnected home to a calm, connected and confident family"
-              className="w-full h-auto object-contain"
-              loading="lazy"
-            />
+      <div className="mx-auto max-w-5xl px-4">
+        <SectionHeading eyebrow="The transformation" title="From Daily Power Struggles to a More Peaceful Home" />
+        <div className="mt-9 grid md:grid-cols-2 gap-6 items-center">
+          <div className="rounded-3xl bg-card border border-border p-7 shadow-sm">
+            <div className="flex items-center gap-3">
+              <ShieldCheck className="size-6 text-accent" />
+              <h3 className="text-xl font-semibold" style={{ fontFamily: "var(--font-display)" }}>What you will understand</h3>
+            </div>
+            <ul className="mt-5 space-y-3">
+              {[
+                "Why your child behaves differently at different ages and stages.",
+                "What sits underneath tantrums, defiance and emotional outbursts.",
+                "How your response can either calm the situation or make it worse.",
+                "How to set boundaries without turning every limit into a battle.",
+              ].map((item) => (
+                <li key={item} className="flex items-start gap-3 text-sm sm:text-base leading-relaxed">
+                  <CheckCircle2 className="size-5 mt-0.5 text-accent shrink-0" />
+                  {item}
+                </li>
+              ))}
+            </ul>
           </div>
+          <div className="rounded-3xl overflow-hidden shadow-xl ring-1 ring-border">
+            <img src={beforeAfter.url} alt="Before and after transformation concept for calmer family life" loading="lazy" className="w-full h-auto" />
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* ---------------- COMMON HELPERS ---------------- */
+
+function SectionHeading({ eyebrow, title, subtitle }: { eyebrow: string; title: string; subtitle?: string }) {
+  return (
+    <div className="text-center max-w-3xl mx-auto">
+      <p className="text-xs sm:text-sm font-bold uppercase tracking-widest text-accent">{eyebrow}</p>
+      <h2 className="mt-2 text-2xl sm:text-3xl md:text-4xl font-semibold" style={{ fontFamily: "var(--font-display)" }}>{title}</h2>
+      {subtitle && <p className="mt-3 text-sm sm:text-base text-muted-foreground leading-relaxed">{subtitle}</p>}
+    </div>
+  );
+}
+
+function SectionCta() {
+  return (
+    <section className="bg-hero-deep text-white py-7">
+      <div className="mx-auto max-w-3xl px-4 text-center">
+        <p className="text-sm sm:text-base font-semibold">Ready to make home feel calmer?</p>
+        <div className="mt-3 max-w-sm mx-auto">
+          <CtaButton variant="light" subtitle="Live on 14 Sep · 3:00–4:30 PM PKT">Reserve My Seat</CtaButton>
         </div>
       </div>
     </section>
@@ -347,29 +379,22 @@ function TransformationSection() {
 /* ---------------- CURRICULUM ---------------- */
 
 function CurriculumSection() {
-  const modules = [
-    "Why the parenting advice everyone gives you doesn't actually work.",
-    "What is normal behaviour at your child's age, and what isn't.",
-    "Why your child listens more when they feel close to you first.",
-    "Simple changes in your parenting that can reduce daily arguments.",
-    "Why your child behaves this way, and what they're really trying to tell you.",
-    "How the right toys and play can calm your child and help them learn.",
-    "Easy play activities that improve your child's behaviour and development.",
-    "Ready-to-use tools that help you handle tough behaviour calmly and confidently.",
-    "The common mistakes that quietly make behaviour worse, and how to avoid them.",
-    "Quick, practical fixes you can try at home the same day.",
+  const lessons = [
+    "Understand what your child's behaviour is really communicating.",
+    "Learn practical ways to respond to tantrums without shouting.",
+    "Set healthy boundaries around screens, study, bedtime and routines.",
+    "Build cooperation while protecting your relationship with your child.",
+    "Get your parenting questions answered live in Q&A.",
   ];
   return (
-    <section id="curriculum" className="py-14 md:py-20 bg-secondary scroll-mt-16">
+    <section id="curriculum" className="py-14 md:py-20 bg-background">
       <div className="mx-auto max-w-5xl px-4">
-        <SectionHeading eyebrow="Inside the workshop" title="What You'll Learn (10 Simple, Real-Life Topics)" />
-        <div className="mt-8 grid sm:grid-cols-2 gap-4">
-          {modules.map((m, i) => (
-            <div key={m} className="flex items-center gap-4 rounded-2xl bg-card border border-border p-5 shadow-sm">
-              <span className="grid place-items-center size-10 rounded-full bg-accent text-warm-brown-deep font-semibold shrink-0" style={{ fontFamily: "var(--font-display)" }}>
-                {String(i + 1).padStart(2, "0")}
-              </span>
-              <span className="text-sm md:text-base font-medium leading-snug">{m}</span>
+        <SectionHeading eyebrow="Inside the workshop" title="What We Will Cover" />
+        <div className="mt-9 grid md:grid-cols-2 gap-5">
+          {lessons.map((lesson, i) => (
+            <div key={lesson} className="flex items-start gap-4 rounded-2xl border border-border bg-card p-5 shadow-sm">
+              <span className="grid place-items-center size-9 rounded-full bg-accent/30 text-warm-brown font-bold shrink-0">{i + 1}</span>
+              <p className="text-sm sm:text-base leading-relaxed">{lesson}</p>
             </div>
           ))}
         </div>
@@ -381,54 +406,26 @@ function CurriculumSection() {
 /* ---------------- ABOUT SAMRA ---------------- */
 
 function AboutSamra() {
-  const creds = [
-    "Clinical Psychologist",
-    "4 Years of Experience",
-    "Post Graduate Diploma in Clinical Psychology",
-    "Certified Early Childhood Educator",
-    "Behaviour Therapist (ABAT Candidate)",
-  ];
-  const works = ["Parents", "Children", "University Students", "Life Counselling"];
   return (
-    <section className="py-14 md:py-20 bg-background">
-      <div className="mx-auto max-w-5xl px-4 grid md:grid-cols-5 gap-8 items-center">
-        <div className="md:col-span-2">
-          <div className="rounded-3xl overflow-hidden shadow-xl ring-1 ring-border">
-            <img
-              src={samraPortrait}
-              alt="Miss Samra Riaz, Clinical Psychologist and Parent Counsellor"
-              className="w-full h-auto object-cover"
-              width={1024}
-              height={1280}
-              loading="lazy"
-            />
-          </div>
+    <section className="py-14 md:py-20 bg-secondary">
+      <div className="mx-auto max-w-5xl px-4 grid md:grid-cols-[280px_1fr] gap-8 items-center">
+        <div className="rounded-3xl overflow-hidden shadow-xl ring-1 ring-blush/30 max-w-sm mx-auto">
+          <img src={samraPortrait} alt="Miss Samra Riaz" className="w-full h-auto" />
         </div>
-        <div className="md:col-span-3">
-          <p className="text-sm font-semibold uppercase tracking-widest text-secondary-foreground/70">Your Guide</p>
-          <h2 className="mt-2 text-2xl md:text-4xl font-semibold" style={{ fontFamily: "var(--font-display)" }}>
-            Meet Miss Samra Riaz
-          </h2>
-          <p className="mt-3 text-muted-foreground leading-relaxed">
-            Samra is a clinical psychologist and parent counsellor who helps families build calmer,
-            warmer homes. She speaks to you like a friend, not like a textbook. No hard words, no
-            judgement, just simple advice that works in real Pakistani homes.
+        <div>
+          <p className="text-xs sm:text-sm font-bold uppercase tracking-widest text-accent">Meet your instructor</p>
+          <h2 className="mt-2 text-3xl sm:text-4xl font-semibold" style={{ fontFamily: "var(--font-display)" }}>Miss Samra Riaz</h2>
+          <p className="mt-4 text-sm sm:text-base text-muted-foreground leading-relaxed">
+            A practical, compassionate approach to parenting that helps mothers and fathers understand what is really happening underneath difficult behaviour.
           </p>
-          <div className="mt-5 grid sm:grid-cols-2 gap-2.5">
-            {creds.map((c) => (
-              <div key={c} className="flex items-start gap-2 text-sm font-medium">
-                <Award className="size-4 text-warm-brown shrink-0 mt-0.5" />
-                <span>{c}</span>
-              </div>
+          <div className="mt-5 flex flex-wrap gap-3">
+            {[
+              "Parenting Guidance",
+              "Child Behaviour",
+              "Family Communication",
+            ].map((tag) => (
+              <span key={tag} className="rounded-full bg-white px-4 py-2 text-xs sm:text-sm font-semibold border border-border">{tag}</span>
             ))}
-          </div>
-          <div className="mt-5">
-            <p className="text-sm font-semibold text-foreground">She works with:</p>
-            <div className="mt-2 flex flex-wrap gap-2">
-              {works.map((w) => (
-                <span key={w} className="rounded-full bg-accent/50 text-accent-foreground text-xs font-semibold px-3 py-1">{w}</span>
-              ))}
-            </div>
           </div>
         </div>
       </div>
@@ -440,28 +437,9 @@ function AboutSamra() {
 
 function StorySection() {
   return (
-    <section className="py-14 md:py-20 bg-secondary">
-      <div className="mx-auto max-w-3xl px-4">
-        <div className="rounded-3xl bg-card border border-border p-8 md:p-10 shadow-sm">
-          <span className="grid place-items-center size-12 rounded-2xl mx-auto" style={{ backgroundColor: "var(--soft-pink)" }}>
-            <Heart className="size-6 text-destructive" />
-          </span>
-          <h2 className="mt-5 text-center text-2xl md:text-3xl font-semibold" style={{ fontFamily: "var(--font-display)" }}>
-            Why I Do This Work
-          </h2>
-          <div className="mt-5 space-y-4 text-muted-foreground leading-relaxed text-center md:text-left">
-            <p>
-              My work with families started close to home. Growing up with three autistic cousins,
-              I saw how hard it is for parents when nobody explains what is really going on with
-              their child. And I saw how much easier life becomes once they finally understand.
-            </p>
-            <p>
-              That gave me one mission: to help parents <span className="font-semibold text-foreground">before</span> small
-              struggles grow into big problems. Every child deserves to be understood, and every
-              parent deserves to feel calm, confident and close to their child.
-            </p>
-          </div>
-        </div>
+    <section className="py-14 md:py-20 bg-background">
+      <div className="mx-auto max-w-4xl px-4 text-center">
+        <SectionHeading eyebrow="A reminder for parents" title="You Do Not Have to Do This Alone" subtitle="Parenting gets easier when you understand what is happening and have a simple plan for the hard moments." />
       </div>
     </section>
   );
@@ -470,24 +448,22 @@ function StorySection() {
 /* ---------------- INCLUDES ---------------- */
 
 function IncludesSection() {
-  const items = [
-    { icon: Video, title: "Live Confident Parenting Workshop", desc: "A live, interactive session with Miss Samra on Google Meet." },
-    { icon: Users, title: "Private Parent Community Access", desc: "Join a supportive community of parents on the same journey." },
-    { icon: FileText, title: "The Parenting Genius Blueprint (PDF)", desc: "Understand your child's unique intelligence and natural strengths." },
-    { icon: Heart, title: "Parent Gratitude Planner", desc: "A simple guided planner to build a more positive connection." },
+  const includes = [
+    { icon: Video, title: "90-Minute Live Workshop", desc: "Join live from anywhere on Google Meet." },
+    { icon: MessageCircle, title: "Live Q&A", desc: "Ask your own parenting questions." },
+    { icon: FileText, title: "Practical Takeaways", desc: "Simple actions you can start using immediately." },
+    { icon: Gift, title: "3 Free Bonuses", desc: "Extra resources to keep using after the workshop." },
   ];
   return (
-    <section className="py-14 md:py-20 bg-background">
-      <div className="mx-auto max-w-6xl px-4">
-        <SectionHeading eyebrow="Everything included" title="Everything You Get With Your Workshop Ticket" />
-        <div className="mt-10 grid sm:grid-cols-2 gap-4 max-w-4xl mx-auto">
-          {items.map(({ icon: Icon, title, desc }) => (
-            <div key={title} className="rounded-3xl bg-card border border-border p-6 shadow-sm">
-              <span className="grid place-items-center size-11 rounded-2xl bg-accent/50 text-warm-brown">
-                <Icon className="size-5" />
-              </span>
+    <section className="py-14 md:py-20 bg-secondary">
+      <div className="mx-auto max-w-5xl px-4">
+        <SectionHeading eyebrow="Your seat includes" title="Everything You Need to Get Started" />
+        <div className="mt-9 grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+          {includes.map(({ icon: Icon, title, desc }) => (
+            <div key={title} className="rounded-3xl bg-card border border-border p-6 text-center shadow-sm">
+              <span className="mx-auto grid place-items-center size-12 rounded-2xl bg-accent/40 text-warm-brown"><Icon className="size-5" /></span>
               <h3 className="mt-4 font-semibold" style={{ fontFamily: "var(--font-display)" }}>{title}</h3>
-              <p className="mt-1.5 text-sm text-muted-foreground">{desc}</p>
+              <p className="mt-2 text-sm text-muted-foreground leading-relaxed">{desc}</p>
             </div>
           ))}
         </div>
@@ -496,40 +472,17 @@ function IncludesSection() {
   );
 }
 
-/* ---------------- PRICING ---------------- */
+/* ---------------- GUARANTEE ---------------- */
 
 function GuaranteeSection() {
-  const points = [
-    "Refund available within 24 hours after the workshop ends",
-    "100% of your registration fee returned",
-    "No questions asked",
-  ];
   return (
-    <section className="py-14 md:py-20 bg-blush/15">
-      <div className="mx-auto max-w-2xl px-4">
-        <div className="rounded-3xl bg-white border-2 border-blush/40 p-8 md:p-10 shadow-xl text-center">
-          <div className="mx-auto mb-5 grid size-20 place-items-center rounded-full bg-accent/30 ring-4 ring-blush/30">
-            <ShieldCheck className="size-10 text-primary" />
-          </div>
-          <h2 className="text-2xl md:text-3xl font-bold text-warm-brown-deep" style={{ fontFamily: "var(--font-display)" }}>
-            100% Money-Back Guarantee
-          </h2>
-          <p className="mt-4 text-muted-foreground leading-relaxed">
-            If you attend the workshop and genuinely feel you didn't learn practical parenting strategies
-            that can help you create a more peaceful home, simply let us know within{" "}
-            <span className="font-semibold text-warm-brown">24 hours</span> after the workshop ends.
-            We'll refund <span className="font-semibold text-warm-brown">100% of your registration fee</span>. No questions asked.
-          </p>
-          <div className="mt-6 grid gap-2.5 max-w-md mx-auto text-left">
-            {points.map((p) => (
-              <div key={p} className="flex items-start gap-2.5 rounded-xl bg-accent/15 px-4 py-3">
-                <CheckCircle2 className="size-5 text-primary shrink-0 mt-0.5" />
-                <span className="text-sm font-semibold text-warm-brown">{p}</span>
-              </div>
-            ))}
-          </div>
-          <p className="mt-6 text-sm text-muted-foreground">
-            This guarantee exists because we're confident you'll find immense value in this session.
+    <section className="py-14 md:py-20 bg-background">
+      <div className="mx-auto max-w-3xl px-4">
+        <div className="rounded-3xl border border-border bg-card p-7 sm:p-9 text-center shadow-sm">
+          <Lock className="mx-auto size-7 text-accent" />
+          <h2 className="mt-3 text-2xl sm:text-3xl font-semibold" style={{ fontFamily: "var(--font-display)" }}>A Safe Decision for Your Family</h2>
+          <p className="mt-3 text-sm sm:text-base text-muted-foreground leading-relaxed">
+            Come ready to learn, ask questions and leave with practical ideas you can try right away at home.
           </p>
         </div>
       </div>
@@ -537,31 +490,21 @@ function GuaranteeSection() {
   );
 }
 
+/* ---------------- PRICING ---------------- */
+
 function PricingSection() {
   return (
     <section className="py-14 md:py-20 bg-secondary">
-      <div className="mx-auto max-w-2xl px-4">
-        <div className="rounded-3xl bg-card border-2 border-accent/40 p-8 md:p-10 shadow-lg text-center">
-          <p className="text-sm font-semibold uppercase tracking-widest text-secondary-foreground/70">
-            Limited-time seat price
-          </p>
-          <div className="mt-4 flex items-end justify-center gap-3">
-            <span className="text-5xl md:text-6xl font-semibold text-warm-brown-deep" style={{ fontFamily: "var(--font-display)" }}>
-              499 PKR
-            </span>
-            <span className="text-xl text-muted-foreground line-through mb-1">2,000 PKR</span>
+      <div className="mx-auto max-w-lg px-4">
+        <div className="rounded-3xl bg-card border border-border p-8 sm:p-10 shadow-xl text-center">
+          <p className="text-xs font-bold uppercase tracking-widest text-accent">Workshop seat</p>
+          <div className="mt-3 flex items-baseline justify-center gap-2">
+            <span className="text-5xl font-black" style={{ fontFamily: "var(--font-display)" }}>499</span>
+            <span className="text-lg font-bold">PKR</span>
           </div>
-          <div className="mt-3 inline-block rounded-full bg-accent/60 text-accent-foreground text-sm font-bold px-4 py-1.5">
-            You save 1,501 PKR today
-          </div>
-          <p className="mt-5 text-muted-foreground">
-            Book now while the price is low. After this group, the price goes back up to 2,000 PKR.
-          </p>
-          <div className="mt-7 max-w-sm mx-auto">
-            <CtaButton subtitle="Live on 31 Aug · Includes 3 free bonuses">Reserve My Seat for 499 PKR</CtaButton>
-          </div>
-          <div className="mt-4 flex items-center justify-center gap-2 text-xs text-muted-foreground">
-            <Lock className="size-3.5" /> Secure checkout
+          <p className="mt-2 text-sm text-muted-foreground">One live session · 14 September · 3:00–4:30 PM PKT</p>
+          <div className="mt-6">
+            <CtaButton subtitle="Live on Google Meet · 3 free bonuses">Reserve My Seat</CtaButton>
           </div>
         </div>
       </div>
@@ -571,75 +514,25 @@ function PricingSection() {
 
 /* ---------------- BONUSES ---------------- */
 
-function FreeBadge() {
-  return (
-    <span className="inline-flex items-center gap-1.5 rounded-full bg-primary/10 text-primary text-[11px] font-bold uppercase tracking-wide px-3 py-1 ring-1 ring-primary/20">
-      <Gift className="size-3.5" /> Included FREE
-    </span>
-  );
-}
-
 function BonusesSection() {
   const bonuses = [
-    {
-      img: bonusCommunity.url,
-      alt: "Private Parent Community Access — a supportive community of parents sharing tips and encouragement",
-      label: "Bonus 1",
-      title: "Private Parent Community Access",
-      desc: "Join a supportive community of parents where you can ask questions, share experiences, learn practical parenting tips, and grow alongside parents on the same journey.",
-    },
-    {
-      img: bonusGeniusBlueprint.url,
-      alt: "The Parenting Genius Blueprint — a PDF guide to your child's unique intelligence and natural strengths",
-      label: "Bonus 2",
-      title: "The Parenting Genius Blueprint (PDF)",
-      desc: "Discover your child's unique intelligence, natural strengths, learning style, and how you can support their growth with more confidence — all in one practical PDF guide.",
-    },
-    {
-      img: bonusGratitudePlanner.url,
-      alt: "Parent Gratitude Planner — a simple guided planner to build a positive connection with your child",
-      label: "Bonus 3",
-      title: "Parent Gratitude Planner",
-      desc: "A simple guided planner designed to help you notice the good, reduce daily frustration, and build a more positive connection with your child.",
-    },
+    { img: bonusCommunity.url, title: "Parenting Support Community" },
+    { img: bonusGeniusBlueprint.url, title: "Parenting Genius Blueprint" },
+    { img: bonusGratitudePlanner.url, title: "Gratitude Planner" },
   ];
   return (
     <section className="py-14 md:py-20 bg-background">
-      <div className="mx-auto max-w-6xl px-4">
-        <SectionHeading
-          eyebrow="Included free"
-          title="Free Bonuses That Make Parenting Easier"
-          subtitle="Helpful tools and continued support to make parenting easier. All included free when you register."
-        />
-
-        <div className="mt-10 md:mt-14 space-y-10 md:space-y-16">
-          {bonuses.map((b, i) => {
-            const reverse = i % 2 === 1;
-            return (
-              <div
-                key={b.label}
-                className="grid items-center gap-6 md:gap-10 md:grid-cols-2"
-              >
-                <div className={reverse ? "md:order-2" : "md:order-1"}>
-                  <div className="overflow-hidden rounded-2xl shadow-lg ring-1 ring-blush/30 bg-white">
-                    <img src={b.img} alt={b.alt} className="w-full h-auto object-contain" loading="lazy" />
-                  </div>
-                </div>
-                <div className={reverse ? "md:order-1" : "md:order-2"}>
-                  <div className="flex items-center gap-3">
-                    <span className="inline-flex items-center rounded-full bg-primary/10 text-primary text-xs font-bold uppercase tracking-widest px-3 py-1 ring-1 ring-primary/20">
-                      {b.label}
-                    </span>
-                    <FreeBadge />
-                  </div>
-                  <h3 className="mt-4 text-2xl md:text-3xl font-semibold text-warm-brown-deep" style={{ fontFamily: "var(--font-display)" }}>
-                    {b.title}
-                  </h3>
-                  <p className="mt-3 text-muted-foreground leading-relaxed">{b.desc}</p>
-                </div>
+      <div className="mx-auto max-w-5xl px-4">
+        <SectionHeading eyebrow="Included free" title="3 Bonuses for Every Attendee" />
+        <div className="mt-9 grid md:grid-cols-3 gap-5">
+          {bonuses.map(({ img, title }) => (
+            <div key={title} className="rounded-3xl overflow-hidden bg-card border border-border shadow-sm">
+              <img src={img} alt={title} loading="lazy" className="w-full h-auto" />
+              <div className="p-5 text-center">
+                <h3 className="font-semibold" style={{ fontFamily: "var(--font-display)" }}>{title}</h3>
               </div>
-            );
-          })}
+            </div>
+          ))}
         </div>
       </div>
     </section>
@@ -649,32 +542,17 @@ function BonusesSection() {
 /* ---------------- TESTIMONIALS ---------------- */
 
 function TestimonialsSection() {
-  const reviews = [
-    { name: "A. Fatima", role: "Mother of two", text: "For the first time I understood why my son was acting out. The shouting has almost stopped at home." },
-    { name: "M. Bilal", role: "Father", text: "As a dad I wasn't sure this was for me. It completely changed how I talk to my daughter." },
-    { name: "S. Ayesha", role: "Mother", text: "Warm and easy to follow. I tried the tools the same evening and saw a difference." },
-  ];
   return (
     <section className="py-14 md:py-20 bg-secondary">
-      <div className="mx-auto max-w-5xl px-4">
-        <SectionHeading eyebrow="Parent stories" title="Parents Just Like You" />
-        <div className="mt-8 grid md:grid-cols-3 gap-5">
-          {reviews.map((r) => (
-            <div key={r.name} className="rounded-3xl bg-card border border-border p-6 shadow-sm">
-              <div className="flex gap-0.5 text-secondary-foreground">
-                {Array.from({ length: 5 }).map((_, i) => <Star key={i} className="size-4 fill-current text-[color:var(--secondary-foreground)]" />)}
-              </div>
-              <p className="mt-3 text-sm italic text-foreground leading-relaxed">"{r.text}"</p>
-              <div className="mt-4">
-                <p className="text-sm font-semibold">{r.name}</p>
-                <p className="text-xs text-muted-foreground">{r.role}</p>
-              </div>
+      <div className="mx-auto max-w-4xl px-4">
+        <SectionHeading eyebrow="Parent feedback" title="What Attendees Appreciated" />
+        <div className="mt-8 grid md:grid-cols-2 gap-5">
+          {[testimonialMotherhood.url, testimonialParenting.url].map((src) => (
+            <div key={src} className="rounded-3xl overflow-hidden bg-white shadow-md border border-border">
+              <img src={src} alt="Parent testimonial" loading="lazy" className="w-full h-auto" />
             </div>
           ))}
         </div>
-        <p className="mt-6 text-center text-xs text-muted-foreground">
-          Testimonials shown are placeholders and will be replaced with real parent reviews.
-        </p>
       </div>
     </section>
   );
@@ -684,25 +562,23 @@ function TestimonialsSection() {
 
 function FAQSection() {
   const faqs = [
-    { q: "Who should attend this workshop?", a: "Any parent who wants a calmer home and wants to understand their child better, whether your child is a toddler, school-aged or older." },
-    { q: "Can fathers attend?", a: "Absolutely. Fathers play a vital role, and this workshop is designed for both mothers and fathers." },
-    { q: "Can both parents join?", a: "Yes. We encourage both parents to attend together on the same registration so you're on the same page at home." },
-    { q: "Is the workshop recording included?", a: "The 499 PKR ticket covers the live workshop plus your 3 free bonuses. The complete workshop recording is available separately as an optional paid add-on at checkout if you'd like to rewatch later." },
-    { q: "How long is the workshop?", a: "It runs for 1 hour 30 minutes, including a live Q&A session." },
-    { q: "What platform is it on?", a: "The live session is hosted on Google Meet. You'll receive the joining link on WhatsApp and email." },
+    ["Who is this workshop for?", "It is for mothers and fathers who want a calmer, more cooperative home and practical tools for everyday parenting challenges."],
+    ["How long is the workshop?", "The live workshop runs for 90 minutes, from 3:00 PM to 4:30 PM Pakistan Standard Time."],
+    ["Where will it happen?", "Online via Google Meet. You can join from your phone or computer."],
+    ["Is there a live Q&A?", "Yes. You will have time to ask your own parenting questions during the live session."],
   ];
   return (
     <section className="py-14 md:py-20 bg-background">
       <div className="mx-auto max-w-3xl px-4">
         <SectionHeading eyebrow="Questions" title="Frequently Asked Questions" />
         <div className="mt-8 space-y-3">
-          {faqs.map((f) => (
-            <details key={f.q} className="group rounded-2xl bg-card border border-border p-5 shadow-sm">
-              <summary className="flex cursor-pointer items-center justify-between gap-3 font-semibold list-none">
-                <span>{f.q}</span>
-                <ChevronDown className="size-5 text-warm-brown shrink-0 transition-transform group-open:rotate-180" />
+          {faqs.map(([q, a]) => (
+            <details key={q} className="group rounded-2xl border border-border bg-card px-5 py-4 shadow-sm">
+              <summary className="flex cursor-pointer list-none items-center justify-between gap-4 font-semibold">
+                <span>{q}</span>
+                <ChevronDown className="size-4 shrink-0 transition group-open:rotate-180" />
               </summary>
-              <p className="mt-3 text-sm text-muted-foreground leading-relaxed">{f.a}</p>
+              <p className="mt-3 pr-8 text-sm text-muted-foreground leading-relaxed">{a}</p>
             </details>
           ))}
         </div>
@@ -715,52 +591,15 @@ function FAQSection() {
 
 function FinalCta() {
   return (
-    <section className="hero-bg text-foreground py-16 md:py-24">
+    <section className="py-14 md:py-20 bg-hero-deep text-white">
       <div className="mx-auto max-w-3xl px-4 text-center">
-        <h2 className="text-2xl md:text-4xl font-semibold" style={{ fontFamily: "var(--font-display)" }}>
-          A Calmer Home Can Start This Week
-        </h2>
-        <p className="mt-4 text-foreground/75 max-w-xl mx-auto">
-          Join Miss Samra Riaz live on 31 August and learn simple ways to end the daily fights and
-          enjoy your child again. No guilt, no shouting, no need to be perfect.
-        </p>
-        <div className="mt-6 max-w-sm mx-auto">
-          <MasterclassCountdown variant="light" showDateLine={false} className="mb-5" />
-          <CtaButton subtitle="Only 499 PKR · Includes 3 free bonuses">Reserve My Seat</CtaButton>
-        </div>
-        <div className="mt-5 flex items-center justify-center gap-2 text-sm text-foreground/70">
-          <ShieldCheck className="size-4 text-accent" /> Secure checkout · Instant confirmation
+        <p className="text-sm font-bold uppercase tracking-widest text-accent">14 September · 3:00–4:30 PM PKT</p>
+        <h2 className="mt-3 text-3xl sm:text-4xl md:text-5xl font-semibold" style={{ fontFamily: "var(--font-display)" }}>Give Yourself a Calmer Home to Come Back To.</h2>
+        <p className="mt-4 text-sm sm:text-base text-white/75 leading-relaxed">Reserve your seat for the live parenting workshop on Google Meet.</p>
+        <div className="mt-7 max-w-md mx-auto">
+          <CtaButton variant="light" subtitle="499 PKR · Includes 3 free bonuses">Reserve My Seat</CtaButton>
         </div>
       </div>
     </section>
-  );
-}
-
-/* ---------------- SHARED ---------------- */
-
-function SectionHeading({ eyebrow, title, subtitle }: { eyebrow?: string; title: string; subtitle?: string }) {
-  return (
-    <div className="text-center max-w-2xl mx-auto">
-      {eyebrow && (
-        <p className="text-xs font-semibold uppercase tracking-widest text-secondary-foreground/70">{eyebrow}</p>
-      )}
-      <h2 className="mt-2 text-2xl md:text-4xl font-semibold leading-tight" style={{ fontFamily: "var(--font-display)" }}>
-        {title}
-      </h2>
-      {subtitle && <p className="mt-3 text-muted-foreground">{subtitle}</p>}
-    </div>
-  );
-}
-
-/* Consistent conversion CTA placed after major sales sections. Scrolls to the opt-in form. */
-function SectionCta() {
-  return (
-    <div className="bg-background">
-      <div className="mx-auto max-w-sm px-4 py-8 md:py-10">
-        <CtaButton subtitle="Join the live Confident Parenting Workshop">
-          Reserve My Seat for 499 PKR
-        </CtaButton>
-      </div>
-    </div>
   );
 }
