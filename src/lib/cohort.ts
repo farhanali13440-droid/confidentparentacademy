@@ -3,9 +3,9 @@
 // and the deadline reminder emails both read from here, so updating the date
 // for a future cohort only requires changing COHORT_START_ISO below.
 
-// 31st August 2026 (Monday), 3:00 PM Pakistan Standard Time (UTC+5)
-// => 2026-08-31T15:00:00+05:00 => 2026-08-31T10:00:00Z
-export const COHORT_START_ISO = '2026-08-31T10:00:00Z'
+// 14th September 2026 (Monday), 3:00 PM Pakistan Standard Time (UTC+5)
+// => 2026-09-14T15:00:00+05:00 => 2026-09-14T10:00:00Z
+export const COHORT_START_ISO = '2026-09-14T10:00:00Z'
 export const COHORT_TIMEZONE = 'Asia/Karachi'
 
 /** Milliseconds since epoch for the live session start. */
